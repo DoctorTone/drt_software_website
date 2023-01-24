@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Sky } from "@react-three/drei";
 
-import Island from "./components/Island.js";
+import { Island } from "./components/Island.js";
 
 const App = () => {
   return (
@@ -10,7 +10,13 @@ const App = () => {
       <pointLight position={[10, 10, 10]} />
       <Sky />
       <Float>
-        <Island />
+        <Island position={[0, 0, 0]} />
+      </Float>
+      <Float>
+        <Island position={[5, 0, 0]} />
+      </Float>
+      <Float>
+        <Island position={[-5, 0, 0]} />
       </Float>
 
       <OrbitControls />
