@@ -16,71 +16,42 @@ export function Portfolio(props) {
         <group rotation={[-Math.PI, 0, 0]} scale={0.3}>
           <group rotation={[Math.PI / 2, 0, 0]}>
             <mesh
-              castShadow
-              receiveShadow
               geometry={nodes.Mesh_0.geometry}
               material={materials["80DEEA"]}
             />
+            <mesh geometry={nodes.Mesh_1.geometry}>
+              <meshStandardMaterial color="orange" />
+            </mesh>
             <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Mesh_1.geometry}
-              material={materials["795548"]}
-            />
-            <mesh
-              castShadow
-              receiveShadow
               geometry={nodes.Mesh_2.geometry}
               material={materials["455A64"]}
             />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.Mesh_3.geometry}
-              material={materials["039BE5"]}
-            />
+            <mesh geometry={nodes.Mesh_3.geometry}>
+              <meshStandardMaterial color="orange" />
+            </mesh>
           </group>
         </group>
       </group>
       <group position={[-0.36, 0.36, 0]} scale={4.23}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube001_1.geometry}
-          material={materials["Material.001"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube001_2.geometry}
-          material={materials["Material.005"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube001_3.geometry}
-          material={materials["Material.004"]}
-        />
+        <mesh geometry={nodes.Cube001_1.geometry}>
+          <meshStandardMaterial color="grey" />
+        </mesh>
+        <mesh geometry={nodes.Cube001_2.geometry}>
+          <meshStandardMaterial color="darkgrey" />
+        </mesh>
+        <mesh geometry={nodes.Cube001_3.geometry}>
+          <meshStandardMaterial color="grey" />
+        </mesh>
       </group>
       <group position={[0.15, -0.12, 0]} scale={4.23}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube002.geometry}
-          material={materials["Material.002"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube002_1.geometry}
-          material={materials["Material.003"]}
-        />
+        <mesh geometry={nodes.Cube002.geometry}>
+          <meshStandardMaterial color="grey" />
+        </mesh>
       </group>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.node_id51001.geometry}
-        material={materials["84.001"]}
         position={[0.07, -0.12, 0]}
         scale={[5.2, 4.57, 5.2]}
       />

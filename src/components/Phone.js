@@ -9,11 +9,11 @@ export function Phone(props) {
   const { nodes, materials } = useGLTF("/models/phone.glb");
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Phone.geometry} rotation={[Math.PI / 2, 0, 0]}>
+      <mesh castShadow receiveShadow geometry={nodes.Phone.geometry}>
         <meshStandardMaterial color="grey" />
       </mesh>
     </group>
   );
 }
 
-useGLTF.preload("/phone.glb");
+useGLTF.preload("/models/phone.glb");

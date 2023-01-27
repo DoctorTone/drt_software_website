@@ -12,7 +12,8 @@ export const IslandContact = () => {
           color="white"
           center
           fontSize={0.2}
-          position={[-5, 2.5, 0]}
+          position={[-5.3, 2.75, 0]}
+          rotation-y={-Math.PI / 2}
           anchorX="center"
           anchorY="middle"
           outlineWidth={0.02}
@@ -20,7 +21,7 @@ export const IslandContact = () => {
           Contact
         </Text>
       </Suspense>
-      <Phone position={[-5, 2, 0]} scale={0.01}></Phone>
+      <Phone position={[-5.5, 2.1, 0]} scale={0.007} />
     </Float>
   );
 };
