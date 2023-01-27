@@ -14,12 +14,16 @@ const App = () => {
     state.lightPosition,
   ]);
 
+  const camRotRequired = useStore((state) => state.camRightRequired);
+  // DEBUG
+  console.log("Cam rot required = ", camRotRequired);
+
   return (
     <>
       <Canvas camera={{ position: cameraPosition }}>
         <ambientLight intensity={0.5} />
         <pointLight position={lightPosition} />
-        <Sky />
+        <Sky sunPosition={[1, 0.15, 0]} />
         <IslandDRT />
         <IslandPortfolio />
         <IslandContact />

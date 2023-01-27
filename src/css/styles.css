@@ -21,3 +21,7 @@ body {
   left: 0;
   bottom: 1%;
 }
+
+.btn:hover {
+  color: orange;
+}
