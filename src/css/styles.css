@@ -13,3 +13,11 @@ body,
 body {
   background: #4e4b4b;
 }
+
+.panel {
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  left: 0;
+  bottom: 1%;
+}

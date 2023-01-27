@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Float, Sky } from "@react-three/drei";
+import CameraControl from "./UI/CameraControl.js";
 import useStore from "./state/store.js";
 
 import { IslandDRT } from "./components/IslandDRT.js";
@@ -14,17 +15,20 @@ const App = () => {
   ]);
 
   return (
-    <Canvas camera={{ position: cameraPosition }}>
-      <ambientLight intensity={0.5} />
-      <pointLight position={lightPosition} />
-      <Sky />
-      <IslandDRT />
-      <IslandPortfolio />
-      <IslandContact />
-      <IslandServices />
+    <>
+      <Canvas camera={{ position: cameraPosition }}>
+        <ambientLight intensity={0.5} />
+        <pointLight position={lightPosition} />
+        <Sky />
+        <IslandDRT />
+        <IslandPortfolio />
+        <IslandContact />
+        <IslandServices />
 
-      <OrbitControls />
-    </Canvas>
+        <OrbitControls />
+      </Canvas>
+      <CameraControl />
+    </>
   );
 };
 
