@@ -2,10 +2,13 @@ import React, { Suspense } from "react";
 import { Float, Text } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Portfolio } from "./Portfolio.js";
+import useStore from "../state/store.js";
 
 export const IslandPortfolio = () => {
+  const rotationIntensity = useStore((state) => state.rotationIntensity);
+
   return (
-    <Float>
+    <Float rotationIntensity={rotationIntensity}>
       <Island position={[5, 0, 0]} />
       <Portfolio position={[5, 2, 0]} />
       <Suspense fallback={null}>
