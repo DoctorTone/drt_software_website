@@ -1,14 +1,19 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text3D, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Tree } from "./Tree.js";
 import { DRT } from "./DRT.js";
 import { SCENE } from "../state/Config.js";
 
+import useStore from "../state/store.js";
+
 export const IslandDRT = () => {
   const [hovered, setHovered] = useState(false);
+
+  const showAboutModal = useStore((state) => state.showAboutModal);
   const selectIsland = () => {
     console.log("Clicked island");
+    showAboutModal(true);
   };
 
   const pointerOver = () => {
