@@ -21,8 +21,6 @@ const ThreeApp = () => {
     if (camRotRightRequired || camRotLeftRequired) {
       const direction = camRotLeftRequired ? -1 : 1;
       currentRot.current += delta;
-      // DEBUG
-      console.log("Rot = ", currentRot.current);
       if (currentRot.current > Math.PI / 2) {
         currentRot.current = 0;
         resetCamRotate();
@@ -31,8 +29,6 @@ const ThreeApp = () => {
       state.camera.position.applyQuaternion(tempRot);
     } else {
       currentRot.current = 0;
-      // DEBUG
-      console.log("Rot = ", currentRot.current);
     }
   });
 
@@ -46,7 +42,7 @@ const ThreeApp = () => {
       <IslandContact />
       <IslandServices />
 
-      <OrbitControls />
+      <OrbitControls enablePan={false} enableRotate={false} />
     </>
   );
 };
