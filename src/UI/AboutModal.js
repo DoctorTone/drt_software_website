@@ -26,7 +26,7 @@ const AboutModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        <p>Modal body text goes here.</p>
+        <p>I'm Tony Glover, blah blah.</p>
       </Modal.Body>
 
       <Modal.Footer>

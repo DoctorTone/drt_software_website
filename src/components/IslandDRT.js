@@ -4,7 +4,7 @@ import { Island } from "./Island.js";
 import { Tree } from "./Tree.js";
 import { DRT } from "./DRT.js";
 import { SCENE } from "../state/Config.js";
-
+import useSound from "use-sound";
 import useStore from "../state/store.js";
 
 export const IslandDRT = () => {
@@ -12,8 +12,8 @@ export const IslandDRT = () => {
 
   const showAboutModal = useStore((state) => state.showAboutModal);
   const selectIsland = () => {
-    console.log("Clicked island");
     showAboutModal(true);
+    play();
   };
 
   const pointerOver = () => {
@@ -27,6 +27,7 @@ export const IslandDRT = () => {
   };
 
   useCursor(hovered);
+  const [play] = useSound("./sounds/select.wav", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
