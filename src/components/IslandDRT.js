@@ -3,13 +3,11 @@ import { Float, Text3D, Text } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Tree } from "./Tree.js";
 import { DRT } from "./DRT.js";
-import useStore from "../state/store.js";
+import { SCENE } from "../state/Config.js";
 
 export const IslandDRT = () => {
-  const rotationIntensity = useStore((state) => state.rotationIntensity);
-
   return (
-    <Float rotationIntensity={rotationIntensity}>
+    <Float rotationIntensity={SCENE.rotationIntensity}>
       <Island position={[0, 0, 6]} />
       <Tree position={[-1, 1.5, 6]} scale={0.05} />
       <DRT position={[0.2, 2.2, 6.4]} />

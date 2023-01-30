@@ -2,13 +2,11 @@ import React, { Suspense } from "react";
 import { Float, Text } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Phone } from "./Phone.js";
-import useStore from "../state/store.js";
+import { SCENE } from "../state/Config.js";
 
 export const IslandContact = () => {
-  const rotationIntensity = useStore((state) => state.rotationIntensity);
-
   return (
-    <Float rotationIntensity={rotationIntensity}>
+    <Float rotationIntensity={SCENE.rotationIntensity}>
       <Island position={[-5, 0, 0]} />
       <Suspense fallback={null}>
         <Text

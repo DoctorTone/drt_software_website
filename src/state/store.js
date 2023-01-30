@@ -5,6 +5,8 @@ const useStore = create((set) => ({
   camRotateLeftRequired: false,
   rotateCamRight: () => set({ camRotateRightRequired: true }),
   rotateCamLeft: () => set({ camRotateLeftRequired: true }),
+  resetCamRotate: () =>
+    set({ camRotateRightRequired: false, camRotateLeftRequired: false }),
 }));
 
 export default useStore;

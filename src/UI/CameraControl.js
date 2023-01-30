@@ -5,10 +5,11 @@ import useStore from "../state/store.js";
 
 const CameraControl = () => {
   const rotateCamRight = useStore((state) => state.rotateCamRight);
+  const rotateCamLeft = useStore((state) => state.rotateCamLeft);
 
   return (
     <div className="panel pe-2">
-      <Button variant="outline-dark">
+      <Button onClick={rotateCamLeft} variant="outline-dark">
         <CaretLeft />
         Prev
       </Button>{" "}
