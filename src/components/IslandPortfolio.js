@@ -16,12 +16,10 @@ export const IslandPortfolio = () => {
   };
 
   const pointerOver = () => {
-    console.log("Pointer over");
     setHovered(true);
   };
 
   const pointerOut = () => {
-    console.log("Pointer out");
     setHovered(false);
   };
 

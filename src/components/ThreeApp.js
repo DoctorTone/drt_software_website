@@ -13,6 +13,9 @@ const ThreeApp = () => {
   const camRotLeftRequired = useStore((state) => state.camRotateLeftRequired);
   const resetCamRotate = useStore((state) => state.resetCamRotate);
   const animateSceneDown = useStore((state) => state.animateSceneDown);
+  const animateSceneUp = useStore((state) => state.animateSceneUp);
+  const moveSceneUp = useStore((state) => state.moveSceneUp);
+  const resetSceneAnimation = useStore((state) => state.resetSceneAnimation);
   const currentRot = useRef(0);
   const main = useRef();
 
@@ -29,7 +32,18 @@ const ThreeApp = () => {
     }
 
     if (animateSceneDown) {
-      main.current.position.y -= delta;
+      main.current.position.y -= delta * 15;
+      if (main.current.position.y < -30) {
+        moveSceneUp();
+      }
+    }
+
+    if (animateSceneUp) {
+      main.current.position.y += delta * 15;
+      if (main.current.position.y > 0) {
+        main.current.position.y = 0;
+        resetSceneAnimation();
+      }
     }
   });
 

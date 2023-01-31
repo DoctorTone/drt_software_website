@@ -15,7 +15,11 @@ const useStore = create((set) => ({
 
   // Scene animations
   animateSceneDown: false,
+  animateSceneUp: false,
   moveSceneDown: () => set({ animateSceneDown: true }),
+  moveSceneUp: () => set({ animateSceneDown: false, animateSceneUp: true }),
+  resetSceneAnimation: () =>
+    set({ animateSceneDown: false, animateSceneUp: false }),
 }));
 
 export default useStore;
