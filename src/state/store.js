@@ -12,16 +12,21 @@ const useStore = create((set) => ({
   // Modals
   aboutModalVisible: false,
   showAboutModal: (show) => set({ aboutModalVisible: show }),
+  contactModalVisible: false,
+  showContactModal: (show) => set({ contactModalVisible: show }),
 
   // Scene animations
   animateSceneDown: false,
   animateSceneUp: false,
+  activeScene: "main",
   moveSceneDown: () => set({ animateSceneDown: true }),
   moveSceneUp: () => set({ animateSceneDown: false, animateSceneUp: true }),
   resetSceneAnimation: () =>
     set({ animateSceneDown: false, animateSceneUp: false }),
   currentLevel: 0,
   setCurrentLevel: (level) => set({ currentLevel: level }),
+  setActiveScene: (scene) =>
+    set({ activeScene: scene, animateSceneDown: true }),
 }));
 
 export default useStore;

@@ -6,9 +6,11 @@ import useStore from "../state/store.js";
 
 const NavigationUI = () => {
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
+  const setActiveScene = useStore((state) => state.setActiveScene);
 
   const Home = () => {
     setCurrentLevel(SCENE.MAIN_LEVEL);
+    setActiveScene("main");
   };
 
   return (
