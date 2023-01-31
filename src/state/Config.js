@@ -8,6 +8,10 @@ const SCENE = {
   ambientIntensity: 0.5,
   tempRot: new THREE.Quaternion(),
   Y_AXIS: new THREE.Vector3(0, 1, 0),
+  MAIN_LEVEL: 0,
+  LEVEL_1: 1,
+  LEVEL_2: 2,
+  LEVEL_3: 3,
 };
 
 export { SCENE };

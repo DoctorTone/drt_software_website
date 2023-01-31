@@ -16,10 +16,19 @@ body {
 
 .panel {
   position: absolute;
-  text-align: right;
   width: 100%;
+}
+
+#home {
+  left: 0;
+  top: 5%;
+  text-align: left;
+}
+
+#camControl {
   left: 0;
   bottom: 1%;
+  text-align: right;
 }
 
 .btn:hover {

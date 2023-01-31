@@ -8,7 +8,7 @@ const CameraControl = () => {
   const rotateCamLeft = useStore((state) => state.rotateCamLeft);
 
   return (
-    <div className="panel pe-2">
+    <div id="camControl" className="panel pe-2">
       <Button onClick={rotateCamLeft} variant="outline-dark">
         <CaretLeft />
         Prev

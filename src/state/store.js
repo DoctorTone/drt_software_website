@@ -20,6 +20,8 @@ const useStore = create((set) => ({
   moveSceneUp: () => set({ animateSceneDown: false, animateSceneUp: true }),
   resetSceneAnimation: () =>
     set({ animateSceneDown: false, animateSceneUp: false }),
+  currentLevel: 0,
+  setCurrentLevel: (level) => set({ currentLevel: level }),
 }));
 
 export default useStore;

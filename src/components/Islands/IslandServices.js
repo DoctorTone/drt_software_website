@@ -1,28 +1,28 @@
 import React, { Suspense } from "react";
 import { Float, Text } from "@react-three/drei";
-import { Island } from "./Island.js";
-import { Phone } from "./Phone.js";
-import { SCENE } from "../state/Config.js";
+import { Island } from "../Island.js";
+import { Work } from "../Work.js";
+import { SCENE } from "../../state/Config.js";
 
-export const IslandContact = () => {
+export const IslandServices = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
-      <Island position={[-5, 0, 0]} />
+      <Island position={[0, 0, -5]} />
+      <Work rotation-y={Math.PI / 2} scale={0.1} position={[0, 2.15, -5.25]} />
       <Suspense fallback={null}>
         <Text
           color="white"
           center
           fontSize={0.2}
-          position={[-5.3, 2.75, 0]}
-          rotation-y={-Math.PI / 2}
+          position={[0, 2.85, -5.25]}
+          rotation-y={Math.PI}
           anchorX="center"
           anchorY="middle"
           outlineWidth={0.02}
           outlineColor="black">
-          Contact
+          Services
         </Text>
       </Suspense>
-      <Phone position={[-5.25, 2.1, -0.15]} scale={0.007} />
     </Float>
   );
 };

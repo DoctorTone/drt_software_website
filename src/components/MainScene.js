@@ -1,8 +1,8 @@
 import React from "react";
-import { IslandDRT } from "./IslandDRT.js";
-import { IslandContact } from "./IslandContact.js";
-import { IslandServices } from "./IslandServices.js";
-import { IslandPortfolio } from "./IslandPortfolio.js";
+import { IslandDRT } from "./Islands/IslandDRT.js";
+import { IslandContact } from "./Islands/IslandContact.js";
+import { IslandServices } from "./Islands/IslandServices.js";
+import { IslandPortfolio } from "./Islands/IslandPortfolio.js";
 
 const MainScene = () => {
   return (
