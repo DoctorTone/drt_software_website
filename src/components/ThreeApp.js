@@ -5,17 +5,16 @@ import useStore from "../state/store.js";
 import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
-import { IslandDRT } from "./IslandDRT.js";
-import { IslandContact } from "./IslandContact.js";
-import { IslandServices } from "./IslandServices.js";
-import { IslandPortfolio } from "./IslandPortfolio.js";
+import MainScene from "./MainScene.js";
 
 let tempRot = new THREE.Quaternion();
 const ThreeApp = () => {
   const camRotRightRequired = useStore((state) => state.camRotateRightRequired);
   const camRotLeftRequired = useStore((state) => state.camRotateLeftRequired);
   const resetCamRotate = useStore((state) => state.resetCamRotate);
+  const animateSceneDown = useStore((state) => state.animateSceneDown);
   const currentRot = useRef(0);
+  const main = useRef();
 
   useFrame((state, delta) => {
     if (camRotRightRequired || camRotLeftRequired) {
@@ -27,8 +26,10 @@ const ThreeApp = () => {
       }
       tempRot.setFromAxisAngle(SCENE.Y_AXIS, delta * direction);
       state.camera.position.applyQuaternion(tempRot);
-    } else {
-      currentRot.current = 0;
+    }
+
+    if (animateSceneDown) {
+      main.current.position.y -= delta;
     }
   });
 
@@ -37,10 +38,9 @@ const ThreeApp = () => {
       <ambientLight intensity={SCENE.ambientIntensity} />
       <pointLight position={SCENE.lightPosition} />
       <Sky sunPosition={SCENE.sunPosition} />
-      <IslandDRT />
-      <IslandPortfolio />
-      <IslandContact />
-      <IslandServices />
+      <group ref={main}>
+        <MainScene />
+      </group>
 
       <OrbitControls enablePan={false} enableRotate={false} />
     </>

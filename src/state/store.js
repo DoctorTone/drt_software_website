@@ -12,6 +12,10 @@ const useStore = create((set) => ({
   // Modals
   aboutModalVisible: false,
   showAboutModal: (show) => set({ aboutModalVisible: show }),
+
+  // Scene animations
+  animateSceneDown: false,
+  moveSceneDown: () => set({ animateSceneDown: true }),
 }));
 
 export default useStore;
