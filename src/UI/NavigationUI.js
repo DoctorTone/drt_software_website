@@ -1,6 +1,11 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import { House, ArrowCounterclockwise } from "react-bootstrap-icons";
+import {
+  House,
+  ArrowCounterclockwise,
+  InfoLg,
+  Question,
+} from "react-bootstrap-icons";
 import { SCENE } from "../state/Config.js";
 import useStore from "../state/store.js";
 
@@ -20,9 +25,14 @@ const NavigationUI = () => {
           <House />
         </Button>
       </div>
-      <div>
+      <div className="mb-3">
         <Button variant="outline-dark">
           <ArrowCounterclockwise />
+        </Button>
+      </div>
+      <div>
+        <Button variant="outline-dark">
+          <InfoLg />
         </Button>
       </div>
     </div>

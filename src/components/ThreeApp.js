@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
 import useStore from "../state/store.js";
+import { shallow } from "zustand/shallow";
 import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
@@ -10,9 +11,13 @@ import PortfolioScene from "./PortfolioScene.js";
 
 let tempRot = new THREE.Quaternion();
 const ThreeApp = () => {
-  const camRotRightRequired = useStore((state) => state.camRotateRightRequired);
-  const camRotLeftRequired = useStore((state) => state.camRotateLeftRequired);
-  const resetCamRotate = useStore((state) => state.resetCamRotate);
+  const [camRotRightRequired, camRotLeftRequired, resetCamRotate] = useStore(
+    (state) => [
+      state.camRotateRightRequired,
+      state.camRotateLeftRequired,
+      state.resetCamRotate,
+    ]
+  );
   const animateSceneDown = useStore((state) => state.animateSceneDown);
   const animateSceneUp = useStore((state) => state.animateSceneUp);
   const moveSceneUp = useStore((state) => state.moveSceneUp);
@@ -42,9 +47,10 @@ const ThreeApp = () => {
       if (currentRot.current > Math.PI / 2) {
         currentRot.current = 0;
         resetCamRotate();
+      } else {
+        tempRot.setFromAxisAngle(SCENE.Y_AXIS, delta * direction);
+        state.camera.position.applyQuaternion(tempRot);
       }
-      tempRot.setFromAxisAngle(SCENE.Y_AXIS, delta * direction);
-      state.camera.position.applyQuaternion(tempRot);
     }
 
     if (animateSceneDown) {

@@ -4,6 +4,7 @@ import CameraControl from "./UI/CameraControl.js";
 import NavigationUI from "./UI/NavigationUI.js";
 import AboutModal from "./UI/AboutModal.js";
 import ContactModal from "./UI/ContactModal.js";
+import ServicesModal from "./UI/ServicesModal.js";
 
 import { SCENE } from "./state/Config.js";
 import useStore from "./state/store.js";
@@ -11,6 +12,7 @@ import useStore from "./state/store.js";
 const App = () => {
   const aboutModalVisible = useStore((state) => state.aboutModalVisible);
   const contactModalVisible = useStore((state) => state.contactModalVisible);
+  const servicesModalVisible = useStore((state) => state.servicesModalVisible);
 
   return (
     <>
@@ -21,6 +23,7 @@ const App = () => {
       <NavigationUI />
       <AboutModal showModal={aboutModalVisible} />
       <ContactModal showModal={contactModalVisible} />
+      <ServicesModal showModal={servicesModalVisible} />
     </>
   );
 };

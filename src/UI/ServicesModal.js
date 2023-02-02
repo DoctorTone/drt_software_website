@@ -4,12 +4,13 @@ import Modal from "react-bootstrap/Modal";
 
 import useStore from "../state/store.js";
 
-const AboutModal = ({ showModal }) => {
-  const showAboutModal = useStore((state) => state.showAboutModal);
+const ServicesModal = ({ showModal }) => {
+  const showServicesModal = useStore((state) => state.showServicesModal);
   const [show, setShow] = useState(false);
+
   const handleClose = () => {
     setShow(false);
-    showAboutModal(false);
+    showServicesModal(false);
   };
 
   useEffect(() => {
@@ -19,11 +20,11 @@ const AboutModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Welcome to DRT</Modal.Title>
+        <Modal.Title>Services</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
-        <p>I'm Tony Glover, blah blah.</p>
+        <p>I provide the following services</p>
       </Modal.Body>
 
       <Modal.Footer>
@@ -35,4 +36,4 @@ const AboutModal = ({ showModal }) => {
   );
 };
 
-export default AboutModal;
+export default ServicesModal;

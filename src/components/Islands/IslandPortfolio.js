@@ -24,7 +24,7 @@ export const IslandPortfolio = () => {
   };
 
   useCursor(hovered);
-  const [play] = useSound("./sounds/nextScene.wav", { volume: 0.25 });
+  const [play] = useSound("./sounds/select.mp3", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
