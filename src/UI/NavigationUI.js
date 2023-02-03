@@ -12,10 +12,15 @@ import useStore from "../state/store.js";
 const NavigationUI = () => {
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
   const setActiveScene = useStore((state) => state.setActiveScene);
+  const showInfoModal = useStore((state) => state.showInfoModal);
 
   const Home = () => {
     setCurrentLevel(SCENE.MAIN_LEVEL);
     setActiveScene("main");
+  };
+
+  const Info = () => {
+    showInfoModal(true);
   };
 
   return (
@@ -31,7 +36,7 @@ const NavigationUI = () => {
         </Button>
       </div>
       <div>
-        <Button variant="outline-dark">
+        <Button onClick={Info} variant="outline-dark">
           <InfoLg />
         </Button>
       </div>

@@ -6,6 +6,7 @@ import { shallow } from "zustand/shallow";
 import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
+import { Cloud } from "./Cloud.js";
 import MainScene from "./MainScene.js";
 import PortfolioScene from "./PortfolioScene.js";
 
@@ -77,6 +78,7 @@ const ThreeApp = () => {
       <ambientLight intensity={SCENE.ambientIntensity} />
       <pointLight position={SCENE.lightPosition} />
       <Sky sunPosition={SCENE.sunPosition} />
+      <Cloud position={[0, 6, 0]} scale={[0.5, 0.25, 0.25]} />
       {currentLevel === SCENE.MAIN_LEVEL && (
         <group ref={allRefs["main"]}>
           <MainScene />
