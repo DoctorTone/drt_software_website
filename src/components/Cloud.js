@@ -19,6 +19,9 @@ export function Cloud(props) {
       <mesh geometry={nodes.Sphere001.geometry}>
         <meshStandardMaterial color="white" />
       </mesh>
+      <mesh position={[-5, 0, 0]} geometry={nodes.Sphere001.geometry}>
+        <meshStandardMaterial color="white" />
+      </mesh>
     </group>
   );
 }
