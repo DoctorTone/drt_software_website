@@ -12,6 +12,11 @@ export function Cloud(props) {
 
   useFrame((state, delta) => {
     cloud.current.position.x += delta;
+    if (cloud.current.position.x > 30) {
+      cloud.current.position.x = -15;
+    }
+    // DEBUG
+    console.log("cloud = ", cloud.current.position.x);
   });
 
   return (
@@ -19,7 +24,16 @@ export function Cloud(props) {
       <mesh geometry={nodes.Sphere001.geometry}>
         <meshStandardMaterial color="white" />
       </mesh>
-      <mesh position={[-5, 0, 0]} geometry={nodes.Sphere001.geometry}>
+      <mesh position={[-10, 0, 0]} geometry={nodes.Sphere001.geometry}>
+        <meshStandardMaterial color="white" />
+      </mesh>
+      <mesh position={[-14, 0, 5]} geometry={nodes.Sphere001.geometry}>
+        <meshStandardMaterial color="white" />
+      </mesh>
+      <mesh position={[7, -1, 0]} geometry={nodes.Sphere001.geometry}>
+        <meshStandardMaterial color="white" />
+      </mesh>
+      <mesh position={[-16, -1, -6]} geometry={nodes.Sphere001.geometry}>
         <meshStandardMaterial color="white" />
       </mesh>
     </group>

@@ -78,7 +78,7 @@ const ThreeApp = () => {
       <ambientLight intensity={SCENE.ambientIntensity} />
       <pointLight position={SCENE.lightPosition} />
       <Sky sunPosition={SCENE.sunPosition} />
-      <Cloud position={[0, 6, 0]} scale={[0.5, 0.25, 0.25]} />
+      <Cloud position={[-15, 6, 0]} scale={[0.5, 0.25, 0.25]} />
       {currentLevel === SCENE.MAIN_LEVEL && (
         <group ref={allRefs["main"]}>
           <MainScene />
