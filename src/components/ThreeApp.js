@@ -10,7 +10,6 @@ import { Cloud } from "./Cloud.js";
 import MainScene from "./MainScene.js";
 import PortfolioScene from "./PortfolioScene.js";
 
-let tempRot = new THREE.Quaternion();
 const ThreeApp = () => {
   const [camRotRightRequired, camRotLeftRequired, resetCamRotate] = useStore(
     (state) => [
@@ -29,6 +28,8 @@ const ThreeApp = () => {
   const setActiveScene = useStore((state) => state.setActiveScene);
 
   const currentRot = useRef(0);
+  const worldRot = useRef(0);
+  const topLevel = useRef();
   const allRefs = {
     main: useRef(),
     portfolio: useRef(),
@@ -46,11 +47,14 @@ const ThreeApp = () => {
       const direction = camRotLeftRequired ? -1 : 1;
       currentRot.current += delta;
       if (currentRot.current > Math.PI / 2) {
+        worldRot.current += (Math.PI / 2) * direction;
         currentRot.current = 0;
+        topLevel.current.rotation.y = worldRot.current;
+        // DEBUG
+        // console.log("World rot = ", worldRot.current);
         resetCamRotate();
       } else {
-        tempRot.setFromAxisAngle(SCENE.Y_AXIS, delta * direction);
-        state.camera.position.applyQuaternion(tempRot);
+        topLevel.current.rotation.y += delta * direction;
       }
     }
 
@@ -79,16 +83,18 @@ const ThreeApp = () => {
       <pointLight position={SCENE.lightPosition} />
       <Sky sunPosition={SCENE.sunPosition} />
       <Cloud position={[-15, 6, 0]} scale={[0.5, 0.25, 0.25]} />
-      {currentLevel === SCENE.MAIN_LEVEL && (
-        <group ref={allRefs["main"]}>
-          <MainScene />
-        </group>
-      )}
-      {currentLevel === SCENE.LEVEL_1 && (
-        <group ref={allRefs["portfolio"]} position={[0, -30, 0]}>
-          <PortfolioScene />
-        </group>
-      )}
+      <group ref={topLevel}>
+        {currentLevel === SCENE.MAIN_LEVEL && (
+          <group ref={allRefs["main"]}>
+            <MainScene />
+          </group>
+        )}
+        {currentLevel === SCENE.LEVEL_1 && (
+          <group ref={allRefs["portfolio"]} position={[0, -30, 0]}>
+            <PortfolioScene />
+          </group>
+        )}
+      </group>
 
       <OrbitControls enablePan={false} enableRotate={false} />
     </>

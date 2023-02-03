@@ -12,6 +12,8 @@ const SCENE = {
   LEVEL_1: 1,
   LEVEL_2: 2,
   LEVEL_3: 3,
+  CLOUD_MAX: 30,
+  CLOUD_MIN: -15,
 };
 
 export { SCENE };
