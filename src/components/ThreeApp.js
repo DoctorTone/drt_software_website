@@ -19,9 +19,9 @@ const ThreeApp = () => {
     ],
     shallow
   );
-  const animateSceneDown = useStore((state) => state.animateSceneDown);
+  const animatingSceneDown = useStore((state) => state.animatingSceneDown);
+  const animatingSceneUp = useStore((state) => state.animatingSceneUp);
   const animateSceneUp = useStore((state) => state.animateSceneUp);
-  const moveSceneUp = useStore((state) => state.moveSceneUp);
   const resetSceneAnimation = useStore((state) => state.resetSceneAnimation);
   const currentLevel = useStore((state) => state.currentLevel);
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
@@ -44,6 +44,8 @@ const ThreeApp = () => {
   activeRef = allRefs["main"];
 
   useEffect(() => {
+    // DEBUG
+    console.log("New scene = ", activeScene);
     activeRef = allRefs[activeScene];
   }, [activeScene]);
 
@@ -63,18 +65,18 @@ const ThreeApp = () => {
       }
     }
 
-    if (animateSceneDown) {
+    if (animatingSceneDown) {
       activeRef.current.position.y -= delta * SCENE.DOWNWARD_SPEED;
       if (activeRef.current.position.y < SCENE.FLOOR_LEVEL) {
         activeRef.current.position.y = SCENE.FLOOR_LEVEL;
-        moveSceneUp();
-        setCurrentLevel(SCENE.LEVEL_1);
-        setActiveScene("portfolio");
+        animateSceneUp(SCENE.LEVEL_1, "portfolio");
       }
     }
 
-    if (animateSceneUp) {
+    if (animatingSceneUp) {
       activeRef.current.position.y += delta * SCENE.UPWARD_SPEED;
+      // DEBUG
+      console.log("Pos = ", activeRef.current.position.y);
       if (activeRef.current.position.y > 0) {
         activeRef.current.position.y = 0;
         resetSceneAnimation();
@@ -95,7 +97,7 @@ const ThreeApp = () => {
           </group>
         )}
         {currentLevel === SCENE.LEVEL_1 && (
-          <group ref={allRefs["portfolio"]} position-x={SCENE.FLOOR_LEVEL}>
+          <group ref={allRefs["portfolio"]} position-y={SCENE.FLOOR_LEVEL}>
             <PortfolioScene />
           </group>
         )}

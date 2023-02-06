@@ -5,6 +5,11 @@ const PortfolioScene = () => {
   return (
     <>
       <IslandPhysics />
+      <IslandDataViz />
+      <IslandVR />
+      <IslandShaders />
+      <IslandTech />
+      <IslandVideos />
     </>
   );
 };

@@ -8,13 +8,13 @@ import useStore from "../../state/store.js";
 
 export const IslandPortfolio = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const moveSceneDown = useStore((state) => state.moveSceneDown);
+  const animateSceneDown = useStore((state) => state.animateSceneDown);
   const activeIsland = useStore((state) => state.activeIsland);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
       play();
-      moveSceneDown();
+      animateSceneDown();
     }
   };
 

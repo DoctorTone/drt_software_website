@@ -38,13 +38,19 @@ const useStore = create((set) => ({
   showInfoModal: (show) => set({ infoModalVisible: show }),
 
   // Scene animations
-  animateSceneDown: false,
-  animateSceneUp: false,
+  animatingSceneDown: false,
+  animatingSceneUp: false,
   activeScene: "main",
-  moveSceneDown: () => set({ animateSceneDown: true }),
-  moveSceneUp: () => set({ animateSceneDown: false, animateSceneUp: true }),
+  animateSceneDown: () => set({ animatingSceneDown: true }),
+  animateSceneUp: (level, scene) =>
+    set({
+      animatingSceneDown: false,
+      animatingSceneUp: true,
+      currentLevel: level,
+      activeScene: scene,
+    }),
   resetSceneAnimation: () =>
-    set({ animateSceneDown: false, animateSceneUp: false }),
+    set({ animatingSceneDown: false, animatingSceneUp: false }),
   currentLevel: 0,
   setCurrentLevel: (level) => set({ currentLevel: level }),
   setActiveScene: (scene) =>
