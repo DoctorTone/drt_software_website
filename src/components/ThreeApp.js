@@ -16,7 +16,8 @@ const ThreeApp = () => {
       state.camRotateRightRequired,
       state.camRotateLeftRequired,
       state.resetCamRotate,
-    ]
+    ],
+    shallow
   );
   const animateSceneDown = useStore((state) => state.animateSceneDown);
   const animateSceneUp = useStore((state) => state.animateSceneUp);
@@ -26,6 +27,10 @@ const ThreeApp = () => {
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
   const activeScene = useStore((state) => state.activeScene);
   const setActiveScene = useStore((state) => state.setActiveScene);
+  const activeIsland = useStore((state) => state.activeIsland);
+
+  // DEBUG
+  console.log("Island = ", activeIsland);
 
   const currentRot = useRef(0);
   const worldRot = useRef(0);
@@ -59,9 +64,9 @@ const ThreeApp = () => {
     }
 
     if (animateSceneDown) {
-      activeRef.current.position.y -= delta * 15;
-      if (activeRef.current.position.y < -30) {
-        activeRef.current.position.y = -30;
+      activeRef.current.position.y -= delta * SCENE.DOWNWARD_SPEED;
+      if (activeRef.current.position.y < SCENE.FLOOR_LEVEL) {
+        activeRef.current.position.y = SCENE.FLOOR_LEVEL;
         moveSceneUp();
         setCurrentLevel(SCENE.LEVEL_1);
         setActiveScene("portfolio");
@@ -69,7 +74,7 @@ const ThreeApp = () => {
     }
 
     if (animateSceneUp) {
-      activeRef.current.position.y += delta * 20;
+      activeRef.current.position.y += delta * SCENE.UPWARD_SPEED;
       if (activeRef.current.position.y > 0) {
         activeRef.current.position.y = 0;
         resetSceneAnimation();
@@ -82,7 +87,7 @@ const ThreeApp = () => {
       <ambientLight intensity={SCENE.ambientIntensity} />
       <pointLight position={SCENE.lightPosition} />
       <Sky sunPosition={SCENE.sunPosition} />
-      <Cloud position={[-15, 6, 0]} scale={[0.5, 0.25, 0.25]} />
+      <Cloud position={SCENE.cloudPosition} scale={SCENE.cloudScale} />
       <group ref={topLevel}>
         {currentLevel === SCENE.MAIN_LEVEL && (
           <group ref={allRefs["main"]}>
@@ -90,7 +95,7 @@ const ThreeApp = () => {
           </group>
         )}
         {currentLevel === SCENE.LEVEL_1 && (
-          <group ref={allRefs["portfolio"]} position={[0, -30, 0]}>
+          <group ref={allRefs["portfolio"]} position-x={SCENE.FLOOR_LEVEL}>
             <PortfolioScene />
           </group>
         )}

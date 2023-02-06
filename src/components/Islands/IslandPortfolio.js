@@ -6,17 +6,22 @@ import { SCENE } from "../../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../../state/store.js";
 
-export const IslandPortfolio = () => {
+export const IslandPortfolio = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const moveSceneDown = useStore((state) => state.moveSceneDown);
+  const activeIsland = useStore((state) => state.activeIsland);
 
   const selectIsland = () => {
-    play();
-    moveSceneDown();
+    if (activeIsland === islandNumber) {
+      play();
+      moveSceneDown();
+    }
   };
 
   const pointerOver = () => {
-    setHovered(true);
+    if (activeIsland === islandNumber) {
+      setHovered(true);
+    }
   };
 
   const pointerOut = () => {

@@ -2,10 +2,28 @@ import { create } from "zustand";
 
 const useStore = create((set) => ({
   // Camera rotations
+  activeIsland: 0,
+  numIslands: 4,
+  setActiveIsland: (island) => set({ activeIsland: island }),
+  setNumIslands: (islands) => set({ numIslands: islands }),
   camRotateRightRequired: false,
   camRotateLeftRequired: false,
-  rotateCamRight: () => set({ camRotateRightRequired: true }),
-  rotateCamLeft: () => set({ camRotateLeftRequired: true }),
+  rotateCamRight: () => {
+    set((state) => ({
+      camRotateRightRequired: true,
+      activeIsland:
+        state.activeIsland + 1 >= state.numIslands ? 0 : state.activeIsland + 1,
+    }));
+  },
+  rotateCamLeft: () => {
+    set((state) => ({
+      camRotateLeftRequired: true,
+      activeIsland:
+        state.activeIsland - 1 < 0
+          ? state.numIslands - 1
+          : state.activeIsland - 1,
+    }));
+  },
   resetCamRotate: () =>
     set({ camRotateRightRequired: false, camRotateLeftRequired: false }),
 

@@ -7,10 +7,10 @@ import { IslandPortfolio } from "./Islands/IslandPortfolio.js";
 const MainScene = () => {
   return (
     <>
-      <IslandDRT />
-      <IslandPortfolio />
-      <IslandContact />
-      <IslandServices />
+      <IslandDRT islandNumber={0} />
+      <IslandContact islandNumber={1} />
+      <IslandServices islandNumber={2} />
+      <IslandPortfolio islandNumber={3} />
     </>
   );
 };

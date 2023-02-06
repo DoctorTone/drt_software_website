@@ -6,17 +6,22 @@ import { SCENE } from "../../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../../state/store.js";
 
-export const IslandServices = () => {
+export const IslandServices = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-
   const showServicesModal = useStore((state) => state.showServicesModal);
+  const activeIsland = useStore((state) => state.activeIsland);
+
   const selectIsland = () => {
-    showServicesModal(true);
-    play();
+    if (activeIsland === islandNumber) {
+      showServicesModal(true);
+      play();
+    }
   };
 
   const pointerOver = () => {
-    setHovered(true);
+    if (activeIsland === islandNumber) {
+      setHovered(true);
+    }
   };
 
   const pointerOut = () => {

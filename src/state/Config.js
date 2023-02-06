@@ -14,6 +14,11 @@ const SCENE = {
   LEVEL_3: 3,
   CLOUD_MAX: 30,
   CLOUD_MIN: -15,
+  cloudPosition: [-15, 6, 0],
+  cloudScale: [0.5, 0.25, 0.25],
+  DOWNWARD_SPEED: 15,
+  UPWARD_SPEED: 20,
+  FLOOR_LEVEL: -30,
 };
 
 export { SCENE };
