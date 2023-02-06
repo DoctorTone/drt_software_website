@@ -21,4 +21,8 @@ const SCENE = {
   FLOOR_LEVEL: -30,
 };
 
-export { SCENE };
+const ISLANDS = {
+  PhysicsPosition: []
+}
+
+export { SCENE, ISLANDS };

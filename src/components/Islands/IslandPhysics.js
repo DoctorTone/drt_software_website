@@ -1,13 +1,13 @@
 import React, { Suspense } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
 import { Island } from "../Island.js";
-import { SCENE } from "../../state/Config.js";
+import { SCENE, ISLANDS } from "../../state/Config.js";
 
 export const IslandPhysics = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
-        <Island position={[6, 0, 0]} />
+        <Island position={[ISLANDS.PhysicsPosition]} />
         <Suspense fallback={null}>
           <Text
             color="white"
