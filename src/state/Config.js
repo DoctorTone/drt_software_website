@@ -22,7 +22,15 @@ const SCENE = {
 };
 
 const ISLANDS = {
-  PhysicsPosition: []
-}
+  DRTPosition: [0, 0, 6],
+  PortfolioPosition: [6, 0, 0],
+  ContactPosition: [-6, 0, 0],
+  ServicesPosition: [0, 0, -6],
+  PhysicsPosition: [6, 0, 0],
+  DataVizPosition: [1.854, 0, -5.706],
+  ShaderPosition: [-3.927, 0, -3.527],
+  TechPosition: [-3.927, 0, 3.527],
+  VRPosition: [1.854, 0, 5.706],
+};
 
 export { SCENE, ISLANDS };

@@ -7,7 +7,7 @@ export const IslandPhysics = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
-        <Island position={[ISLANDS.PhysicsPosition]} />
+        <Island position={ISLANDS.PhysicsPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"

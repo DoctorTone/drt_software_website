@@ -1,13 +1,13 @@
 import React, { Suspense } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
 import { Island } from "../Island.js";
-import { SCENE } from "../../state/Config.js";
+import { SCENE, ISLANDS } from "../../state/Config.js";
 
 export const IslandDataViz = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
-        <Island position={[6, 0, 0]} />
+        <Island position={ISLANDS.DataVizPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
@@ -24,5 +24,5 @@ export const IslandDataViz = () => {
         </Suspense>
       </group>
     </Float>
-  )
+  );
 };

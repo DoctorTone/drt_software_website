@@ -2,7 +2,7 @@ import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
 import { Island } from "../Island.js";
 import { Phone } from "../Phone.js";
-import { SCENE } from "../../state/Config.js";
+import { SCENE, ISLANDS } from "../../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../../state/store.js";
 
@@ -37,7 +37,7 @@ export const IslandContact = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={[-5, 0, 0]} />
+        <Island position={ISLANDS.ContactPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"

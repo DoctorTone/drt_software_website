@@ -3,7 +3,7 @@ import { Float, Text, useCursor } from "@react-three/drei";
 import { Island } from "../Island.js";
 import { Tree } from "../Tree.js";
 import { DRT } from "../DRT.js";
-import { SCENE } from "../../state/Config.js";
+import { SCENE, ISLANDS } from "../../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../../state/store.js";
 
@@ -38,7 +38,7 @@ export const IslandDRT = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={[0, 0, 6]} />
+        <Island position={ISLANDS.DRTPosition} />
         <Tree position={[-1, 1.5, 6]} scale={0.05} />
         <DRT position={[0.2, 2.2, 6.4]} />
         <Suspense fallback={null}>

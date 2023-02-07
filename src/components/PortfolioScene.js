@@ -10,9 +10,9 @@ const PortfolioScene = () => {
     <>
       <IslandPhysics />
       <IslandDataViz />
-      <IslandVR />
       <IslandShaders />
       <IslandTech />
+      <IslandVR />
     </>
   );
 };

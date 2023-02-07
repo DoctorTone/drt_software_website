@@ -2,7 +2,7 @@ import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
 import { Island } from "../Island.js";
 import { Work } from "../Work.js";
-import { SCENE } from "../../state/Config.js";
+import { SCENE, ISLANDS } from "../../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../../state/store.js";
 
@@ -37,7 +37,7 @@ export const IslandServices = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={[0, 0, -5]} />
+        <Island position={ISLANDS.ServicesPosition} />
         <Work
           rotation-y={Math.PI / 2}
           scale={0.1}
