@@ -42,22 +42,25 @@ const ISLANDS = {
   ServicesModelPosition: [0, 2.15, -6],
   ServicesTextPosition: [0, 2.85, -6],
   // Physics island
-  PhysicsPosition: [6, 0, 0],
-  PhysicsTextPosition: [6, 3, 0],
+  PhysicsPosition: [1.854, 0, -5.706],
+  PhysicsTextPosition: [1.854, 3, -5.706],
+  PhysicsTextRotation: -3.5,
   // Data Viz island
-  DataVizPosition: [1.854, 0, -5.706],
-  DataVizTextPosition: [1.854, 3, -5.706],
-  DataVizTextRotation: -2.827,
+  DataVizPosition: [6, 0, 0],
+  DataVizTextPosition: [6, 3, 0],
+  DataVizTextRotation: Math.PI / 2,
   // Shader island
   ShaderPosition: [-3.927, 0, -3.527],
   ShaderTextPosition: [-3.927, 3, -3.527],
-  ShaderTextRotation: -4.084,
+  ShaderTextRotation: 4.15,
   // Tech island
   TechPosition: [-3.927, 0, 3.527],
   TechTextPosition: [-3.927, 3, 3.527],
+  TechTextRotation: -1,
   // VR island
   VRPosition: [1.854, 0, 5.706],
   VRTextPosition: [1.854, 3, 5.706],
+  VRTextRotation: 0.3,
 };
 
 export { SCENE, ISLANDS };

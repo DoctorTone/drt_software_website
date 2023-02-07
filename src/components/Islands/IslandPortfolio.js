@@ -10,11 +10,13 @@ export const IslandPortfolio = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const animateSceneDown = useStore((state) => state.animateSceneDown);
   const activeIsland = useStore((state) => state.activeIsland);
+  const setNumIslands = useStore((state) => state.setNumIslands);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
       play();
       animateSceneDown();
+      setNumIslands(5);
     }
   };
 

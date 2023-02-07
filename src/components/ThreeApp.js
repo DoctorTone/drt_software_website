@@ -28,12 +28,14 @@ const ThreeApp = () => {
   const activeScene = useStore((state) => state.activeScene);
   const setActiveScene = useStore((state) => state.setActiveScene);
   const activeIsland = useStore((state) => state.activeIsland);
+  const numIslands = useStore((state) => state.numIslands);
 
   // DEBUG
   console.log("Island = ", activeIsland);
 
   const currentRot = useRef(0);
   const worldRot = useRef(0);
+  const rotIncrement = useRef(Math.PI / 2);
   const topLevel = useRef();
   const allRefs = {
     main: useRef(),
@@ -47,14 +49,15 @@ const ThreeApp = () => {
     // DEBUG
     console.log("New scene = ", activeScene);
     activeRef = allRefs[activeScene];
-  }, [activeScene]);
+    rotIncrement.current = (Math.PI * 2) / numIslands;
+  }, [activeScene, numIslands]);
 
   useFrame((state, delta) => {
     if (camRotRightRequired || camRotLeftRequired) {
       const direction = camRotLeftRequired ? -1 : 1;
       currentRot.current += delta;
-      if (currentRot.current > Math.PI / 2) {
-        worldRot.current += (Math.PI / 2) * direction;
+      if (currentRot.current > rotIncrement.current) {
+        worldRot.current += rotIncrement.current * direction;
         currentRot.current = 0;
         topLevel.current.rotation.y = worldRot.current;
         // DEBUG

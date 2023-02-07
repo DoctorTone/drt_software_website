@@ -8,8 +8,8 @@ import { IslandTech } from "./Islands/IslandTech.js";
 const PortfolioScene = () => {
   return (
     <>
-      <IslandPhysics />
       <IslandDataViz />
+      <IslandPhysics />
       <IslandShaders />
       <IslandTech />
       <IslandVR />

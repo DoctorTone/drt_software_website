@@ -14,7 +14,7 @@ export const IslandTech = () => {
             center
             fontSize={SCENE.FONT_SIZE}
             position={ISLANDS.TechTextPosition}
-            rotation-y={Math.PI / 2}
+            rotation-y={ISLANDS.TechTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}

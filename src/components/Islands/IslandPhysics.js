@@ -14,7 +14,7 @@ export const IslandPhysics = () => {
             center
             fontSize={SCENE.FONT_SIZE}
             position={ISLANDS.PhysicsTextPosition}
-            rotation-y={Math.PI / 2}
+            rotation-y={ISLANDS.PhysicsTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}

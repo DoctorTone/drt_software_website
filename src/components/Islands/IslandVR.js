@@ -14,7 +14,7 @@ export const IslandVR = () => {
             center
             fontSize={SCENE.FONT_SIZE}
             position={ISLANDS.VRTextPosition}
-            rotation-y={Math.PI / 2}
+            rotation-y={ISLANDS.VRTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
