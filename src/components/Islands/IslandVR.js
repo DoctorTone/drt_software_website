@@ -12,12 +12,12 @@ export const IslandVR = () => {
           <Text
             color="white"
             center
-            fontSize={0.2}
-            position={[6, 3, 0]}
+            fontSize={SCENE.FONT_SIZE}
+            position={ISLANDS.VRTextPosition}
             rotation-y={Math.PI / 2}
             anchorX="center"
             anchorY="middle"
-            outlineWidth={0.02}
+            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
             VR
           </Text>

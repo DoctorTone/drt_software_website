@@ -39,17 +39,17 @@ export const IslandDRT = ({ islandNumber }) => {
         onPointerOut={pointerOut}
         onClick={selectIsland}>
         <Island position={ISLANDS.DRTPosition} />
-        <Tree position={[-1, 1.5, 6]} scale={0.05} />
-        <DRT position={[0.2, 2.2, 6.4]} />
+        <Tree position={ISLANDS.DRTTreePosition} scale={0.05} />
+        <DRT position={ISLANDS.DRTModelPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
-            fontSize={0.2}
-            position={[0, 3, 6.4]}
+            fontSize={SCENE.FONT_SIZE}
+            position={ISLANDS.DRTTextPosition}
             anchorX="center"
             anchorY="middle"
-            outlineWidth={0.02}
+            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
             About
           </Text>

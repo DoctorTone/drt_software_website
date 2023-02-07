@@ -42,17 +42,17 @@ export const IslandContact = ({ islandNumber }) => {
           <Text
             color="white"
             center
-            fontSize={0.2}
-            position={[-5.3, 2.75, 0]}
+            fontSize={SCENE.FONT_SIZE}
+            position={ISLANDS.ContactTextPosition}
             rotation-y={-Math.PI / 2}
             anchorX="center"
             anchorY="middle"
-            outlineWidth={0.02}
+            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
             Contact
           </Text>
         </Suspense>
-        <Phone position={[-5.25, 2.1, -0.15]} scale={0.007} />
+        <Phone position={ISLANDS.ContactModelPosition} scale={0.007} />
       </group>
     </Float>
   );

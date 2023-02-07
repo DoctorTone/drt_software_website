@@ -41,18 +41,18 @@ export const IslandServices = ({ islandNumber }) => {
         <Work
           rotation-y={Math.PI / 2}
           scale={0.1}
-          position={[0, 2.15, -5.25]}
+          position={ISLANDS.ServicesModelPosition}
         />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
-            fontSize={0.2}
-            position={[0, 2.85, -5.25]}
+            fontSize={SCENE.FONT_SIZE}
+            position={ISLANDS.ServicesTextPosition}
             rotation-y={Math.PI}
             anchorX="center"
             anchorY="middle"
-            outlineWidth={0.02}
+            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
             Services
           </Text>

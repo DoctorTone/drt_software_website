@@ -38,17 +38,17 @@ export const IslandPortfolio = ({ islandNumber }) => {
         onPointerOut={pointerOut}
         onClick={selectIsland}>
         <Island position={ISLANDS.PortfolioPosition} />
-        <Portfolio position={[5, 2, 0]} />
+        <Portfolio position={ISLANDS.PortfolioModelPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
-            fontSize={0.2}
-            position={[5, 3.25, 0]}
+            fontSize={SCENE.FONT_SIZE}
+            position={ISLANDS.PortfolioTextPosition}
             rotation-y={Math.PI / 2}
             anchorX="center"
             anchorY="middle"
-            outlineWidth={0.02}
+            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
             Portfolio
           </Text>
