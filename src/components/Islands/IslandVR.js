@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
 import { Island } from "../Island.js";
+import { VR } from "../VR.js";
 import { SCENE, ISLANDS } from "../../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../../state/store.js";
@@ -35,6 +36,7 @@ export const IslandVR = ({ islandNumber }) => {
         onPointerOut={pointerOut}
         onClick={selectIsland}>
         <Island position={ISLANDS.VRPosition} />
+        <VR position={ISLANDS.VRModelPosition} scale={0.6} />
         <Suspense fallback={null}>
           <Text
             color="white"

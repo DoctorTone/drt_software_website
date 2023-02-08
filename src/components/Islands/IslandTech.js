@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
 import { Island } from "../Island.js";
+import { Keyboard } from "../Keyboard.js";
 import { SCENE, ISLANDS } from "../../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../../state/store.js";
@@ -35,6 +36,11 @@ export const IslandTech = ({ islandNumber }) => {
         onPointerOut={pointerOut}
         onClick={selectIsland}>
         <Island position={ISLANDS.TechPosition} />
+        <Keyboard
+          position={ISLANDS.TechModelPosition}
+          scale={5}
+          rotation={[0.75, -1, 0.75]}
+        />
         <Suspense fallback={null}>
           <Text
             color="white"
