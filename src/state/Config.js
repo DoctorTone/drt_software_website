@@ -43,6 +43,7 @@ const ISLANDS = {
   ServicesTextPosition: [0, 2.85, -6],
   // Physics island
   PhysicsPosition: [1.854, 0, -5.706],
+  PhysicsModelPosition: [1.854, 2.2, -5.706],
   PhysicsTextPosition: [1.854, 3, -5.706],
   PhysicsTextRotation: -3.5,
   // Data Viz island
