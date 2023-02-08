@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
 import { Island } from "../Island.js";
+import Box from "../Box.js";
 import { SCENE, ISLANDS } from "../../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../../state/store.js";
@@ -35,6 +36,7 @@ export const IslandShaders = ({ islandNumber }) => {
         onPointerOut={pointerOut}
         onClick={selectIsland}>
         <Island position={ISLANDS.ShaderPosition} />
+        <Box position={ISLANDS.ShaderModelPosition} scale={0.5} />
         <Suspense fallback={null}>
           <Text
             color="white"

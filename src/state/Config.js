@@ -53,6 +53,7 @@ const ISLANDS = {
   DataVizTextRotation: Math.PI / 2,
   // Shader island
   ShaderPosition: [-3.927, 0, -3.527],
+  ShaderModelPosition: [-3.927, 2, -3.527],
   ShaderTextPosition: [-3.927, 3, -3.527],
   ShaderTextRotation: 4.15,
   // Tech island
