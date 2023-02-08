@@ -47,7 +47,8 @@ const ISLANDS = {
   PhysicsTextRotation: -3.5,
   // Data Viz island
   DataVizPosition: [6, 0, 0],
-  DataVizTextPosition: [6, 3, 0],
+  DataVizModelPosition: [6.25, 2, 0],
+  DataVizTextPosition: [6.25, 3, 0],
   DataVizTextRotation: Math.PI / 2,
   // Shader island
   ShaderPosition: [-3.927, 0, -3.527],
