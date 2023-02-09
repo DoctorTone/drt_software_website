@@ -9,6 +9,7 @@ import { SCENE } from "../state/Config.js";
 import { Cloud } from "./Cloud.js";
 import MainScene from "./MainScene.js";
 import PortfolioScene from "./PortfolioScene.js";
+import DataVizScene from "./DataVizScene.js";
 
 const ThreeApp = () => {
   const [camRotRightRequired, camRotLeftRequired, resetCamRotate] = useStore(
@@ -40,10 +41,14 @@ const ThreeApp = () => {
   const allRefs = {
     main: useRef(),
     portfolio: useRef(),
+    dataviz: useRef(),
   };
 
   let activeRef = useRef();
-  activeRef = allRefs["main"];
+  activeRef = allRefs.main;
+
+  // DEBUG
+  console.log("Active = ", activeRef);
 
   useEffect(() => {
     // DEBUG
@@ -72,7 +77,7 @@ const ThreeApp = () => {
       activeRef.current.position.y -= delta * SCENE.DOWNWARD_SPEED;
       if (activeRef.current.position.y < SCENE.FLOOR_LEVEL) {
         activeRef.current.position.y = SCENE.FLOOR_LEVEL;
-        animateSceneUp(SCENE.LEVEL_1, "portfolio");
+        animateSceneUp();
       }
     }
 
@@ -102,6 +107,11 @@ const ThreeApp = () => {
         {currentLevel === SCENE.LEVEL_1 && (
           <group ref={allRefs["portfolio"]} position-y={SCENE.FLOOR_LEVEL}>
             <PortfolioScene />
+          </group>
+        )}
+        {currentLevel === SCENE.LEVEL_2 && (
+          <group ref={allRefs["dataviz"]} position-y={SCENE.FLOOR_LEVEL}>
+            <DataVizScene />
           </group>
         )}
       </group>

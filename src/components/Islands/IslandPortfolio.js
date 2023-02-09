@@ -8,15 +8,18 @@ import useStore from "../../state/store.js";
 
 export const IslandPortfolio = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const animateSceneDown = useStore((state) => state.animateSceneDown);
+  const animateNextScene = useStore((state) => state.animateNextScene);
   const activeIsland = useStore((state) => state.activeIsland);
-  const setNumIslands = useStore((state) => state.setNumIslands);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
       play();
-      animateSceneDown();
-      setNumIslands(5);
+      const nextScene = {
+        level: SCENE.LEVEL_1,
+        scene: "portfolio",
+        islands: 5,
+      };
+      animateNextScene(nextScene);
     }
   };
 

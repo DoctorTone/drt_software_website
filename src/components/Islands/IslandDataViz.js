@@ -9,10 +9,12 @@ import useStore from "../../state/store.js";
 export const IslandDataViz = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
+  const animateSceneDown = useStore((state) => state.animateSceneDown);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
       play();
+      animateSceneDown(4);
     }
   };
 
