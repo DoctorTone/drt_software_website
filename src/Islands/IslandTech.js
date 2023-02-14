@@ -1,12 +1,12 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
-import { Island } from "../Island.js";
-import Box from "../Box.js";
-import { SCENE, ISLANDS } from "../../state/Config.js";
+import { Island } from "./Island.js";
+import { Keyboard } from "../Models/Keyboard.js";
+import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
-import useStore from "../../state/store.js";
+import useStore from "../state/store.js";
 
-export const IslandShaders = ({ islandNumber }) => {
+export const IslandTech = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
 
@@ -35,20 +35,24 @@ export const IslandShaders = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.ShaderPosition} />
-        <Box position={ISLANDS.ShaderModelPosition} scale={0.5} />
+        <Island position={ISLANDS.TechPosition} />
+        <Keyboard
+          position={ISLANDS.TechModelPosition}
+          scale={5}
+          rotation={[0.75, -1, 0.75]}
+        />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.ShaderTextPosition}
-            rotation-y={ISLANDS.ShaderTextRotation}
+            position={ISLANDS.TechTextPosition}
+            rotation-y={ISLANDS.TechTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            Shaders
+            Tech
           </Text>
         </Suspense>
       </group>

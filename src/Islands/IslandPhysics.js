@@ -1,20 +1,17 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
-import { Island } from "../Island.js";
-import { Tree } from "../Tree.js";
-import { DRT } from "../DRT.js";
-import { SCENE, ISLANDS } from "../../state/Config.js";
+import { Island } from "./Island.js";
+import { Physics } from "../Models/Physics.js";
+import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
-import useStore from "../../state/store.js";
+import useStore from "../state/store.js";
 
-export const IslandDRT = ({ islandNumber }) => {
+export const IslandPhysics = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const showAboutModal = useStore((state) => state.showAboutModal);
   const activeIsland = useStore((state) => state.activeIsland);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showAboutModal(true);
       play();
     }
   };
@@ -38,20 +35,24 @@ export const IslandDRT = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.DRTPosition} />
-        <Tree position={ISLANDS.DRTTreePosition} scale={0.05} />
-        <DRT position={ISLANDS.DRTModelPosition} />
+        <Island position={ISLANDS.PhysicsPosition} />
+        <Physics
+          position={ISLANDS.PhysicsModelPosition}
+          scale={0.125}
+          rotation-y={1.25}
+        />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.DRTTextPosition}
+            position={ISLANDS.PhysicsTextPosition}
+            rotation-y={ISLANDS.PhysicsTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            About
+            Physics
           </Text>
         </Suspense>
       </group>

@@ -1,20 +1,25 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
-import { Island } from "../Island.js";
-import { Phone } from "../Phone.js";
-import { SCENE, ISLANDS } from "../../state/Config.js";
+import { Island } from "./Island.js";
+import { DataViz } from "../Models/DataViz.js";
+import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
-import useStore from "../../state/store.js";
+import useStore from "../state/store.js";
 
-export const IslandContact = ({ islandNumber }) => {
+export const IslandDataViz = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const showContactModal = useStore((state) => state.showContactModal);
   const activeIsland = useStore((state) => state.activeIsland);
+  const animateNextScene = useStore((state) => state.animateNextScene);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showContactModal(true);
       play();
+      const nextScene = {
+        level: SCENE.LEVEL_2,
+        scene: "dataviz",
+        islands: 4,
+      };
+      animateNextScene(nextScene);
     }
   };
 
@@ -37,22 +42,22 @@ export const IslandContact = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.ContactPosition} />
+        <Island position={ISLANDS.DataVizPosition} />
+        <DataViz position={ISLANDS.DataVizModelPosition} scale={0.15} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.ContactTextPosition}
-            rotation-y={-Math.PI / 2}
+            position={ISLANDS.DataVizTextPosition}
+            rotation-y={ISLANDS.DataVizTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            Contact
+            Data Viz
           </Text>
         </Suspense>
-        <Phone position={ISLANDS.ContactModelPosition} scale={0.007} />
       </group>
     </Float>
   );

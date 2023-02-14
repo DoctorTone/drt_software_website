@@ -1,18 +1,25 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
-import { Island } from "../Island.js";
-import { Physics } from "../Physics.js";
-import { SCENE, ISLANDS } from "../../state/Config.js";
+import { Island } from "./Island.js";
+import { Portfolio } from "../Models/Portfolio.js";
+import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
-import useStore from "../../state/store.js";
+import useStore from "../state/store.js";
 
-export const IslandPhysics = ({ islandNumber }) => {
+export const IslandPortfolio = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
+  const animateNextScene = useStore((state) => state.animateNextScene);
   const activeIsland = useStore((state) => state.activeIsland);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
       play();
+      const nextScene = {
+        level: SCENE.LEVEL_1,
+        scene: "portfolio",
+        islands: 5,
+      };
+      animateNextScene(nextScene);
     }
   };
 
@@ -27,7 +34,7 @@ export const IslandPhysics = ({ islandNumber }) => {
   };
 
   useCursor(hovered);
-  const [play] = useSound("./sounds/select.wav", { volume: 0.25 });
+  const [play] = useSound("./sounds/select.mp3", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
@@ -35,24 +42,20 @@ export const IslandPhysics = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.PhysicsPosition} />
-        <Physics
-          position={ISLANDS.PhysicsModelPosition}
-          scale={0.125}
-          rotation-y={1.25}
-        />
+        <Island position={ISLANDS.PortfolioPosition} />
+        <Portfolio position={ISLANDS.PortfolioModelPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.PhysicsTextPosition}
-            rotation-y={ISLANDS.PhysicsTextRotation}
+            position={ISLANDS.PortfolioTextPosition}
+            rotation-y={Math.PI / 2}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            Physics
+            Portfolio
           </Text>
         </Suspense>
       </group>

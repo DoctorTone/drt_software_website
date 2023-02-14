@@ -21,6 +21,9 @@ const SCENE = {
   FLOOR_LEVEL: -30,
   FONT_SIZE: 0.2,
   FONT_OUTLINE_WIDTH: 0.02,
+  CYL_RADIUS: 1.5,
+  CYL_HEIGHT: 1.25,
+  CYL_SEGMENTS: 6,
 };
 
 const ISLANDS = {
@@ -66,6 +69,8 @@ const ISLANDS = {
   VRModelPosition: [4.5, -7.25, 5.5],
   VRTextPosition: [1.854, 3, 5.706],
   VRTextRotation: 0.3,
+  // Med viz island
+  MedVizPosition: [6, 0, 0],
 };
 
 export { SCENE, ISLANDS };

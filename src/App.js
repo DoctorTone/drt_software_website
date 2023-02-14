@@ -2,10 +2,10 @@ import { Canvas } from "@react-three/fiber";
 import ThreeApp from "./components/ThreeApp.js";
 import CameraControl from "./UI/CameraControl.js";
 import NavigationUI from "./UI/NavigationUI.js";
-import AboutModal from "./UI/AboutModal.js";
-import ContactModal from "./UI/ContactModal.js";
-import ServicesModal from "./UI/ServicesModal.js";
-import InfoModal from "./UI/InfoModal.js";
+import AboutModal from "./Modals/AboutModal.js";
+import ContactModal from "./Modals/ContactModal.js";
+import ServicesModal from "./Modals/ServicesModal.js";
+import InfoModal from "./Modals/InfoModal.js";
 
 import { SCENE } from "./state/Config.js";
 import useStore from "./state/store.js";

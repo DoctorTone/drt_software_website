@@ -6,10 +6,10 @@ import { shallow } from "zustand/shallow";
 import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
-import { Cloud } from "./Cloud.js";
-import MainScene from "./MainScene.js";
-import PortfolioScene from "./PortfolioScene.js";
-import DataVizScene from "./DataVizScene.js";
+import { Cloud } from "./Models/Cloud.js";
+import MainScene from "../Scenes/MainScene.js";
+import PortfolioScene from "../Scenes/PortfolioScene.js";
+import DataVizScene from "../Scenes/DataVizScene.js";
 
 const ThreeApp = () => {
   const [camRotRightRequired, camRotLeftRequired, resetCamRotate] = useStore(
@@ -32,7 +32,7 @@ const ThreeApp = () => {
   const numIslands = useStore((state) => state.numIslands);
 
   // DEBUG
-  console.log("Island = ", activeIsland);
+  // console.log("Island = ", activeIsland);
 
   const currentRot = useRef(0);
   const worldRot = useRef(0);
@@ -45,15 +45,13 @@ const ThreeApp = () => {
   };
 
   let activeRef = useRef();
-  activeRef = allRefs.main;
-
-  // DEBUG
-  console.log("Active = ", activeRef);
+  console.log("Ref = ", activeRef);
 
   useEffect(() => {
     // DEBUG
     console.log("New scene = ", activeScene);
-    activeRef = allRefs[activeScene];
+    activeRef.current = allRefs[activeScene].current;
+    console.log("Active ref = ", activeRef.current);
     rotIncrement.current = (Math.PI * 2) / numIslands;
   }, [activeScene, numIslands]);
 
@@ -83,8 +81,6 @@ const ThreeApp = () => {
 
     if (animatingSceneUp) {
       activeRef.current.position.y += delta * SCENE.UPWARD_SPEED;
-      // DEBUG
-      console.log("Pos = ", activeRef.current.position.y);
       if (activeRef.current.position.y > 0) {
         activeRef.current.position.y = 0;
         resetSceneAnimation();
@@ -100,17 +96,23 @@ const ThreeApp = () => {
       <Cloud position={SCENE.cloudPosition} scale={SCENE.cloudScale} />
       <group ref={topLevel}>
         {currentLevel === SCENE.MAIN_LEVEL && (
-          <group ref={allRefs["main"]}>
+          <group ref={allRefs["main"]} name="main">
             <MainScene />
           </group>
         )}
         {currentLevel === SCENE.LEVEL_1 && (
-          <group ref={allRefs["portfolio"]} position-y={SCENE.FLOOR_LEVEL}>
+          <group
+            ref={allRefs["portfolio"]}
+            name="portfolio"
+            position-y={SCENE.FLOOR_LEVEL}>
             <PortfolioScene />
           </group>
         )}
         {currentLevel === SCENE.LEVEL_2 && (
-          <group ref={allRefs["dataviz"]} position-y={SCENE.FLOOR_LEVEL}>
+          <group
+            ref={allRefs["dataviz"]}
+            name="dataviz"
+            position-y={SCENE.FLOOR_LEVEL}>
             <DataVizScene />
           </group>
         )}
