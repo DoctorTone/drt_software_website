@@ -8,10 +8,10 @@ import { Floor } from "../Models/Floor.js";
 const DataVizScene = () => {
   return (
     <>
-      <IslandMedViz />
-      <IslandBrainViz />
-      <IslandCovidViz />
-      <IslandFinanceViz />
+      <IslandMedViz islandNumber={0} />
+      <IslandFinanceViz islandNumber={1} />
+      <IslandCovidViz islandNumber={2} />
+      <IslandBrainViz islandNumber={3} />
     </>
   );
 };

@@ -8,7 +8,10 @@ export const IslandBrainViz = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
-        <IslandCylinder position={ISLANDS.BrainVizPosition} />
+        <IslandCylinder
+          position={ISLANDS.BrainVizPosition}
+          rotation-y={Math.PI / 2}
+        />
         <Tablet
           position={ISLANDS.BrainVizModelPosition}
           rotation={[Math.PI, -Math.PI / 2, -Math.PI / 8]}

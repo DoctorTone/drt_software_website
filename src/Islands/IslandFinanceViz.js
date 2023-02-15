@@ -8,7 +8,10 @@ export const IslandFinanceViz = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
-        <IslandCylinder position={ISLANDS.FinanceVizPosition} />
+        <IslandCylinder
+          position={ISLANDS.FinanceVizPosition}
+          rotation-y={Math.PI / 2}
+        />
         <Tablet
           position={ISLANDS.FinanceVizModelPosition}
           rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
