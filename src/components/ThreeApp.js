@@ -6,7 +6,7 @@ import { shallow } from "zustand/shallow";
 import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
-import { Cloud } from "./Models/Cloud.js";
+import { Cloud } from "../Models/Cloud.js";
 import MainScene from "../Scenes/MainScene.js";
 import PortfolioScene from "../Scenes/PortfolioScene.js";
 import DataVizScene from "../Scenes/DataVizScene.js";

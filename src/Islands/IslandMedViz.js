@@ -9,7 +9,10 @@ export const IslandMedViz = () => {
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
         <IslandCylinder position={ISLANDS.MedVizPosition} />
-        <Tablet position={ISLANDS.MedVizModelPosition} />
+        <Tablet
+          position={ISLANDS.MedVizModelPosition}
+          map={"/textures/lightning.jpg"}
+        />
         <Suspense fallback={null}>
           <Text
             color="white"
