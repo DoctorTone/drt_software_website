@@ -11,7 +11,8 @@ export const IslandMedViz = () => {
         <IslandCylinder position={ISLANDS.MedVizPosition} />
         <Tablet
           position={ISLANDS.MedVizModelPosition}
-          map={"/textures/lightning.jpg"}
+          rotation={[Math.PI, 0, -Math.PI / 8]}
+          map={"/textures/volumeRender.jpg"}
         />
         <Suspense fallback={null}>
           <Text
