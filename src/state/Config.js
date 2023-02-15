@@ -21,7 +21,7 @@ const SCENE = {
   FLOOR_LEVEL: -30,
   FONT_SIZE: 0.2,
   FONT_OUTLINE_WIDTH: 0.02,
-  CYL_RADIUS: 1.5,
+  CYL_RADIUS: 1.75,
   CYL_HEIGHT: 0.7,
   CYL_SEGMENTS: 6,
   FLOOR_RADIUS: 20,
@@ -73,6 +73,8 @@ const ISLANDS = {
   VRTextRotation: 0.3,
   // Med viz island
   MedVizPosition: [6, 0, 0],
+  MedVizModelPosition: [6, 2, 0],
+  MedVizTextPosition: [6, 3.5, 0],
   // Brain viz island
   BrainVizPosition: [0, 0, -6],
   // Covid viz island
