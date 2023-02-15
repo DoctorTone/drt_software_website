@@ -81,6 +81,8 @@ const ISLANDS = {
   BrainVizTextPosition: [0, 3.5, -6],
   // Covid viz island
   CovidVizPosition: [-6, 0, 0],
+  CovidVizModelPosition: [-6, 2, 0],
+  CovidVizTextPosition: [-6, 3.5, 0],
   // Finance viz island
   FinanceVizPosition: [0, 0, 6],
   FinanceVizModelPosition: [0, 2, 6],
