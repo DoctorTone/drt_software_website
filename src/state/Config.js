@@ -73,6 +73,12 @@ const ISLANDS = {
   VRTextRotation: 0.3,
   // Med viz island
   MedVizPosition: [6, 0, 0],
+  // Brain viz island
+  BrainVizPosition: [0, 0, -6],
+  // Covid viz island
+  CovidVizPosition: [-6, 0, 0],
+  // Finance viz island
+  FinanceVizPosition: [0, 0, 6],
 };
 
 export { SCENE, ISLANDS };
