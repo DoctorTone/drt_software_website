@@ -77,6 +77,8 @@ const ISLANDS = {
   MedVizTextPosition: [6, 3.5, 0],
   // Brain viz island
   BrainVizPosition: [0, 0, -6],
+  BrainVizModelPosition: [0, 2, -6],
+  BrainVizTextPosition: [0, 3.5, -6],
   // Covid viz island
   CovidVizPosition: [-6, 0, 0],
   // Finance viz island
