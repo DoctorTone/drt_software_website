@@ -36,6 +36,8 @@ const useStore = create((set) => ({
   showServicesModal: (show) => set({ servicesModalVisible: show }),
   infoModalVisible: false,
   showInfoModal: (show) => set({ infoModalVisible: show }),
+  medVizModalVisible: false,
+  showMedVizModal: (show) => set({medVizModalVisible: show}),
 
   // Scene animations
   animatingSceneDown: false,
