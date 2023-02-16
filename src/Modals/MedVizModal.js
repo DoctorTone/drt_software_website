@@ -24,7 +24,11 @@ const MedVizModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        <p>I provide the following services</p>
+        I've previously worked in the medical imaging industry developing applications that take 2D imaging data and create 3D volumetric models.
+        <div className="text-center">
+            <Button className="me-2" variant="primary">Launch demo</Button>
+            <Button variant="warning">Launch video</Button>
+        </div>
       </Modal.Body>
 
       <Modal.Footer>

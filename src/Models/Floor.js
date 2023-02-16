@@ -6,7 +6,7 @@ export const Floor = (props) => {
     <group {...props} dispose={null}>
       <mesh>
         <cylinderGeometry
-          args={[SCENE.FLOOR_RADIUS, SCENE.FLOOR_RADIUS, SCENE.FLOOR_HEIGHT]}
+          args={[SCENE.FLOOR_RADIUS, SCENE.FLOOR_RADIUS, SCENE.FLOOR_HEIGHT, SCENE.FLOOR_SEGMENTS]}
         />
         <meshStandardMaterial color="blue" />
       </mesh>

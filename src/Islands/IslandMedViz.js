@@ -13,8 +13,8 @@ export const IslandMedViz = ({islandNumber}) => {
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showMedVizModal(true);
       play();
+      showMedVizModal(true);
     }
   };
 

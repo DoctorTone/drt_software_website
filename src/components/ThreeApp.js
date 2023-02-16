@@ -7,6 +7,7 @@ import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
 import { Cloud } from "../Models/Cloud.js";
+import {Floor} from "../Models/Floor.js";
 import MainScene from "../Scenes/MainScene.js";
 import PortfolioScene from "../Scenes/PortfolioScene.js";
 import DataVizScene from "../Scenes/DataVizScene.js";
@@ -73,8 +74,8 @@ const ThreeApp = () => {
 
     if (animatingSceneDown) {
       activeRef.current.position.y -= delta * SCENE.DOWNWARD_SPEED;
-      if (activeRef.current.position.y < SCENE.FLOOR_LEVEL) {
-        activeRef.current.position.y = SCENE.FLOOR_LEVEL;
+      if (activeRef.current.position.y < SCENE.GROUND_LEVEL) {
+        activeRef.current.position.y = SCENE.GROUND_LEVEL;
         animateSceneUp();
       }
     }
@@ -94,6 +95,7 @@ const ThreeApp = () => {
       <pointLight position={SCENE.lightPosition} />
       <Sky sunPosition={SCENE.sunPosition} />
       <Cloud position={SCENE.cloudPosition} scale={SCENE.cloudScale} />
+      {/* <Floor position-y={SCENE.FLOOR_LEVEL} rotation-y={Math.PI/2}/> */}
       <group ref={topLevel}>
         {currentLevel === SCENE.MAIN_LEVEL && (
           <group ref={allRefs["main"]} name="main">
@@ -104,7 +106,7 @@ const ThreeApp = () => {
           <group
             ref={allRefs["portfolio"]}
             name="portfolio"
-            position-y={SCENE.FLOOR_LEVEL}>
+            position-y={SCENE.GROUND_LEVEL}>
             <PortfolioScene />
           </group>
         )}
@@ -112,7 +114,7 @@ const ThreeApp = () => {
           <group
             ref={allRefs["dataviz"]}
             name="dataviz"
-            position-y={SCENE.FLOOR_LEVEL}>
+            position-y={SCENE.GROUND_LEVEL}>
             <DataVizScene />
           </group>
         )}
