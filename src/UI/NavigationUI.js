@@ -13,10 +13,15 @@ const NavigationUI = () => {
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
   const setActiveScene = useStore((state) => state.setActiveScene);
   const showInfoModal = useStore((state) => state.showInfoModal);
+  const animateNextScene = useStore((state) => state.animateNextScene);
 
   const Home = () => {
-    setCurrentLevel(SCENE.MAIN_LEVEL);
-    setActiveScene("main");
+    const nextScene = {
+      level: SCENE.MAIN_LEVEL,
+      scene: "main",
+      islands: 4,
+    };
+    animateNextScene(nextScene);
   };
 
   const Info = () => {
