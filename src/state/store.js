@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { SCENE } from "./Config.js";
 
 const useStore = create((set) => ({
   // Camera rotations
@@ -6,26 +7,24 @@ const useStore = create((set) => ({
   numIslands: 4,
   setActiveIsland: (island) => set({ activeIsland: island }),
   setNumIslands: (islands) => set({ numIslands: islands }),
-  camRotateRightRequired: false,
-  camRotateLeftRequired: false,
+  cameraRotation: SCENE.CAM_ROTATE_NONE,
   rotateCamRight: () => {
     set((state) => ({
-      camRotateRightRequired: true,
+      cameraRotation: SCENE.CAM_ROTATE_RIGHT,
       activeIsland:
         state.activeIsland + 1 >= state.numIslands ? 0 : state.activeIsland + 1,
     }));
   },
   rotateCamLeft: () => {
     set((state) => ({
-      camRotateLeftRequired: true,
+      cameraRotation: SCENE.CAM_ROTATE_LEFT,
       activeIsland:
         state.activeIsland - 1 < 0
           ? state.numIslands - 1
           : state.activeIsland - 1,
     }));
   },
-  resetCamRotate: () =>
-    set({ camRotateRightRequired: false, camRotateLeftRequired: false }),
+  resetCamRotate: () => set({ cameraRotation: SCENE.CAM_ROTATE_NONE }),
 
   // Modals
   aboutModalVisible: false,
@@ -37,7 +36,7 @@ const useStore = create((set) => ({
   infoModalVisible: false,
   showInfoModal: (show) => set({ infoModalVisible: show }),
   medVizModalVisible: false,
-  showMedVizModal: (show) => set({medVizModalVisible: show}),
+  showMedVizModal: (show) => set({ medVizModalVisible: show }),
 
   // Scene animations
   animatingSceneDown: false,

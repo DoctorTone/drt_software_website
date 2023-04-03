@@ -7,20 +7,15 @@ import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
 import { Cloud } from "../Models/Cloud.js";
-import {Floor} from "../Models/Floor.js";
+import { Floor } from "../Models/Floor.js";
 import MainScene from "../Scenes/MainScene.js";
 import PortfolioScene from "../Scenes/PortfolioScene.js";
 import DataVizScene from "../Scenes/DataVizScene.js";
 
 const ThreeApp = () => {
-  const [camRotRightRequired, camRotLeftRequired, resetCamRotate] = useStore(
-    (state) => [
-      state.camRotateRightRequired,
-      state.camRotateLeftRequired,
-      state.resetCamRotate,
-    ],
-    shallow
-  );
+  const cameraRotation = useStore((state) => state.cameraRotation);
+  const resetCamRotate = useStore((state) => state.resetCamRotate);
+
   const animatingSceneDown = useStore((state) => state.animatingSceneDown);
   const animatingSceneUp = useStore((state) => state.animatingSceneUp);
   const animateSceneUp = useStore((state) => state.animateSceneUp);
@@ -57,8 +52,8 @@ const ThreeApp = () => {
   }, [activeScene, numIslands]);
 
   useFrame((state, delta) => {
-    if (camRotRightRequired || camRotLeftRequired) {
-      const direction = camRotLeftRequired ? -1 : 1;
+    if (cameraRotation !== SCENE.CAM_ROTATE_NONE) {
+      const direction = cameraRotation === SCENE.CAM_ROTATE_RIGHT ? -1 : 1;
       currentRot.current += delta;
       if (currentRot.current > rotIncrement.current) {
         worldRot.current += rotIncrement.current * direction;
