@@ -36,6 +36,11 @@ const NavigationUI = () => {
         islands = 4;
         break;
 
+      case SCENE.LEVEL_2:
+        scene = "portfolio";
+        islands = 5;
+        break;
+
       default:
         break;
     }
