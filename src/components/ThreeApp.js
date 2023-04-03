@@ -45,13 +45,16 @@ const ThreeApp = () => {
   };
 
   let activeRef = useRef();
-  console.log("Ref = ", activeRef);
+
+  useEffect(() => {
+    allRefs["main"].current.position.y = 0;
+  }, []);
 
   useEffect(() => {
     // DEBUG
     console.log("New scene = ", activeScene);
     activeRef.current = allRefs[activeScene].current;
-    console.log("Active ref = ", activeRef.current);
+    console.log("Active ref = ", activeRef.current.position);
     rotIncrement.current = (Math.PI * 2) / numIslands;
   }, [activeScene, numIslands]);
 
@@ -97,7 +100,10 @@ const ThreeApp = () => {
       {/* <Floor position-y={SCENE.FLOOR_LEVEL} rotation-y={Math.PI/2}/> */}
       <group ref={topLevel}>
         {currentLevel === SCENE.MAIN_LEVEL && (
-          <group ref={allRefs["main"]} name="main">
+          <group
+            ref={allRefs["main"]}
+            name="main"
+            position-y={SCENE.GROUND_LEVEL}>
             <MainScene />
           </group>
         )}

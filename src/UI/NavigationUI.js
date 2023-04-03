@@ -20,6 +20,7 @@ const NavigationUI = () => {
       level: SCENE.MAIN_LEVEL,
       scene: "main",
       islands: 4,
+      direction: SCENE.ANIMATE_DOWN,
     };
     animateNextScene(nextScene);
   };
