@@ -39,15 +39,14 @@ const useStore = create((set) => ({
   showMedVizModal: (show) => set({ medVizModalVisible: show }),
 
   // Scene animations
-  animatingSceneDown: false,
-  animatingSceneUp: false,
+  sceneAnimationState: SCENE.ANIMATE_NONE,
   activeScene: "main",
   nextScene: "",
   nextIslands: 0,
   nextLevel: 0,
   animateNextScene: (nextScene) =>
     set({
-      animatingSceneDown: true,
+      sceneAnimationState: nextScene.direction,
       nextIslands: nextScene.islands,
       nextLevel: nextScene.level,
       nextScene: nextScene.scene,
@@ -61,8 +60,8 @@ const useStore = create((set) => ({
       currentLevel: state.nextLevel,
     }));
   },
-  resetSceneAnimation: () =>
-    set({ animatingSceneDown: false, animatingSceneUp: false }),
+  setSceneAnimationState: (direction) =>
+    set({ sceneAnimationState: direction }),
   currentLevel: 0,
   setCurrentLevel: (level) => set({ currentLevel: level }),
   setActiveScene: (scene) =>

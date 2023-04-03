@@ -16,10 +16,11 @@ const ThreeApp = () => {
   const cameraRotation = useStore((state) => state.cameraRotation);
   const resetCamRotate = useStore((state) => state.resetCamRotate);
 
-  const animatingSceneDown = useStore((state) => state.animatingSceneDown);
-  const animatingSceneUp = useStore((state) => state.animatingSceneUp);
-  const animateSceneUp = useStore((state) => state.animateSceneUp);
-  const resetSceneAnimation = useStore((state) => state.resetSceneAnimation);
+  const sceneAnimationState = useStore((state) => state.sceneAnimationState);
+  const setSceneAnimationState = useStore(
+    (state) => state.setSceneAnimationState
+  );
+
   const currentLevel = useStore((state) => state.currentLevel);
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
   const activeScene = useStore((state) => state.activeScene);
@@ -53,7 +54,7 @@ const ThreeApp = () => {
 
   useFrame((state, delta) => {
     if (cameraRotation !== SCENE.CAM_ROTATE_NONE) {
-      const direction = cameraRotation === SCENE.CAM_ROTATE_RIGHT ? -1 : 1;
+      const direction = cameraRotation === SCENE.CAM_ROTATE_LEFT ? -1 : 1;
       currentRot.current += delta;
       if (currentRot.current > rotIncrement.current) {
         worldRot.current += rotIncrement.current * direction;
@@ -67,19 +68,19 @@ const ThreeApp = () => {
       }
     }
 
-    if (animatingSceneDown) {
+    if (sceneAnimationState === SCENE.ANIMATE_DOWN) {
       activeRef.current.position.y -= delta * SCENE.DOWNWARD_SPEED;
       if (activeRef.current.position.y < SCENE.GROUND_LEVEL) {
         activeRef.current.position.y = SCENE.GROUND_LEVEL;
-        animateSceneUp();
+        setSceneAnimationState(SCENE.ANIMATE_UP);
       }
     }
 
-    if (animatingSceneUp) {
+    if (sceneAnimationState === SCENE.ANIMATE_UP) {
       activeRef.current.position.y += delta * SCENE.UPWARD_SPEED;
       if (activeRef.current.position.y > 0) {
         activeRef.current.position.y = 0;
-        resetSceneAnimation();
+        setSceneAnimationState(SCENE.ANIMATE_NONE);
       }
     }
   });
