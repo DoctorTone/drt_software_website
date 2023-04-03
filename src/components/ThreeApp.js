@@ -20,6 +20,9 @@ const ThreeApp = () => {
   const setSceneAnimationState = useStore(
     (state) => state.setSceneAnimationState
   );
+  const updateSceneAnimationState = useStore(
+    (state) => state.updateSceneAnimationState
+  );
 
   const currentLevel = useStore((state) => state.currentLevel);
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
@@ -72,7 +75,7 @@ const ThreeApp = () => {
       activeRef.current.position.y -= delta * SCENE.DOWNWARD_SPEED;
       if (activeRef.current.position.y < SCENE.GROUND_LEVEL) {
         activeRef.current.position.y = SCENE.GROUND_LEVEL;
-        setSceneAnimationState(SCENE.ANIMATE_UP);
+        updateSceneAnimationState(SCENE.ANIMATE_UP);
       }
     }
 

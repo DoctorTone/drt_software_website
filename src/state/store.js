@@ -51,10 +51,9 @@ const useStore = create((set) => ({
       nextLevel: nextScene.level,
       nextScene: nextScene.scene,
     }),
-  animateSceneUp: () => {
+  updateSceneAnimationState: (direction) => {
     set((state) => ({
-      animatingSceneDown: false,
-      animatingSceneUp: true,
+      sceneAnimationState: direction,
       activeScene: state.nextScene,
       numIslands: state.nextIslands,
       currentLevel: state.nextLevel,
