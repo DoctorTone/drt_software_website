@@ -14,7 +14,7 @@ export function Physics(props) {
         position={[0, 0, 0]}
         rotation={[0, 1.57, 0]}
         scale={0.5}>
-        <meshStandardMaterial color="grey" />
+        <meshStandardMaterial color="orange" />
       </mesh>
       <mesh
         geometry={nodes.Torus001.geometry}

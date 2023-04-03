@@ -14,7 +14,7 @@ export function Keyboard(props) {
         <meshStandardMaterial color="grey" />
       </mesh>
       <mesh geometry={nodes.KEYs.geometry}>
-        <meshStandardMaterial color="darkgrey" />
+        <meshStandardMaterial color="orange" />
       </mesh>
       <mesh geometry={nodes.Cube027_2.geometry}>
         <meshStandardMaterial color="grey" />

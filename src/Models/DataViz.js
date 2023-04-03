@@ -25,7 +25,7 @@ export function DataViz(props) {
         geometry={nodes.Cube.geometry}
         position={[0, 3, -3.75]}
         scale={[1, 3, 1]}>
-        <meshStandardMaterial color="grey" />
+        <meshStandardMaterial color="orange" />
       </mesh>
       <mesh
         geometry={nodes.Cube.geometry}
