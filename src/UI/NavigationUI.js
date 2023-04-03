@@ -10,8 +10,7 @@ import { SCENE } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 const NavigationUI = () => {
-  const setCurrentLevel = useStore((state) => state.setCurrentLevel);
-  const setActiveScene = useStore((state) => state.setActiveScene);
+  const currentLevel = useStore((state) => state.currentLevel);
   const showInfoModal = useStore((state) => state.showInfoModal);
   const animateNextScene = useStore((state) => state.animateNextScene);
 
@@ -22,6 +21,32 @@ const NavigationUI = () => {
       islands: 4,
       direction: SCENE.ANIMATE_DOWN,
     };
+    animateNextScene(nextScene);
+  };
+
+  const BackOneLevel = () => {
+    if (currentLevel === SCENE.MAIN_LEVEL) return;
+
+    let scene;
+    let islands;
+
+    switch (currentLevel) {
+      case SCENE.LEVEL_1:
+        scene = "main";
+        islands = 4;
+        break;
+
+      default:
+        break;
+    }
+
+    const nextScene = {
+      level: currentLevel - 1,
+      scene: scene,
+      islands: islands,
+      direction: SCENE.ANIMATE_DOWN,
+    };
+
     animateNextScene(nextScene);
   };
 
@@ -37,7 +62,7 @@ const NavigationUI = () => {
         </Button>
       </div>
       <div className="mb-3">
-        <Button variant="outline-dark">
+        <Button onClick={BackOneLevel} variant="outline-dark">
           <ArrowCounterclockwise />
         </Button>
       </div>
