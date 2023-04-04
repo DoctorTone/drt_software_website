@@ -13,7 +13,13 @@ export const IslandCylinder = (props) => {
             SCENE.CYL_SEGMENTS,
           ]}
         />
-        <meshStandardMaterial color="#e07715" />
+        <meshPhysicalMaterial
+          color={0xefefef}
+          transmission={1}
+          roughness={0.35}
+          thickness={50}
+          envMapIntensity={4}
+        />
       </mesh>
     </group>
   );

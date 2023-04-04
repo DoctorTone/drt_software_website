@@ -37,15 +37,16 @@ export const IslandMedViz = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <IslandCylinder position={ISLANDS.MedVizPosition} />
-        <IslandOuterCylinder
+        {/* <IslandOuterCylinder
           position={[
             ISLANDS.MedVizPosition[0],
             ISLANDS.MedVizPosition[1] - 0.25,
             ISLANDS.MedVizPosition[2],
           ]}
-        />
+        /> */}
         <Tablet
           position={ISLANDS.MedVizModelPosition}
           rotation={[Math.PI, 0, -Math.PI / 8]}
@@ -61,7 +62,8 @@ export const IslandMedViz = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Medical
           </Text>
         </Suspense>

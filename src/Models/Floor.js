@@ -1,7 +1,13 @@
 import React from "react";
+import * as THREE from "three";
+import { useLoader } from "@react-three/fiber";
+import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
+import { Environment, useTexture } from "@react-three/drei";
 import { SCENE } from "../state/Config.js";
 
 export const Floor = (props) => {
+  // const map = useLoader(RGBELoader, "textures/skylit.hdr");
+
   return (
     <group {...props} dispose={null}>
       <mesh position-y={-0.75}>
@@ -13,7 +19,7 @@ export const Floor = (props) => {
             SCENE.FLOOR_SEGMENTS,
           ]}
         />
-        <meshStandardMaterial color="blue" />
+        <meshStandardMaterial color="grey" />
       </mesh>
     </group>
   );

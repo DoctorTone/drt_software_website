@@ -13,7 +13,6 @@ const DataVizScene = () => {
       <IslandFinanceViz islandNumber={1} />
       <IslandCovidViz islandNumber={2} />
       <IslandBrainViz islandNumber={0} />
-      <Floor />
     </>
   );
 };
