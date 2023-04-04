@@ -41,7 +41,8 @@ export const IslandDRT = ({ islandNumber }) => {
         <Tree position={ISLANDS.DRTTreePosition} scale={0.05} />
         <DRT position={ISLANDS.DRTModelPosition} />
         <Shadow
-          scale={1}
+          scale={1.5}
+          opacity={0.65}
           position={[
             ISLANDS.DRTModelPosition[0],
             ISLANDS.DRTModelPosition[1] - 0.5,
