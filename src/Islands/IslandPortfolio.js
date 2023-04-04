@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Portfolio } from "../Models/Portfolio.js";
 import { SCENE, ISLANDS } from "../state/Config.js";
@@ -43,8 +43,16 @@ export const IslandPortfolio = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.PortfolioPosition} />
         <Portfolio position={ISLANDS.PortfolioModelPosition} />
+        <Shadow
+          scale={2.5}
+          position={[
+            ISLANDS.PortfolioModelPosition[0],
+            ISLANDS.PortfolioModelPosition[1] - 0.25,
+            ISLANDS.PortfolioModelPosition[2],
+          ]}
+        />
+        <Island position={ISLANDS.PortfolioPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"

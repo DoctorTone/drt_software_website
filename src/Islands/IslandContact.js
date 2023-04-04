@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Phone } from "../Models/Phone.js";
 import { SCENE, ISLANDS } from "../state/Config.js";
@@ -37,6 +37,15 @@ export const IslandContact = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
+        <Phone position={ISLANDS.ContactModelPosition} scale={0.007} />
+        <Shadow
+          scale={1}
+          position={[
+            ISLANDS.ContactModelPosition[0],
+            ISLANDS.ContactModelPosition[1] - 0.5,
+            ISLANDS.ContactModelPosition[2],
+          ]}
+        />
         <Island position={ISLANDS.ContactPosition} />
         <Suspense fallback={null}>
           <Text
@@ -52,7 +61,6 @@ export const IslandContact = ({ islandNumber }) => {
             Contact
           </Text>
         </Suspense>
-        <Phone position={ISLANDS.ContactModelPosition} scale={0.007} />
       </group>
     </Float>
   );

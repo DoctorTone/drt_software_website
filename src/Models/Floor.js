@@ -4,9 +4,14 @@ import { SCENE } from "../state/Config.js";
 export const Floor = (props) => {
   return (
     <group {...props} dispose={null}>
-      <mesh>
+      <mesh position-y={-0.75}>
         <cylinderGeometry
-          args={[SCENE.FLOOR_RADIUS, SCENE.FLOOR_RADIUS, SCENE.FLOOR_HEIGHT, SCENE.FLOOR_SEGMENTS]}
+          args={[
+            SCENE.FLOOR_RADIUS,
+            SCENE.FLOOR_RADIUS,
+            SCENE.FLOOR_HEIGHT,
+            SCENE.FLOOR_SEGMENTS,
+          ]}
         />
         <meshStandardMaterial color="blue" />
       </mesh>

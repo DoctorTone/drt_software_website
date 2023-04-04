@@ -4,6 +4,7 @@ import { IslandBrainViz } from "../Islands/IslandBrainViz";
 import { IslandCovidViz } from "../Islands/IslandCovidViz";
 import { IslandFinanceViz } from "../Islands/IslandFinanceViz";
 import { Floor } from "../Models/Floor.js";
+import { ContactShadows } from "@react-three/drei";
 
 const DataVizScene = () => {
   return (
@@ -12,6 +13,7 @@ const DataVizScene = () => {
       <IslandFinanceViz islandNumber={1} />
       <IslandCovidViz islandNumber={2} />
       <IslandBrainViz islandNumber={0} />
+      <Floor />
     </>
   );
 };

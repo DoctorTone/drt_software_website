@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Tree } from "../Models/Tree.js";
 import { DRT } from "../Models/DRT.js";
@@ -38,9 +38,17 @@ export const IslandDRT = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.DRTPosition} />
         <Tree position={ISLANDS.DRTTreePosition} scale={0.05} />
         <DRT position={ISLANDS.DRTModelPosition} />
+        <Shadow
+          scale={1}
+          position={[
+            ISLANDS.DRTModelPosition[0],
+            ISLANDS.DRTModelPosition[1] - 0.5,
+            ISLANDS.DRTModelPosition[2],
+          ]}
+        />
+        <Island position={ISLANDS.DRTPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"

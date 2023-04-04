@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Work } from "../Models/Work.js";
 import { SCENE, ISLANDS } from "../state/Config.js";
@@ -37,12 +37,20 @@ export const IslandServices = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.ServicesPosition} />
         <Work
           rotation-y={Math.PI / 2}
           scale={0.1}
           position={ISLANDS.ServicesModelPosition}
         />
+        <Shadow
+          scale={1}
+          position={[
+            ISLANDS.ServicesModelPosition[0],
+            ISLANDS.ServicesModelPosition[1] - 0.5,
+            ISLANDS.ServicesModelPosition[2],
+          ]}
+        />
+        <Island position={ISLANDS.ServicesPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
