@@ -42,10 +42,12 @@ export const IslandPortfolio = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Portfolio position={ISLANDS.PortfolioModelPosition} />
         <Shadow
           scale={2.5}
+          opacity={0.75}
           position={[
             ISLANDS.PortfolioModelPosition[0],
             ISLANDS.PortfolioModelPosition[1] - 0.25,
@@ -63,7 +65,8 @@ export const IslandPortfolio = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Portfolio
           </Text>
         </Suspense>
