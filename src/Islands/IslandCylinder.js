@@ -3,16 +3,9 @@ import { SCENE } from "../state/Config.js";
 
 export const IslandCylinder = (props) => {
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} rotation-x={Math.PI / 2}>
       <mesh>
-        <cylinderGeometry
-          args={[
-            SCENE.CYL_RADIUS,
-            SCENE.CYL_RADIUS,
-            SCENE.CYL_HEIGHT,
-            SCENE.CYL_SEGMENTS,
-          ]}
-        />
+        <capsuleGeometry args={[0.5, 2, 32, 32]} />
         <meshPhysicalMaterial
           color={0xdfe6f2}
           transmission={1}
