@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor, RoundedBox } from "@react-three/drei";
+import { Float, Text, useCursor, RoundedBox, Shadow } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
@@ -33,12 +33,20 @@ export const IslandShaders = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Island position={ISLANDS.ShaderPosition} />
         <RoundedBox position={ISLANDS.ShaderModelPosition} scale={1}>
           <meshStandardMaterial color="grey" />
         </RoundedBox>
+        <Shadow
+          scale={1.9}
+          opacity={0.85}
+          position={[
+            ISLANDS.ShaderTextPosition[0],
+            ISLANDS.ShaderTextPosition[1] - 1.5,
+            ISLANDS.ShaderTextPosition[2],
+          ]}
+        />
         <Suspense fallback={null}>
           <Text
             color="white"
@@ -49,8 +57,7 @@ export const IslandShaders = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
+            outlineColor="black">
             Shaders
           </Text>
         </Suspense>

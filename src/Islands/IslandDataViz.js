@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { DataViz } from "../Models/DataViz.js";
 import { SCENE, ISLANDS } from "../state/Config.js";
@@ -45,6 +45,15 @@ export const IslandDataViz = ({ islandNumber }) => {
         onClick={selectIsland}>
         <Island position={ISLANDS.DataVizPosition} />
         <DataViz position={ISLANDS.DataVizModelPosition} scale={0.15} />
+        <Shadow
+          scale={1.5}
+          opacity={0.85}
+          position={[
+            ISLANDS.DataVizTextPosition[0],
+            ISLANDS.DataVizTextPosition[1] - 1.35,
+            ISLANDS.DataVizTextPosition[2],
+          ]}
+        />
         <Suspense fallback={null}>
           <Text
             color="white"

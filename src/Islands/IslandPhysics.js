@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Physics } from "../Models/Physics.js";
 import { SCENE, ISLANDS } from "../state/Config.js";
@@ -40,6 +40,15 @@ export const IslandPhysics = ({ islandNumber }) => {
           position={ISLANDS.PhysicsModelPosition}
           scale={0.125}
           rotation-y={1.25}
+        />
+        <Shadow
+          scale={1.5}
+          opacity={0.85}
+          position={[
+            ISLANDS.PhysicsTextPosition[0],
+            ISLANDS.PhysicsTextPosition[1] - 1.35,
+            ISLANDS.PhysicsTextPosition[2],
+          ]}
         />
         <Suspense fallback={null}>
           <Text

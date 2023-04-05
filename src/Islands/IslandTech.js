@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.js";
 import { Keyboard } from "../Models/Keyboard.js";
 import { SCENE, ISLANDS } from "../state/Config.js";
@@ -40,6 +40,15 @@ export const IslandTech = ({ islandNumber }) => {
           position={ISLANDS.TechModelPosition}
           scale={5}
           rotation={[0.75, -1, 0.75]}
+        />
+        <Shadow
+          scale={1.75}
+          opacity={0.65}
+          position={[
+            ISLANDS.TechTextPosition[0],
+            ISLANDS.TechTextPosition[1] - 1.35,
+            ISLANDS.TechTextPosition[2],
+          ]}
         />
         <Suspense fallback={null}>
           <Text
