@@ -14,11 +14,11 @@ export const IslandCylinder = (props) => {
           ]}
         />
         <meshPhysicalMaterial
-          color={0xefefef}
+          color={0xdfe6f2}
           transmission={1}
-          roughness={0.35}
+          roughness={0.2}
           thickness={50}
-          envMapIntensity={4}
+          envMapIntensity={10}
         />
       </mesh>
     </group>
