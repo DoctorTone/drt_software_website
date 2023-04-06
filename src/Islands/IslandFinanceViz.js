@@ -8,10 +8,10 @@ export const IslandFinanceViz = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
-        <IslandCylinder
+        {/* <IslandCylinder
           position={ISLANDS.FinanceVizPosition}
           rotation-y={Math.PI / 2}
-        />
+        /> */}
         <Tablet
           position={ISLANDS.FinanceVizModelPosition}
           rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
@@ -26,7 +26,8 @@ export const IslandFinanceViz = () => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Financial
           </Text>
         </Suspense>

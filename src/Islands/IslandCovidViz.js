@@ -8,7 +8,7 @@ export const IslandCovidViz = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
-        <IslandCylinder position={ISLANDS.CovidVizPosition} />
+        {/* <IslandCylinder position={ISLANDS.CovidVizPosition} /> */}
         <Tablet
           position={ISLANDS.CovidVizModelPosition}
           rotation={[Math.PI, Math.PI, -Math.PI / 8]}
@@ -24,7 +24,8 @@ export const IslandCovidViz = () => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Pandemic
           </Text>
         </Suspense>

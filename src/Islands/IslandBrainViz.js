@@ -8,10 +8,10 @@ export const IslandBrainViz = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
-        <IslandCylinder
+        {/* <IslandCylinder
           position={ISLANDS.BrainVizPosition}
           rotation-y={Math.PI / 2}
-        />
+        /> */}
         <Tablet
           position={ISLANDS.BrainVizModelPosition}
           rotation={[Math.PI, -Math.PI / 2, -Math.PI / 8]}
@@ -27,7 +27,8 @@ export const IslandBrainViz = () => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Real-Time
           </Text>
         </Suspense>

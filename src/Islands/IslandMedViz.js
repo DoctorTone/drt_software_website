@@ -39,7 +39,7 @@ export const IslandMedViz = ({ islandNumber }) => {
         onPointerOut={pointerOut}
         onClick={selectIsland}
       >
-        <IslandCylinder position={ISLANDS.MedVizPosition} />
+        {/* <IslandCylinder position={ISLANDS.MedVizPosition} /> */}
         {/* <IslandOuterCylinder
           position={[
             ISLANDS.MedVizPosition[0],
