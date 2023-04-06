@@ -14,7 +14,14 @@ export function Tablet(props) {
     <group {...props} dispose={null}>
       <group scale={[0.1, 1.2, 0.9]}>
         <mesh geometry={nodes.Cube001.geometry}>
-          <meshStandardMaterial color="#333333" />
+          {/* <meshStandardMaterial color="#333333" /> */}
+          <meshPhysicalMaterial
+            color={0xeeeeee}
+            transmission={1}
+            roughness={0.2}
+            thickness={10}
+            envMapIntensity={1.5}
+          />
         </mesh>
         <mesh geometry={nodes.Cube001_1.geometry}>
           <meshStandardMaterial map={texture} />
