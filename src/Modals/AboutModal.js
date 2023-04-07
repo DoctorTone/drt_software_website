@@ -23,7 +23,11 @@ const AboutModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        <p>I'm Tony Glover, blah blah.</p>
+        <p>
+          I'm Dr Tony Glover and I have more than 25 years experience in the
+          software development industry. I have extensive experience in
+          designing and building 3D graphical applications, including
+        </p>
       </Modal.Body>
 
       <Modal.Footer>

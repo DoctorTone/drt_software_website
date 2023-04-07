@@ -25,10 +25,7 @@ const ThreeApp = () => {
   );
 
   const currentLevel = useStore((state) => state.currentLevel);
-  const setCurrentLevel = useStore((state) => state.setCurrentLevel);
   const activeScene = useStore((state) => state.activeScene);
-  const setActiveScene = useStore((state) => state.setActiveScene);
-  const activeIsland = useStore((state) => state.activeIsland);
   const numIslands = useStore((state) => state.numIslands);
 
   // DEBUG
@@ -103,7 +100,8 @@ const ThreeApp = () => {
           <group
             ref={allRefs["main"]}
             name="main"
-            position-y={SCENE.GROUND_LEVEL}>
+            position-y={SCENE.GROUND_LEVEL}
+          >
             <MainScene />
           </group>
         )}
@@ -111,7 +109,8 @@ const ThreeApp = () => {
           <group
             ref={allRefs["portfolio"]}
             name="portfolio"
-            position-y={SCENE.GROUND_LEVEL}>
+            position-y={SCENE.GROUND_LEVEL}
+          >
             <PortfolioScene />
           </group>
         )}
@@ -119,7 +118,8 @@ const ThreeApp = () => {
           <group
             ref={allRefs["dataviz"]}
             name="dataviz"
-            position-y={SCENE.GROUND_LEVEL}>
+            position-y={SCENE.GROUND_LEVEL}
+          >
             <DataVizScene />
           </group>
         )}

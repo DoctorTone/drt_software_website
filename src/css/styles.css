@@ -16,7 +16,6 @@ body {
 
 .panel {
   position: absolute;
-  width: 100%;
 }
 
 #home {
@@ -25,8 +24,14 @@ body {
   text-align: left;
 }
 
+#social {
+  right: 0;
+  top: 5%;
+  text-align: right;
+}
+
 #camControl {
-  left: 0;
+  right: 0;
   bottom: 1%;
   text-align: right;
 }

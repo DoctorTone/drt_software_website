@@ -5,6 +5,9 @@ import {
   ArrowCounterclockwise,
   InfoLg,
   Question,
+  Twitter,
+  Youtube,
+  Linkedin,
 } from "react-bootstrap-icons";
 import { SCENE } from "../state/Config.js";
 import useStore from "../state/store.js";
@@ -15,6 +18,8 @@ const NavigationUI = () => {
   const animateNextScene = useStore((state) => state.animateNextScene);
 
   const Home = () => {
+    if (currentLevel === SCENE.MAIN_LEVEL) return;
+
     const nextScene = {
       level: SCENE.MAIN_LEVEL,
       scene: "main",
@@ -60,23 +65,42 @@ const NavigationUI = () => {
   };
 
   return (
-    <div id="home" className="panel ps-5">
-      <div className="mb-3">
-        <Button onClick={Home} variant="outline-dark">
-          <House />
-        </Button>
+    <>
+      <div id="home" className="panel ps-5">
+        <div className="mb-3">
+          <Button onClick={Home} variant="outline-dark">
+            <House />
+          </Button>
+        </div>
+        <div className="mb-3">
+          <Button onClick={BackOneLevel} variant="outline-dark">
+            <ArrowCounterclockwise />
+          </Button>
+        </div>
+        <div>
+          <Button onClick={Info} variant="outline-dark">
+            <InfoLg />
+          </Button>
+        </div>
       </div>
-      <div className="mb-3">
-        <Button onClick={BackOneLevel} variant="outline-dark">
-          <ArrowCounterclockwise />
-        </Button>
+      <div id="social" className="panel pe-5">
+        <div className="mb-3">
+          <Button onClick={Home} variant="outline-dark">
+            <Twitter />
+          </Button>
+        </div>
+        <div className="mb-3">
+          <Button onClick={BackOneLevel} variant="outline-dark">
+            <Youtube />
+          </Button>
+        </div>
+        <div>
+          <Button onClick={Info} variant="outline-dark">
+            <Linkedin />
+          </Button>
+        </div>
       </div>
-      <div>
-        <Button onClick={Info} variant="outline-dark">
-          <InfoLg />
-        </Button>
-      </div>
-    </div>
+    </>
   );
 };
 
