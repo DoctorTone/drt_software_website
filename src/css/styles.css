@@ -39,3 +39,10 @@ body {
 .btn:hover {
   color: orange;
 }
+
+a.redLink:link,
+a.redLink:visited,
+a.redLink:hover,
+a.redLink:active {
+  color: red;
+}

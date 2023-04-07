@@ -85,18 +85,31 @@ const NavigationUI = () => {
       </div>
       <div id="social" className="panel pe-5">
         <div className="mb-3">
-          <Button onClick={Home} variant="outline-dark">
-            <Twitter />
+          <Button variant="outline-dark">
+            <a href="https://twitter.com/DrtSoftware" target="_blank">
+              <Twitter />
+            </a>
           </Button>
         </div>
         <div className="mb-3">
           <Button onClick={BackOneLevel} variant="outline-dark">
-            <Youtube />
+            <a
+              className="redLink"
+              href="https://www.youtube.com/channel/UCNYHLpd8oKLoE2xw49ZX1nQ?"
+              target="_blank"
+            >
+              <Youtube />
+            </a>
           </Button>
         </div>
         <div>
           <Button onClick={Info} variant="outline-dark">
-            <Linkedin />
+            <a
+              href="https://www.linkedin.com/in/tony-glover-4081694/"
+              target="_blank"
+            >
+              <Linkedin />
+            </a>
           </Button>
         </div>
       </div>
