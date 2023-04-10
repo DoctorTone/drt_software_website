@@ -77,7 +77,7 @@ const ISLANDS = {
   // VR island
   VRPosition: [1.854, 0, 5.706],
   VRModelPosition: [4.5, -7, 5.5],
-  VRTextPosition: [1.854, 3, 5.706],
+  VRTextPosition: [1.9, 3.25, 5.706],
   VRTextRotation: 0.3,
   // Med viz island
   MedVizPosition: [6, 0, 0],

@@ -7,6 +7,7 @@ import ContactModal from "./Modals/ContactModal.js";
 import ServicesModal from "./Modals/ServicesModal.js";
 import InfoModal from "./Modals/InfoModal.js";
 import MedVizModal from "./Modals/MedVizModal.js";
+import { Perf } from "r3f-perf";
 
 import { SCENE } from "./state/Config.js";
 import useStore from "./state/store.js";
@@ -22,6 +23,7 @@ const App = () => {
     <>
       <Canvas camera={{ position: SCENE.cameraPosition }}>
         <ThreeApp />
+        <Perf />
       </Canvas>
       <CameraControl />
       <NavigationUI />
