@@ -1,26 +1,20 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { Island } from "./Island.js";
-import { DataViz } from "../Models/DataViz.js";
+import { Island } from "./Island.jsx";
+import { Work } from "../Models/Work.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
 
-export const IslandDataViz = ({ islandNumber }) => {
+export const IslandServices = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
+  const showServicesModal = useStore((state) => state.showServicesModal);
   const activeIsland = useStore((state) => state.activeIsland);
-  const animateNextScene = useStore((state) => state.animateNextScene);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
+      showServicesModal(true);
       play();
-      const nextScene = {
-        level: SCENE.LEVEL_2,
-        scene: "dataviz",
-        islands: 4,
-        direction: SCENE.ANIMATE_DOWN,
-      };
-      animateNextScene(nextScene);
     }
   };
 
@@ -43,29 +37,32 @@ export const IslandDataViz = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.DataVizPosition} />
-        <DataViz position={ISLANDS.DataVizModelPosition} scale={0.15} />
+        <Work
+          rotation-y={Math.PI / 2}
+          scale={0.1}
+          position={ISLANDS.ServicesModelPosition}
+        />
         <Shadow
-          scale={1.5}
-          opacity={0.85}
+          scale={1}
           position={[
-            ISLANDS.DataVizTextPosition[0],
-            ISLANDS.DataVizTextPosition[1] - 1.35,
-            ISLANDS.DataVizTextPosition[2],
+            ISLANDS.ServicesModelPosition[0],
+            ISLANDS.ServicesModelPosition[1] - 0.5,
+            ISLANDS.ServicesModelPosition[2],
           ]}
         />
+        <Island position={ISLANDS.ServicesPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.DataVizTextPosition}
-            rotation-y={ISLANDS.DataVizTextRotation}
+            position={ISLANDS.ServicesTextPosition}
+            rotation-y={Math.PI}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            Data Viz
+            Services
           </Text>
         </Suspense>
       </group>

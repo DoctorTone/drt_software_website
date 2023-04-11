@@ -1,9 +1,7 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
 import { SCENE, ISLANDS } from "../state/Config.js";
-import { IslandCylinder } from "./IslandCylinder.js";
-import { IslandOuterCylinder } from "./IslandOuterCylinder.js";
-import { Tablet } from "../Models/Tablet.js";
+import { Tablet } from "../Models/Tablet.jsx";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
 
@@ -37,8 +35,7 @@ export const IslandMedViz = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         {/* <IslandCylinder position={ISLANDS.MedVizPosition} /> */}
         {/* <IslandOuterCylinder
           position={[
@@ -62,8 +59,7 @@ export const IslandMedViz = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
+            outlineColor="black">
             Medical
           </Text>
         </Suspense>

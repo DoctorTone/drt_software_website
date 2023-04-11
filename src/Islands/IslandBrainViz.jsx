@@ -1,32 +1,34 @@
 import React, { Suspense } from "react";
 import { Float, Text, useCursor } from "@react-three/drei";
 import { SCENE, ISLANDS } from "../state/Config.js";
-import { IslandCylinder } from "./IslandCylinder.js";
-import { Tablet } from "../Models/Tablet.js";
+import { IslandCylinder } from "./IslandCylinder.jsx";
+import { Tablet } from "../Models/Tablet.jsx";
 
-export const IslandCovidViz = () => {
+export const IslandBrainViz = () => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group>
-        {/* <IslandCylinder position={ISLANDS.CovidVizPosition} /> */}
+        {/* <IslandCylinder
+          position={ISLANDS.BrainVizPosition}
+          rotation-y={Math.PI / 2}
+        /> */}
         <Tablet
-          position={ISLANDS.CovidVizModelPosition}
-          rotation={[Math.PI, Math.PI, -Math.PI / 8]}
-          map={"/textures/pandemic.jpg"}
+          position={ISLANDS.BrainVizModelPosition}
+          rotation={[Math.PI, -Math.PI / 2, -Math.PI / 8]}
+          map={"/textures/brainVisualisation.jpg"}
         />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.CovidVizTextPosition}
-            rotation-y={-Math.PI / 2}
+            position={ISLANDS.BrainVizTextPosition}
+            rotation-y={Math.PI}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
-            Pandemic
+            outlineColor="black">
+            Real-Time
           </Text>
         </Suspense>
       </group>

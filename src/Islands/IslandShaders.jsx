@@ -1,12 +1,11 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { Island } from "./Island.js";
-import { Keyboard } from "../Models/Keyboard.js";
+import { Float, Text, useCursor, RoundedBox, Shadow } from "@react-three/drei";
+import { Island } from "./Island.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
 
-export const IslandTech = ({ islandNumber }) => {
+export const IslandShaders = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
 
@@ -35,19 +34,17 @@ export const IslandTech = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.TechPosition} />
-        <Keyboard
-          position={ISLANDS.TechModelPosition}
-          scale={5}
-          rotation={[0.75, -1, 0.75]}
-        />
+        <Island position={ISLANDS.ShaderPosition} />
+        <RoundedBox position={ISLANDS.ShaderModelPosition} scale={1}>
+          <meshStandardMaterial color="grey" />
+        </RoundedBox>
         <Shadow
-          scale={1.75}
-          opacity={0.65}
+          scale={1.9}
+          opacity={0.85}
           position={[
-            ISLANDS.TechTextPosition[0],
-            ISLANDS.TechTextPosition[1] - 1.35,
-            ISLANDS.TechTextPosition[2],
+            ISLANDS.ShaderTextPosition[0],
+            ISLANDS.ShaderTextPosition[1] - 1.5,
+            ISLANDS.ShaderTextPosition[2],
           ]}
         />
         <Suspense fallback={null}>
@@ -55,13 +52,13 @@ export const IslandTech = ({ islandNumber }) => {
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.TechTextPosition}
-            rotation-y={ISLANDS.TechTextRotation}
+            position={ISLANDS.ShaderTextPosition}
+            rotation-y={ISLANDS.ShaderTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            Tech
+            Shaders
           </Text>
         </Suspense>
       </group>

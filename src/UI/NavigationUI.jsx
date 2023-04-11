@@ -96,8 +96,7 @@ const NavigationUI = () => {
             <a
               className="redLink"
               href="https://www.youtube.com/channel/UCNYHLpd8oKLoE2xw49ZX1nQ?"
-              target="_blank"
-            >
+              target="_blank">
               <Youtube />
             </a>
           </Button>
@@ -106,8 +105,7 @@ const NavigationUI = () => {
           <Button onClick={Info} variant="outline-dark">
             <a
               href="https://www.linkedin.com/in/tony-glover-4081694/"
-              target="_blank"
-            >
+              target="_blank">
               <Linkedin />
             </a>
           </Button>

@@ -1,19 +1,17 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { Island } from "./Island.js";
-import { Work } from "../Models/Work.js";
+import { Island } from "./Island.jsx";
+import { Keyboard } from "../Models/Keyboard.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
 
-export const IslandServices = ({ islandNumber }) => {
+export const IslandTech = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const showServicesModal = useStore((state) => state.showServicesModal);
   const activeIsland = useStore((state) => state.activeIsland);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showServicesModal(true);
       play();
     }
   };
@@ -37,32 +35,33 @@ export const IslandServices = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Work
-          rotation-y={Math.PI / 2}
-          scale={0.1}
-          position={ISLANDS.ServicesModelPosition}
+        <Island position={ISLANDS.TechPosition} />
+        <Keyboard
+          position={ISLANDS.TechModelPosition}
+          scale={5}
+          rotation={[0.75, -1, 0.75]}
         />
         <Shadow
-          scale={1}
+          scale={1.75}
+          opacity={0.65}
           position={[
-            ISLANDS.ServicesModelPosition[0],
-            ISLANDS.ServicesModelPosition[1] - 0.5,
-            ISLANDS.ServicesModelPosition[2],
+            ISLANDS.TechTextPosition[0],
+            ISLANDS.TechTextPosition[1] - 1.35,
+            ISLANDS.TechTextPosition[2],
           ]}
         />
-        <Island position={ISLANDS.ServicesPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.ServicesTextPosition}
-            rotation-y={Math.PI}
+            position={ISLANDS.TechTextPosition}
+            rotation-y={ISLANDS.TechTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            Services
+            Tech
           </Text>
         </Suspense>
       </group>

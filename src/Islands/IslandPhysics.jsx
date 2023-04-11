@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { Island } from "./Island.js";
-import { Physics } from "../Models/Physics.js";
+import { Island } from "./Island.jsx";
+import { Physics } from "../Models/Physics.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";

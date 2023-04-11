@@ -6,11 +6,11 @@ import { shallow } from "zustand/shallow";
 import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
-import { Cloud } from "../Models/Cloud.js";
-import { Floor } from "../Models/Floor.js";
-import MainScene from "../Scenes/MainScene.js";
-import PortfolioScene from "../Scenes/PortfolioScene.js";
-import DataVizScene from "../Scenes/DataVizScene.js";
+import { Cloud } from "../Models/Cloud.jsx";
+import { Floor } from "../Models/Floor.jsx";
+import MainScene from "../Scenes/MainScene.jsx";
+import PortfolioScene from "../Scenes/PortfolioScene.jsx";
+import DataVizScene from "../Scenes/DataVizScene.jsx";
 
 const ThreeApp = () => {
   const cameraRotation = useStore((state) => state.cameraRotation);
@@ -100,8 +100,7 @@ const ThreeApp = () => {
           <group
             ref={allRefs["main"]}
             name="main"
-            position-y={SCENE.GROUND_LEVEL}
-          >
+            position-y={SCENE.GROUND_LEVEL}>
             <MainScene />
           </group>
         )}
@@ -109,8 +108,7 @@ const ThreeApp = () => {
           <group
             ref={allRefs["portfolio"]}
             name="portfolio"
-            position-y={SCENE.GROUND_LEVEL}
-          >
+            position-y={SCENE.GROUND_LEVEL}>
             <PortfolioScene />
           </group>
         )}
@@ -118,8 +116,7 @@ const ThreeApp = () => {
           <group
             ref={allRefs["dataviz"]}
             name="dataviz"
-            position-y={SCENE.GROUND_LEVEL}
-          >
+            position-y={SCENE.GROUND_LEVEL}>
             <DataVizScene />
           </group>
         )}

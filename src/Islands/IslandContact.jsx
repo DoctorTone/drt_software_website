@@ -1,26 +1,20 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { Island } from "./Island.js";
-import { Portfolio } from "../Models/Portfolio.js";
+import { Island } from "./Island.jsx";
+import { Phone } from "../Models/Phone.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
 
-export const IslandPortfolio = ({ islandNumber }) => {
+export const IslandContact = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const animateNextScene = useStore((state) => state.animateNextScene);
+  const showContactModal = useStore((state) => state.showContactModal);
   const activeIsland = useStore((state) => state.activeIsland);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
+      showContactModal(true);
       play();
-      const nextScene = {
-        level: SCENE.LEVEL_1,
-        scene: "portfolio",
-        islands: 5,
-        direction: SCENE.ANIMATE_DOWN,
-      };
-      animateNextScene(nextScene);
     }
   };
 
@@ -35,39 +29,36 @@ export const IslandPortfolio = ({ islandNumber }) => {
   };
 
   useCursor(hovered);
-  const [play] = useSound("./sounds/select.mp3", { volume: 0.25 });
+  const [play] = useSound("./sounds/select.wav", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
-        <Portfolio position={ISLANDS.PortfolioModelPosition} />
+        onClick={selectIsland}>
+        <Phone position={ISLANDS.ContactModelPosition} scale={0.007} />
         <Shadow
-          scale={2.5}
-          opacity={0.75}
+          scale={1}
           position={[
-            ISLANDS.PortfolioModelPosition[0],
-            ISLANDS.PortfolioModelPosition[1] - 0.25,
-            ISLANDS.PortfolioModelPosition[2],
+            ISLANDS.ContactModelPosition[0],
+            ISLANDS.ContactModelPosition[1] - 0.5,
+            ISLANDS.ContactModelPosition[2],
           ]}
         />
-        <Island position={ISLANDS.PortfolioPosition} />
+        <Island position={ISLANDS.ContactPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.PortfolioTextPosition}
-            rotation-y={Math.PI / 2}
+            position={ISLANDS.ContactTextPosition}
+            rotation-y={-Math.PI / 2}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
-            Portfolio
+            outlineColor="black">
+            Contact
           </Text>
         </Suspense>
       </group>

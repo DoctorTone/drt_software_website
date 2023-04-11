@@ -1,19 +1,17 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { Island } from "./Island.js";
-import { Phone } from "../Models/Phone.js";
+import { Island } from "./Island.jsx";
+import { VR } from "../Models/VR.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
 
-export const IslandContact = ({ islandNumber }) => {
+export const IslandVR = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const showContactModal = useStore((state) => state.showContactModal);
   const activeIsland = useStore((state) => state.activeIsland);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showContactModal(true);
       play();
     }
   };
@@ -37,28 +35,29 @@ export const IslandContact = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Phone position={ISLANDS.ContactModelPosition} scale={0.007} />
+        <Island position={ISLANDS.VRPosition} />
+        <VR position={ISLANDS.VRModelPosition} scale={0.6} />
         <Shadow
-          scale={1}
+          scale={1.65}
+          opacity={0.85}
           position={[
-            ISLANDS.ContactModelPosition[0],
-            ISLANDS.ContactModelPosition[1] - 0.5,
-            ISLANDS.ContactModelPosition[2],
+            ISLANDS.VRTextPosition[0],
+            ISLANDS.VRTextPosition[1] - 1.35,
+            ISLANDS.VRTextPosition[2],
           ]}
         />
-        <Island position={ISLANDS.ContactPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.ContactTextPosition}
-            rotation-y={-Math.PI / 2}
+            position={ISLANDS.VRTextPosition}
+            rotation-y={ISLANDS.VRTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            Contact
+            VR
           </Text>
         </Suspense>
       </group>

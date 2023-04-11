@@ -1,21 +1,26 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { Island } from "./Island.js";
-import { Tree } from "../Models/Tree.js";
-import { DRT } from "../Models/DRT.js";
+import { Island } from "./Island.jsx";
+import { DataViz } from "../Models/DataViz.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
 
-export const IslandDRT = ({ islandNumber }) => {
+export const IslandDataViz = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const showAboutModal = useStore((state) => state.showAboutModal);
   const activeIsland = useStore((state) => state.activeIsland);
+  const animateNextScene = useStore((state) => state.animateNextScene);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showAboutModal(true);
       play();
+      const nextScene = {
+        level: SCENE.LEVEL_2,
+        scene: "dataviz",
+        islands: 4,
+        direction: SCENE.ANIMATE_DOWN,
+      };
+      animateNextScene(nextScene);
     }
   };
 
@@ -38,29 +43,29 @@ export const IslandDRT = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Tree position={ISLANDS.DRTTreePosition} scale={0.05} />
-        <DRT position={ISLANDS.DRTModelPosition} />
+        <Island position={ISLANDS.DataVizPosition} />
+        <DataViz position={ISLANDS.DataVizModelPosition} scale={0.15} />
         <Shadow
           scale={1.5}
-          opacity={0.65}
+          opacity={0.85}
           position={[
-            ISLANDS.DRTModelPosition[0],
-            ISLANDS.DRTModelPosition[1] - 0.5,
-            ISLANDS.DRTModelPosition[2],
+            ISLANDS.DataVizTextPosition[0],
+            ISLANDS.DataVizTextPosition[1] - 1.35,
+            ISLANDS.DataVizTextPosition[2],
           ]}
         />
-        <Island position={ISLANDS.DRTPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.DRTTextPosition}
+            position={ISLANDS.DataVizTextPosition}
+            rotation-y={ISLANDS.DataVizTextRotation}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            About
+            Data Viz
           </Text>
         </Suspense>
       </group>

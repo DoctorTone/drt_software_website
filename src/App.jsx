@@ -1,12 +1,12 @@
 import { Canvas } from "@react-three/fiber";
-import ThreeApp from "./components/ThreeApp.js";
-import CameraControl from "./UI/CameraControl.js";
-import NavigationUI from "./UI/NavigationUI.js";
-import AboutModal from "./Modals/AboutModal.js";
-import ContactModal from "./Modals/ContactModal.js";
-import ServicesModal from "./Modals/ServicesModal.js";
-import InfoModal from "./Modals/InfoModal.js";
-import MedVizModal from "./Modals/MedVizModal.js";
+import ThreeApp from "./components/ThreeApp.jsx";
+import CameraControl from "./UI/CameraControl.jsx";
+import NavigationUI from "./UI/NavigationUI.jsx";
+import AboutModal from "./Modals/AboutModal.jsx";
+import ContactModal from "./Modals/ContactModal.jsx";
+import ServicesModal from "./Modals/ServicesModal.jsx";
+import InfoModal from "./Modals/InfoModal.jsx";
+import MedVizModal from "./Modals/MedVizModal.jsx";
 import { Perf } from "r3f-perf";
 
 import { SCENE } from "./state/Config.js";

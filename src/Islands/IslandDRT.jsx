@@ -1,16 +1,20 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor, RoundedBox, Shadow } from "@react-three/drei";
-import { Island } from "./Island.js";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
+import { Island } from "./Island.jsx";
+import { Tree } from "../Models/Tree.jsx";
+import { DRT } from "../Models/DRT.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
 
-export const IslandShaders = ({ islandNumber }) => {
+export const IslandDRT = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
+  const showAboutModal = useStore((state) => state.showAboutModal);
   const activeIsland = useStore((state) => state.activeIsland);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
+      showAboutModal(true);
       play();
     }
   };
@@ -34,31 +38,29 @@ export const IslandShaders = ({ islandNumber }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}>
-        <Island position={ISLANDS.ShaderPosition} />
-        <RoundedBox position={ISLANDS.ShaderModelPosition} scale={1}>
-          <meshStandardMaterial color="grey" />
-        </RoundedBox>
+        <Tree position={ISLANDS.DRTTreePosition} scale={0.05} />
+        <DRT position={ISLANDS.DRTModelPosition} />
         <Shadow
-          scale={1.9}
-          opacity={0.85}
+          scale={1.5}
+          opacity={0.65}
           position={[
-            ISLANDS.ShaderTextPosition[0],
-            ISLANDS.ShaderTextPosition[1] - 1.5,
-            ISLANDS.ShaderTextPosition[2],
+            ISLANDS.DRTModelPosition[0],
+            ISLANDS.DRTModelPosition[1] - 0.5,
+            ISLANDS.DRTModelPosition[2],
           ]}
         />
+        <Island position={ISLANDS.DRTPosition} />
         <Suspense fallback={null}>
           <Text
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.ShaderTextPosition}
-            rotation-y={ISLANDS.ShaderTextRotation}
+            position={ISLANDS.DRTTextPosition}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
             outlineColor="black">
-            Shaders
+            About
           </Text>
         </Suspense>
       </group>
