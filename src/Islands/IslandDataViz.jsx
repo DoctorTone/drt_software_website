@@ -18,6 +18,7 @@ export const IslandDataViz = ({ islandNumber }) => {
         level: SCENE.LEVEL_2,
         scene: "dataviz",
         islands: 4,
+        activeIsland: 3,
         direction: SCENE.ANIMATE_DOWN,
       };
       animateNextScene(nextScene);

@@ -54,6 +54,7 @@ const NavigationUI = () => {
       level: currentLevel - 1,
       scene: scene,
       islands: islands,
+      activeIsland: 3,
       direction: SCENE.ANIMATE_DOWN,
     };
 

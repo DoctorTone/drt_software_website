@@ -28,9 +28,6 @@ const ThreeApp = () => {
   const activeScene = useStore((state) => state.activeScene);
   const numIslands = useStore((state) => state.numIslands);
 
-  // DEBUG
-  // console.log("Island = ", activeIsland);
-
   const currentRot = useRef(0);
   const worldRot = useRef(0);
   const rotIncrement = useRef(Math.PI / 2);
@@ -83,6 +80,8 @@ const ThreeApp = () => {
       activeRef.current.position.y += delta * SCENE.UPWARD_SPEED;
       if (activeRef.current.position.y > 0) {
         activeRef.current.position.y = 0;
+        topLevel.current.rotation.y = -Math.PI / 2;
+        worldRot.current = -Math.PI / 2;
         setSceneAnimationState(SCENE.ANIMATE_NONE);
       }
     }

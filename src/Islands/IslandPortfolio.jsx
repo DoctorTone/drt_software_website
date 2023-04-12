@@ -18,6 +18,7 @@ export const IslandPortfolio = ({ islandNumber }) => {
         level: SCENE.LEVEL_1,
         scene: "portfolio",
         islands: 5,
+        activeIsland: 3,
         direction: SCENE.ANIMATE_DOWN,
       };
       animateNextScene(nextScene);
