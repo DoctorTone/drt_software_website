@@ -24,28 +24,42 @@ const ContactModel = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        <Form>
+        <Form action="https://usebasin.com/f/da50ea670849" method="POST">
           <Form.Group className="row">
             <div className="col-2">
               <Form.Label>Name</Form.Label>
             </div>
             <div className="col-10 mb-2">
-              <Form.Control type="text" />
+              <Form.Control
+                type="text"
+                name="userName"
+                placeholder="Enter name"
+                required
+              />
             </div>
             <div className="col-2">
               <Form.Label>Email</Form.Label>
             </div>
             <div className="col-10 mb-2">
-              <Form.Control type="email" />
+              <Form.Control
+                type="email"
+                name="userEmail"
+                placeholder="name@name.com"
+                required
+              />
             </div>
             <div className="col-2">
               <Form.Label>Phone</Form.Label>
             </div>
             <div className="col-10 mb-2">
-              <Form.Control type="phone" />
+              <Form.Control
+                type="tel"
+                name="userPhone"
+                placeholder="12345 678910"
+              />
             </div>
           </Form.Group>
-          <Button>Submit</Button>
+          <Button type="submit">Submit</Button>
         </Form>
       </Modal.Body>
 
