@@ -2,6 +2,7 @@ import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { Work } from "../Models/Work.jsx";
+import { Lamp } from "../Models/Lamp.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
@@ -41,6 +42,14 @@ export const IslandServices = ({ islandNumber }) => {
           rotation-y={Math.PI / 2}
           scale={0.1}
           position={ISLANDS.ServicesModelPosition}
+        />
+        <Lamp
+          scale={0.425}
+          position={[
+            ISLANDS.ServicesModelPosition[0] + 1,
+            ISLANDS.ServicesModelPosition[1] - 0.65,
+            ISLANDS.ServicesModelPosition[2] - 0.6,
+          ]}
         />
         <Shadow
           scale={1}
