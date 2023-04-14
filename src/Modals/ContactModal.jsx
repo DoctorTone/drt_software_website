@@ -25,10 +25,27 @@ const ContactModel = ({ showModal }) => {
 
       <Modal.Body>
         <Form>
-          <Form.Group>
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="email" />
+          <Form.Group className="row">
+            <div className="col-2">
+              <Form.Label>Name</Form.Label>
+            </div>
+            <div className="col-10 mb-2">
+              <Form.Control type="text" />
+            </div>
+            <div className="col-2">
+              <Form.Label>Email</Form.Label>
+            </div>
+            <div className="col-10 mb-2">
+              <Form.Control type="email" />
+            </div>
+            <div className="col-2">
+              <Form.Label>Phone</Form.Label>
+            </div>
+            <div className="col-10 mb-2">
+              <Form.Control type="phone" />
+            </div>
           </Form.Group>
+          <Button>Submit</Button>
         </Form>
       </Modal.Body>
 
