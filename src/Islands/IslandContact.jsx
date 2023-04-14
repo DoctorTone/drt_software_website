@@ -2,6 +2,7 @@ import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { Phone } from "../Models/Phone.jsx";
+import { Dog } from "../Models/Dog.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
@@ -38,6 +39,15 @@ export const IslandContact = ({ islandNumber }) => {
         onPointerOut={pointerOut}
         onClick={selectIsland}>
         <Phone position={ISLANDS.ContactModelPosition} scale={0.007} />
+        <Dog
+          scale={0.275}
+          rotation-y={-Math.PI / 8}
+          position={[
+            ISLANDS.ContactModelPosition[0] - 0.5,
+            ISLANDS.ContactModelPosition[1] - 0.5,
+            ISLANDS.ContactModelPosition[2] - 0.9,
+          ]}
+        />
         <Shadow
           scale={1}
           position={[
