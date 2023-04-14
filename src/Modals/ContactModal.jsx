@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
 import useStore from "../state/store.js";
@@ -23,7 +24,12 @@ const ContactModel = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        <p>Please contact us.</p>
+        <Form>
+          <Form.Group>
+            <Form.Label>Name</Form.Label>
+            <Form.Control type="email" />
+          </Form.Group>
+        </Form>
       </Modal.Body>
 
       <Modal.Footer>
