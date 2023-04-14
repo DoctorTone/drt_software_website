@@ -20,7 +20,7 @@ const ContactModel = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Contact</Modal.Title>
+        <Modal.Title>Please Contact</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
@@ -50,6 +50,7 @@ const ContactModel = ({ showModal }) => {
       </Modal.Body>
 
       <Modal.Footer>
+        <h6 className="me-5">I aim to respond in one working day</h6>
         <Button onClick={handleClose} variant="secondary">
           Close
         </Button>
