@@ -5,11 +5,13 @@ const useStore = create((set) => ({
   // Camera rotations
   activeIsland: 0,
   numIslands: 4,
+  ignoreButtonPress: false,
   setActiveIsland: (island) => set({ activeIsland: island }),
   setNumIslands: (islands) => set({ numIslands: islands }),
   cameraRotation: SCENE.CAM_ROTATE_NONE,
   rotateCamRight: () => {
     set((state) => ({
+      ignoreButtonPress: true,
       cameraRotation: SCENE.CAM_ROTATE_RIGHT,
       activeIsland:
         state.activeIsland + 1 >= state.numIslands ? 0 : state.activeIsland + 1,
@@ -17,6 +19,7 @@ const useStore = create((set) => ({
   },
   rotateCamLeft: () => {
     set((state) => ({
+      ignoreButtonPress: true,
       cameraRotation: SCENE.CAM_ROTATE_LEFT,
       activeIsland:
         state.activeIsland - 1 < 0
@@ -24,7 +27,8 @@ const useStore = create((set) => ({
           : state.activeIsland - 1,
     }));
   },
-  resetCamRotate: () => set({ cameraRotation: SCENE.CAM_ROTATE_NONE }),
+  resetCamRotate: () =>
+    set({ ignoreButtonPress: false, cameraRotation: SCENE.CAM_ROTATE_NONE }),
 
   // Modals
   aboutModalVisible: false,
