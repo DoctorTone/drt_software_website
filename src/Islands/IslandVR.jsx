@@ -9,9 +9,11 @@ import useStore from "../state/store.js";
 export const IslandVR = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
+  const showVRModal = useStore((state) => state.showVRModal);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
+      showVRModal(true);
       play();
     }
   };
@@ -34,7 +36,8 @@ export const IslandVR = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Island position={ISLANDS.VRPosition} />
         <VR position={ISLANDS.VRModelPosition} scale={0.6} />
         <Shadow
@@ -56,7 +59,8 @@ export const IslandVR = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             VR
           </Text>
         </Suspense>
