@@ -26,8 +26,8 @@ const ServicesModal = ({ showModal }) => {
       <Modal.Body>
         <p>
           As well as bespoke software design and development, I also do 3D
-          consultancy, as well as teaching and mentoring. If you need help with
-          anything 3D-related then please get in touch.
+          consultancy, presentations, workshops and mentoring. If you need help
+          with anything 3D-related then please get in touch.
         </p>
       </Modal.Body>
 

@@ -19,10 +19,9 @@ export function Dog(props) {
         geometry={nodes.Mesh002.geometry}
         material={materials["body_orange-light"]}
       />
-      <mesh
-        geometry={nodes.Mesh002_1.geometry}
-        material={materials.body_orange}
-      />
+      <mesh geometry={nodes.Mesh002_1.geometry}>
+        <meshStandardMaterial color="darkorange" />
+      </mesh>
     </group>
   );
 }
