@@ -9,9 +9,11 @@ import useStore from "../state/store.js";
 export const IslandTech = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
+  const showTechModal = useStore((state) => state.showTechModal);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
+      showTechModal(true);
       play();
     }
   };
@@ -34,7 +36,8 @@ export const IslandTech = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Island position={ISLANDS.TechPosition} />
         <Keyboard
           position={ISLANDS.TechModelPosition}
@@ -60,7 +63,8 @@ export const IslandTech = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Tech
           </Text>
         </Suspense>

@@ -8,6 +8,8 @@ import ServicesModal from "./Modals/ServicesModal.jsx";
 import InfoModal from "./Modals/InfoModal.jsx";
 import MedVizModal from "./Modals/MedVizModal.jsx";
 import PhysicsModal from "./Modals/PhysicsModal.jsx";
+import ShaderModal from "./Modals/ShaderModal.jsx";
+import TechModal from "./Modals/TechModal.jsx";
 import { Perf } from "r3f-perf";
 
 import { SCENE } from "./state/Config.js";
@@ -20,6 +22,8 @@ const App = () => {
   const infoModalVisible = useStore((state) => state.infoModalVisible);
   const medVizModalVisible = useStore((state) => state.medVizModalVisible);
   const physicsModalVisible = useStore((state) => state.physicsModalVisible);
+  const shaderModalVisible = useStore((state) => state.shaderModalVisible);
+  const techModalVisible = useStore((state) => state.techModalVisible);
 
   return (
     <>
@@ -35,6 +39,8 @@ const App = () => {
       <InfoModal showModal={infoModalVisible} />
       <MedVizModal showModal={medVizModalVisible} />
       <PhysicsModal showModal={physicsModalVisible} />
+      <ShaderModal showModal={shaderModalVisible} />
+      <TechModal showModal={techModalVisible} />
     </>
   );
 };
