@@ -9,9 +9,11 @@ import useStore from "../state/store.js";
 export const IslandPhysics = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
+  const showPhysicsModal = useStore((state) => state.showPhysicsModal);
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
+      showPhysicsModal(true);
       play();
     }
   };
@@ -34,7 +36,8 @@ export const IslandPhysics = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Island position={ISLANDS.PhysicsPosition} />
         <Physics
           position={ISLANDS.PhysicsModelPosition}
@@ -60,7 +63,8 @@ export const IslandPhysics = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Physics
           </Text>
         </Suspense>

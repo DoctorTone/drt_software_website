@@ -7,6 +7,7 @@ import ContactModal from "./Modals/ContactModal.jsx";
 import ServicesModal from "./Modals/ServicesModal.jsx";
 import InfoModal from "./Modals/InfoModal.jsx";
 import MedVizModal from "./Modals/MedVizModal.jsx";
+import PhysicsModal from "./Modals/PhysicsModal.jsx";
 import { Perf } from "r3f-perf";
 
 import { SCENE } from "./state/Config.js";
@@ -18,6 +19,7 @@ const App = () => {
   const servicesModalVisible = useStore((state) => state.servicesModalVisible);
   const infoModalVisible = useStore((state) => state.infoModalVisible);
   const medVizModalVisible = useStore((state) => state.medVizModalVisible);
+  const physicsModalVisible = useStore((state) => state.physicsModalVisible);
 
   return (
     <>
@@ -32,6 +34,7 @@ const App = () => {
       <ServicesModal showModal={servicesModalVisible} />
       <InfoModal showModal={infoModalVisible} />
       <MedVizModal showModal={medVizModalVisible} />
+      <PhysicsModal showModal={physicsModalVisible} />
     </>
   );
 };
