@@ -3,8 +3,8 @@ import { IslandMedViz } from "../Islands/IslandMedViz";
 import { IslandBrainViz } from "../Islands/IslandBrainViz";
 import { IslandCovidViz } from "../Islands/IslandCovidViz";
 import { IslandFinanceViz } from "../Islands/IslandFinanceViz";
-import { Floor } from "../Models/Floor.jsx";
-import { Fish } from "../Models/Fish.jsx";
+import { Island } from "../Islands/Island.jsx";
+import { Foundation } from "../Models/Foundation.jsx";
 
 const DataVizScene = () => {
   return (
@@ -13,8 +13,8 @@ const DataVizScene = () => {
       <IslandFinanceViz islandNumber={1} />
       <IslandCovidViz islandNumber={2} />
       <IslandBrainViz islandNumber={0} />
-      <Fish />
-      <Floor color={0x4276ed} />
+      <Foundation position={[1, 0, -1]} scale={2.5} />
+      <Island position-y={-7.75} scale={5} />
     </>
   );
 };
