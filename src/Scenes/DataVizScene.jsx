@@ -4,6 +4,7 @@ import { IslandBrainViz } from "../Islands/IslandBrainViz";
 import { IslandCovidViz } from "../Islands/IslandCovidViz";
 import { IslandFinanceViz } from "../Islands/IslandFinanceViz";
 import { Floor } from "../Models/Floor.jsx";
+import { Fish } from "../Models/Fish.jsx";
 
 const DataVizScene = () => {
   return (
@@ -12,7 +13,8 @@ const DataVizScene = () => {
       <IslandFinanceViz islandNumber={1} />
       <IslandCovidViz islandNumber={2} />
       <IslandBrainViz islandNumber={0} />
-      <Floor color={0x6d95f2} />
+      <Fish />
+      <Floor color={0x4276ed} />
     </>
   );
 };
