@@ -20,13 +20,15 @@ const VRModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>VR</Modal.Title>
+        <Modal.Title>Virtual Reality</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
-        Real time physics is now possible in the browser. The following example
-        is a simple game level showing accurate physical simulation.
-        <div className="text-center">
+        With the advent of WebXR, it is now possible to have interactive,
+        virtual reality environments online. This opens up the possibilities to
+        develop simulations, games, educational apps and more, all in the
+        browser. Click below to explore a VR world.
+        <div className="text-center mt-2">
           <Button className="me-2" variant="primary">
             Launch demo
           </Button>

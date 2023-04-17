@@ -24,13 +24,8 @@ const TechModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        Real time physics is now possible in the browser. The following example
-        is a simple game level showing accurate physical simulation.
-        <div className="text-center">
-          <Button className="me-2" variant="primary">
-            Launch demo
-          </Button>
-        </div>
+        The majority of my work is web-based so the technologies I use reflect
+        this, such as javascript libraries like three.js and react three fiber.
       </Modal.Body>
 
       <Modal.Footer>
