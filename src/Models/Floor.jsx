@@ -19,7 +19,7 @@ export const Floor = (props) => {
             SCENE.FLOOR_SEGMENTS,
           ]}
         />
-        <meshStandardMaterial color="grey" />
+        <meshStandardMaterial color={props.color} />
       </mesh>
     </group>
   );
