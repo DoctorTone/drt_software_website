@@ -10,9 +10,9 @@ const DataVizScene = () => {
   return (
     <>
       <IslandMedViz islandNumber={3} />
-      <IslandFinanceViz islandNumber={1} />
-      <IslandCovidViz islandNumber={2} />
-      <IslandBrainViz islandNumber={0} />
+      <IslandFinanceViz islandNumber={0} />
+      <IslandCovidViz islandNumber={1} />
+      <IslandBrainViz islandNumber={2} />
       <Foundation position={[1, 0, -1]} scale={2.5} />
       <Island position-y={-7.75} scale={5} />
     </>

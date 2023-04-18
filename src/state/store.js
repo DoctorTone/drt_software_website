@@ -49,6 +49,8 @@ const useStore = create((set) => ({
   showTechModal: (show) => set({ techModalVisible: show }),
   VRModalVisible: false,
   showVRModal: (show) => set({ VRModalVisible: show }),
+  realTimeModalVisible: false,
+  showRealTimeModal: (show) => set({ realTimeModalVisible: show }),
 
   // Scene animations
   sceneAnimationState: SCENE.ANIMATE_NONE,

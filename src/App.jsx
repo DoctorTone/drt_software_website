@@ -11,6 +11,7 @@ import PhysicsModal from "./Modals/PhysicsModal.jsx";
 import ShaderModal from "./Modals/ShaderModal.jsx";
 import TechModal from "./Modals/TechModal.jsx";
 import VRModal from "./Modals/VRModal.jsx";
+import RealTimeModal from "./Modals/RealTimeModal.jsx";
 import { Perf } from "r3f-perf";
 
 import { SCENE } from "./state/Config.js";
@@ -26,6 +27,7 @@ const App = () => {
   const shaderModalVisible = useStore((state) => state.shaderModalVisible);
   const techModalVisible = useStore((state) => state.techModalVisible);
   const VRModalVisible = useStore((state) => state.VRModalVisible);
+  const realTimeModalVisible = useStore((state) => state.realTimeModalVisible);
 
   return (
     <>
@@ -44,6 +46,7 @@ const App = () => {
       <ShaderModal showModal={shaderModalVisible} />
       <TechModal showModal={techModalVisible} />
       <VRModal showModal={VRModalVisible} />
+      <RealTimeModal showModal={realTimeModalVisible} />
     </>
   );
 };
