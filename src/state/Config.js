@@ -95,6 +95,10 @@ const ISLANDS = {
   FinanceVizPosition: [0, 0, 6],
   FinanceVizModelPosition: [0, 2, 6],
   FinanceVizTextPosition: [0, 3.5, 6],
+  // Sleep viz island
+  SleepVizPosition: [0, 0, 6],
+  SleepVizModelPosition: [0, 2, 6],
+  SleepVizTextPosition: [0, 3.5, 6],
 };
 
 export { SCENE, ISLANDS };
