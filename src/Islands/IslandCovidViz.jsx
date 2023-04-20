@@ -10,7 +10,7 @@ export const IslandCovidViz = () => {
         {/* <IslandCylinder position={ISLANDS.CovidVizPosition} /> */}
         <Tablet
           position={ISLANDS.CovidVizModelPosition}
-          rotation={[Math.PI, Math.PI, -Math.PI / 8]}
+          rotation={[Math.PI, Math.PI * 0.775, -Math.PI * 0.1]}
           map={"/textures/pandemic.jpg"}
         />
         <Suspense fallback={null}>
@@ -19,11 +19,12 @@ export const IslandCovidViz = () => {
             center
             fontSize={SCENE.FONT_SIZE}
             position={ISLANDS.CovidVizTextPosition}
-            rotation-y={-Math.PI / 2}
+            rotation-y={-Math.PI * 0.25}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Pandemic
           </Text>
         </Suspense>

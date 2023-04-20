@@ -14,7 +14,7 @@ export const IslandFinanceViz = () => {
         /> */}
         <Tablet
           position={ISLANDS.FinanceVizModelPosition}
-          rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
+          rotation={[Math.PI, Math.PI * 0.375, -Math.PI * 0.1]}
           map={"/textures/FTSEViz.jpg"}
         />
         <Suspense fallback={null}>
@@ -23,10 +23,12 @@ export const IslandFinanceViz = () => {
             center
             fontSize={SCENE.FONT_SIZE}
             position={ISLANDS.FinanceVizTextPosition}
+            rotation-y={Math.PI * 0.15}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Financial
           </Text>
         </Suspense>
