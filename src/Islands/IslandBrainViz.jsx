@@ -41,7 +41,7 @@ export const IslandBrainViz = ({ islandNumber }) => {
       >
         <Tablet
           position={ISLANDS.BrainVizModelPosition}
-          rotation={[Math.PI, -Math.PI / 2, -Math.PI / 8]}
+          rotation={[Math.PI, Math.PI * 1.2, -Math.PI * 0.1]}
           map={"/textures/brainVisualisation.jpg"}
         />
         <Suspense fallback={null}>
@@ -50,7 +50,7 @@ export const IslandBrainViz = ({ islandNumber }) => {
             center
             fontSize={SCENE.FONT_SIZE}
             position={ISLANDS.BrainVizTextPosition}
-            rotation-y={Math.PI}
+            rotation-y={Math.PI * 1.3}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
