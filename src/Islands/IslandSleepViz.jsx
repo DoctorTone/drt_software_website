@@ -35,9 +35,10 @@ export const IslandSleepViz = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Tablet
-          position={ISLANDS.MedVizModelPosition}
+          position={ISLANDS.SleepVizModelPosition}
           rotation={[Math.PI, 0, -Math.PI / 8]}
           map={"/textures/sleepData.jpg"}
         />
@@ -46,12 +47,13 @@ export const IslandSleepViz = ({ islandNumber }) => {
             color="white"
             center
             fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.MedVizTextPosition}
+            position={ISLANDS.SleepVizTextPosition}
             rotation-y={Math.PI / 2}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Sleep
           </Text>
         </Suspense>

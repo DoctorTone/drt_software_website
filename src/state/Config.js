@@ -84,21 +84,21 @@ const ISLANDS = {
   MedVizModelPosition: [6, 2, 0],
   MedVizTextPosition: [6, 3.5, 0],
   // Brain viz island
-  BrainVizPosition: [0, 0, -6],
-  BrainVizModelPosition: [0, 2, -6],
-  BrainVizTextPosition: [0, 3.5, -6],
+  BrainVizPosition: [-3.927, 0, -3.527],
+  BrainVizModelPosition: [-3.927, 2, -3.527],
+  BrainVizTextPosition: [-3.927, 3.5, -3.527],
   // Covid viz island
-  CovidVizPosition: [-6, 0, 0],
-  CovidVizModelPosition: [-6, 2, 0],
-  CovidVizTextPosition: [-6, 3.5, 0],
+  CovidVizPosition: [-3.927, 0, 3.527],
+  CovidVizModelPosition: [-3.927, 2, 3.527],
+  CovidVizTextPosition: [-3.927, 3.5, 3.527],
   // Finance viz island
-  FinanceVizPosition: [0, 0, 6],
-  FinanceVizModelPosition: [0, 2, 6],
-  FinanceVizTextPosition: [0, 3.5, 6],
+  FinanceVizPosition: [1.854, 0, 5.706],
+  FinanceVizModelPosition: [1.854, 2, 5.706],
+  FinanceVizTextPosition: [1.854, 3.5, 5.706],
   // Sleep viz island
-  SleepVizPosition: [0, 0, 6],
-  SleepVizModelPosition: [0, 2, 6],
-  SleepVizTextPosition: [0, 3.5, 6],
+  SleepVizPosition: [1.854, 0, -5.706],
+  SleepVizModelPosition: [1.854, 2, -5.706],
+  SleepVizTextPosition: [1.854, 3.5, -5.706],
 };
 
 export { SCENE, ISLANDS };

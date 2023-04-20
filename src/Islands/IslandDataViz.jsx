@@ -17,7 +17,7 @@ export const IslandDataViz = ({ islandNumber }) => {
       const nextScene = {
         level: SCENE.LEVEL_2,
         scene: "dataviz",
-        islands: 4,
+        islands: 5,
         activeIsland: 3,
         direction: SCENE.ANIMATE_DOWN,
       };
@@ -43,7 +43,8 @@ export const IslandDataViz = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Island position={ISLANDS.DataVizPosition} />
         <DataViz position={ISLANDS.DataVizModelPosition} scale={0.15} />
         <Shadow
@@ -65,7 +66,8 @@ export const IslandDataViz = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Data Viz
           </Text>
         </Suspense>
