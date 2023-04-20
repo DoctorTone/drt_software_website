@@ -53,6 +53,8 @@ const useStore = create((set) => ({
   showRealTimeModal: (show) => set({ realTimeModalVisible: show }),
   covidVizModal: false,
   showCovidVizModal: (show) => set({ covidVizModal: show }),
+  financeVizModal: false,
+  showFinanceVizModal: (show) => set({ financeVizModal: show }),
 
   // Scene animations
   sceneAnimationState: SCENE.ANIMATE_NONE,
