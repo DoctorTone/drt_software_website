@@ -45,10 +45,7 @@ const ThreeApp = () => {
   }, []);
 
   useEffect(() => {
-    // DEBUG
-    console.log("New scene = ", activeScene);
     activeRef.current = allRefs[activeScene].current;
-    console.log("Active ref = ", activeRef.current.position);
     rotIncrement.current = (Math.PI * 2) / numIslands;
   }, [activeScene, numIslands]);
 
@@ -99,7 +96,8 @@ const ThreeApp = () => {
           <group
             ref={allRefs["main"]}
             name="main"
-            position-y={SCENE.GROUND_LEVEL}>
+            position-y={SCENE.GROUND_LEVEL}
+          >
             <MainScene />
           </group>
         )}
@@ -107,7 +105,8 @@ const ThreeApp = () => {
           <group
             ref={allRefs["portfolio"]}
             name="portfolio"
-            position-y={SCENE.GROUND_LEVEL}>
+            position-y={SCENE.GROUND_LEVEL}
+          >
             <PortfolioScene />
           </group>
         )}
@@ -115,7 +114,8 @@ const ThreeApp = () => {
           <group
             ref={allRefs["dataviz"]}
             name="dataviz"
-            position-y={SCENE.GROUND_LEVEL}>
+            position-y={SCENE.GROUND_LEVEL}
+          >
             <DataVizScene />
           </group>
         )}
