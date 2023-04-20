@@ -39,7 +39,7 @@ export const IslandSleepViz = ({ islandNumber }) => {
       >
         <Tablet
           position={ISLANDS.SleepVizModelPosition}
-          rotation={[Math.PI, 0, -Math.PI / 8]}
+          rotation={[Math.PI, -Math.PI / 2.5, -Math.PI / 8]}
           map={"/textures/sleepData.jpg"}
         />
         <Suspense fallback={null}>
@@ -48,7 +48,7 @@ export const IslandSleepViz = ({ islandNumber }) => {
             center
             fontSize={SCENE.FONT_SIZE}
             position={ISLANDS.SleepVizTextPosition}
-            rotation-y={Math.PI / 2}
+            rotation-y={Math.PI * 0.9}
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
