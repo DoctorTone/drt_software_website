@@ -5,12 +5,12 @@ import Modal from "react-bootstrap/Modal";
 import useStore from "../state/store.js";
 
 const PandemicModal = ({ showModal }) => {
-  const showMedVizModal = useStore((state) => state.showMedVizModal);
+  const showCovidVizModal = useStore((state) => state.showCovidVizModal);
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
     setShow(false);
-    showMedVizModal(false);
+    showCovidVizModal(false);
   };
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const PandemicModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Medical Visualisation</Modal.Title>
+        <Modal.Title>Pandemic Visualisation</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
