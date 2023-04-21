@@ -51,10 +51,12 @@ const useStore = create((set) => ({
   showVRModal: (show) => set({ VRModalVisible: show }),
   realTimeModalVisible: false,
   showRealTimeModal: (show) => set({ realTimeModalVisible: show }),
-  covidVizModal: false,
-  showCovidVizModal: (show) => set({ covidVizModal: show }),
-  financeVizModal: false,
-  showFinanceVizModal: (show) => set({ financeVizModal: show }),
+  covidVizModalVisible: false,
+  showCovidVizModal: (show) => set({ covidVizModalVisible: show }),
+  financeVizModalVisible: false,
+  showFinanceVizModal: (show) => set({ financeVizModalVisible: show }),
+  sleepVizModalVisible: false,
+  showSleepVizModal: (show) => set({ sleepVizModalVisible: show }),
 
   // Scene animations
   sceneAnimationState: SCENE.ANIMATE_NONE,
