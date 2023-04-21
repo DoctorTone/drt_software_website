@@ -14,6 +14,7 @@ import VRModal from "./Modals/VRModal.jsx";
 import RealTimeModal from "./Modals/RealTimeModal.jsx";
 import SleepModal from "./Modals/SleepModal.jsx";
 import PandemicModal from "./Modals/PandemicModal.jsx";
+import FinanceModal from "./Modals/FinanceModal.jsx";
 import { Perf } from "r3f-perf";
 
 import { SCENE } from "./state/Config.js";
@@ -32,6 +33,9 @@ const App = () => {
   const realTimeModalVisible = useStore((state) => state.realTimeModalVisible);
   const sleepVizModalVisible = useStore((state) => state.sleepVizModalVisible);
   const covidVizModalVisible = useStore((state) => state.covidVizModalVisible);
+  const financeVizModalVisible = useStore(
+    (state) => state.financeVizModalVisible
+  );
 
   return (
     <>
@@ -53,6 +57,7 @@ const App = () => {
       <RealTimeModal showModal={realTimeModalVisible} />
       <SleepModal showModal={sleepVizModalVisible} />
       <PandemicModal showModal={covidVizModalVisible} />
+      <FinanceModal showModal={financeVizModalVisible} />
     </>
   );
 };

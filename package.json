@@ -23,7 +23,7 @@
     "zustand": "^4.3.2"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
