@@ -36,6 +36,29 @@ body {
   text-align: right;
 }
 
+#infoText {
+  left: 10%;
+  top: 5%;
+}
+
+.outline {
+  border: 2px solid darkslategray;
+  border-radius: 10px;
+  padding: 0.25% 0.5% 0% 0.5%;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
 .btn:hover {
   color: orange;
 }

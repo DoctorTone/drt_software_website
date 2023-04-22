@@ -68,7 +68,7 @@ const NavigationUI = () => {
 
   return (
     <>
-      <div id="home" className="panel ps-5">
+      <div id="home" className="panel ps-3">
         <div className="mb-3">
           <Button onClick={Home} variant="outline-dark">
             <House />
@@ -85,7 +85,7 @@ const NavigationUI = () => {
           </Button>
         </div>
       </div>
-      <div id="social" className="panel pe-5">
+      <div id="social" className="panel pe-3">
         <div className="mb-3">
           <Button variant="outline-dark">
             <a href="https://twitter.com/DrtSoftware" target="_blank">
@@ -98,7 +98,8 @@ const NavigationUI = () => {
             <a
               className="redLink"
               href="https://www.youtube.com/channel/UCNYHLpd8oKLoE2xw49ZX1nQ?"
-              target="_blank">
+              target="_blank"
+            >
               <Youtube />
             </a>
           </Button>
@@ -107,7 +108,8 @@ const NavigationUI = () => {
           <Button onClick={Info} variant="outline-dark">
             <a
               href="https://www.linkedin.com/in/tony-glover-4081694/"
-              target="_blank">
+              target="_blank"
+            >
               <Linkedin />
             </a>
           </Button>

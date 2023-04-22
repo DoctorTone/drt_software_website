@@ -2,7 +2,7 @@ import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { Work } from "../Models/Work.jsx";
-import { Lamp } from "../Models/Lamp.jsx";
+import { Flag } from "../Models/Flag.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
@@ -37,17 +37,18 @@ export const IslandServices = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Work
           rotation-y={Math.PI / 2}
           scale={0.1}
           position={ISLANDS.ServicesModelPosition}
         />
-        <Lamp
+        <Flag
           scale={0.425}
           position={[
             ISLANDS.ServicesModelPosition[0] + 1,
-            ISLANDS.ServicesModelPosition[1] - 0.65,
+            ISLANDS.ServicesModelPosition[1] - 0.4,
             ISLANDS.ServicesModelPosition[2] - 0.6,
           ]}
         />
@@ -70,7 +71,8 @@ export const IslandServices = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Services
           </Text>
         </Suspense>

@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import ThreeApp from "./components/ThreeApp.jsx";
 import CameraControl from "./UI/CameraControl.jsx";
 import NavigationUI from "./UI/NavigationUI.jsx";
+import InfoText from "./UI/InfoText.jsx";
 import AboutModal from "./Modals/AboutModal.jsx";
 import ContactModal from "./Modals/ContactModal.jsx";
 import ServicesModal from "./Modals/ServicesModal.jsx";
@@ -45,6 +46,7 @@ const App = () => {
       </Canvas>
       <CameraControl />
       <NavigationUI />
+      <InfoText />
       <AboutModal showModal={aboutModalVisible} />
       <ContactModal showModal={contactModalVisible} />
       <ServicesModal showModal={servicesModalVisible} />

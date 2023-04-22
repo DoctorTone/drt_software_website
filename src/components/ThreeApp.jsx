@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
 import useStore from "../state/store.js";
-import { shallow } from "zustand/shallow";
 import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
