@@ -25,9 +25,10 @@ const AboutModal = ({ showModal }) => {
       <Modal.Body>
         <p>
           I'm Dr Tony Glover and I have more than 25 years experience in the
-          software development industry. I do all things 3D - VR, metaverse,
-          virtual environments, data visualisation, games, graphical tools. If
-          you need some interactive 3D graphics then let me know!
+          software development industry. I do all things 3D - VR and virtual
+          environments, metaverse applications, data visualisation, medical
+          imaging, games and graphical tool design. If you need some interactive
+          3D graphics then let me know!
         </p>
       </Modal.Body>
 
