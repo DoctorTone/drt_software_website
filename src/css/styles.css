@@ -47,16 +47,21 @@ body {
   padding: 0.25% 0.5% 0% 0.5%;
 }
 
-.hidden {
-  visibility: hidden;
+.fader-appear,
+.fader-enter {
   opacity: 0;
-  transition: visibility 0s 2s, opacity 2s linear;
 }
-
-.visible {
-  visibility: visible;
+.fader-appear-active,
+.fader-enter.fader-enter-active {
   opacity: 1;
-  transition: opacity 2s linear;
+  transition: opacity 3000ms linear;
+}
+.fader-exit {
+  opacity: 1;
+}
+.fader-exit.fader-exit-active {
+  opacity: 0;
+  transition: opacity 3000ms linear;
 }
 
 .btn:hover {

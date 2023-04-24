@@ -24,7 +24,10 @@ const InfoModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        <p>Click the islands for more info.</p>
+        <p>
+          Use the next and previous buttons at the bottom right to rotate the
+          scene. Click on the islands for more information.
+        </p>
       </Modal.Body>
 
       <Modal.Footer>
