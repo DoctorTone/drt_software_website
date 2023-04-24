@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 
+const showTextTime = 7500;
+
 const InfoText = () => {
   const [start, setStart] = useState(false);
   const [showText, setShowText] = useState(true);
@@ -14,7 +16,7 @@ const InfoText = () => {
   useEffect(() => {
     setTimeout(() => {
       setShowText(false);
-    }, 10000);
+    }, showTextTime);
   }, []);
 
   return (
@@ -22,7 +24,7 @@ const InfoText = () => {
       {showText ? (
         <div ref={fadeRef}>
           <h4 id="infoText" className="panel outline text-center">
-            <p>Click the arrow keys to rotate scene</p>
+            <p>Click on Prev / Next keys to rotate scene</p>
             <p>Click on islands for more info</p>
           </h4>
         </div>

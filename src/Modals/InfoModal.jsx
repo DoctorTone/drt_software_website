@@ -28,6 +28,17 @@ const InfoModal = ({ showModal }) => {
           Use the next and previous buttons at the bottom right to rotate the
           scene. Click on the islands for more information.
         </p>
+        <p>
+          Thanks to the{" "}
+          <a href="https://market.pmnd.rs/" target="_blank">
+            pmndrs marketplace
+          </a>{" "}
+          and the{" "}
+          <a href="https://blendswap.com/" target="_blank">
+            blend swap
+          </a>{" "}
+          community for the majority of the models.
+        </p>
       </Modal.Body>
 
       <Modal.Footer>

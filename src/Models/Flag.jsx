@@ -11,20 +11,14 @@ export function Flag(props) {
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]}>
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube1351.geometry}
           material={materials["Blue.011"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube1351_1.geometry}
           material={materials["Brown.006"]}
         />
         <mesh
-          castShadow
-          receiveShadow
           geometry={nodes.Cube1351_2.geometry}
           material={materials["Metal.019"]}
         />

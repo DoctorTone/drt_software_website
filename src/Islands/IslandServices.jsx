@@ -48,7 +48,7 @@ export const IslandServices = ({ islandNumber }) => {
           scale={0.425}
           position={[
             ISLANDS.ServicesModelPosition[0] + 1,
-            ISLANDS.ServicesModelPosition[1] - 0.4,
+            ISLANDS.ServicesModelPosition[1] - 0.5,
             ISLANDS.ServicesModelPosition[2] - 0.6,
           ]}
         />
