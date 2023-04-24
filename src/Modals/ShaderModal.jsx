@@ -24,9 +24,11 @@ const ShaderModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        Real time physics is now possible in the browser. The following example
-        is a simple game level showing accurate physical simulation.
-        <div className="text-center">
+        Shaders provide the opportunity to create an amazing array of graphical
+        transformations, ranging from increased realism to weird and wonderful
+        effects. The following demo shows a number of effects that you can
+        switch between.
+        <div className="text-center mt-2">
           <Button className="me-2" variant="primary">
             Launch demo
           </Button>

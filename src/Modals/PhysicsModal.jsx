@@ -24,9 +24,10 @@ const PhysicsModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        Real time physics is now possible in the browser. The following example
-        is a simple game level showing accurate physical simulation.
-        <div className="text-center">
+        Sophisticated physics simulations are now possible in the browser. The
+        following demo uses the rapier physics engine to construct a simple game
+        level.
+        <div className="text-center mt-2">
           <Button className="me-2" variant="primary">
             Launch demo
           </Button>
