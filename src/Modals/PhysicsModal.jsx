@@ -25,8 +25,8 @@ const PhysicsModal = ({ showModal }) => {
 
       <Modal.Body>
         Sophisticated physics simulations are now possible in the browser. The
-        following demo uses the rapier physics engine to construct a simple game
-        level.
+        following demo uses the rapier physics engine to let you play a simple
+        game level. Enjoy!
         <div className="text-center mt-2">
           <Button className="me-2" variant="primary">
             Launch demo

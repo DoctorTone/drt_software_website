@@ -24,8 +24,12 @@ const TechModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        The majority of my work is web-based so the technologies I use reflect
-        this, such as javascript libraries like three.js and react three fiber.
+        As the majority of my work is front-end web-based I use languages and
+        frameworks such as javascript, typescript, react, bootstrap, material
+        ui, etc. For all the graphics/WebXR programming I use three.js and react
+        three fiber and GLSL for shader programming. I have also built back-end
+        applications using node, express and database functionality. For
+        desktop/native graphical applications I also have experience of Unity.
       </Modal.Body>
 
       <Modal.Footer>

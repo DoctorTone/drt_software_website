@@ -28,8 +28,8 @@ const ServicesModal = ({ showModal }) => {
           As well as bespoke software design and development, I also do 3D
           consultancy, presentations, workshops, mentoring and 3D graphical
           services (such as building 3D websites and converting three.js to
-          react three fiber). If you need help with anything 3D-related then
-          please get in touch.
+          react three fiber for example). If you need help with anything
+          3D-related then please get in touch.
         </p>
       </Modal.Body>
 
