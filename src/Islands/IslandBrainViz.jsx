@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import { Tablet } from "../Models/Tablet.jsx";
 import useStore from "../state/store.js";
@@ -36,12 +36,21 @@ export const IslandBrainViz = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Tablet
           position={ISLANDS.BrainVizModelPosition}
           rotation={[Math.PI, Math.PI * 1.2, -Math.PI * 0.1]}
           map={"/textures/brainVisualisation.jpg"}
+        />
+        <Shadow
+          scale={[2, 1, 1]}
+          opacity={0.65}
+          rotation-z={Math.PI * 0.3}
+          position={[
+            ISLANDS.BrainVizTextPosition[0] - 0.25,
+            ISLANDS.BrainVizTextPosition[1] - 3,
+            ISLANDS.BrainVizTextPosition[2] - 0.25,
+          ]}
         />
         <Suspense fallback={null}>
           <Text
@@ -53,8 +62,7 @@ export const IslandBrainViz = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
+            outlineColor="black">
             Real-Time
           </Text>
         </Suspense>

@@ -1,5 +1,5 @@
 import React, { useState, Suspense } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import { Tablet } from "../Models/Tablet.jsx";
 import useStore from "../state/store.js";
@@ -34,12 +34,21 @@ export const IslandCovidViz = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Tablet
           position={ISLANDS.CovidVizModelPosition}
           rotation={[Math.PI, Math.PI * 0.775, -Math.PI * 0.1]}
           map={"/textures/pandemic.jpg"}
+        />
+        <Shadow
+          scale={[2, 1, 1]}
+          opacity={0.65}
+          rotation-z={Math.PI * 0.75}
+          position={[
+            ISLANDS.CovidVizTextPosition[0] - 0.4,
+            ISLANDS.CovidVizTextPosition[1] - 3,
+            ISLANDS.CovidVizTextPosition[2] + 0.4,
+          ]}
         />
         <Suspense fallback={null}>
           <Text
@@ -51,8 +60,7 @@ export const IslandCovidViz = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
+            outlineColor="black">
             Pandemic
           </Text>
         </Suspense>

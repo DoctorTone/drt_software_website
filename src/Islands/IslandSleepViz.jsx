@@ -41,12 +41,12 @@ export const IslandSleepViz = ({ islandNumber }) => {
           map={"/textures/sleepData.jpg"}
         />
         <Shadow
-          scale={[1.65, 0.55, 1.25]}
+          scale={[1.85, 0.55, 1.25]}
           opacity={0.65}
           rotation-z={Math.PI * 0.9}
           position={[
             ISLANDS.SleepVizTextPosition[0] + 0.2,
-            ISLANDS.SleepVizTextPosition[1] - 3.25,
+            ISLANDS.SleepVizTextPosition[1] - 3.1,
             ISLANDS.SleepVizTextPosition[2] - 0.5,
           ]}
         />

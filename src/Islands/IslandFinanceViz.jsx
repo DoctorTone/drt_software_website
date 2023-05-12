@@ -1,5 +1,5 @@
 import React, { useState, Suspense } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import { Tablet } from "../Models/Tablet.jsx";
 import useStore from "../state/store.js";
@@ -34,12 +34,21 @@ export const IslandFinanceViz = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Tablet
           position={ISLANDS.FinanceVizModelPosition}
           rotation={[Math.PI, Math.PI * 0.375, -Math.PI * 0.1]}
           map={"/textures/FTSEViz.jpg"}
+        />
+        <Shadow
+          scale={[1.85, 0.55, 1.25]}
+          opacity={0.65}
+          rotation-z={Math.PI * 1.1}
+          position={[
+            ISLANDS.FinanceVizTextPosition[0] + 0.1,
+            ISLANDS.FinanceVizTextPosition[1] - 2.875,
+            ISLANDS.FinanceVizTextPosition[2] + 0.4,
+          ]}
         />
         <Suspense fallback={null}>
           <Text
@@ -51,8 +60,7 @@ export const IslandFinanceViz = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
+            outlineColor="black">
             Financial
           </Text>
         </Suspense>
