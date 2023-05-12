@@ -46,6 +46,8 @@ const ThreeApp = () => {
   useEffect(() => {
     activeRef.current = allRefs[activeScene].current;
     rotIncrement.current = (Math.PI * 2) / numIslands;
+    // DEBUG
+    console.log("Altered rot");
   }, [activeScene, numIslands]);
 
   useFrame((state, delta) => {
@@ -69,6 +71,8 @@ const ThreeApp = () => {
       if (activeRef.current.position.y < SCENE.GROUND_LEVEL) {
         activeRef.current.position.y = SCENE.GROUND_LEVEL;
         updateSceneAnimationState(SCENE.ANIMATE_UP);
+        topLevel.current.rotation.y = -Math.PI / 2;
+        worldRot.current = -Math.PI / 2;
       }
     }
 
@@ -76,8 +80,6 @@ const ThreeApp = () => {
       activeRef.current.position.y += delta * SCENE.UPWARD_SPEED;
       if (activeRef.current.position.y > 0) {
         activeRef.current.position.y = 0;
-        topLevel.current.rotation.y = -Math.PI / 2;
-        worldRot.current = -Math.PI / 2;
         setSceneAnimationState(SCENE.ANIMATE_NONE);
       }
     }
