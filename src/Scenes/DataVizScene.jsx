@@ -5,7 +5,7 @@ import { IslandCovidViz } from "../Islands/IslandCovidViz";
 import { IslandFinanceViz } from "../Islands/IslandFinanceViz";
 import { IslandSleepViz } from "../Islands/IslandSleepViz";
 import { Island } from "../Islands/Island.jsx";
-import { Henge } from "../Models/Henge.jsx";
+import { DataViz } from "../Models/DataViz.jsx";
 
 const DataVizScene = () => {
   return (
@@ -15,7 +15,7 @@ const DataVizScene = () => {
       <IslandCovidViz islandNumber={0} />
       <IslandBrainViz islandNumber={1} />
       <IslandSleepViz islandNumber={2} />
-      <Henge />
+      <DataViz position-y={0.2} scale={0.45} />
       <Island position-y={-7.75} scale={5} />
     </>
   );
