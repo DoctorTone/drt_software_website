@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from "react";
-import { Float, Text, useCursor } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import { Tablet } from "../Models/Tablet.jsx";
 import useStore from "../state/store.js";
@@ -34,12 +34,21 @@ export const IslandSleepViz = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Tablet
           position={ISLANDS.SleepVizModelPosition}
           rotation={[Math.PI, -Math.PI / 2.5, -Math.PI / 8]}
           map={"/textures/sleepData.jpg"}
+        />
+        <Shadow
+          scale={[1.65, 0.55, 1.25]}
+          opacity={0.65}
+          rotation-z={Math.PI * 0.9}
+          position={[
+            ISLANDS.SleepVizTextPosition[0] + 0.2,
+            ISLANDS.SleepVizTextPosition[1] - 3.25,
+            ISLANDS.SleepVizTextPosition[2] - 0.5,
+          ]}
         />
         <Suspense fallback={null}>
           <Text
@@ -51,8 +60,7 @@ export const IslandSleepViz = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
+            outlineColor="black">
             Sleep
           </Text>
         </Suspense>
