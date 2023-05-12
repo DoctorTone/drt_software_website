@@ -10,11 +10,12 @@ export const IslandVR = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
   const showVRModal = useStore((state) => state.showVRModal);
+  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
       showVRModal(true);
-      play();
+      selectSound.play();
     }
   };
 
@@ -29,7 +30,6 @@ export const IslandVR = ({ islandNumber }) => {
   };
 
   useCursor(hovered);
-  const [play] = useSound("./sounds/select.wav", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>

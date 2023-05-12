@@ -4,18 +4,18 @@ import { Island } from "./Island.jsx";
 import { Work } from "../Models/Work.jsx";
 import { Flag } from "../Models/Flag.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
-import useSound from "use-sound";
 import useStore from "../state/store.js";
 
 export const IslandServices = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const showServicesModal = useStore((state) => state.showServicesModal);
   const activeIsland = useStore((state) => state.activeIsland);
+  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
       showServicesModal(true);
-      play();
+      selectSound.play();
     }
   };
 
@@ -30,7 +30,6 @@ export const IslandServices = ({ islandNumber }) => {
   };
 
   useCursor(hovered);
-  const [play] = useSound("./sounds/select.wav", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>

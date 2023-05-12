@@ -3,17 +3,17 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { Portfolio } from "../Models/Portfolio.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
-import useSound from "use-sound";
 import useStore from "../state/store.js";
 
 export const IslandPortfolio = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const animateNextScene = useStore((state) => state.animateNextScene);
   const activeIsland = useStore((state) => state.activeIsland);
+  const [selectSound] = useState(() => new Audio("./sounds/select.mp3"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      play();
+      selectSound.play();
       const nextScene = {
         level: SCENE.LEVEL_1,
         scene: "portfolio",
@@ -36,14 +36,14 @@ export const IslandPortfolio = ({ islandNumber }) => {
   };
 
   useCursor(hovered);
-  const [play] = useSound("./sounds/select.mp3", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Portfolio position={ISLANDS.PortfolioModelPosition} />
         <Shadow
           scale={2.5}
@@ -65,7 +65,8 @@ export const IslandPortfolio = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             Portfolio
           </Text>
         </Suspense>

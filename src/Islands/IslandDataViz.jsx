@@ -3,17 +3,17 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { DataViz } from "../Models/DataViz.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
-import useSound from "use-sound";
 import useStore from "../state/store.js";
 
 export const IslandDataViz = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
   const animateNextScene = useStore((state) => state.animateNextScene);
+  const [selectSound] = useState(() => new Audio("./sounds/select.mp3"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      play();
+      selectSound.play();
       const nextScene = {
         level: SCENE.LEVEL_2,
         scene: "dataviz",
@@ -36,7 +36,6 @@ export const IslandDataViz = ({ islandNumber }) => {
   };
 
   useCursor(hovered);
-  const [play] = useSound("./sounds/select.wav", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>

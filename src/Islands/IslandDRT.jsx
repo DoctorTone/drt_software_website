@@ -4,18 +4,18 @@ import { Island } from "./Island.jsx";
 import { Tree } from "../Models/Tree.jsx";
 import { DRT } from "../Models/DRT.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
-import useSound from "use-sound";
 import useStore from "../state/store.js";
 
 export const IslandDRT = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const showAboutModal = useStore((state) => state.showAboutModal);
   const activeIsland = useStore((state) => state.activeIsland);
+  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
       showAboutModal(true);
-      play();
+      selectSound.play();
     }
   };
 
@@ -30,14 +30,14 @@ export const IslandDRT = ({ islandNumber }) => {
   };
 
   useCursor(hovered);
-  const [play] = useSound("./sounds/select.wav", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Tree position={ISLANDS.DRTTreePosition} scale={0.05} />
         <DRT position={ISLANDS.DRTModelPosition} />
         <Shadow
@@ -59,7 +59,8 @@ export const IslandDRT = ({ islandNumber }) => {
             anchorX="center"
             anchorY="middle"
             outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
+            outlineColor="black"
+          >
             About
           </Text>
         </Suspense>

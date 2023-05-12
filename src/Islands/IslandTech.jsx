@@ -3,18 +3,18 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { Keyboard } from "../Models/Keyboard.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
-import useSound from "use-sound";
 import useStore from "../state/store.js";
 
 export const IslandTech = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
   const showTechModal = useStore((state) => state.showTechModal);
+  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
       showTechModal(true);
-      play();
+      selectSound.play();
     }
   };
 
@@ -29,7 +29,6 @@ export const IslandTech = ({ islandNumber }) => {
   };
 
   useCursor(hovered);
-  const [play] = useSound("./sounds/select.wav", { volume: 0.25 });
 
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
