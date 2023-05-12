@@ -29,7 +29,11 @@ const VRModal = ({ showModal }) => {
         develop simulations, games, educational apps and more, all in the
         browser. Click below to explore a VR world.
         <div className="text-center mt-2">
-          <Button className="me-2" variant="primary">
+          <Button
+            href="https://drt-software.com/Demos/VRFramework/VRFramework.html"
+            target="_blank"
+            className="me-2"
+            variant="primary">
             Launch demo
           </Button>
         </div>

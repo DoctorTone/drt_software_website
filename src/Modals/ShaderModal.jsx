@@ -29,7 +29,11 @@ const ShaderModal = ({ showModal }) => {
         effects. The following demo shows a number of effects that you can
         switch between.
         <div className="text-center mt-2">
-          <Button className="me-2" variant="primary">
+          <Button
+            href="https://drt-software.com/Demos/Effects/effects.html"
+            target="_blank"
+            className="me-2"
+            variant="primary">
             Launch demo
           </Button>
         </div>

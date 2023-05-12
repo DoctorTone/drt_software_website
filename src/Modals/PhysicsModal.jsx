@@ -28,7 +28,11 @@ const PhysicsModal = ({ showModal }) => {
         following demo uses the rapier physics engine to let you play a simple
         game level. Enjoy!
         <div className="text-center mt-2">
-          <Button className="me-2" variant="primary">
+          <Button
+            href="https://drt-software.com/Demos/Physics/physics_demo.html"
+            target="_blank"
+            className="me-2"
+            variant="primary">
             Launch demo
           </Button>
         </div>
