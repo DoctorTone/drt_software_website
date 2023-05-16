@@ -38,7 +38,7 @@ export const IslandFinanceViz = ({ islandNumber }) => {
         <Tablet
           position={ISLANDS.FinanceVizModelPosition}
           rotation={[Math.PI, Math.PI * 0.375, -Math.PI * 0.1]}
-          map={"/textures/FTSEViz.jpg"}
+          map={"./textures/FTSEViz.jpg"}
         />
         <Shadow
           scale={[1.85, 0.55, 1.25]}

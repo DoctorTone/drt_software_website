@@ -8,7 +8,7 @@ import { useFrame } from "@react-three/fiber";
 import { SCENE } from "../state/Config.js";
 
 export function Cloud(props) {
-  const { nodes, materials } = useGLTF("/models/cloud.glb");
+  const { nodes, materials } = useGLTF("./models/cloud.glb");
   const cloud = useRef();
 
   useFrame((state, delta) => {
@@ -39,4 +39,4 @@ export function Cloud(props) {
   );
 }
 
-useGLTF.preload("/models/cloud.glb");
+useGLTF.preload("./models/cloud.glb");

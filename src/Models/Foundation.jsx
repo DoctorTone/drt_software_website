@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Foundation(props) {
-  const { nodes, materials } = useGLTF("/models/foundation.gltf");
+  const { nodes, materials } = useGLTF("./models/foundation.gltf");
   return (
     <group {...props} dispose={null}>
       <group>
@@ -22,4 +22,4 @@ export function Foundation(props) {
   );
 }
 
-useGLTF.preload("/models/foundation.gltf");
+useGLTF.preload("./models/foundation.gltf");

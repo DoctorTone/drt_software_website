@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Fish(props) {
-  const { nodes, materials } = useGLTF("/models/fish.gltf");
+  const { nodes, materials } = useGLTF("./models/fish.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -31,4 +31,4 @@ export function Fish(props) {
   );
 }
 
-useGLTF.preload("/models/fish.gltf");
+useGLTF.preload("./models/fish.gltf");

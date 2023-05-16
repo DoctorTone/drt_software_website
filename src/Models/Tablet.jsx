@@ -6,7 +6,7 @@ import React from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 
 export function Tablet(props) {
-  const { nodes, materials } = useGLTF("/models/tablet.glb");
+  const { nodes, materials } = useGLTF("./models/tablet.glb");
   const texture = useTexture(props.map);
   texture.flipY = false;
 
@@ -31,4 +31,4 @@ export function Tablet(props) {
   );
 }
 
-useGLTF.preload("/models/tablet.glb");
+useGLTF.preload("./models/tablet.glb");

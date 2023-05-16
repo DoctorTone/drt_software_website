@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Keyboard(props) {
-  const { nodes, materials } = useGLTF("/models/keyboard.glb");
+  const { nodes, materials } = useGLTF("./models/keyboard.glb");
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Cube027.geometry}>
@@ -25,4 +25,4 @@ export function Keyboard(props) {
   );
 }
 
-useGLTF.preload("/models/keyboard.glb");
+useGLTF.preload("./models/keyboard.glb");

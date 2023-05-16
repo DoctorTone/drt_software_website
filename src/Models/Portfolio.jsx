@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Portfolio(props) {
-  const { nodes, materials } = useGLTF("/models/portfolio.glb");
+  const { nodes, materials } = useGLTF("./models/portfolio.glb");
   return (
     <group {...props} dispose={null}>
       <group
@@ -59,4 +59,4 @@ export function Portfolio(props) {
   );
 }
 
-useGLTF.preload("/models/portfolio.glb");
+useGLTF.preload("./models/portfolio.glb");

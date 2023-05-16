@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function DataViz(props) {
-  const { nodes, materials } = useGLTF("/models/dataViz.glb");
+  const { nodes, materials } = useGLTF("./models/dataViz.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -46,4 +46,4 @@ export function DataViz(props) {
   );
 }
 
-useGLTF.preload("/models/dataViz.glb");
+useGLTF.preload("./models/dataViz.glb");

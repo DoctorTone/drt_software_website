@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function DRT(props) {
-  const { nodes, materials } = useGLTF("/models/DRT-Text.gltf");
+  const { nodes, materials } = useGLTF("./models/DRT-Text.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -19,4 +19,4 @@ export function DRT(props) {
   );
 }
 
-useGLTF.preload("/models/DRT-Text.gltf");
+useGLTF.preload("./models/DRT-Text.gltf");

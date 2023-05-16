@@ -46,7 +46,7 @@ export const IslandMedViz = ({ islandNumber }) => {
         <Tablet
           position={ISLANDS.MedVizModelPosition}
           rotation={[Math.PI, 0, -Math.PI / 8]}
-          map={"/textures/volumeRender.jpg"}
+          map={"./textures/volumeRender.jpg"}
         />
         <Shadow
           scale={[0.65, 1.55, 1.25]}

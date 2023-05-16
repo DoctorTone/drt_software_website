@@ -10,7 +10,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function VR(props) {
-  const { nodes, materials } = useGLTF("/models/vr_headset.glb");
+  const { nodes, materials } = useGLTF("./models/vr_headset.glb");
   return (
     <group {...props} dispose={null}>
       <group position={[-3.96, 0.04, -0.14]}>
@@ -26,4 +26,4 @@ export function VR(props) {
   );
 }
 
-useGLTF.preload("/models/vr_headset.glb");
+useGLTF.preload("./models/vr_headset.glb");

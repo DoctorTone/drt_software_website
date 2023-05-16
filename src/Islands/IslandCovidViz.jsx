@@ -38,7 +38,7 @@ export const IslandCovidViz = ({ islandNumber }) => {
         <Tablet
           position={ISLANDS.CovidVizModelPosition}
           rotation={[Math.PI, Math.PI * 0.775, -Math.PI * 0.1]}
-          map={"/textures/pandemic.jpg"}
+          map={"./textures/pandemic.jpg"}
         />
         <Shadow
           scale={[2, 1, 1]}

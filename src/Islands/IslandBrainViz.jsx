@@ -40,7 +40,7 @@ export const IslandBrainViz = ({ islandNumber }) => {
         <Tablet
           position={ISLANDS.BrainVizModelPosition}
           rotation={[Math.PI, Math.PI * 1.2, -Math.PI * 0.1]}
-          map={"/textures/brainVisualisation.jpg"}
+          map={"./textures/brainVisualisation.jpg"}
         />
         <Shadow
           scale={[2, 1, 1]}

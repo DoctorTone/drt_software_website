@@ -7,7 +7,7 @@ import { useGLTF } from "@react-three/drei";
 import { MeshStandardMaterial } from "three";
 
 export function Henge(props) {
-  const { nodes, materials } = useGLTF("/models/henge.gltf");
+  const { nodes, materials } = useGLTF("./models/henge.gltf");
   const stone = 0x777777;
 
   return (
@@ -37,4 +37,4 @@ export function Henge(props) {
   );
 }
 
-useGLTF.preload("/models/henge.gltf");
+useGLTF.preload("./models/henge.gltf");

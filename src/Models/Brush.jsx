@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Brush(props) {
-  const { nodes, materials } = useGLTF("/models/artistBrush.gltf");
+  const { nodes, materials } = useGLTF("./models/artistBrush.gltf");
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI, 0, 0]} scale={0.3}>

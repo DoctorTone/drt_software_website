@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dog(props) {
-  const { nodes, materials } = useGLTF("/models/dog.gltf");
+  const { nodes, materials } = useGLTF("./models/dog.gltf");
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Mesh001.geometry} material={materials.eyes} />
@@ -26,4 +26,4 @@ export function Dog(props) {
   );
 }
 
-useGLTF.preload("/models/dog.gltf");
+useGLTF.preload("./models/dog.gltf");

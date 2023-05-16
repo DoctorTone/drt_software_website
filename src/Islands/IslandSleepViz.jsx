@@ -38,7 +38,7 @@ export const IslandSleepViz = ({ islandNumber }) => {
         <Tablet
           position={ISLANDS.SleepVizModelPosition}
           rotation={[Math.PI, -Math.PI / 2.5, -Math.PI / 8]}
-          map={"/textures/sleepData.jpg"}
+          map={"./textures/sleepData.jpg"}
         />
         <Shadow
           scale={[1.85, 0.55, 1.25]}
