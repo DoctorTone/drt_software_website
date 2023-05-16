@@ -24,24 +24,23 @@ const FinanceModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        I've previously worked in the medical imaging industry developing
-        applications that take 2D imaging data and create 3D volumetric models.
-        The following demo was used to isolate and measure tumerous lesions in
-        the brain.
+        This demo offers a novel method to visualise data in three dimensions.
+        The application visualises the FTSE-100 index for the whole of 2016. It
+        illustrates the share price trends on a daily, weekly and monthly basis.
+        The height of each bar also corresponds to the share price trend
+        throughout the year.
         <div className="text-center mt-2">
           <Button
             className="me-2"
             variant="primary"
-            href="https://www.drt-software.com/MedicalViz/medicalViz.html"
-            target="_blank"
-          >
+            href="https://www.drt-software.com/FTSEViz/FTSEViz.html"
+            target="_blank">
             Launch demo
           </Button>
           <Button
             variant="warning"
-            href="https://www.youtube.com/watch?v=MoKVrdJoqAM"
-            target="_blank"
-          >
+            href="https://www.youtube.com/watch?v=P-B_Tk56038"
+            target="_blank">
             Launch video
           </Button>
         </div>

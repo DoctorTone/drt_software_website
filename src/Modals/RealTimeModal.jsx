@@ -24,24 +24,23 @@ const RealTimeModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        Processing data over the web can result in being able to visualise data
-        in real-time. At the Mayhem Horror festival we visualised the EEG
-        activity of film fans as they watched the horror! Made in conjunction
-        with colleagues at Thrill Laboratory and the Mixed Reality Lab.
+        Processing data over the web makes it an ideal platform to be able to
+        visualise data in real-time. At the Mayhem Horror festival we visualised
+        the EEG activity of film fans as they watched the horror! Made in
+        conjunction with colleagues at Thrill Laboratory and the Mixed Reality
+        Lab.
         <div className="text-center mt-2">
           <Button
             className="me-2"
             variant="primary"
-            href="https://www.drt-software.com/MedicalViz/medicalViz.html"
-            target="_blank"
-          >
+            href="https://www.drt-software.com/Horror/brainViz.html"
+            target="_blank">
             Launch demo
           </Button>
           <Button
             variant="warning"
-            href="https://www.youtube.com/watch?v=MoKVrdJoqAM"
-            target="_blank"
-          >
+            href="https://www.youtube.com/watch?v=I-VyOMYmE5U"
+            target="_blank">
             Launch video
           </Button>
         </div>

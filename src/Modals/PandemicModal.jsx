@@ -24,24 +24,26 @@ const PandemicModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        I've previously worked in the medical imaging industry developing
-        applications that take 2D imaging data and create 3D volumetric models.
-        The following demo was used to isolate and measure tumerous lesions in
-        the brain.
+        During the global pandemic, data visualisation played a key role in
+        providing information and analysis of the virus. The huge quantities of
+        data generated have been utilsied by both scientific and governmental
+        bodies to help inform policy decisions. They also provide the general
+        public with a means to scrutinise all the information. This
+        visualisation shows the virus data for the first wave in the UK. It
+        separates out aspects of the data so that they may be studied more
+        easily, yet still allows comparisons to be made.
         <div className="text-center mt-2">
           <Button
             className="me-2"
             variant="primary"
-            href="https://www.drt-software.com/MedicalViz/medicalViz.html"
-            target="_blank"
-          >
+            href="https://www.drt-software.com/Covid/covid19.html"
+            target="_blank">
             Launch demo
           </Button>
           <Button
             variant="warning"
-            href="https://www.youtube.com/watch?v=MoKVrdJoqAM"
-            target="_blank"
-          >
+            href="https://www.youtube.com/watch?v=hWqefIG6otA&t=34s"
+            target="_blank">
             Launch video
           </Button>
         </div>

@@ -24,24 +24,24 @@ const SleepModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        I've previously worked in the medical imaging industry developing
-        applications that take 2D imaging data and create 3D volumetric models.
-        The following demo was used to isolate and measure tumerous lesions in
-        the brain.
+        I've built numerous 3D data visualisations as I think it offers a
+        different perspective to more conventional ways to present data. This
+        example depicts sleep patterns for a subject over a number of months,
+        illustrating all the associated attributes. The application is fully
+        interactive allowing individual attribute selection, scaling and
+        highlighting of any relevant trends.
         <div className="text-center mt-2">
           <Button
             className="me-2"
             variant="primary"
-            href="https://www.drt-software.com/MedicalViz/medicalViz.html"
-            target="_blank"
-          >
+            href="https://www.drt-software.com/SleepViz/sleepViz.html"
+            target="_blank">
             Launch demo
           </Button>
           <Button
             variant="warning"
-            href="https://www.youtube.com/watch?v=MoKVrdJoqAM"
-            target="_blank"
-          >
+            href="https://www.youtube.com/watch?v=ZTOuC_TjjB8"
+            target="_blank">
             Launch video
           </Button>
         </div>
