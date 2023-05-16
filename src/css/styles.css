@@ -36,9 +36,13 @@ body {
   text-align: right;
 }
 
-#infoText {
-  left: 10%;
+#infoTextTop {
+  left: 7.5%;
   top: 5%;
+}
+#infoTextBottom {
+  left: 20%;
+  top: 12%;
 }
 
 .outline {

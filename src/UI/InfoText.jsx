@@ -23,8 +23,10 @@ const InfoText = () => {
     <>
       {showText ? (
         <div ref={fadeRef}>
-          <h4 id="infoText" className="panel outline text-center">
+          <h4 id="infoTextTop" className="panel outline text-center">
             <p>Click on Prev / Next keys to rotate scene</p>
+          </h4>
+          <h4 id="infoTextBottom" className="panel outline text-center">
             <p>Click on islands for more info</p>
           </h4>
         </div>
