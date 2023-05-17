@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, Suspense } from "react";
 import { useFrame } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
 import useStore from "../state/store.js";
@@ -70,9 +70,9 @@ const ThreeApp = () => {
       activeRef.current.position.y -= delta * SCENE.DOWNWARD_SPEED;
       if (activeRef.current.position.y < SCENE.GROUND_LEVEL) {
         activeRef.current.position.y = SCENE.GROUND_LEVEL;
-        updateSceneAnimationState(SCENE.ANIMATE_UP);
         topLevel.current.rotation.y = -Math.PI / 2;
         worldRot.current = -Math.PI / 2;
+        updateSceneAnimationState(SCENE.ANIMATE_UP);
       }
     }
 
@@ -97,27 +97,30 @@ const ThreeApp = () => {
           <group
             ref={allRefs["main"]}
             name="main"
-            position-y={SCENE.GROUND_LEVEL}
-          >
-            <MainScene />
+            position-y={SCENE.GROUND_LEVEL}>
+            <Suspense fallback={null}>
+              <MainScene />
+            </Suspense>
           </group>
         )}
         {currentLevel === SCENE.LEVEL_1 && (
           <group
             ref={allRefs["portfolio"]}
             name="portfolio"
-            position-y={SCENE.GROUND_LEVEL}
-          >
-            <PortfolioScene />
+            position-y={SCENE.GROUND_LEVEL}>
+            <Suspense fallback={null}>
+              <PortfolioScene />
+            </Suspense>
           </group>
         )}
         {currentLevel === SCENE.LEVEL_2 && (
           <group
             ref={allRefs["dataviz"]}
             name="dataviz"
-            position-y={SCENE.GROUND_LEVEL}
-          >
-            <DataVizScene />
+            position-y={SCENE.GROUND_LEVEL}>
+            <Suspense fallback={null}>
+              <DataVizScene />
+            </Suspense>
           </group>
         )}
       </group>
