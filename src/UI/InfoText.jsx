@@ -1,17 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
-import { CSSTransition } from "react-transition-group";
+import React, { useState, useEffect } from "react";
 
 const showTextTime = 7500;
 
 const InfoText = () => {
-  const [start, setStart] = useState(false);
   const [showText, setShowText] = useState(true);
-  const fadeRef = useRef();
-
-  const hideText = () => {
-    console.log("Hiding text");
-    setShowText(false);
-  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,13 +14,13 @@ const InfoText = () => {
   return (
     <>
       {showText ? (
-        <div ref={fadeRef}>
-          <h4 id="infoTextTop" className="panel outline text-center">
-            <p>Click on Prev / Next keys to rotate scene</p>
-          </h4>
-          <h4 id="infoTextBottom" className="panel outline text-center">
+        <div>
+          <h5 id="infoTextTop" className="panel outline text-center">
+            <p>Click on Prev / Next to rotate scene</p>
+          </h5>
+          <h5 id="infoTextBottom" className="panel outline text-center">
             <p>Click on islands for more info</p>
-          </h4>
+          </h5>
         </div>
       ) : null}
     </>

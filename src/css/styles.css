@@ -38,15 +38,15 @@ body {
 
 #infoTextTop {
   left: 7.5%;
-  top: 5%;
+  top: 1%;
 }
 #infoTextBottom {
-  left: 20%;
-  top: 12%;
+  left: 15%;
+  top: 10%;
 }
 
 .outline {
-  border: 2px solid darkslategray;
+  border: 0px solid darkslategray;
   border-radius: 10px;
   padding: 0.25% 0.5% 0% 0.5%;
 }
