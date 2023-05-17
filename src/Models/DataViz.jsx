@@ -13,34 +13,34 @@ export function DataViz(props) {
         geometry={nodes.Cube.geometry}
         position={[0, 2, 1.25]}
         scale={[1, 2, 1]}>
-        <meshStandardMaterial color="grey" />
+        <meshLambertMaterial color="grey" />
       </mesh>
       <mesh
         geometry={nodes.Cube.geometry}
         position={[0, 2.5, -1.25]}
         scale={[1, 2.5, 1]}>
-        <meshStandardMaterial color="grey" />
+        <meshLambertMaterial color="grey" />
       </mesh>
       <mesh
         geometry={nodes.Cube.geometry}
         position={[0, 3, -3.75]}
         scale={[1, 3, 1]}>
-        <meshStandardMaterial color="orange" />
+        <meshLambertMaterial color="orange" />
       </mesh>
       <mesh
         geometry={nodes.Cube.geometry}
         position={[0, 3.5, -6.25]}
         scale={[1, 3.5, 1]}>
-        <meshStandardMaterial color="grey" />
+        <meshLambertMaterial color="grey" />
       </mesh>
       <mesh
         geometry={nodes.Cube.geometry}
         position={[0, 1.5, 3.75]}
         scale={[1, 1.5, 1]}>
-        <meshStandardMaterial color="grey" />
+        <meshLambertMaterial color="grey" />
       </mesh>
       <mesh geometry={nodes.Cube.geometry} position={[0, 1, 6.25]}>
-        <meshStandardMaterial color="grey" />
+        <meshLambertMaterial color="grey" />
       </mesh>
     </group>
   );

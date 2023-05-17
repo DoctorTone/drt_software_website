@@ -9,16 +9,8 @@ export function Island(props) {
   const { nodes, materials } = useGLTF("./models/singleIsland.glb");
   return (
     <group {...props} dispose={null}>
-      <mesh
-        receiveShadow
-        geometry={nodes.Cube001.geometry}
-        material={materials.Earth}
-      />
-      <mesh
-        receiveShadow
-        geometry={nodes.Cube001_1.geometry}
-        material={materials.Grass}
-      />
+      <mesh geometry={nodes.Cube001.geometry} material={materials.Earth} />
+      <mesh geometry={nodes.Cube001_1.geometry} material={materials.Grass} />
     </group>
   );
 }
