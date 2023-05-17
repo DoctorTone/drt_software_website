@@ -10,8 +10,6 @@ export function Tree(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes["tree-spruce"].geometry}
         material={materials.color_main}
       />
