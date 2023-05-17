@@ -35,8 +35,7 @@ export const IslandTech = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Island position={ISLANDS.TechPosition} />
         <Keyboard
           position={ISLANDS.TechModelPosition}
@@ -52,21 +51,18 @@ export const IslandTech = ({ islandNumber }) => {
             ISLANDS.TechTextPosition[2],
           ]}
         />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.TechTextPosition}
-            rotation-y={ISLANDS.TechTextRotation}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
-            Tech
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.TechTextPosition}
+          rotation-y={ISLANDS.TechTextRotation}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          Tech
+        </Text>
       </group>
     </Float>
   );

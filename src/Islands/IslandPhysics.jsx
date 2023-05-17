@@ -35,8 +35,7 @@ export const IslandPhysics = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Island position={ISLANDS.PhysicsPosition} />
         <Physics
           position={ISLANDS.PhysicsModelPosition}
@@ -52,21 +51,18 @@ export const IslandPhysics = ({ islandNumber }) => {
             ISLANDS.PhysicsTextPosition[2],
           ]}
         />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.PhysicsTextPosition}
-            rotation-y={ISLANDS.PhysicsTextRotation}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
-            Physics
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.PhysicsTextPosition}
+          rotation-y={ISLANDS.PhysicsTextRotation}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          Physics
+        </Text>
       </group>
     </Float>
   );

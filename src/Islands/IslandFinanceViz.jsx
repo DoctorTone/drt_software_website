@@ -50,20 +50,18 @@ export const IslandFinanceViz = ({ islandNumber }) => {
             ISLANDS.FinanceVizTextPosition[2] + 0.4,
           ]}
         />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.FinanceVizTextPosition}
-            rotation-y={Math.PI * 0.15}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
-            Financial
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.FinanceVizTextPosition}
+          rotation-y={Math.PI * 0.15}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          Financial
+        </Text>
       </group>
     </Float>
   );

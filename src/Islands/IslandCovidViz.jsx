@@ -50,20 +50,18 @@ export const IslandCovidViz = ({ islandNumber }) => {
             ISLANDS.CovidVizTextPosition[2] + 0.4,
           ]}
         />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.CovidVizTextPosition}
-            rotation-y={-Math.PI * 0.25}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
-            Pandemic
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.CovidVizTextPosition}
+          rotation-y={-Math.PI * 0.25}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          Pandemic
+        </Text>
       </group>
     </Float>
   );

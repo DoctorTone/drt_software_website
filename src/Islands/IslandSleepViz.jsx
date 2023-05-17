@@ -50,20 +50,18 @@ export const IslandSleepViz = ({ islandNumber }) => {
             ISLANDS.SleepVizTextPosition[2] - 0.5,
           ]}
         />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.SleepVizTextPosition}
-            rotation-y={Math.PI * 0.9}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
-            Sleep
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.SleepVizTextPosition}
+          rotation-y={Math.PI * 0.9}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          Sleep
+        </Text>
       </group>
     </Float>
   );

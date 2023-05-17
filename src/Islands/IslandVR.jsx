@@ -48,20 +48,18 @@ export const IslandVR = ({ islandNumber }) => {
             ISLANDS.VRTextPosition[2],
           ]}
         />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.VRTextPosition}
-            rotation-y={ISLANDS.VRTextRotation}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
-            VR
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.VRTextPosition}
+          rotation-y={ISLANDS.VRTextRotation}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          VR
+        </Text>
       </group>
     </Float>
   );

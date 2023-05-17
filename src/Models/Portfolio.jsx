@@ -20,37 +20,35 @@ export function Portfolio(props) {
               material={materials["80DEEA"]}
             />
             <mesh geometry={nodes.Mesh_1.geometry}>
-              <meshStandardMaterial color="orange" />
+              <meshLambertMaterial color="orange" />
             </mesh>
             <mesh
               geometry={nodes.Mesh_2.geometry}
               material={materials["455A64"]}
             />
             <mesh geometry={nodes.Mesh_3.geometry}>
-              <meshStandardMaterial color="orange" />
+              <meshLambertMaterial color="orange" />
             </mesh>
           </group>
         </group>
       </group>
       <group position={[-0.36, 0.36, 0]} scale={4.23}>
         <mesh geometry={nodes.Cube001_1.geometry}>
-          <meshStandardMaterial color="grey" />
+          <meshLambertMaterial color="grey" />
         </mesh>
         <mesh geometry={nodes.Cube001_2.geometry}>
-          <meshStandardMaterial color="darkgrey" />
+          <meshLambertMaterial color="darkgrey" />
         </mesh>
         <mesh geometry={nodes.Cube001_3.geometry}>
-          <meshStandardMaterial color="grey" />
+          <meshLambertMaterial color="grey" />
         </mesh>
       </group>
       <group position={[0.15, -0.12, 0]} scale={4.23}>
         <mesh geometry={nodes.Cube002.geometry}>
-          <meshStandardMaterial color="grey" />
+          <meshLambertMaterial color="grey" />
         </mesh>
       </group>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.node_id51001.geometry}
         position={[0.07, -0.12, 0]}
         scale={[5.2, 4.57, 5.2]}

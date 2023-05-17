@@ -57,7 +57,6 @@ export const IslandMedViz = ({ islandNumber }) => {
             ISLANDS.MedVizTextPosition[2],
           ]}
         />
-        {/* <Suspense fallback={null}> */}
         <Text
           color="white"
           center
@@ -70,7 +69,6 @@ export const IslandMedViz = ({ islandNumber }) => {
           outlineColor="black">
           Medical
         </Text>
-        {/* </Suspense> */}
       </group>
     </Float>
   );

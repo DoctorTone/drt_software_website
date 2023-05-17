@@ -15,7 +15,7 @@ export function VR(props) {
     <group {...props} dispose={null}>
       <group position={[-3.96, 0.04, -0.14]}>
         <mesh geometry={nodes.VR_Screen_aiStandardSurface1_0.geometry}>
-          <meshStandardMaterial color="orange" />
+          <meshLambertMaterial color="orange" />
         </mesh>
       </group>
       <mesh

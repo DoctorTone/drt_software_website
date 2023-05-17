@@ -20,7 +20,7 @@ export function Dog(props) {
         material={materials["body_orange-light"]}
       />
       <mesh geometry={nodes.Mesh002_1.geometry}>
-        <meshStandardMaterial color="darkorange" />
+        <meshLambertMaterial color="darkorange" />
       </mesh>
     </group>
   );

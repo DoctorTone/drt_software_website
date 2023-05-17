@@ -34,8 +34,7 @@ export const IslandShaders = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Island position={ISLANDS.ShaderPosition} />
         <RoundedBox position={ISLANDS.ShaderModelPosition} scale={1}>
           <meshStandardMaterial color="grey" />
@@ -49,21 +48,18 @@ export const IslandShaders = ({ islandNumber }) => {
             ISLANDS.ShaderTextPosition[2],
           ]}
         />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.ShaderTextPosition}
-            rotation-y={ISLANDS.ShaderTextRotation}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
-            Shaders
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.ShaderTextPosition}
+          rotation-y={ISLANDS.ShaderTextRotation}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          Shaders
+        </Text>
       </group>
     </Float>
   );

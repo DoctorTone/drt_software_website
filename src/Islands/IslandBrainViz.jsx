@@ -52,20 +52,18 @@ export const IslandBrainViz = ({ islandNumber }) => {
             ISLANDS.BrainVizTextPosition[2] - 0.25,
           ]}
         />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.BrainVizTextPosition}
-            rotation-y={Math.PI * 1.3}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
-            Real-Time
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.BrainVizTextPosition}
+          rotation-y={Math.PI * 1.3}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          Real-Time
+        </Text>
       </group>
     </Float>
   );
