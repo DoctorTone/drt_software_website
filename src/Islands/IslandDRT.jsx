@@ -36,8 +36,7 @@ export const IslandDRT = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Tree position={ISLANDS.DRTTreePosition} scale={0.05} />
         <DRT position={ISLANDS.DRTModelPosition} />
         <Shadow
@@ -50,20 +49,17 @@ export const IslandDRT = ({ islandNumber }) => {
           ]}
         />
         <Island position={ISLANDS.DRTPosition} />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.DRTTextPosition}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
-            About
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.DRTTextPosition}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          About
+        </Text>
       </group>
     </Float>
   );

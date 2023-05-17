@@ -15,16 +15,16 @@ export function Tablet(props) {
       <group scale={[0.1, 1.2, 0.9]}>
         <mesh geometry={nodes.Cube001.geometry}>
           {/* <meshStandardMaterial color="#333333" /> */}
-          <meshPhysicalMaterial
+          <meshLambertMaterial
             color={0xeeeeee}
-            transmission={1}
-            roughness={0.2}
-            thickness={10}
-            envMapIntensity={1.5}
+            // transmission={1}
+            // roughness={0.2}
+            // thickness={10}
+            // envMapIntensity={1.5}
           />
         </mesh>
         <mesh geometry={nodes.Cube001_1.geometry}>
-          <meshStandardMaterial map={texture} />
+          <meshLambertMaterial map={texture} />
         </mesh>
       </group>
     </group>

@@ -36,8 +36,7 @@ export const IslandServices = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}
-      >
+        onClick={selectIsland}>
         <Work
           rotation-y={Math.PI / 2}
           scale={0.1}
@@ -60,21 +59,18 @@ export const IslandServices = ({ islandNumber }) => {
           ]}
         />
         <Island position={ISLANDS.ServicesPosition} />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.ServicesTextPosition}
-            rotation-y={Math.PI}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black"
-          >
-            Services
-          </Text>
-        </Suspense>
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.ServicesTextPosition}
+          rotation-y={Math.PI}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          Services
+        </Text>
       </group>
     </Float>
   );

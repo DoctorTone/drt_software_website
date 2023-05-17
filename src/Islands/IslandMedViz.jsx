@@ -57,20 +57,20 @@ export const IslandMedViz = ({ islandNumber }) => {
             ISLANDS.MedVizTextPosition[2],
           ]}
         />
-        <Suspense fallback={null}>
-          <Text
-            color="white"
-            center
-            fontSize={SCENE.FONT_SIZE}
-            position={ISLANDS.MedVizTextPosition}
-            rotation-y={Math.PI / 2}
-            anchorX="center"
-            anchorY="middle"
-            outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-            outlineColor="black">
-            Medical
-          </Text>
-        </Suspense>
+        {/* <Suspense fallback={null}> */}
+        <Text
+          color="white"
+          center
+          fontSize={SCENE.FONT_SIZE}
+          position={ISLANDS.MedVizTextPosition}
+          rotation-y={Math.PI / 2}
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+          outlineColor="black">
+          Medical
+        </Text>
+        {/* </Suspense> */}
       </group>
     </Float>
   );
