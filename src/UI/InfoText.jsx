@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const showTextTime = 75000;
+// Show info text for specified time
+const showTextTime = 7.5 * 1000;
 
 const InfoText = () => {
   const [showText, setShowText] = useState(true);
