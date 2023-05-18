@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const showTextTime = 7500;
+const showTextTime = 75000;
 
 const InfoText = () => {
   const [showText, setShowText] = useState(true);
@@ -14,12 +14,12 @@ const InfoText = () => {
   return (
     <>
       {showText ? (
-        <div>
-          <h5 id="infoTextTop" className="panel outline text-center">
-            <p>Click on Prev / Next to rotate scene</p>
+        <div id="infoTextTop" className="panel">
+          <h5 className="outline text-center">
+            Click on Prev / Next to rotate scene
           </h5>
-          <h5 id="infoTextBottom" className="panel outline text-center">
-            <p>Click on islands for more info</p>
+          <h5 className="outline text-center ms-1 ms-md-5">
+            Click on islands for more
           </h5>
         </div>
       ) : null}
