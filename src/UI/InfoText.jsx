@@ -15,11 +15,11 @@ const InfoText = () => {
   return (
     <>
       {showText ? (
-        <div id="infoTextTop" className="panel">
-          <h5 className="outline text-center">
+        <div id="infoTextTop" className="panel orangeText">
+          <h5 className="outline dark text-center mb-3">
             Click on Prev / Next to rotate scene
           </h5>
-          <h5 className="outline text-center ms-1 ms-md-5">
+          <h5 className="outline dark text-center ms-1 ms-md-5">
             Click on islands for more
           </h5>
         </div>

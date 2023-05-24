@@ -48,6 +48,13 @@ body {
   padding: 0.5%;
 }
 
+.orangeText {
+  color: orange;
+}
+.dark {
+  background-color: rgba(0.4, 0.4, 0.4, 0.35);
+}
+
 .fader-appear,
 .fader-enter {
   opacity: 0;
