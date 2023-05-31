@@ -8,15 +8,17 @@ title: VR HEADSET | LOW POLY | FREE
 
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { MATERIALS } from "../state/Config.js";
 
 export function VR(props) {
   const { nodes, materials } = useGLTF("./models/vr_headset.glb");
   return (
     <group {...props} dispose={null}>
       <group position={[-3.96, 0.04, -0.14]}>
-        <mesh geometry={nodes.VR_Screen_aiStandardSurface1_0.geometry}>
-          <meshLambertMaterial color="orange" />
-        </mesh>
+        <mesh
+          geometry={nodes.VR_Screen_aiStandardSurface1_0.geometry}
+          material={MATERIALS.ORANGE}
+        />
       </group>
       <mesh
         geometry={nodes.VR1_lambert17_0.geometry}

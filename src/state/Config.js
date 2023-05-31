@@ -110,7 +110,7 @@ const MATERIALS = {
     color: 0x210f00,
   }),
   CLOUD: new THREE.MeshLambertMaterial({ color: "white" }),
-  GREY: new THREE.MeshLambertMaterial({ color: 0x403f4d }),
+  GREY: new THREE.MeshLambertMaterial({ color: 0x333333 }),
   ORANGE: new THREE.MeshLambertMaterial({ color: 0xcc2906 }),
   SHINY_ORANGE: new THREE.MeshPhongMaterial({ color: 0xcc2906 }),
 };

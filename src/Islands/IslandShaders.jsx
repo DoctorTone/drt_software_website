@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, RoundedBox, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
-import { SCENE, ISLANDS } from "../state/Config.js";
+import { SCENE, ISLANDS, MATERIALS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandShaders = ({ islandNumber }) => {
@@ -36,9 +36,11 @@ export const IslandShaders = ({ islandNumber }) => {
         onPointerOut={pointerOut}
         onClick={selectIsland}>
         <Island position={ISLANDS.ShaderPosition} />
-        <RoundedBox position={ISLANDS.ShaderModelPosition} scale={1}>
-          <meshStandardMaterial color="grey" />
-        </RoundedBox>
+        <RoundedBox
+          position={ISLANDS.ShaderModelPosition}
+          scale={1}
+          material={MATERIALS.GREY}
+        />
         <Shadow
           scale={1.9}
           opacity={0.85}

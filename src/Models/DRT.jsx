@@ -8,7 +8,6 @@ import { MATERIALS } from "../state/Config.js";
 
 export function DRT(props) {
   const { nodes, materials } = useGLTF("./models/DRT-Text.gltf");
-  console.log("Mats = ", materials);
   return (
     <group {...props} dispose={null}>
       <mesh
