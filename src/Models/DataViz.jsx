@@ -8,7 +8,6 @@ import { MATERIALS } from "../state/Config.js";
 
 export function DataViz(props) {
   const { nodes, materials } = useGLTF("./models/dataViz.glb");
-  console.log("Mats=  ", materials);
   return (
     <group {...props} dispose={null}>
       <mesh

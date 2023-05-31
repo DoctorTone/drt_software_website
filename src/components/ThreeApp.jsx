@@ -46,8 +46,6 @@ const ThreeApp = () => {
   useEffect(() => {
     activeRef.current = allRefs[activeScene].current;
     rotIncrement.current = (Math.PI * 2) / numIslands;
-    // DEBUG
-    console.log("Altered rot");
   }, [activeScene, numIslands]);
 
   useFrame((state, delta) => {
