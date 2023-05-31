@@ -104,4 +104,15 @@ const ISLANDS = {
   SleepVizTextPosition: [1.854, 3.5, -5.706],
 };
 
-export { SCENE, ISLANDS };
+const MATERIALS = {
+  GRASS: new THREE.MeshLambertMaterial({ color: "green" }),
+  EARTH: new THREE.MeshLambertMaterial({
+    color: 0x210f00,
+  }),
+  CLOUD: new THREE.MeshLambertMaterial({ color: "white" }),
+  GREY: new THREE.MeshLambertMaterial({ color: 0x403f4d }),
+  ORANGE: new THREE.MeshLambertMaterial({ color: 0xcc2906 }),
+  SHINY_ORANGE: new THREE.MeshPhongMaterial({ color: 0xcc2906 }),
+};
+
+export { SCENE, ISLANDS, MATERIALS };

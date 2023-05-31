@@ -42,7 +42,7 @@ const App = () => {
     <>
       <Canvas camera={{ position: SCENE.cameraPosition }}>
         <ThreeApp />
-        {/* <Perf /> */}
+        <Perf />
       </Canvas>
       <CameraControl />
       <NavigationUI />
