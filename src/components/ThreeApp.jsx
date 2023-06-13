@@ -10,6 +10,7 @@ import { Floor } from "../Models/Floor.jsx";
 import MainScene from "../Scenes/MainScene.jsx";
 import PortfolioScene from "../Scenes/PortfolioScene.jsx";
 import DataVizScene from "../Scenes/DataVizScene.jsx";
+import { Loading } from "./Loading.jsx";
 
 const ThreeApp = () => {
   const cameraRotation = useStore((state) => state.cameraRotation);
@@ -96,7 +97,7 @@ const ThreeApp = () => {
             ref={allRefs["main"]}
             name="main"
             position-y={SCENE.GROUND_LEVEL}>
-            <Suspense fallback={null}>
+            <Suspense fallback={<Loading />}>
               <MainScene />
             </Suspense>
           </group>
