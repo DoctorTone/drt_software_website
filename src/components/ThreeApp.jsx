@@ -2,11 +2,9 @@ import React, { useRef, useEffect, Suspense } from "react";
 import { useFrame } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
 import useStore from "../state/store.js";
-import * as THREE from "three";
 import { SCENE } from "../state/Config.js";
 
 import { Cloud } from "../Models/Cloud.jsx";
-import { Floor } from "../Models/Floor.jsx";
 import MainScene from "../Scenes/MainScene.jsx";
 import PortfolioScene from "../Scenes/PortfolioScene.jsx";
 import DataVizScene from "../Scenes/DataVizScene.jsx";
@@ -57,8 +55,6 @@ const ThreeApp = () => {
         worldRot.current += rotIncrement.current * direction;
         currentRot.current = 0;
         topLevel.current.rotation.y = worldRot.current;
-        // DEBUG
-        // console.log("World rot = ", worldRot.current);
         resetCamRotate();
       } else {
         topLevel.current.rotation.y += delta * direction;
@@ -90,7 +86,6 @@ const ThreeApp = () => {
       <pointLight position={SCENE.lightPosition} />
       <Sky sunPosition={SCENE.sunPosition} />
       <Cloud position={SCENE.cloudPosition} scale={SCENE.cloudScale} />
-      {/* <Floor position-y={SCENE.FLOOR_LEVEL} rotation-y={Math.PI/2}/> */}
       <group ref={topLevel}>
         {currentLevel === SCENE.MAIN_LEVEL && (
           <group

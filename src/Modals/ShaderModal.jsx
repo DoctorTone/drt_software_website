@@ -27,8 +27,8 @@ const ShaderModal = ({ showModal }) => {
         Shaders provide the opportunity to create an amazing array of graphical
         transformations, ranging from increased realism to weird and wonderful
         effects. The following demo shows a number of effects that you can
-        switch between.
-        <div className="text-center mt-2 mb-2">
+        switch between (keep checking for updates!).
+        <div className="text-center mt-2 mb-3">
           <Button
             href="https://drt-software.com/Demos/Effects/effects.html"
             target="_blank"

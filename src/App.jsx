@@ -47,6 +47,7 @@ const App = () => {
       <CameraControl />
       <NavigationUI />
       <InfoText />
+      {/* Add modal param to select modal */}
       <AboutModal showModal={aboutModalVisible} />
       <ContactModal showModal={contactModalVisible} />
       <ServicesModal showModal={servicesModalVisible} />

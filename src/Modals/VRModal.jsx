@@ -27,7 +27,7 @@ const VRModal = ({ showModal }) => {
         With the advent of WebXR, it is now possible to have interactive,
         virtual reality environments online. This opens up the possibilities to
         develop simulations, games, educational apps and more, all in the
-        browser. Click below for a simple VR framework to experiment with.
+        browser. Click below for a simple VR framework I use to experiment with.
         <div className="text-center mt-2">
           <Button
             href="https://drt-software.com/Demos/VRFramework/VRFramework.html"
