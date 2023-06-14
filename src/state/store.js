@@ -33,6 +33,8 @@ const useStore = create((set) => ({
   // Modals
   aboutModalVisible: false,
   showAboutModal: (show) => set({ aboutModalVisible: show }),
+  startUpModalVisible: true,
+  showStartUpModal: (show) => set({ startUpModalVisible: show }),
   contactModalVisible: false,
   showContactModal: (show) => set({ contactModalVisible: show }),
   servicesModalVisible: false,

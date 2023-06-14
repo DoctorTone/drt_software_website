@@ -4,6 +4,7 @@ import CameraControl from "./UI/CameraControl.jsx";
 import NavigationUI from "./UI/NavigationUI.jsx";
 import InfoText from "./UI/InfoText.jsx";
 import AboutModal from "./Modals/AboutModal.jsx";
+import StartUpModal from "./Modals/StartUpModal.jsx";
 import ContactModal from "./Modals/ContactModal.jsx";
 import ServicesModal from "./Modals/ServicesModal.jsx";
 import InfoModal from "./Modals/InfoModal.jsx";
@@ -23,6 +24,7 @@ import useStore from "./state/store.js";
 
 const App = () => {
   const aboutModalVisible = useStore((state) => state.aboutModalVisible);
+  const startUpModalVisible = useStore((state) => state.startUpModalVisible);
   const contactModalVisible = useStore((state) => state.contactModalVisible);
   const servicesModalVisible = useStore((state) => state.servicesModalVisible);
   const infoModalVisible = useStore((state) => state.infoModalVisible);
@@ -46,9 +48,10 @@ const App = () => {
       </Canvas>
       <CameraControl />
       <NavigationUI />
-      <InfoText />
+      {/* <InfoText /> */}
       {/* Add modal param to select modal */}
       <AboutModal showModal={aboutModalVisible} />
+      <StartUpModal showModal={startUpModalVisible} />
       <ContactModal showModal={contactModalVisible} />
       <ServicesModal showModal={servicesModalVisible} />
       <InfoModal showModal={infoModalVisible} />
