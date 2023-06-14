@@ -1,5 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import {
   House,
   ArrowCounterclockwise,
@@ -66,18 +68,32 @@ const NavigationUI = () => {
     showInfoModal(true);
   };
 
+  const homeTips = (props) => {
+    <Tooltip id="homeTip" {...props}>
+      Go to top level
+    </Tooltip>;
+  };
+
   return (
     <>
       <div id="home" className="panel ps-3">
         <div className="mb-3">
-          <Button onClick={Home} variant="outline-dark">
-            <House />
-          </Button>
+          <OverlayTrigger
+            placement="right"
+            overlay={<Tooltip id="homeTip">Back to top level</Tooltip>}>
+            <Button onClick={Home} variant="outline-dark">
+              <House />
+            </Button>
+          </OverlayTrigger>
         </div>
         <div className="mb-3">
-          <Button onClick={BackOneLevel} variant="outline-dark">
-            <ArrowCounterclockwise />
-          </Button>
+          <OverlayTrigger
+            placement="right"
+            overlay={<Tooltip id="backTip">Up one level</Tooltip>}>
+            <Button onClick={BackOneLevel} variant="outline-dark">
+              <ArrowCounterclockwise />
+            </Button>
+          </OverlayTrigger>
         </div>
         <div>
           <Button onClick={Info} variant="outline-dark">
