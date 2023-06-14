@@ -8,9 +8,10 @@ import useStore from "../state/store.js";
 
 const MainScene = () => {
   const showStartUpModal = useStore((state) => state.showStartUpModal);
+  const startUpModalShown = useStore((state) => state.startUpModalShown);
 
   useEffect(() => {
-    showStartUpModal(true);
+    showStartUpModal(startUpModalShown ? false : true);
   }, []);
 
   return (
