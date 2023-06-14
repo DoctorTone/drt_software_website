@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { CaretRight, CaretLeft } from "react-bootstrap-icons";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import useStore from "../state/store.js";
 
 const CameraControl = () => {
@@ -20,14 +22,26 @@ const CameraControl = () => {
 
   return (
     <div id="camControl" className="panel pe-2">
-      <Button onClick={rotateCameraLeft} variant="outline-dark">
-        <CaretLeft />
-        Prev
-      </Button>{" "}
-      <Button onClick={rotateCameraRight} variant="outline-dark">
-        Next
-        <CaretRight />
-      </Button>
+      <OverlayTrigger
+        placement="top"
+        overlay={<Tooltip id="camLeft">Rotate clockwise</Tooltip>}>
+        <Button
+          onClick={rotateCameraLeft}
+          variant="outline-dark"
+          className="me-1">
+          <CaretLeft />
+          Prev
+        </Button>
+      </OverlayTrigger>
+
+      <OverlayTrigger
+        placement="top"
+        overlay={<Tooltip id="camRight">Rotate anti-clockwise</Tooltip>}>
+        <Button onClick={rotateCameraRight} variant="outline-dark">
+          Next
+          <CaretRight />
+        </Button>
+      </OverlayTrigger>
     </div>
   );
 };
