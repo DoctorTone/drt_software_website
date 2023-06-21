@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import ThreeApp from "./components/ThreeApp.jsx";
 import CameraControl from "./UI/CameraControl.jsx";
 import NavigationUI from "./UI/NavigationUI.jsx";
-import InfoText from "./UI/InfoText.jsx";
 import AboutModal from "./Modals/AboutModal.jsx";
 import StartUpModal from "./Modals/StartUpModal.jsx";
 import ContactModal from "./Modals/ContactModal.jsx";
@@ -17,7 +16,6 @@ import RealTimeModal from "./Modals/RealTimeModal.jsx";
 import SleepModal from "./Modals/SleepModal.jsx";
 import PandemicModal from "./Modals/PandemicModal.jsx";
 import FinanceModal from "./Modals/FinanceModal.jsx";
-import { Perf } from "r3f-perf";
 
 import { SCENE } from "./state/Config.js";
 import useStore from "./state/store.js";
@@ -44,11 +42,9 @@ const App = () => {
     <>
       <Canvas camera={{ position: SCENE.cameraPosition }}>
         <ThreeApp />
-        {/* <Perf /> */}
       </Canvas>
       <CameraControl />
       <NavigationUI />
-      {/* <InfoText /> */}
       {/* Add modal param to select modal */}
       <AboutModal showModal={aboutModalVisible} />
       <StartUpModal showModal={startUpModalVisible} />

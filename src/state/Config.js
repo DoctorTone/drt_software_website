@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 const SCENE = {
-  cameraPosition: [0, 4, 10],
+  cameraPosition: [0, 4, 10.5],
   lightPosition: [10, 10, 10],
   rotationIntensity: 0.25,
   sunPosition: [1, 0.15, 0],
