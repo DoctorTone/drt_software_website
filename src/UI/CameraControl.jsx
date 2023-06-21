@@ -25,10 +25,7 @@ const CameraControl = () => {
       <OverlayTrigger
         placement="top"
         overlay={<Tooltip id="camLeft">Rotate clockwise</Tooltip>}>
-        <Button
-          onClick={rotateCameraLeft}
-          variant="outline-dark"
-          className="me-1">
+        <Button onClick={rotateCameraLeft} variant="dark" className="me-1">
           <CaretLeft />
           Rotate
         </Button>
@@ -37,7 +34,7 @@ const CameraControl = () => {
       <OverlayTrigger
         placement="top"
         overlay={<Tooltip id="camRight">Rotate anti-clockwise</Tooltip>}>
-        <Button onClick={rotateCameraRight} variant="outline-dark">
+        <Button onClick={rotateCameraRight} variant="dark">
           Rotate
           <CaretRight />
         </Button>

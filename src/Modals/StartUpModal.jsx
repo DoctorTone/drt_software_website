@@ -24,8 +24,8 @@ const StartUpModal = ({ showModal }) => {
       </Modal.Header>
       <Modal.Body>
         <p>
-          Use the <strong>Prev</strong> and <strong>Next</strong> buttons at the
-          bottom right to rotate the islands around.
+          Use the <strong>Rotate</strong> buttons at the bottom to rotate the
+          islands around.
         </p>
         <p>
           Click on the island in front of you to find out more. Feel free to

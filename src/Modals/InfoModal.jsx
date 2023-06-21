@@ -25,7 +25,7 @@ const InfoModal = ({ showModal }) => {
 
       <Modal.Body>
         <p>
-          Use the next and previous buttons at the bottom right to rotate the
+          Use the <strong>rotate</strong> buttons at the bottom to rotate the
           islands, then click the nearest island for more information.
         </p>
         <p>
