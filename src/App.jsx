@@ -17,6 +17,8 @@ import SleepModal from "./Modals/SleepModal.jsx";
 import PandemicModal from "./Modals/PandemicModal.jsx";
 import FinanceModal from "./Modals/FinanceModal.jsx";
 
+import Bubble from "./components/Bubble.jsx";
+
 import { SCENE } from "./state/Config.js";
 import useStore from "./state/store.js";
 
@@ -60,6 +62,7 @@ const App = () => {
       <SleepModal showModal={sleepVizModalVisible} />
       <PandemicModal showModal={covidVizModalVisible} />
       <FinanceModal showModal={financeVizModalVisible} />
+      <Bubble />
     </>
   );
 };
