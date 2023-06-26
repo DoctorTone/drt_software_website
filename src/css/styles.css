@@ -86,8 +86,8 @@ a.redLink:active {
 
 /* Speech bubble */
 #speechBubble {
-  left: 10%;
-  top: 10%;
+  left: 0%;
+  bottom: 0%;
 }
 p.bubble {
   position: relative;
