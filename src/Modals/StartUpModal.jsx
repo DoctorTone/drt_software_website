@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { House, ArrowCounterclockwise } from "react-bootstrap-icons";
+import { SCENE } from "../state/Config.js";
 
 import useStore from "../state/store.js";
 
@@ -11,6 +12,13 @@ const StartUpModal = ({ showModal }) => {
   const handleClose = () => {
     setShow(false);
     showStartUpModal(false);
+    // Ensure user interacts after certain time
+    setTimeout(() => {
+      const elem = document.getElementById("speechBubble");
+      if (!elem) return;
+
+      elem.classList.remove("d-none");
+    }, SCENE.ROTATE_TIMEOUT);
   };
 
   useEffect(() => {

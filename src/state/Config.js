@@ -37,6 +37,7 @@ const SCENE = {
   ANIMATE_NONE: 0,
   ANIMATE_UP: 1,
   ANIMATE_DOWN: 2,
+  ROTATE_TIMEOUT: 5000,
 };
 
 const ISLANDS = {
