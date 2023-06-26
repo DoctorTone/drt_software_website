@@ -30,6 +30,9 @@ const useStore = create((set) => ({
   resetCamRotate: () =>
     set({ ignoreButtonPress: false, cameraRotation: SCENE.CAM_ROTATE_NONE }),
 
+  // Speech bubbles
+  speechBubbleVisible: false,
+  removeSpeechBubble: (status) => set({ speechBubbleVisible: status }),
   // Modals
   aboutModalVisible: false,
   showAboutModal: (show) => set({ aboutModalVisible: show }),

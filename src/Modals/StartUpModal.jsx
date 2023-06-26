@@ -8,6 +8,7 @@ import useStore from "../state/store.js";
 
 const StartUpModal = ({ showModal }) => {
   const showStartUpModal = useStore((state) => state.showStartUpModal);
+  const removeSpeechBubble = useStore((state) => state.removeSpeechBubble);
   const [show, setShow] = useState(false);
   const handleClose = () => {
     setShow(false);
@@ -18,6 +19,7 @@ const StartUpModal = ({ showModal }) => {
       if (!elem) return;
 
       elem.classList.remove("d-none");
+      removeSpeechBubble(true);
     }, SCENE.ROTATE_TIMEOUT);
   };
 

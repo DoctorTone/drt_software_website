@@ -8,14 +8,32 @@ import useStore from "../state/store.js";
 const CameraControl = () => {
   const rotateCamRight = useStore((state) => state.rotateCamRight);
   const rotateCamLeft = useStore((state) => state.rotateCamLeft);
+  const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
+  const removeSpeechBubble = useStore((state) => state.removeSpeechBubble);
   const ignoreButtonPress = useStore((state) => state.ignoreButtonPress);
 
   const rotateCameraLeft = () => {
+    if (speechBubbleVisible) {
+      removeSpeechBubble(false);
+      const elem = document.getElementById("speechBubble");
+      if (!elem) return;
+
+      elem.classList.add("d-none");
+    }
+
     if (ignoreButtonPress) return;
     rotateCamLeft();
   };
 
   const rotateCameraRight = () => {
+    if (speechBubbleVisible) {
+      removeSpeechBubble(false);
+      const elem = document.getElementById("speechBubble");
+      if (!elem) return;
+
+      elem.classList.add("d-none");
+    }
+
     if (ignoreButtonPress) return;
     rotateCamRight();
   };
