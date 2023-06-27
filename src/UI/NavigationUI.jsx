@@ -11,7 +11,7 @@ import {
   Youtube,
   Linkedin,
 } from "react-bootstrap-icons";
-import { SCENE } from "../state/Config.js";
+import { SCENE, ISLANDS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 const NavigationUI = () => {
@@ -25,8 +25,8 @@ const NavigationUI = () => {
     const nextScene = {
       level: SCENE.MAIN_LEVEL,
       scene: "main",
-      islands: 4,
-      activeIsland: 3,
+      islands: ISLANDS.MAIN_LEVEL_ISLANDS,
+      activeIsland: ISLANDS.ACTIVE_ISLAND,
       direction: SCENE.ANIMATE_DOWN,
     };
     animateNextScene(nextScene);
@@ -41,12 +41,12 @@ const NavigationUI = () => {
     switch (currentLevel) {
       case SCENE.LEVEL_1:
         scene = "main";
-        islands = 4;
+        islands = ISLANDS.MAIN_LEVEL_ISLANDS;
         break;
 
       case SCENE.LEVEL_2:
         scene = "portfolio";
-        islands = 5;
+        islands = ISLANDS.LEVEL_1_ISLANDS;
         break;
 
       default:
@@ -57,7 +57,7 @@ const NavigationUI = () => {
       level: currentLevel - 1,
       scene: scene,
       islands: islands,
-      activeIsland: 3,
+      activeIsland: ISLANDS.ACTIVE_ISLAND,
       direction: SCENE.ANIMATE_DOWN,
     };
 
