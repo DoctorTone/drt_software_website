@@ -6,7 +6,7 @@ import {
   House,
   ArrowCounterclockwise,
   InfoLg,
-  Question,
+  Person,
   Twitter,
   Youtube,
   Linkedin,
@@ -95,9 +95,14 @@ const NavigationUI = () => {
             </Button>
           </OverlayTrigger>
         </div>
-        <div>
+        <div className="mb-3">
           <Button onClick={Info} variant="outline-dark">
             <InfoLg />
+          </Button>
+        </div>
+        <div>
+          <Button onClick={Info} variant="outline-dark">
+            <Person />
           </Button>
         </div>
       </div>
