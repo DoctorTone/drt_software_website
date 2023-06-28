@@ -1,13 +1,13 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { SCENE, ISLANDS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
 import { Tablet } from "../Models/Tablet.jsx";
 import useStore from "../state/store.js";
 
 export const IslandBrainViz = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
-  const showRealTimeModal = useStore((state) => state.showRealTimeModal);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
@@ -15,7 +15,7 @@ export const IslandBrainViz = ({ islandNumber }) => {
     console.log("Active = ", activeIsland);
     if (activeIsland === islandNumber) {
       selectSound.play();
-      showRealTimeModal(true);
+      setVisibleModal(MODALS.REALTIME);
     }
   };
 

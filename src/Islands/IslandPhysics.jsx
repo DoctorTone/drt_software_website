@@ -2,18 +2,18 @@ import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { Physics } from "../Models/Physics.jsx";
-import { SCENE, ISLANDS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandPhysics = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
-  const showPhysicsModal = useStore((state) => state.showPhysicsModal);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showPhysicsModal(true);
+      setVisibleModal(MODALS.PHYSICS);
       selectSound.play();
     }
   };

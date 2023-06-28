@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { MODALS } from "../state/Config.js";
 
 import useStore from "../state/store.js";
 
 const RealTimeModal = ({ showModal }) => {
-  const showRealTimeModal = useStore((state) => state.showRealTimeModal);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
     setShow(false);
-    showRealTimeModal(false);
+    setVisibleModal(MODALS.NONE);
   };
 
   useEffect(() => {
