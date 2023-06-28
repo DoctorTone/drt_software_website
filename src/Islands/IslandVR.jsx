@@ -2,19 +2,19 @@ import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { VR } from "../Models/VR.jsx";
-import { SCENE, ISLANDS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
 import useSound from "use-sound";
 import useStore from "../state/store.js";
 
 export const IslandVR = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
-  const showVRModal = useStore((state) => state.showVRModal);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showVRModal(true);
+      setVisibleModal(MODALS.VR);
       selectSound.play();
     }
   };
