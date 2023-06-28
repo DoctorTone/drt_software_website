@@ -1,18 +1,18 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, RoundedBox, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
-import { SCENE, ISLANDS, MATERIALS } from "../state/Config.js";
+import { SCENE, ISLANDS, MATERIALS, MODALS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandShaders = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
   const activeIsland = useStore((state) => state.activeIsland);
-  const showShaderModal = useStore((state) => state.showShaderModal);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showShaderModal(true);
+      setVisibleModal(MODALS.SHADER);
       selectSound.play();
     }
   };
