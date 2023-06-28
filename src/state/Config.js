@@ -110,6 +110,25 @@ const ISLANDS = {
   SleepVizTextPosition: [1.854, 3.5, -5.706],
 };
 
+const MODALS = {
+  NONE: 0,
+  ABOUT: 1,
+  CONTACT: 2,
+  FINANCE: 3,
+  INFO: 4,
+  MEDVIZ: 5,
+  PANDEMIC: 6,
+  PERSON: 7,
+  PHYSICS: 8,
+  REALTIME: 9,
+  SERVICES: 10,
+  SHADER: 11,
+  SLEEP: 12,
+  START: 13,
+  TECH: 14,
+  VR: 15,
+};
+
 const MATERIALS = {
   GRASS: new THREE.MeshLambertMaterial({ color: "green" }),
   EARTH: new THREE.MeshLambertMaterial({
@@ -121,4 +140,4 @@ const MATERIALS = {
   SHINY_ORANGE: new THREE.MeshPhongMaterial({ color: 0xcc2906 }),
 };
 
-export { SCENE, ISLANDS, MATERIALS };
+export { SCENE, ISLANDS, MODALS, MATERIALS };

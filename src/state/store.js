@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { SCENE } from "./Config.js";
+import { SCENE, MODALS } from "./Config.js";
 
 const useStore = create((set) => ({
   // Camera rotations
@@ -33,7 +33,10 @@ const useStore = create((set) => ({
   // Speech bubbles
   speechBubbleVisible: true,
   displaySpeechBubble: (status) => set({ speechBubbleVisible: status }),
+
   // Modals
+  currentVisibleModal: MODALS.NONE,
+  setVisibleModal: (modalNumber) => set({ currentVisibleModal: modalNumber }),
   aboutModalVisible: false,
   showAboutModal: (show) => set({ aboutModalVisible: show }),
   startUpModalVisible: false,

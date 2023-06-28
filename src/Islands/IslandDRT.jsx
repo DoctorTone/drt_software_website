@@ -3,18 +3,18 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { Tree } from "../Models/Tree.jsx";
 import { DRT } from "../Models/DRT.jsx";
-import { SCENE, ISLANDS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandDRT = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const showAboutModal = useStore((state) => state.showAboutModal);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const activeIsland = useStore((state) => state.activeIsland);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showAboutModal(true);
+      setVisibleModal(MODALS.ABOUT);
       selectSound.play();
     }
   };

@@ -73,12 +73,6 @@ const NavigationUI = () => {
     showPersonModal(true);
   };
 
-  const homeTips = (props) => {
-    <Tooltip id="homeTip" {...props}>
-      Go to top level
-    </Tooltip>;
-  };
-
   return (
     <>
       <div id="home" className="panel ps-3">
