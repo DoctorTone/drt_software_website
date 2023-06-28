@@ -18,7 +18,6 @@ const App = () => {
       </Canvas>
       <CameraControl />
       <NavigationUI />
-      {/* Add modal param to select modal */}
       <ShowModals visibleModal={currentVisibleModal} />
       <Bubble />
     </>
