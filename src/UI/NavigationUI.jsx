@@ -11,13 +11,12 @@ import {
   Youtube,
   Linkedin,
 } from "react-bootstrap-icons";
-import { SCENE, ISLANDS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 const NavigationUI = () => {
   const currentLevel = useStore((state) => state.currentLevel);
-  const showInfoModal = useStore((state) => state.showInfoModal);
-  const showPersonModal = useStore((state) => state.showPersonModal);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const animateNextScene = useStore((state) => state.animateNextScene);
 
   const Home = () => {
@@ -66,11 +65,11 @@ const NavigationUI = () => {
   };
 
   const Info = () => {
-    showInfoModal(true);
+    setVisibleModal(MODALS.INFO);
   };
 
   const Contact = () => {
-    showPersonModal(true);
+    setVisibleModal(MODALS.PERSON);
   };
 
   return (
