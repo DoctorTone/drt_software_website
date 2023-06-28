@@ -17,6 +17,7 @@ import useStore from "../state/store.js";
 const NavigationUI = () => {
   const currentLevel = useStore((state) => state.currentLevel);
   const showInfoModal = useStore((state) => state.showInfoModal);
+  const showPersonModal = useStore((state) => state.showPersonModal);
   const animateNextScene = useStore((state) => state.animateNextScene);
 
   const Home = () => {
@@ -68,6 +69,10 @@ const NavigationUI = () => {
     showInfoModal(true);
   };
 
+  const Contact = () => {
+    showPersonModal(true);
+  };
+
   const homeTips = (props) => {
     <Tooltip id="homeTip" {...props}>
       Go to top level
@@ -101,7 +106,7 @@ const NavigationUI = () => {
           </Button>
         </div>
         <div>
-          <Button onClick={Info} variant="outline-dark">
+          <Button onClick={Contact} variant="outline-dark">
             <Person />
           </Button>
         </div>

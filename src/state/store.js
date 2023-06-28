@@ -46,6 +46,8 @@ const useStore = create((set) => ({
   showServicesModal: (show) => set({ servicesModalVisible: show }),
   infoModalVisible: false,
   showInfoModal: (show) => set({ infoModalVisible: show }),
+  personModalVisible: false,
+  showPersonModal: (show) => set({ personModalVisible: show }),
   medVizModalVisible: false,
   showMedVizModal: (show) => set({ medVizModalVisible: show }),
   physicsModalVisible: false,

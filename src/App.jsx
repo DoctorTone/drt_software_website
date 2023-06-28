@@ -16,6 +16,7 @@ import RealTimeModal from "./Modals/RealTimeModal.jsx";
 import SleepModal from "./Modals/SleepModal.jsx";
 import PandemicModal from "./Modals/PandemicModal.jsx";
 import FinanceModal from "./Modals/FinanceModal.jsx";
+import PersonModal from "./Modals/PersonModal.jsx";
 
 import Bubble from "./components/Bubble.jsx";
 
@@ -39,6 +40,7 @@ const App = () => {
   const financeVizModalVisible = useStore(
     (state) => state.financeVizModalVisible
   );
+  const personModalVisible = useStore((state) => state.personModalVisible);
 
   return (
     <>
@@ -62,6 +64,7 @@ const App = () => {
       <SleepModal showModal={sleepVizModalVisible} />
       <PandemicModal showModal={covidVizModalVisible} />
       <FinanceModal showModal={financeVizModalVisible} />
+      <PersonModal showModal={personModalVisible} />
       <Bubble />
     </>
   );

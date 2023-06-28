@@ -84,6 +84,13 @@ a.redLink:active {
   color: red;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
 /* Speech bubble */
 #speechBubble {
   left: 0%;
