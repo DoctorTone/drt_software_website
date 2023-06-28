@@ -37,8 +37,6 @@ const useStore = create((set) => ({
   // Modals
   currentVisibleModal: MODALS.NONE,
   setVisibleModal: (modalNumber) => set({ currentVisibleModal: modalNumber }),
-  aboutModalVisible: false,
-  showAboutModal: (show) => set({ aboutModalVisible: show }),
   startUpModalVisible: false,
   startUpModalShown: false,
   showStartUpModal: (show) =>

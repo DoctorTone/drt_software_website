@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import { MODALS } from "../state/Config.js";
 
 import useStore from "../state/store.js";
 
 const ContactModel = ({ showModal }) => {
-  const showContactModal = useStore((state) => state.showContactModal);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [show, setShow] = useState(false);
   const handleClose = () => {
     setShow(false);
-    showContactModal(false);
+    setVisibleModal(MODALS.NONE);
   };
 
   useEffect(() => {

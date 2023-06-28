@@ -3,18 +3,18 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { Phone } from "../Models/Phone.jsx";
 import { Dog } from "../Models/Dog.jsx";
-import { SCENE, ISLANDS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandContact = ({ islandNumber }) => {
   const [hovered, setHovered] = useState(false);
-  const showContactModal = useStore((state) => state.showContactModal);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const activeIsland = useStore((state) => state.activeIsland);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
   const selectIsland = () => {
     if (activeIsland === islandNumber) {
-      showContactModal(true);
+      setVisibleModal(MODALS.CONTACT);
       selectSound.play();
     }
   };
