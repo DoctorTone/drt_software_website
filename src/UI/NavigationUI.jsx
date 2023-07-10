@@ -155,15 +155,78 @@ const NavigationUI = () => {
                 <h5>
                   <strong>Demos:</strong>
                 </h5>
-                <h5>VR framework</h5>
-                <h5>Physics</h5>
-                <h5>Shader effects</h5>
-                <h5>Material editor</h5>
-                <h5>Medical Viz</h5>
-                <h5>Financial Viz</h5>
-                <h5>Pandemic Viz</h5>
-                <h5>Sleep Viz</h5>
-                <h5>Real-time Viz</h5>
+                <h5>
+                  <a
+                    href="https://drt-software.com/Demos/VRFramework/VRFramework.html"
+                    target="_blank"
+                  >
+                    VR framework
+                  </a>
+                </h5>
+                <h5>
+                  <a
+                    href="https://drt-software.com/Demos/Physics/physics_demo.html"
+                    target="_blank"
+                  >
+                    Physics
+                  </a>
+                </h5>
+                <h5>
+                  <a
+                    href="https://drt-software.com/Demos/Effects/effects.html"
+                    target="_blank"
+                  >
+                    Shader effects
+                  </a>
+                </h5>
+                <h5>
+                  <a
+                    href="https://drt-software.com/Demos/Material/editor.html"
+                    target="_blank"
+                  >
+                    Material editor
+                  </a>
+                </h5>
+                <h5>
+                  <a
+                    href="https://www.drt-software.com/MedicalViz/medicalViz.html"
+                    target="_blank"
+                  >
+                    Medical Viz
+                  </a>
+                </h5>
+                <h5>
+                  <a
+                    href="https://www.drt-software.com/FTSEViz/FTSEViz.html"
+                    target="_blank"
+                  >
+                    Financial Viz
+                  </a>
+                </h5>
+                <h5>
+                  <a
+                    href="https://www.drt-software.com/Covid/covid19.html"
+                    target="_blank"
+                  >
+                    Pandemic Viz
+                  </a>
+                </h5>
+                <h5>
+                  <a
+                    href="https://www.drt-software.com/SleepViz/sleepViz.html"
+                    target="_blank"
+                  >
+                    Sleep Viz
+                  </a>
+                </h5>
+                <h5>
+                  <a
+                    href="https://www.drt-software.com/Horror/brainViz.html"
+                    target="_blank"
+                  >
+                    Real-time Viz
+                  </a>
+                </h5>
               </div>
             </Offcanvas.Body>
           </Offcanvas>
