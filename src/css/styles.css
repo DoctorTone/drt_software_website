@@ -43,6 +43,11 @@ body {
   width: 100%;
 }
 
+#links {
+  left: 48%;
+  top: 5%;
+}
+
 .outline {
   border: 0px solid darkslategray;
   border-radius: 10px;
