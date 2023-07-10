@@ -36,9 +36,10 @@ export const IslandVR = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Island position={ISLANDS.VRPosition} />
-        <VR position={ISLANDS.VRModelPosition} scale={0.6} />
+        <VR position={ISLANDS.VRModelPosition} rotation-y={1.2} scale={0.6} />
         <Shadow
           scale={1.65}
           opacity={0.85}
@@ -57,7 +58,8 @@ export const IslandVR = ({ islandNumber }) => {
           anchorX="center"
           anchorY="middle"
           outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-          outlineColor="black">
+          outlineColor="black"
+        >
           VR
         </Text>
       </group>

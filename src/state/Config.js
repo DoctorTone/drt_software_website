@@ -69,11 +69,11 @@ const ISLANDS = {
   PhysicsModelPosition: [1.854, 2.2, -5.706],
   PhysicsTextPosition: [1.854, 3, -5.706],
   PhysicsTextRotation: -3.5,
-  // Data Viz island
-  DataVizPosition: [6, 0, 0],
-  DataVizModelPosition: [6.25, 1.8, 0],
-  DataVizTextPosition: [6.25, 3, 0],
-  DataVizTextRotation: Math.PI / 2,
+  // VR island
+  VRPosition: [6, 0, 0],
+  VRModelPosition: [6.5, -7, -2.5],
+  VRTextPosition: [6.25, 3.25, 0],
+  VRTextRotation: Math.PI / 2,
   // Shader island
   ShaderPosition: [-3.927, 0, -3.527],
   ShaderModelPosition: [-3.927, 2.35, -3.527],
@@ -84,11 +84,11 @@ const ISLANDS = {
   TechModelPosition: [-3.927, 2.2, 3.527],
   TechTextPosition: [-3.927, 3, 3.527],
   TechTextRotation: -1,
-  // VR island
-  VRPosition: [1.854, 0, 5.706],
-  VRModelPosition: [4.5, -7, 5.5],
-  VRTextPosition: [1.9, 3.25, 5.706],
-  VRTextRotation: 0.3,
+  // Data Viz island
+  DataVizPosition: [1.854, 0, 5.706],
+  DataVizModelPosition: [4.5, -7, 5.5],
+  DataVizTextPosition: [1.9, 3.25, 5.706],
+  DataVizTextRotation: 0.3,
   // Med viz island
   MedVizPosition: [6, 0, 0],
   MedVizModelPosition: [6, 2, 0],

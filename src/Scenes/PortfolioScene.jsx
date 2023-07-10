@@ -8,11 +8,11 @@ import { IslandTech } from "../Islands/IslandTech.jsx";
 const PortfolioScene = () => {
   return (
     <>
-      <IslandDataViz islandNumber={3} />
+      <IslandVR islandNumber={3} />
       <IslandPhysics islandNumber={2} />
       <IslandShaders islandNumber={1} />
       <IslandTech islandNumber={0} />
-      <IslandVR islandNumber={4} />
+      <IslandDataViz islandNumber={4} />
     </>
   );
 };
