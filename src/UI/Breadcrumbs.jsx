@@ -1,5 +1,6 @@
 import React from "react";
 import { SCENE } from "../state/Config.js";
+import Alert from "react-bootstrap/Alert";
 import useStore from "../state/store.js";
 
 const Breadcrumbs = () => {
@@ -24,7 +25,7 @@ const Breadcrumbs = () => {
     }
   };
   return (
-    <div id="breadcrumbs" className="panel">
+    <div id="breadcrumbs" className="panel infoDisplay">
       Level: {getLevelText()}
     </div>
   );

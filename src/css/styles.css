@@ -60,8 +60,14 @@ body {
 }
 
 #breadcrumbs {
-  left: 48%;
-  top: 10%;
+  left: 15%;
+  top: 4%;
+}
+
+.infoDisplay {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
 }
 .orangeText {
   color: orange;
