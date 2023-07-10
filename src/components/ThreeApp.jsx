@@ -50,14 +50,14 @@ const ThreeApp = () => {
   useFrame((state, delta) => {
     if (cameraRotation !== SCENE.CAM_ROTATE_NONE) {
       const direction = cameraRotation === SCENE.CAM_ROTATE_LEFT ? -1 : 1;
-      currentRot.current += delta;
+      currentRot.current += delta * SCENE.ROTATION_SPEED;
       if (currentRot.current > rotIncrement.current) {
         worldRot.current += rotIncrement.current * direction;
         currentRot.current = 0;
         topLevel.current.rotation.y = worldRot.current;
         resetCamRotate();
       } else {
-        topLevel.current.rotation.y += delta * direction;
+        topLevel.current.rotation.y += delta * SCENE.ROTATION_SPEED * direction;
       }
     }
 
