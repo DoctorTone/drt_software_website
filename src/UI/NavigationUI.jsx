@@ -109,14 +109,24 @@ const NavigationUI = () => {
           </OverlayTrigger>
         </div>
         <div className="mb-3">
-          <Button onClick={Info} variant="outline-dark">
-            <InfoLg />
-          </Button>
+          <OverlayTrigger
+            placement="right"
+            overlay={<Tooltip id="infoTip">Information</Tooltip>}
+          >
+            <Button onClick={Info} variant="outline-dark">
+              <InfoLg />
+            </Button>
+          </OverlayTrigger>
         </div>
         <div className="mb-3">
-          <Button onClick={Contact} variant="outline-dark">
-            <Person />
-          </Button>
+          <OverlayTrigger
+            placement="right"
+            overlay={<Tooltip id="contactTip">Contact me</Tooltip>}
+          >
+            <Button onClick={Contact} variant="outline-dark">
+              <Person />
+            </Button>
+          </OverlayTrigger>
         </div>
         <div>
           <OverlayTrigger
