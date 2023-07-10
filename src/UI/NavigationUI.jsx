@@ -132,8 +132,29 @@ const NavigationUI = () => {
               <Offcanvas.Title>Demo Links</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              You can go straight to the level or demo you want by clicking the
-              links below:
+              <p>Go straight to the level or demo you want.</p>
+              <div className="mb-5">
+                <h5>
+                  <strong>Levels:</strong>
+                </h5>
+                <h5>Home</h5>
+                <h5>Portfolio</h5>
+                <h5>Data visualisation</h5>
+              </div>
+              <div>
+                <h5>
+                  <strong>Demos:</strong>
+                </h5>
+                <h5>VR framework</h5>
+                <h5>Physics</h5>
+                <h5>Shader effects</h5>
+                <h5>Material editor</h5>
+                <h5>Medical Viz</h5>
+                <h5>Financial Viz</h5>
+                <h5>Pandemic Viz</h5>
+                <h5>Sleep Viz</h5>
+                <h5>Real-time Viz</h5>
+              </div>
             </Offcanvas.Body>
           </Offcanvas>
         </div>
