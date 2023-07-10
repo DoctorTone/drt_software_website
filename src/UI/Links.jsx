@@ -21,13 +21,13 @@ const Links = () => {
           Links
         </Button>
       </div>
-      <Offcanvas show={showLinks} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+      <Offcanvas show={showLinks} onHide={handleClose} placement="end">
+        <Offcanvas.Header closeButton closeVariant="white">
+          <Offcanvas.Title>Demo Links</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          You can go straight to the level or demo you want by clicking the
+          links below:
         </Offcanvas.Body>
       </Offcanvas>
     </>

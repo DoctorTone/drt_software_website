@@ -43,6 +43,11 @@ body {
   width: 100%;
 }
 
+.offcanvas {
+  background-color: black;
+  color: #adb5bd;
+}
+
 #links {
   left: 48%;
   top: 5%;
