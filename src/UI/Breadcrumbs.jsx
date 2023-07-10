@@ -17,7 +17,7 @@ const Breadcrumbs = () => {
         break;
 
       case SCENE.LEVEL_2:
-        return "Home->Portfolio->Data Visualisation";
+        return "Home->Portfolio->DataVis";
         break;
 
       default:

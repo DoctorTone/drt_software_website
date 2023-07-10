@@ -113,7 +113,7 @@ const NavigationUI = () => {
 
   return (
     <>
-      <div id="home" className="panel ps-3">
+      <div id="home" className="panel ps-2">
         <div className="mb-3">
           <OverlayTrigger
             placement="right"
@@ -276,7 +276,7 @@ const NavigationUI = () => {
           </Offcanvas>
         </div>
       </div>
-      <div id="social" className="panel pe-3">
+      <div id="social" className="panel pe-1">
         <div className="mb-3">
           <Button variant="outline-dark">
             <a href="https://twitter.com/DrtSoftware" target="_blank">
