@@ -33,6 +33,7 @@ const NavigationUI = () => {
       direction: SCENE.ANIMATE_DOWN,
     };
     animateNextScene(nextScene);
+    setShowLinks(false);
   };
 
   const Portfolio = () => {
@@ -46,6 +47,7 @@ const NavigationUI = () => {
       direction: SCENE.ANIMATE_DOWN,
     };
     animateNextScene(nextScene);
+    setShowLinks(false);
   };
 
   const DataViz = () => {
@@ -59,6 +61,7 @@ const NavigationUI = () => {
       direction: SCENE.ANIMATE_DOWN,
     };
     animateNextScene(nextScene);
+    setShowLinks(false);
   };
 
   const BackOneLevel = () => {
@@ -113,7 +116,7 @@ const NavigationUI = () => {
 
   return (
     <>
-      <div id="home" className="panel ps-2">
+      <div id="home" className="panel ps-2 ps-md-3">
         <div className="mb-3">
           <OverlayTrigger
             placement="right"
@@ -276,7 +279,7 @@ const NavigationUI = () => {
           </Offcanvas>
         </div>
       </div>
-      <div id="social" className="panel pe-1">
+      <div id="social" className="panel pe-1 pe-md-3">
         <div className="mb-3">
           <Button variant="outline-dark">
             <a href="https://twitter.com/DrtSoftware" target="_blank">

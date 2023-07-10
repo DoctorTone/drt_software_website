@@ -17,7 +17,7 @@ const Breadcrumbs = () => {
         break;
 
       case SCENE.LEVEL_2:
-        return "Home->Portfolio->DataVis";
+        return "Home->Portfolio->DataViz";
         break;
 
       default:
@@ -26,7 +26,7 @@ const Breadcrumbs = () => {
   };
   return (
     <div id="breadcrumbs" className="panel infoDisplay">
-      Level: {getLevelText()}
+      <em>Level:</em> {getLevelText()}
     </div>
   );
 };

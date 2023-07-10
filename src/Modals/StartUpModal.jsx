@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { House, ArrowCounterclockwise, Link } from "react-bootstrap-icons";
+import {
+  House,
+  ArrowCounterclockwise,
+  Link,
+  EmojiLaughing,
+} from "react-bootstrap-icons";
 import { SCENE } from "../state/Config.js";
 
 import useStore from "../state/store.js";
@@ -50,13 +55,13 @@ const StartUpModal = ({ showModal }) => {
         <p>
           <em>
             If you've been here before you can go straight to a level or demo by
-            clicking the {<Link />} icon on the left.
+            clicking the link {<Link />} icon on the left.
           </em>
         </p>
         <p>
           Be sure to keep coming back as the content will change frequently!
-          Enjoy!
         </p>
+        <p>Enjoy!!</p>
       </Modal.Body>
 
       <Modal.Footer>

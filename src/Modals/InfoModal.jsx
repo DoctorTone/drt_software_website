@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { MODALS } from "../state/Config.js";
+import { Link } from "react-bootstrap-icons";
 
 import useStore from "../state/store.js";
 
@@ -28,6 +29,10 @@ const InfoModal = ({ showModal }) => {
         <p>
           Use the <strong>rotate</strong> buttons at the bottom to rotate the
           islands, then click the nearest island for more information.
+        </p>
+        <p>
+          If you want to access the levels or demos directly then just use the
+          link {<Link />} icon on the left.
         </p>
         <p>
           Thanks to the{" "}
