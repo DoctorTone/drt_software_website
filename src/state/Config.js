@@ -86,7 +86,7 @@ const ISLANDS = {
   TechTextRotation: -1,
   // Data Viz island
   DataVizPosition: [1.854, 0, 5.706],
-  DataVizModelPosition: [4.5, -7, 5.5],
+  DataVizModelPosition: [2, 2, 5.5],
   DataVizTextPosition: [1.9, 3.25, 5.706],
   DataVizTextRotation: 0.3,
   // Med viz island

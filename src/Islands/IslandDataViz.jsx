@@ -42,15 +42,20 @@ export const IslandDataViz = ({ islandNumber }) => {
       <group
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
-        onClick={selectIsland}>
+        onClick={selectIsland}
+      >
         <Island position={ISLANDS.DataVizPosition} />
-        <DataViz position={ISLANDS.DataVizModelPosition} scale={0.15} />
+        <DataViz
+          position={ISLANDS.DataVizModelPosition}
+          rotation-y={Math.PI / 2}
+          scale={0.15}
+        />
         <Shadow
           scale={1.5}
           opacity={0.85}
           position={[
             ISLANDS.DataVizTextPosition[0],
-            ISLANDS.DataVizTextPosition[1] - 1.35,
+            ISLANDS.DataVizTextPosition[1] - 1.5,
             ISLANDS.DataVizTextPosition[2],
           ]}
         />
@@ -63,7 +68,8 @@ export const IslandDataViz = ({ islandNumber }) => {
           anchorX="center"
           anchorY="middle"
           outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-          outlineColor="black">
+          outlineColor="black"
+        >
           Data Viz
         </Text>
       </group>
