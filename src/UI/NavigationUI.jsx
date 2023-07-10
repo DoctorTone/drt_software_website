@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import Offcanvas from "react-bootstrap/Offcanvas";
 import {
   House,
   ArrowCounterclockwise,
@@ -10,6 +11,7 @@ import {
   Twitter,
   Youtube,
   Linkedin,
+  Link,
 } from "react-bootstrap-icons";
 import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
 import useStore from "../state/store.js";
@@ -18,6 +20,7 @@ const NavigationUI = () => {
   const currentLevel = useStore((state) => state.currentLevel);
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const animateNextScene = useStore((state) => state.animateNextScene);
+  const [showLinks, setShowLinks] = useState(false);
 
   const Home = () => {
     if (currentLevel === SCENE.MAIN_LEVEL) return;
@@ -72,13 +75,24 @@ const NavigationUI = () => {
     setVisibleModal(MODALS.PERSON);
   };
 
+  const showDemoLinks = (event) => {
+    event.preventDefault();
+
+    setShowLinks(true);
+  };
+
+  const handleClose = () => {
+    setShowLinks(false);
+  };
+
   return (
     <>
       <div id="home" className="panel ps-3">
         <div className="mb-3">
           <OverlayTrigger
             placement="right"
-            overlay={<Tooltip id="homeTip">Back to top level</Tooltip>}>
+            overlay={<Tooltip id="homeTip">Back to top level</Tooltip>}
+          >
             <Button onClick={Home} variant="outline-dark">
               <House />
             </Button>
@@ -87,7 +101,8 @@ const NavigationUI = () => {
         <div className="mb-3">
           <OverlayTrigger
             placement="right"
-            overlay={<Tooltip id="backTip">Up one level</Tooltip>}>
+            overlay={<Tooltip id="backTip">Up one level</Tooltip>}
+          >
             <Button onClick={BackOneLevel} variant="outline-dark">
               <ArrowCounterclockwise />
             </Button>
@@ -98,10 +113,29 @@ const NavigationUI = () => {
             <InfoLg />
           </Button>
         </div>
-        <div>
+        <div className="mb-3">
           <Button onClick={Contact} variant="outline-dark">
             <Person />
           </Button>
+        </div>
+        <div>
+          <OverlayTrigger
+            placement="right"
+            overlay={<Tooltip id="linkTip">Demo links</Tooltip>}
+          >
+            <Button onClick={showDemoLinks} variant="outline-dark">
+              <Link />
+            </Button>
+          </OverlayTrigger>
+          <Offcanvas show={showLinks} onHide={handleClose} placement="start">
+            <Offcanvas.Header closeButton closeVariant="white">
+              <Offcanvas.Title>Demo Links</Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              You can go straight to the level or demo you want by clicking the
+              links below:
+            </Offcanvas.Body>
+          </Offcanvas>
         </div>
       </div>
       <div id="social" className="panel pe-3">
@@ -117,7 +151,8 @@ const NavigationUI = () => {
             <a
               className="redLink"
               href="https://www.youtube.com/channel/UCNYHLpd8oKLoE2xw49ZX1nQ?"
-              target="_blank">
+              target="_blank"
+            >
               <Youtube />
             </a>
           </Button>
@@ -126,7 +161,8 @@ const NavigationUI = () => {
           <Button variant="outline-dark">
             <a
               href="https://www.linkedin.com/in/tony-glover-4081694/"
-              target="_blank">
+              target="_blank"
+            >
               <Linkedin />
             </a>
           </Button>
