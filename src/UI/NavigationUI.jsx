@@ -35,6 +35,32 @@ const NavigationUI = () => {
     animateNextScene(nextScene);
   };
 
+  const Portfolio = () => {
+    if (currentLevel === SCENE.LEVEL_1) return;
+
+    const nextScene = {
+      level: SCENE.LEVEL_1,
+      scene: "portfolio",
+      islands: ISLANDS.LEVEL_1_ISLANDS,
+      activeIsland: ISLANDS.ACTIVE_ISLAND,
+      direction: SCENE.ANIMATE_DOWN,
+    };
+    animateNextScene(nextScene);
+  };
+
+  const DataViz = () => {
+    if (currentLevel === SCENE.LEVEL_2) return;
+
+    const nextScene = {
+      level: SCENE.LEVEL_2,
+      scene: "dataviz",
+      islands: ISLANDS.LEVEL_2_ISLANDS,
+      activeIsland: ISLANDS.ACTIVE_ISLAND,
+      direction: SCENE.ANIMATE_DOWN,
+    };
+    animateNextScene(nextScene);
+  };
+
   const BackOneLevel = () => {
     if (currentLevel === SCENE.MAIN_LEVEL) return;
 
@@ -139,7 +165,7 @@ const NavigationUI = () => {
           </OverlayTrigger>
           <Offcanvas show={showLinks} onHide={handleClose} placement="start">
             <Offcanvas.Header closeButton closeVariant="white">
-              <Offcanvas.Title>Demo Links</Offcanvas.Title>
+              <Offcanvas.Title>Links</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <p>Go straight to the level or demo you want.</p>
@@ -147,9 +173,27 @@ const NavigationUI = () => {
                 <h5>
                   <strong>Levels:</strong>
                 </h5>
-                <h5>Home</h5>
-                <h5>Portfolio</h5>
-                <h5>Data visualisation</h5>
+                <h5
+                  onClick={Home}
+                  style={{ cursor: "pointer" }}
+                  className="orangeText"
+                >
+                  Home
+                </h5>
+                <h5
+                  onClick={Portfolio}
+                  style={{ cursor: "pointer" }}
+                  className="orangeText"
+                >
+                  Portfolio
+                </h5>
+                <h5
+                  onClick={DataViz}
+                  style={{ cursor: "pointer" }}
+                  className="orangeText"
+                >
+                  Data visualisation
+                </h5>
               </div>
               <div>
                 <h5>

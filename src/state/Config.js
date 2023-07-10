@@ -45,7 +45,7 @@ const ISLANDS = {
   // Main scene
   MAIN_LEVEL_ISLANDS: 4,
   LEVEL_1_ISLANDS: 5,
-  LEVEL_2_ISLANDS: 4,
+  LEVEL_2_ISLANDS: 5,
   ACTIVE_ISLAND: 3,
   // DRT island
   DRTPosition: [0, 0, 6],
