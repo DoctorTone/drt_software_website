@@ -59,6 +59,10 @@ body {
   padding: 0.5%;
 }
 
+#breadcrumbs {
+  left: 48%;
+  top: 10%;
+}
 .orangeText {
   color: orange;
 }
