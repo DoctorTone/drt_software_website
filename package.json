@@ -6,9 +6,6 @@
   "dependencies": {
     "@react-three/drei": "^9.53.1",
     "@react-three/fiber": "^8.10.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "@vitejs/plugin-react": "^3.1.0",
     "bootstrap": "^5.2.3",
     "r3f-perf": "^7.1.2",
@@ -47,6 +44,9 @@
     ]
   },
   "devDependencies": {
-    "@react-three/test-renderer": "^8.1.4"
+    "@react-three/test-renderer": "^8.1.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3"
   }
 }
