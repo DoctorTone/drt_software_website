@@ -10,20 +10,17 @@ import { SCENE } from "./state/Config.js";
 import useStore from "./state/store.js";
 
 const App = () => {
-  const currentVisibleModal = useStore((state) => state.currentVisibleModal);
+	const currentVisibleModal = useStore((state) => state.currentVisibleModal);
 
-  return (
-    <>
-      <Canvas camera={{ position: SCENE.cameraPosition }}>
-        <ThreeApp />
-      </Canvas>
-      <CameraControl />
-      <NavigationUI />
-      <Breadcrumbs />
-      <ShowModals visibleModal={currentVisibleModal} />
-      <Bubble />
-    </>
-  );
+	return (
+		<>
+			<Canvas camera={{ position: SCENE.cameraPosition }}>
+				<ThreeApp />
+			</Canvas>
+			<NavigationUI />
+			<ShowModals visibleModal={currentVisibleModal} />
+		</>
+	);
 };
 
 export default App;
