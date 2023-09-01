@@ -16,7 +16,6 @@ export const IslandDRT = ({ slot }) => {
 		if (slot === 0) {
 			setVisibleModal(MODALS.ABOUT);
 			selectSound.play();
-			setTogglePoints((togglePoints) => !togglePoints);
 		}
 	};
 

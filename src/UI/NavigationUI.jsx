@@ -20,20 +20,15 @@ const NavigationUI = () => {
 	const currentLevel = useStore((state) => state.currentLevel);
 	const setVisibleModal = useStore((state) => state.setVisibleModal);
 	const animateNextScene = useStore((state) => state.animateNextScene);
+	const activeIsland = useStore((state) => state.activeIsland);
 	const [showLinks, setShowLinks] = useState(false);
+	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
-	const Home = () => {
-		if (currentLevel === SCENE.MAIN_LEVEL) return;
-
-		const nextScene = {
-			level: SCENE.MAIN_LEVEL,
-			scene: "main",
-			islands: ISLANDS.MAIN_LEVEL_ISLANDS,
-			activeIsland: ISLANDS.ACTIVE_ISLAND,
-			direction: SCENE.ANIMATE_DOWN,
-		};
-		animateNextScene(nextScene);
-		setShowLinks(false);
+	const About = () => {
+		if (activeIsland === "About") {
+			setVisibleModal(MODALS.ABOUT);
+			selectSound.play();
+		}
 	};
 
 	const Portfolio = () => {
@@ -118,7 +113,7 @@ const NavigationUI = () => {
 		<>
 			<div id="home" className="panel ps-2 ps-md-3 w-10">
 				<div className="mb-3">
-					<Button onClick={Home} variant="outline-dark" className="w-100">
+					<Button onClick={About} variant="outline-dark" className="w-100">
 						About
 					</Button>
 				</div>
@@ -153,7 +148,7 @@ const NavigationUI = () => {
 									<strong>Levels:</strong>
 								</h5>
 								<h5
-									onClick={Home}
+									onClick={About}
 									style={{ cursor: "pointer" }}
 									className="orangeText"
 								>
