@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { useState, useRef } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { Island } from "./Island.jsx";
 import { DRT } from "../Models/DRT.jsx";
@@ -45,8 +45,7 @@ export const IslandDRT = ({ islandNumber }) => {
 					position={ISLANDS.DRTTreePosition}
 					scale={0.05}
 				/>
-				{/* <DRT position={ISLANDS.DRTModelPosition} /> */}
-				<DRT position={ISLANDS.DRTTreePosition} scale={0.05} />
+				<DRT position={ISLANDS.DRTModelPosition} />
 				<Shadow
 					scale={1.5}
 					opacity={0.65}

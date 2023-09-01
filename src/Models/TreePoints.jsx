@@ -12,7 +12,12 @@ export function TreePoints({ showPoints, ...props }) {
 		<group {...props} dispose={null}>
 			{showPoints ? (
 				<points args={[geom]}>
-					<pointsMaterial color="green" size={0.025} />
+					<pointsMaterial
+						transparent={true}
+						opacity={props.opacity}
+						color="green"
+						size={0.025}
+					/>
 				</points>
 			) : (
 				<mesh geometry={geom} material={materials.color_main} />
