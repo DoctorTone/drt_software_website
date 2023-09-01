@@ -6,15 +6,14 @@ import { TreePoints } from "../Models/TreePoints.jsx";
 import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
-export const IslandDRT = ({ islandNumber }) => {
+export const IslandDRT = ({ slot }) => {
 	const [hovered, setHovered] = useState(false);
 	const [togglePoints, setTogglePoints] = useState(false);
 	const setVisibleModal = useStore((state) => state.setVisibleModal);
-	const activeIsland = useStore((state) => state.activeIsland);
 	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
 	const selectIsland = () => {
-		if (activeIsland === islandNumber) {
+		if (slot === 0) {
 			setVisibleModal(MODALS.ABOUT);
 			selectSound.play();
 			setTogglePoints((togglePoints) => !togglePoints);
@@ -22,7 +21,7 @@ export const IslandDRT = ({ islandNumber }) => {
 	};
 
 	const pointerOver = () => {
-		if (activeIsland === islandNumber) {
+		if (slot === 0) {
 			setHovered(true);
 		}
 	};
@@ -36,9 +35,11 @@ export const IslandDRT = ({ islandNumber }) => {
 	return (
 		<Float rotationIntensity={SCENE.rotationIntensity}>
 			<group
+				visible={slot >= 0}
 				onPointerOver={pointerOver}
 				onPointerOut={pointerOut}
 				onClick={selectIsland}
+				position={ISLANDS.SLOT_POSITIONS[slot]}
 			>
 				<TreePoints
 					showPoints={togglePoints}
@@ -55,7 +56,7 @@ export const IslandDRT = ({ islandNumber }) => {
 						ISLANDS.DRTModelPosition[2],
 					]}
 				/>
-				<Island position={ISLANDS.DRTPosition} />
+				<Island />
 				<Text
 					color="white"
 					center

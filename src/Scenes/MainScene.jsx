@@ -17,10 +17,10 @@ const MainScene = () => {
 
 	return (
 		<>
-			<IslandDRT islandNumber={0} />
-			{/* <IslandContact islandNumber={1} />
-			<IslandServices islandNumber={2} />
-			<IslandPortfolio islandNumber={3} /> */}
+			<IslandDRT slot={0} />
+			<IslandContact slot={1} />
+			<IslandServices slot={-1} />
+			<IslandPortfolio slot={2} />
 		</>
 	);
 };

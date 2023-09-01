@@ -42,6 +42,12 @@ const SCENE = {
 };
 
 const ISLANDS = {
+	// Position of each slot
+	SLOT_POSITIONS: [
+		[0, 0, 6],
+		[-9, 0, 0],
+		[9, 0, 0],
+	],
 	// Main scene
 	MAIN_LEVEL_ISLANDS: 4,
 	LEVEL_1_ISLANDS: 5,
@@ -49,17 +55,17 @@ const ISLANDS = {
 	ACTIVE_ISLAND: 3,
 	// DRT island
 	DRTPosition: [0, 0, 6],
-	DRTModelPosition: [0.2, 2.2, 6.4],
-	DRTTextPosition: [0, 3, 6.4],
-	DRTTreePosition: [-1, 1.5, 6],
+	DRTModelPosition: [0.2, 2.2, 0.4],
+	DRTTextPosition: [0, 3, 0.4],
+	DRTTreePosition: [-1, 1.5, 0],
 	// Portfolio island
 	PortfolioPosition: [6, 0, 0],
-	PortfolioModelPosition: [6, 2, 0],
-	PortfolioTextPosition: [6, 3.25, 0],
+	PortfolioModelPosition: [0, 2, 0],
+	PortfolioTextPosition: [0, 3.25, 0],
 	// Contact island
 	ContactPosition: [-6, 0, 0],
-	ContactModelPosition: [-6, 2.1, -0.15],
-	ContactTextPosition: [-6, 2.75, 0],
+	ContactModelPosition: [0, 2.1, -0.15],
+	ContactTextPosition: [0, 2.75, 0],
 	// Services island
 	ServicesPosition: [0, 0, -6],
 	ServicesModelPosition: [0, 2.15, -6],

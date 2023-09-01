@@ -6,72 +6,74 @@ import { Flag } from "../Models/Flag.jsx";
 import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
-export const IslandServices = ({ islandNumber }) => {
-  const [hovered, setHovered] = useState(false);
-  const setVisibleModal = useStore((state) => state.setVisibleModal);
-  const activeIsland = useStore((state) => state.activeIsland);
-  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
+export const IslandServices = ({ slot }) => {
+	const [hovered, setHovered] = useState(false);
+	const setVisibleModal = useStore((state) => state.setVisibleModal);
+	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
-  const selectIsland = () => {
-    if (activeIsland === islandNumber) {
-      setVisibleModal(MODALS.SERVICES);
-      selectSound.play();
-    }
-  };
+	const selectIsland = () => {
+		if (slot === 0) {
+			setVisibleModal(MODALS.SERVICES);
+			selectSound.play();
+		}
+	};
 
-  const pointerOver = () => {
-    if (activeIsland === islandNumber) {
-      setHovered(true);
-    }
-  };
+	const pointerOver = () => {
+		if (slot === 0) {
+			setHovered(true);
+		}
+	};
 
-  const pointerOut = () => {
-    setHovered(false);
-  };
+	const pointerOut = () => {
+		setHovered(false);
+	};
 
-  useCursor(hovered);
+	useCursor(hovered);
 
-  return (
-    <Float rotationIntensity={SCENE.rotationIntensity}>
-      <group
-        onPointerOver={pointerOver}
-        onPointerOut={pointerOut}
-        onClick={selectIsland}>
-        <Work
-          rotation-y={Math.PI / 2}
-          scale={0.1}
-          position={ISLANDS.ServicesModelPosition}
-        />
-        <Flag
-          scale={0.425}
-          position={[
-            ISLANDS.ServicesModelPosition[0] + 1,
-            ISLANDS.ServicesModelPosition[1] - 0.5,
-            ISLANDS.ServicesModelPosition[2] - 0.6,
-          ]}
-        />
-        <Shadow
-          scale={1}
-          position={[
-            ISLANDS.ServicesModelPosition[0],
-            ISLANDS.ServicesModelPosition[1] - 0.5,
-            ISLANDS.ServicesModelPosition[2],
-          ]}
-        />
-        <Island position={ISLANDS.ServicesPosition} />
-        <Text
-          color="white"
-          center
-          fontSize={SCENE.FONT_SIZE}
-          position={ISLANDS.ServicesTextPosition}
-          rotation-y={Math.PI}
-          anchorX="center"
-          anchorY="middle"
-          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-          outlineColor="black">
-          Services
-        </Text>
-      </group>
-    </Float>
-  );
+	return (
+		<Float rotationIntensity={SCENE.rotationIntensity}>
+			<group
+				visible={slot >= 0}
+				onPointerOver={pointerOver}
+				onPointerOut={pointerOut}
+				onClick={selectIsland}
+			>
+				<Work
+					rotation-y={Math.PI / 2}
+					scale={0.1}
+					position={ISLANDS.ServicesModelPosition}
+				/>
+				<Flag
+					scale={0.425}
+					position={[
+						ISLANDS.ServicesModelPosition[0] + 1,
+						ISLANDS.ServicesModelPosition[1] - 0.5,
+						ISLANDS.ServicesModelPosition[2] - 0.6,
+					]}
+				/>
+				<Shadow
+					scale={1}
+					position={[
+						ISLANDS.ServicesModelPosition[0],
+						ISLANDS.ServicesModelPosition[1] - 0.5,
+						ISLANDS.ServicesModelPosition[2],
+					]}
+				/>
+				<Island />
+				<Text
+					color="white"
+					center
+					fontSize={SCENE.FONT_SIZE}
+					position={ISLANDS.ServicesTextPosition}
+					rotation-y={Math.PI}
+					anchorX="center"
+					anchorY="middle"
+					outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+					outlineColor="black"
+				>
+					Services
+				</Text>
+			</group>
+		</Float>
+	);
 };
