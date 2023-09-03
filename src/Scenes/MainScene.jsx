@@ -8,21 +8,21 @@ import { MODALS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 const MainScene = () => {
-	const setVisibleModal = useStore((state) => state.setVisibleModal);
-	const startUpModalShown = useStore((state) => state.startUpModalShown);
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
+  const startUpModalShown = useStore((state) => state.startUpModalShown);
 
-	useEffect(() => {
-		setVisibleModal(startUpModalShown ? MODALS.NONE : MODALS.START);
-	}, []);
+  useEffect(() => {
+    setVisibleModal(startUpModalShown ? MODALS.NONE : MODALS.START);
+  }, []);
 
-	return (
-		<>
-			<IslandDRT slot={0} />
-			<IslandContact slot={1} />
-			<IslandServices slot={-1} />
-			<IslandPortfolio slot={2} />
-		</>
-	);
+  return (
+    <>
+      <IslandDRT slot={0} />
+      <IslandContact slot={2} />
+      <IslandServices slot={1} />
+      <IslandPortfolio slot={-1} />
+    </>
+  );
 };
 
 export default MainScene;
