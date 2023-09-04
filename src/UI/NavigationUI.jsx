@@ -21,6 +21,7 @@ const NavigationUI = () => {
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const animateNextScene = useStore((state) => state.animateNextScene);
   const activeIsland = useStore((state) => state.activeIsland);
+  const setActiveIsland = useStore((state) => state.setActiveIsland);
   const [showLinks, setShowLinks] = useState(false);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
@@ -28,10 +29,19 @@ const NavigationUI = () => {
     if (activeIsland === "About") {
       setVisibleModal(MODALS.ABOUT);
       selectSound.play();
+    } else {
+      setActiveIsland("About");
     }
   };
 
-  const Services = () => {};
+  const Services = () => {
+    if (activeIsland === "Services") {
+      setVisibleModal(MODALS.SERVICES);
+      selectSound.play();
+    } else {
+      setActiveIsland("Services");
+    }
+  };
 
   const Portfolio = () => {
     if (currentLevel === SCENE.LEVEL_1) return;
