@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { Island } from "./Island.jsx";
+import { IslandPoints } from "./IslandPoints.jsx";
 import { Portfolio } from "../Models/Portfolio.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useStore from "../state/store.js";
@@ -58,7 +58,7 @@ export const IslandPortfolio = ({ slot }) => {
 						ISLANDS.PortfolioModelPosition[2],
 					]}
 				/>
-				<Island />
+				<IslandPoints />
 				<Text
 					color="white"
 					center
