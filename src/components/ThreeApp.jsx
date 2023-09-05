@@ -94,7 +94,7 @@ const ThreeApp = () => {
             position-y={SCENE.GROUND_LEVEL}
           >
             <Suspense fallback={<Loading />}>
-              <MainScene slots={[0, 1, 2]} />
+              <MainScene slots={[0, 2, 1]} />
             </Suspense>
           </group>
         )}
