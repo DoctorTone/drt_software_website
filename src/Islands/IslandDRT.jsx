@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { DRT } from "../Models/DRT.jsx";
-import { TreePoints } from "../Models/TreePoints.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
@@ -11,10 +10,13 @@ export const IslandDRT = () => {
   const [hovered, setHovered] = useState(false);
   const [togglePoints, setTogglePoints] = useState(false);
   const targetIsland = useStore((state) => state.targetIsland);
+  const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
   const currentSlots = useStore((state) => state.currentSlots);
+  const updateSlots = useStore((state) => state.updateSlots);
   const getSlotPosition = useStore((state) => state.getSlotPosition);
+  const swapSlots = useStore((state) => state.swapSlots);
 
   const matRef = useRef();
 
@@ -53,6 +55,9 @@ export const IslandDRT = () => {
       if (matRef.current.opacity < 0) {
         matRef.current.opacity = 1;
         setTogglePoints(false);
+        swapSlots(targetIsland, "About", currentSlots);
+        updateSlots(currentSlots);
+        setActiveIsland(targetIsland);
       }
     }
   });

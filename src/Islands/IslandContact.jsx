@@ -3,7 +3,7 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { Phone } from "../Models/Phone.jsx";
-import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandContact = ({ slot }) => {

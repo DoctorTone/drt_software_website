@@ -14,6 +14,11 @@ const useStore = create((set) => ({
 
     return -1;
   },
+  swapSlots: (fromSlot, toSlot, slots) => {
+    const fromIndex = slots.indexOf(fromSlot);
+    const toIndex = slots.indexOf(toSlot);
+    [slots[toIndex], slots[fromIndex]] = [slots[fromIndex], slots[toIndex]];
+  },
   ignoreButtonPress: false,
   setActiveIsland: (island) => set({ activeIsland: island }),
   setTargetIsland: (island) => set({ targetIsland: island }),

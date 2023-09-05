@@ -8,32 +8,30 @@ import { useGLTF } from "@react-three/drei";
 import { MATERIALS } from "../state/Config.js";
 
 export function DRT({ fade, ...props }) {
-	const { nodes, materials } = useGLTF("./models/DRT-Text.gltf");
-	// DEBUG
-	console.log("Mats = ", materials);
-	const matRef = useRef();
+  const { nodes, materials } = useGLTF("./models/DRT-Text.gltf");
+  const matRef = useRef();
 
-	useFrame((state, delta) => {
-		if (fade) {
-			matRef.current.opacity -= delta;
-			if (matRef.current.opacity < 0) {
-				matRef.current.opacity = 0;
-				matRef.current.opacity = 1;
-			}
-		}
-	});
+  useFrame((state, delta) => {
+    if (fade) {
+      matRef.current.opacity -= delta;
+      if (matRef.current.opacity < 0) {
+        matRef.current.opacity = 0;
+        matRef.current.opacity = 1;
+      }
+    }
+  });
 
-	return (
-		<group {...props} dispose={null}>
-			<mesh
-				geometry={nodes.DRT001.geometry}
-				position={[-1.09, -0.44, 0]}
-				rotation={[Math.PI / 2, 0, 0]}
-			>
-				<meshPhongMaterial transparent={true} color={0xcc7306} ref={matRef} />
-			</mesh>
-		</group>
-	);
+  return (
+    <group {...props} dispose={null}>
+      <mesh
+        geometry={nodes.DRT001.geometry}
+        position={[-1.09, -0.44, 0]}
+        rotation={[Math.PI / 2, 0, 0]}
+      >
+        <meshPhongMaterial transparent={true} color={0xcc7306} ref={matRef} />
+      </mesh>
+    </group>
+  );
 }
 
 useGLTF.preload("./models/DRT-Text.gltf");
