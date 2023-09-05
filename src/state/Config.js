@@ -44,8 +44,8 @@ const SCENE = {
 const ISLANDS = {
   // Position of each slot
   SLOT_POSITIONS: [
-    [0, 0, 6],
     [-9, 0, 0],
+    [0, 0, 6],
     [9, 0, 0],
   ],
   // Main scene
@@ -136,6 +136,12 @@ const MODALS = {
   VR: 15,
 };
 
+const SLOTS = {
+  LEFT: 0,
+  MIDDLE: 1,
+  RIGHT: 2,
+};
+
 const MATERIALS = {
   GRASS: new THREE.MeshLambertMaterial({ color: "green" }),
   EARTH: new THREE.MeshLambertMaterial({
@@ -147,4 +153,4 @@ const MATERIALS = {
   SHINY_ORANGE: new THREE.MeshPhongMaterial({ color: 0xcc2906 }),
 };
 
-export { SCENE, ISLANDS, MODALS, MATERIALS };
+export { SCENE, ISLANDS, MODALS, MATERIALS, SLOTS };
