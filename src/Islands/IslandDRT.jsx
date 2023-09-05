@@ -48,6 +48,8 @@ export const IslandDRT = ({ slot }) => {
 			matRef.current.opacity -= delta;
 			if (matRef.current.opacity < 0) {
 				matRef.current.opacity = 0;
+				matRef.current.opacity = 1;
+				setTogglePoints(false);
 			}
 		}
 	});
@@ -60,7 +62,7 @@ export const IslandDRT = ({ slot }) => {
 				onClick={selectIsland}
 				position={ISLANDS.SLOT_POSITIONS[slot]}
 			>
-				<DRT position={ISLANDS.DRTModelPosition} />
+				<DRT fade={togglePoints} position={ISLANDS.DRTModelPosition} />
 				<Shadow
 					scale={1.5}
 					opacity={0.65}

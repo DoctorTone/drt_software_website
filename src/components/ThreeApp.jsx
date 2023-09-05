@@ -11,6 +11,7 @@ import DataVizScene from "../Scenes/DataVizScene.jsx";
 import { Loading } from "./Loading.jsx";
 
 const ThreeApp = () => {
+	const currentSlots = useStore((state) => state.currentSlots);
 	const cameraRotation = useStore((state) => state.cameraRotation);
 	const resetCamRotate = useStore((state) => state.resetCamRotate);
 
@@ -94,7 +95,7 @@ const ThreeApp = () => {
 						position-y={SCENE.GROUND_LEVEL}
 					>
 						<Suspense fallback={<Loading />}>
-							<MainScene slots={[0, 2, 1]} />
+							<MainScene slots={currentSlots} />
 						</Suspense>
 					</group>
 				)}

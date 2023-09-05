@@ -6,9 +6,11 @@ const useStore = create((set) => ({
 	activeIsland: "About",
 	targetIsland: "",
 	numIslands: 4,
+	currentSlots: [0, 2, 1],
 	ignoreButtonPress: false,
 	setActiveIsland: (island) => set({ activeIsland: island }),
 	setTargetIsland: (island) => set({ targetIsland: island }),
+	updateSlots: (slots) => set({ currentSlots: [...slots] }),
 	setNumIslands: (islands) => set({ numIslands: islands }),
 	cameraRotation: SCENE.CAM_ROTATE_NONE,
 	rotateCamRight: () => {
