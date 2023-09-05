@@ -4,9 +4,11 @@ import { SCENE, MODALS } from "./Config.js";
 const useStore = create((set) => ({
 	// Camera rotations
 	activeIsland: "About",
+	targetIsland: "",
 	numIslands: 4,
 	ignoreButtonPress: false,
 	setActiveIsland: (island) => set({ activeIsland: island }),
+	setTargetIsland: (island) => set({ targetIsland: island }),
 	setNumIslands: (islands) => set({ numIslands: islands }),
 	cameraRotation: SCENE.CAM_ROTATE_NONE,
 	rotateCamRight: () => {
