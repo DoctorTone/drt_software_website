@@ -14,18 +14,11 @@ export const IslandDRT = () => {
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
   const currentSlots = useStore((state) => state.currentSlots);
-
-  const getSlotPosition = (slots) => {
-    for (let i = 0; i < slots.length; ++i) {
-      if (slots[i] === "About") return i;
-    }
-
-    return -1;
-  };
+  const getSlotPosition = useStore((state) => state.getSlotPosition);
 
   const matRef = useRef();
 
-  const slotPosition = getSlotPosition(currentSlots);
+  const slotPosition = getSlotPosition(currentSlots, "About");
 
   const selectIsland = () => {
     if (currentSlots[SLOTS.MIDDLE] === "About") {

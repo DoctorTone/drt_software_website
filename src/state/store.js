@@ -7,6 +7,13 @@ const useStore = create((set) => ({
   targetIsland: "",
   numIslands: 4,
   currentSlots: ["Contact", "About", "Services"],
+  getSlotPosition: (slots, island) => {
+    for (let i = 0; i < slots.length; ++i) {
+      if (slots[i] === island) return i;
+    }
+
+    return -1;
+  },
   ignoreButtonPress: false,
   setActiveIsland: (island) => set({ activeIsland: island }),
   setTargetIsland: (island) => set({ targetIsland: island }),
