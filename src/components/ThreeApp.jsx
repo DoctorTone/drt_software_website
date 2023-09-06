@@ -13,17 +13,8 @@ import Overlay from "./Overlay.jsx";
 
 const ThreeApp = () => {
 	const currentSlots = useStore((state) => state.currentSlots);
-
 	const currentLevel = useStore((state) => state.currentLevel);
-
 	const fadeOverlayIn = useStore((state) => state.fadeOverlayIn);
-
-	const topLevel = useRef();
-	const allRefs = {
-		main: useRef(),
-		portfolio: useRef(),
-		dataviz: useRef(),
-	};
 
 	return (
 		<>
@@ -32,23 +23,23 @@ const ThreeApp = () => {
 			<pointLight position={SCENE.lightPosition} />
 			<Sky sunPosition={SCENE.sunPosition} />
 			<Cloud position={SCENE.cloudPosition} scale={SCENE.cloudScale} />
-			<group ref={topLevel}>
+			<group>
 				{currentLevel === SCENE.MAIN_LEVEL && (
-					<group ref={allRefs["main"]} name="main">
+					<group name="main">
 						<Suspense fallback={<Loading />}>
 							<MainScene slots={currentSlots} />
 						</Suspense>
 					</group>
 				)}
 				{currentLevel === SCENE.LEVEL_1 && (
-					<group ref={allRefs["portfolio"]} name="portfolio">
+					<group name="portfolio">
 						<Suspense fallback={null}>
 							<PortfolioScene />
 						</Suspense>
 					</group>
 				)}
 				{currentLevel === SCENE.LEVEL_2 && (
-					<group ref={allRefs["dataviz"]} name="dataviz">
+					<group name="dataviz">
 						<Suspense fallback={null}>
 							<DataVizScene />
 						</Suspense>

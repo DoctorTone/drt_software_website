@@ -6,15 +6,15 @@ import { IslandShaders } from "../Islands/IslandShaders.jsx";
 import { IslandTech } from "../Islands/IslandTech.jsx";
 
 const PortfolioScene = () => {
-  return (
-    <>
-      <IslandVR islandNumber={3} />
-      <IslandPhysics islandNumber={2} />
-      <IslandShaders islandNumber={1} />
-      <IslandTech islandNumber={0} />
-      <IslandDataViz islandNumber={4} />
-    </>
-  );
+	return (
+		<>
+			<IslandVR />
+			<IslandPhysics />
+			<IslandShaders />
+			<IslandTech />
+			<IslandDataViz />
+		</>
+	);
 };
 
 export default PortfolioScene;

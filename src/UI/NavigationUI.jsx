@@ -18,12 +18,14 @@ import useStore from "../state/store.js";
 
 const NavigationUI = () => {
 	const currentLevel = useStore((state) => state.currentLevel);
+	const setCurrentLevel = useStore((state) => state.setCurrentLevel);
 	const setVisibleModal = useStore((state) => state.setVisibleModal);
 	const animateNextScene = useStore((state) => state.animateNextScene);
 	const activeIsland = useStore((state) => state.activeIsland);
 	const setActiveIsland = useStore((state) => state.setActiveIsland);
 	const setTargetIsland = useStore((state) => state.setTargetIsland);
 	const fadeOverlay = useStore((state) => state.fadeOverlay);
+	const updateSlots = useStore((state) => state.updateSlots);
 
 	const [showLinks, setShowLinks] = useState(false);
 	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
@@ -59,6 +61,8 @@ const NavigationUI = () => {
 	const Portfolio = () => {
 		setMenuState("Portfolio");
 		fadeOverlay();
+		setCurrentLevel(SCENE.LEVEL_1);
+		updateSlots(["Physics", "VR", "Shaders"]);
 	};
 
 	const DataViz = () => {

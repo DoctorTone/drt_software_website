@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { SCENE, MODALS } from "./Config.js";
 
 const useStore = create((set) => ({
-	// Camera rotations
+	// Island slot positions
 	activeIsland: "About",
 	targetIsland: "",
 	numIslands: 4,
