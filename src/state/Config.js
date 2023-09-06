@@ -72,8 +72,8 @@ const ISLANDS = {
 	ServicesTextPosition: [0, 2.85, 0],
 	// Physics island
 	PhysicsPosition: [1.854, 0, -5.706],
-	PhysicsModelPosition: [1.854, 2.2, -5.706],
-	PhysicsTextPosition: [1.854, 3, -5.706],
+	PhysicsModelPosition: [0, 2.2, 0],
+	PhysicsTextPosition: [0, 3, 0],
 	PhysicsTextRotation: -3.5,
 	// VR island
 	VRPosition: [6, 0, 0],
