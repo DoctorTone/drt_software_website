@@ -44,6 +44,15 @@ const NavigationUI = () => {
     }
   };
 
+  const Contact = () => {
+    if (activeIsland === "Contact") {
+      setVisibleModal(MODALS.CONTACT);
+      selectSound.play();
+    } else {
+      setTargetIsland("Contact");
+    }
+  };
+
   const Portfolio = () => {
     if (currentLevel === SCENE.LEVEL_1) return;
 
@@ -104,14 +113,6 @@ const NavigationUI = () => {
     animateNextScene(nextScene);
   };
 
-  const Info = () => {
-    setVisibleModal(MODALS.INFO);
-  };
-
-  const Contact = () => {
-    setVisibleModal(MODALS.PERSON);
-  };
-
   const showDemoLinks = (event) => {
     event.preventDefault();
 
@@ -136,7 +137,7 @@ const NavigationUI = () => {
           </Button>
         </div>
         <div className="mb-3">
-          <Button onClick={Info} variant="outline-dark" className="w-100">
+          <Button onClick={Contact} variant="outline-dark" className="w-100">
             Contact
           </Button>
         </div>

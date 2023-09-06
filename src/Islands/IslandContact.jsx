@@ -10,10 +10,14 @@ export const IslandContact = ({ slot }) => {
   const [hovered, setHovered] = useState(false);
   const [togglePoints, setTogglePoints] = useState(false);
   const targetIsland = useStore((state) => state.targetIsland);
+  const activeIsland = useStore((state) => state.activeIsland);
+  const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
   const currentSlots = useStore((state) => state.currentSlots);
+  const updateSlots = useStore((state) => state.updateSlots);
   const getSlotPosition = useStore((state) => state.getSlotPosition);
+  const swapSlots = useStore((state) => state.swapSlots);
 
   const matRef = useRef();
 
@@ -41,7 +45,7 @@ export const IslandContact = ({ slot }) => {
   useEffect(() => {
     if (!targetIsland) return;
 
-    if (targetIsland !== "Contact") {
+    if (targetIsland !== "Contact" && activeIsland === "Contact") {
       setTogglePoints(true);
     }
   }, [targetIsland]);
@@ -52,6 +56,9 @@ export const IslandContact = ({ slot }) => {
       if (matRef.current.opacity < 0) {
         matRef.current.opacity = 1;
         setTogglePoints(false);
+        swapSlots(targetIsland, "Contact", currentSlots);
+        updateSlots(currentSlots);
+        setActiveIsland(targetIsland);
       }
     }
   });
@@ -80,7 +87,7 @@ export const IslandContact = ({ slot }) => {
             ISLANDS.ContactModelPosition[2],
           ]}
         />
-        <IslandPoints />
+        <IslandPoints showPoints={togglePoints} />
         <Text
           color="white"
           center

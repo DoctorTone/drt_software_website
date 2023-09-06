@@ -10,6 +10,7 @@ export const IslandServices = ({ slot }) => {
   const [hovered, setHovered] = useState(false);
   const [togglePoints, setTogglePoints] = useState(false);
   const targetIsland = useStore((state) => state.targetIsland);
+  const activeIsland = useStore((state) => state.activeIsland);
   const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
@@ -44,7 +45,7 @@ export const IslandServices = ({ slot }) => {
   useEffect(() => {
     if (!targetIsland) return;
 
-    if (targetIsland !== "Services") {
+    if (targetIsland !== "Services" && activeIsland === "Services") {
       setTogglePoints(true);
     }
   }, [targetIsland]);
