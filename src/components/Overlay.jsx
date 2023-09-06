@@ -2,13 +2,22 @@ import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 const Overlay = ({ fade, ...props }) => {
 	const matRef = useRef();
+	const triggerRef = useRef(false);
+
+	if (fade) {
+		triggerRef.current = true;
+	}
 
 	let fadeDirection = 1;
 	useFrame((state, delta) => {
-		if (fade) {
+		if (triggerRef.current) {
 			matRef.current.opacity += delta * fadeDirection;
 			if (matRef.current.opacity >= 1) {
 				fadeDirection = -1;
+			}
+			if (matRef.current.opacity < 0) {
+				matRef.current.opacity = 0;
+				triggerRef.current = false;
 			}
 		}
 	});
