@@ -82,8 +82,8 @@ const ISLANDS = {
 	VRTextRotation: Math.PI / 2,
 	// Shader island
 	ShaderPosition: [-3.927, 0, -3.527],
-	ShaderModelPosition: [-3.927, 2.35, -3.527],
-	ShaderTextPosition: [-3.927, 3.2, -3.527],
+	ShaderModelPosition: [0, 2.35, 0],
+	ShaderTextPosition: [0, 3.2, 0],
 	ShaderTextRotation: 4.15,
 	// Tech island
 	TechPosition: [-3.927, 0, 3.527],
