@@ -23,8 +23,10 @@ const NavigationUI = () => {
   const activeIsland = useStore((state) => state.activeIsland);
   const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
+
   const [showLinks, setShowLinks] = useState(false);
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
+  const [menuState, setMenuState] = useState("Main");
 
   const About = () => {
     if (activeIsland === "About") {
@@ -54,17 +56,7 @@ const NavigationUI = () => {
   };
 
   const Portfolio = () => {
-    if (currentLevel === SCENE.LEVEL_1) return;
-
-    const nextScene = {
-      level: SCENE.LEVEL_1,
-      scene: "portfolio",
-      islands: ISLANDS.LEVEL_1_ISLANDS,
-      activeIsland: ISLANDS.ACTIVE_ISLAND,
-      direction: SCENE.ANIMATE_DOWN,
-    };
-    animateNextScene(nextScene);
-    setShowLinks(false);
+    setMenuState("Portfolio");
   };
 
   const DataViz = () => {
@@ -126,139 +118,87 @@ const NavigationUI = () => {
   return (
     <>
       <div id="home" className="panel ps-2 ps-md-3 w-10">
-        <div className="mb-3">
-          <Button onClick={About} variant="outline-dark" className="w-100">
-            About
-          </Button>
-        </div>
-        <div className="mb-3">
-          <Button onClick={Services} variant="outline-dark" className="w-100">
-            Services
-          </Button>
-        </div>
-        <div className="mb-3">
-          <Button onClick={Contact} variant="outline-dark" className="w-100">
-            Contact
-          </Button>
-        </div>
-        <div className="mb-3">
-          <Button onClick={Contact} variant="outline-dark" className="w-100">
-            Porfolio
-          </Button>
-        </div>
-        <div>
-          <Offcanvas show={showLinks} onHide={handleClose} placement="start">
-            <Offcanvas.Header closeButton closeVariant="white">
-              <Offcanvas.Title>Links</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <p>Go straight to the level or demo you want.</p>
-              <div className="mb-5">
-                <h5>
-                  <strong>Levels:</strong>
-                </h5>
-                <h5
-                  onClick={About}
-                  style={{ cursor: "pointer" }}
-                  className="orangeText"
-                >
-                  Home
-                </h5>
-                <h5
-                  onClick={Portfolio}
-                  style={{ cursor: "pointer" }}
-                  className="orangeText"
-                >
-                  Portfolio
-                </h5>
-                <h5
-                  onClick={DataViz}
-                  style={{ cursor: "pointer" }}
-                  className="orangeText"
-                >
-                  Data visualisation
-                </h5>
-              </div>
-              <div>
-                <h5>
-                  <strong>Demos:</strong>
-                </h5>
-                <h5>
-                  <a
-                    href="https://drt-software.com/Demos/VRFramework/VRFramework.html"
-                    target="_blank"
-                  >
-                    VR framework
-                  </a>
-                </h5>
-                <h5>
-                  <a
-                    href="https://drt-software.com/Demos/Physics/physics_demo.html"
-                    target="_blank"
-                  >
-                    Physics
-                  </a>
-                </h5>
-                <h5>
-                  <a
-                    href="https://drt-software.com/Demos/Effects/effects.html"
-                    target="_blank"
-                  >
-                    Shader effects
-                  </a>
-                </h5>
-                <h5>
-                  <a
-                    href="https://drt-software.com/Demos/Material/editor.html"
-                    target="_blank"
-                  >
-                    Material editor
-                  </a>
-                </h5>
-                <h5>
-                  <a
-                    href="https://www.drt-software.com/MedicalViz/medicalViz.html"
-                    target="_blank"
-                  >
-                    Medical Viz
-                  </a>
-                </h5>
-                <h5>
-                  <a
-                    href="https://www.drt-software.com/FTSEViz/FTSEViz.html"
-                    target="_blank"
-                  >
-                    Financial Viz
-                  </a>
-                </h5>
-                <h5>
-                  <a
-                    href="https://www.drt-software.com/Covid/covid19.html"
-                    target="_blank"
-                  >
-                    Pandemic Viz
-                  </a>
-                </h5>
-                <h5>
-                  <a
-                    href="https://www.drt-software.com/SleepViz/sleepViz.html"
-                    target="_blank"
-                  >
-                    Sleep Viz
-                  </a>
-                </h5>
-                <h5>
-                  <a
-                    href="https://www.drt-software.com/Horror/brainViz.html"
-                    target="_blank"
-                  >
-                    Real-time Viz
-                  </a>
-                </h5>
-              </div>
-            </Offcanvas.Body>
-          </Offcanvas>
-        </div>
+        {menuState === "Main" ? (
+          <div>
+            <div className="mb-3">
+              <Button onClick={About} variant="outline-dark" className="w-100">
+                About
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Services}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Services
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Contact}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Contact
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Portfolio}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Porfolio
+              </Button>
+            </div>
+          </div>
+        ) : null}
+        {menuState === "Portfolio" ? (
+          <div>
+            <div className="mb-3">
+              <Button onClick={About} variant="outline-dark" className="w-100">
+                VR
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Services}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Physics
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Contact}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Shaders
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Services}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Tech
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Contact}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Data Viz
+              </Button>
+            </div>
+          </div>
+        ) : null}
       </div>
       <div id="social" className="panel pe-1 pe-md-3">
         <div className="mb-3">
