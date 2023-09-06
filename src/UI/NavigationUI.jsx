@@ -60,17 +60,7 @@ const NavigationUI = () => {
   };
 
   const DataViz = () => {
-    if (currentLevel === SCENE.LEVEL_2) return;
-
-    const nextScene = {
-      level: SCENE.LEVEL_2,
-      scene: "dataviz",
-      islands: ISLANDS.LEVEL_2_ISLANDS,
-      activeIsland: ISLANDS.ACTIVE_ISLAND,
-      direction: SCENE.ANIMATE_DOWN,
-    };
-    animateNextScene(nextScene);
-    setShowLinks(false);
+    setMenuState("DataViz");
   };
 
   const BackOneLevel = () => {
@@ -190,11 +180,56 @@ const NavigationUI = () => {
             </div>
             <div className="mb-3">
               <Button
-                onClick={Contact}
+                onClick={DataViz}
                 variant="outline-dark"
                 className="w-100"
               >
                 Data Viz
+              </Button>
+            </div>
+          </div>
+        ) : null}
+        {menuState === "DataViz" ? (
+          <div>
+            <div className="mb-3">
+              <Button onClick={About} variant="outline-dark" className="w-100">
+                Medical
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Services}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Finance
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Contact}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Pandemic
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={Services}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Sleep
+              </Button>
+            </div>
+            <div className="mb-3">
+              <Button
+                onClick={DataViz}
+                variant="outline-dark"
+                className="w-100"
+              >
+                Real-time
               </Button>
             </div>
           </div>
