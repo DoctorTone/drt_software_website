@@ -1,9 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import ThreeApp from "./components/ThreeApp.jsx";
-import CameraControl from "./UI/CameraControl.jsx";
 import NavigationUI from "./UI/NavigationUI.jsx";
-import Breadcrumbs from "./UI/Breadcrumbs.jsx";
 import ShowModals from "./Modals/ShowModals.jsx";
+import FadeUI from "./UI/FadeUI.jsx";
 import Bubble from "./components/Bubble.jsx";
 
 import { SCENE } from "./state/Config.js";
@@ -18,6 +17,7 @@ const App = () => {
 				<ThreeApp />
 			</Canvas>
 			<NavigationUI />
+			<FadeUI />
 			<ShowModals visibleModal={currentVisibleModal} />
 		</>
 	);
