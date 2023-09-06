@@ -1,27 +1,31 @@
-import React, { Suspense, useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { useFrame } from "@react-three/fiber";
 import { DataViz } from "../Models/DataViz.jsx";
 import { SCENE, ISLANDS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandDataViz = ({ islandNumber }) => {
 	const [hovered, setHovered] = useState(false);
+	const [togglePoints, setTogglePoints] = useState(false);
+	const targetIsland = useStore((state) => state.targetIsland);
 	const activeIsland = useStore((state) => state.activeIsland);
 	const animateNextScene = useStore((state) => state.animateNextScene);
 	const [selectSound] = useState(() => new Audio("./sounds/select.mp3"));
+	const currentSlots = useStore((state) => state.currentSlots);
+	const updateSlots = useStore((state) => state.updateSlots);
+	const getSlotPosition = useStore((state) => state.getSlotPosition);
+	const swapSlots = useStore((state) => state.swapSlots);
+
+	const matRef = useRef();
+
+	const slotPosition = getSlotPosition(currentSlots, "DataViz");
 
 	const selectIsland = () => {
-		if (activeIsland === islandNumber) {
+		if (currentSlots[SLOTS.MIDDLE] === "DataViz") {
+			setVisibleModal(MODALS.CONTACT);
 			selectSound.play();
-			const nextScene = {
-				level: SCENE.LEVEL_2,
-				scene: "dataviz",
-				islands: 5,
-				activeIsland: 3,
-				direction: SCENE.ANIMATE_DOWN,
-			};
-			animateNextScene(nextScene);
 		}
 	};
 

@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 const SCENE = {
-	cameraPosition: [0, 2.75, 10],
+	cameraPosition: [0, 3, 10],
 	lightPosition: [10, 10, 10],
 	rotationIntensity: 0.25,
 	sunPosition: [1, 0.15, 0],
@@ -77,7 +77,7 @@ const ISLANDS = {
 	PhysicsTextRotation: -3.5,
 	// VR island
 	VRPosition: [6, 0, 0],
-	VRModelPosition: [2, -7, -2],
+	VRModelPosition: [2, -7, -1.5],
 	VRTextPosition: [0.25, 3.25, 0],
 	VRTextRotation: Math.PI / 2,
 	// Shader island

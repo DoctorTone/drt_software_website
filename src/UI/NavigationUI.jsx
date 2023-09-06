@@ -62,11 +62,16 @@ const NavigationUI = () => {
 		setMenuState("Portfolio");
 		fadeOverlay();
 		setCurrentLevel(SCENE.LEVEL_1);
-		updateSlots(["Tech", "VR", "DataViz"]);
+		updateSlots(["Physics", "VR", "Shaders"]);
 	};
 
 	const DataViz = () => {
 		setMenuState("DataViz");
+	};
+
+	const Home = () => {
+		setCurrentLevel(SCENE.MAIN_LEVEL);
+		updateSlots(["Contact", "About", "Services"]);
 	};
 
 	const BackOneLevel = () => {
@@ -191,6 +196,11 @@ const NavigationUI = () => {
 								className="w-100"
 							>
 								Data Viz
+							</Button>
+						</div>
+						<div className="mb-3">
+							<Button onClick={Home} variant="outline-dark" className="w-100">
+								<House />
 							</Button>
 						</div>
 					</div>
