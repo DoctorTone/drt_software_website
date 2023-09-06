@@ -62,7 +62,7 @@ const NavigationUI = () => {
 		setMenuState("Portfolio");
 		fadeOverlay();
 		setCurrentLevel(SCENE.LEVEL_1);
-		updateSlots(["Physics", "VR", "Shaders"]);
+		updateSlots(["Tech", "VR", "DataViz"]);
 	};
 
 	const DataViz = () => {

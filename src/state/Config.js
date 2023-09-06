@@ -87,8 +87,8 @@ const ISLANDS = {
 	ShaderTextRotation: 4.15,
 	// Tech island
 	TechPosition: [-3.927, 0, 3.527],
-	TechModelPosition: [-3.927, 2.2, 3.527],
-	TechTextPosition: [-3.927, 3, 3.527],
+	TechModelPosition: [0, 2.2, 0],
+	TechTextPosition: [0, 3, 0],
 	TechTextRotation: -1,
 	// Data Viz island
 	DataVizPosition: [1.854, 0, 5.706],
