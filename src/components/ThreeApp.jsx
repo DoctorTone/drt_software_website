@@ -14,11 +14,11 @@ import Overlay from "./Overlay.jsx";
 const ThreeApp = () => {
 	const currentSlots = useStore((state) => state.currentSlots);
 	const currentLevel = useStore((state) => state.currentLevel);
-	const fadeOverlayIn = useStore((state) => state.fadeOverlayIn);
+	const fadeOverlay = useStore((state) => state.fadeOverlay);
 
 	return (
 		<>
-			<Overlay fade={fadeOverlayIn} position-z={9} />
+			<Overlay fade={fadeOverlay} position-z={9} />
 			<ambientLight intensity={SCENE.ambientIntensity} />
 			<pointLight position={SCENE.lightPosition} />
 			<Sky sunPosition={SCENE.sunPosition} />

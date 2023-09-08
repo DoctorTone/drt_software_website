@@ -23,10 +23,11 @@ const useStore = create((set) => ({
 	setActiveIsland: (island) => set({ activeIsland: island }),
 	setTargetIsland: (island) => set({ targetIsland: island }),
 	updateSlots: (slots) => set({ currentSlots: [...slots] }),
+	overlayFaded: false,
+	setOverlayFaded: (faded) => set({ overlayFaded: faded }),
 	setNumIslands: (islands) => set({ numIslands: islands }),
-	fadeOverlayIn: false,
-	fadeOverlayOut: false,
-	fadeOverlay: () => set({ fadeOverlayIn: true }),
+	fadeOverlay: 0,
+	setFadeOverlay: (fade) => set({ fadeOverlay: fade }),
 	cameraRotation: SCENE.CAM_ROTATE_NONE,
 	rotateCamRight: () => {
 		set((state) => ({

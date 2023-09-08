@@ -1,23 +1,36 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import useStore from "../state/store";
 const Overlay = ({ fade, ...props }) => {
 	const matRef = useRef();
 	const triggerRef = useRef(false);
 
-	if (fade) {
+	const setOverlayFaded = useStore((state) => state.setOverlayFaded);
+	const setFadeOverlay = useStore((state) => state.setFadeOverlay);
+
+	triggerRef.current = false;
+	if (fade !== 0) {
 		triggerRef.current = true;
 	}
 
-	let fadeDirection = 1;
 	useFrame((state, delta) => {
 		if (triggerRef.current) {
-			matRef.current.opacity += delta * fadeDirection;
+			// DEBUG
+			console.log("Fading", fade);
+			matRef.current.opacity += delta * fade;
 			if (matRef.current.opacity >= 1) {
-				fadeDirection = -1;
+				matRef.current.opacity = 1;
+				triggerRef.current = false;
+				// Signal we have faded out
+				setFadeOverlay(0);
+				setOverlayFaded(true);
 			}
+
 			if (matRef.current.opacity < 0) {
 				matRef.current.opacity = 0;
 				triggerRef.current = false;
+				// No more fading
+				setFadeOverlay(0);
 			}
 		}
 	});

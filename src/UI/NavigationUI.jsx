@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
@@ -24,8 +24,10 @@ const NavigationUI = () => {
 	const activeIsland = useStore((state) => state.activeIsland);
 	const setActiveIsland = useStore((state) => state.setActiveIsland);
 	const setTargetIsland = useStore((state) => state.setTargetIsland);
-	const fadeOverlay = useStore((state) => state.fadeOverlay);
+	const setFadeOverlay = useStore((state) => state.setFadeOverlay);
 	const updateSlots = useStore((state) => state.updateSlots);
+	const overlayFaded = useStore((state) => state.overlayFaded);
+	const setOverlayFaded = useStore((state) => state.setOverlayFaded);
 
 	const [showLinks, setShowLinks] = useState(false);
 	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
@@ -60,9 +62,26 @@ const NavigationUI = () => {
 
 	const Portfolio = () => {
 		setMenuState("Portfolio");
-		fadeOverlay();
-		setCurrentLevel(SCENE.LEVEL_1);
-		updateSlots(["Physics", "VR", "Shaders"]);
+		// Fade overlay out
+		setFadeOverlay(1);
+	};
+
+	const VR = () => {
+		if (activeIsland === "VR") {
+			setVisibleModal(MODALS.VR);
+			selectSound.play();
+		} else {
+			setTargetIsland("VR");
+		}
+	};
+
+	const Physics = () => {
+		if (activeIsland === "Physics") {
+			setVisibleModal(MODALS.PHYSICS);
+			selectSound.play();
+		} else {
+			setTargetIsland("Physics");
+		}
 	};
 
 	const DataViz = () => {
@@ -70,6 +89,7 @@ const NavigationUI = () => {
 	};
 
 	const Home = () => {
+		setMenuState("Main");
 		setCurrentLevel(SCENE.MAIN_LEVEL);
 		updateSlots(["Contact", "About", "Services"]);
 	};
@@ -116,6 +136,23 @@ const NavigationUI = () => {
 		setShowLinks(false);
 	};
 
+	useEffect(() => {
+		if (!overlayFaded) return;
+
+		switch (menuState) {
+			case "Portfolio":
+				setCurrentLevel(SCENE.LEVEL_1);
+				updateSlots(["Physics", "VR", "Shaders"]);
+				setActiveIsland("VR");
+				setOverlayFaded(false);
+				setFadeOverlay(-1);
+				break;
+
+			default:
+				break;
+		}
+	}, [overlayFaded]);
+
 	return (
 		<>
 			<div id="home" className="panel ps-2 ps-md-3 w-10">
@@ -158,13 +195,13 @@ const NavigationUI = () => {
 				{menuState === "Portfolio" ? (
 					<div>
 						<div className="mb-3">
-							<Button onClick={About} variant="outline-dark" className="w-100">
+							<Button onClick={VR} variant="outline-dark" className="w-100">
 								VR
 							</Button>
 						</div>
 						<div className="mb-3">
 							<Button
-								onClick={Services}
+								onClick={Physics}
 								variant="outline-dark"
 								className="w-100"
 							>
