@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Float, Text, useCursor, RoundedBox, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { useFrame } from "@react-three/fiber";
-import { SCENE, ISLANDS, MATERIALS, MODALS } from "../state/Config.js";
+import { SCENE, ISLANDS, MATERIALS, MODALS, SLOTS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandShaders = ({ islandNumber }) => {
@@ -10,6 +10,7 @@ export const IslandShaders = ({ islandNumber }) => {
 	const [togglePoints, setTogglePoints] = useState(false);
 	const targetIsland = useStore((state) => state.targetIsland);
 	const activeIsland = useStore((state) => state.activeIsland);
+	const setActiveIsland = useStore((state) => state.setActiveIsland);
 	const setVisibleModal = useStore((state) => state.setVisibleModal);
 	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 	const currentSlots = useStore((state) => state.currentSlots);
@@ -72,7 +73,6 @@ export const IslandShaders = ({ islandNumber }) => {
 			>
 				<RoundedBox
 					position={ISLANDS.ShaderModelPosition}
-					scale={1}
 					material={MATERIALS.GREY}
 				/>
 				<Shadow

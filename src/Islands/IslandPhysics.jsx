@@ -11,6 +11,7 @@ export const IslandPhysics = ({ islandNumber }) => {
 	const [togglePoints, setTogglePoints] = useState(false);
 	const targetIsland = useStore((state) => state.targetIsland);
 	const activeIsland = useStore((state) => state.activeIsland);
+	const setActiveIsland = useStore((state) => state.setActiveIsland);
 	const setVisibleModal = useStore((state) => state.setVisibleModal);
 	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 	const currentSlots = useStore((state) => state.currentSlots);

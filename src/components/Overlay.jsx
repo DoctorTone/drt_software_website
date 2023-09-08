@@ -15,8 +15,6 @@ const Overlay = ({ fade, ...props }) => {
 
 	useFrame((state, delta) => {
 		if (triggerRef.current) {
-			// DEBUG
-			console.log("Fading", fade);
 			matRef.current.opacity += delta * fade;
 			if (matRef.current.opacity >= 1) {
 				matRef.current.opacity = 1;

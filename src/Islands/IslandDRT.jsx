@@ -7,96 +7,97 @@ import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
 
 export const IslandDRT = () => {
-  const [hovered, setHovered] = useState(false);
-  const [togglePoints, setTogglePoints] = useState(false);
-  const targetIsland = useStore((state) => state.targetIsland);
-  const activeIsland = useStore((state) => state.activeIsland);
-  const setActiveIsland = useStore((state) => state.setActiveIsland);
-  const setVisibleModal = useStore((state) => state.setVisibleModal);
-  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
-  const currentSlots = useStore((state) => state.currentSlots);
-  const updateSlots = useStore((state) => state.updateSlots);
-  const getSlotPosition = useStore((state) => state.getSlotPosition);
-  const swapSlots = useStore((state) => state.swapSlots);
+	const [hovered, setHovered] = useState(false);
+	const [togglePoints, setTogglePoints] = useState(false);
+	const targetIsland = useStore((state) => state.targetIsland);
+	const activeIsland = useStore((state) => state.activeIsland);
+	const setActiveIsland = useStore((state) => state.setActiveIsland);
+	const setVisibleModal = useStore((state) => state.setVisibleModal);
+	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
+	const currentSlots = useStore((state) => state.currentSlots);
+	const updateSlots = useStore((state) => state.updateSlots);
+	const getSlotPosition = useStore((state) => state.getSlotPosition);
+	const swapSlots = useStore((state) => state.swapSlots);
 
-  const matRef = useRef();
+	const matRef = useRef();
 
-  const slotPosition = getSlotPosition(currentSlots, "About");
+	const slotPosition = getSlotPosition(currentSlots, "About");
 
-  const selectIsland = () => {
-    if (currentSlots[SLOTS.MIDDLE] === "About") {
-      setVisibleModal(MODALS.ABOUT);
-      selectSound.play();
-    }
-  };
+	const selectIsland = () => {
+		if (currentSlots[SLOTS.MIDDLE] === "About") {
+			setVisibleModal(MODALS.ABOUT);
+			selectSound.play();
+		}
+	};
 
-  const pointerOver = () => {
-    if (currentSlots[SLOTS.MIDDLE] === "About") {
-      setHovered(true);
-    }
-  };
+	const pointerOver = () => {
+		if (currentSlots[SLOTS.MIDDLE] === "About") {
+			setHovered(true);
+		}
+	};
 
-  const pointerOut = () => {
-    setHovered(false);
-  };
+	const pointerOut = () => {
+		setHovered(false);
+	};
 
-  useCursor(hovered);
+	useCursor(hovered);
 
-  useEffect(() => {
-    if (!targetIsland) return;
+	useEffect(() => {
+		if (!targetIsland) return;
 
-    if (targetIsland !== "About" && activeIsland === "About") {
-      setTogglePoints(true);
-    }
-  }, [targetIsland]);
+		if (targetIsland !== "About" && activeIsland === "About") {
+			setTogglePoints(true);
+		}
+	}, [targetIsland]);
 
-  useFrame((state, delta) => {
-    if (togglePoints) {
-      matRef.current.opacity -= delta;
-      if (matRef.current.opacity < 0) {
-        matRef.current.opacity = 1;
-        setTogglePoints(false);
-        swapSlots(targetIsland, "About", currentSlots);
-        updateSlots(currentSlots);
-        setActiveIsland(targetIsland);
-      }
-    }
-  });
+	useFrame((state, delta) => {
+		if (togglePoints) {
+			matRef.current.opacity -= delta;
+			if (matRef.current.opacity < 0) {
+				matRef.current.opacity = 1;
+				setTogglePoints(false);
+				currentSlots[0] = activeIsland;
+				currentSlots[1] = targetIsland;
+				updateSlots(currentSlots);
+				setActiveIsland(targetIsland);
+			}
+		}
+	});
 
-  return (
-    <Float rotationIntensity={SCENE.rotationIntensity}>
-      <group
-        visible={slotPosition >= 0}
-        onPointerOver={pointerOver}
-        onPointerOut={pointerOut}
-        onClick={selectIsland}
-        position={ISLANDS.SLOT_POSITIONS[slotPosition]}
-      >
-        <DRT fade={togglePoints} position={ISLANDS.DRTModelPosition} />
-        <Shadow
-          scale={1.5}
-          opacity={0.65}
-          position={[
-            ISLANDS.DRTModelPosition[0],
-            ISLANDS.DRTModelPosition[1] - 0.5,
-            ISLANDS.DRTModelPosition[2],
-          ]}
-        />
-        <IslandPoints showPoints={togglePoints} />
-        <Text
-          color="white"
-          center
-          fontSize={SCENE.FONT_SIZE}
-          position={ISLANDS.DRTTextPosition}
-          anchorX="center"
-          anchorY="middle"
-          outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
-          outlineColor="black"
-        >
-          About
-          <meshBasicMaterial ref={matRef} transparent={true} />
-        </Text>
-      </group>
-    </Float>
-  );
+	return (
+		<Float rotationIntensity={SCENE.rotationIntensity}>
+			<group
+				visible={slotPosition >= 0}
+				onPointerOver={pointerOver}
+				onPointerOut={pointerOut}
+				onClick={selectIsland}
+				position={ISLANDS.SLOT_POSITIONS[slotPosition]}
+			>
+				<DRT fade={togglePoints} position={ISLANDS.DRTModelPosition} />
+				<Shadow
+					scale={1.5}
+					opacity={0.65}
+					position={[
+						ISLANDS.DRTModelPosition[0],
+						ISLANDS.DRTModelPosition[1] - 0.5,
+						ISLANDS.DRTModelPosition[2],
+					]}
+				/>
+				<IslandPoints showPoints={togglePoints} />
+				<Text
+					color="white"
+					center
+					fontSize={SCENE.FONT_SIZE}
+					position={ISLANDS.DRTTextPosition}
+					anchorX="center"
+					anchorY="middle"
+					outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
+					outlineColor="black"
+				>
+					About
+					<meshBasicMaterial ref={matRef} transparent={true} />
+				</Text>
+			</group>
+		</Float>
+	);
 };

@@ -84,6 +84,23 @@ const NavigationUI = () => {
 		}
 	};
 
+	const Shaders = () => {
+		if (activeIsland === "Shaders") {
+			setVisibleModal(MODALS.SHADERS);
+			selectSound.play();
+		} else {
+			setTargetIsland("Shaders");
+		}
+	};
+	const Tech = () => {
+		if (activeIsland === "Tech") {
+			setVisibleModal(MODALS.TECH);
+			selectSound.play();
+		} else {
+			setTargetIsland("Tech");
+		}
+	};
+
 	const DataViz = () => {
 		setMenuState("DataViz");
 	};
@@ -210,7 +227,7 @@ const NavigationUI = () => {
 						</div>
 						<div className="mb-3">
 							<Button
-								onClick={Contact}
+								onClick={Shaders}
 								variant="outline-dark"
 								className="w-100"
 							>
@@ -218,11 +235,7 @@ const NavigationUI = () => {
 							</Button>
 						</div>
 						<div className="mb-3">
-							<Button
-								onClick={Services}
-								variant="outline-dark"
-								className="w-100"
-							>
+							<Button onClick={Tech} variant="outline-dark" className="w-100">
 								Tech
 							</Button>
 						</div>

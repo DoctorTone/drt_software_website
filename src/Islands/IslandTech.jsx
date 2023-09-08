@@ -3,7 +3,7 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { useFrame } from "@react-three/fiber";
 import { Keyboard } from "../Models/Keyboard.jsx";
-import { SCENE, ISLANDS, MODALS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandTech = ({ islandNumber }) => {
@@ -11,6 +11,7 @@ export const IslandTech = ({ islandNumber }) => {
 	const [togglePoints, setTogglePoints] = useState(false);
 	const targetIsland = useStore((state) => state.targetIsland);
 	const activeIsland = useStore((state) => state.activeIsland);
+	const setActiveIsland = useStore((state) => state.setActiveIsland);
 	const setVisibleModal = useStore((state) => state.setVisibleModal);
 	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 	const currentSlots = useStore((state) => state.currentSlots);
