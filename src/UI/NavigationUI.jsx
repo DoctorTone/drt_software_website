@@ -154,56 +154,44 @@ const NavigationUI = () => {
 
 	const Home = () => {
 		setMenuState("Main");
-		setCurrentLevel(SCENE.MAIN_LEVEL);
-		updateSlots(["Contact", "About", "Services"]);
+		// Fade overlay out
+		setFadeOverlay(1);
 	};
 
-	const BackOneLevel = () => {
-		if (currentLevel === SCENE.MAIN_LEVEL) return;
-
-		let scene;
-		let islands;
-
-		switch (currentLevel) {
-			case SCENE.LEVEL_1:
-				scene = "main";
-				islands = ISLANDS.MAIN_LEVEL_ISLANDS;
+	const Back = () => {
+		switch (menuState) {
+			case "Portfolio":
+				setMenuState("Main");
+				// Fade overlay out
+				setFadeOverlay(1);
+				// DEBUG
+				console.log("Going to main");
 				break;
 
-			case SCENE.LEVEL_2:
-				scene = "portfolio";
-				islands = ISLANDS.LEVEL_1_ISLANDS;
+			case "DataViz":
+				setMenuState("Portfolio");
+				// Fade overlay out
+				setFadeOverlay(1);
 				break;
 
 			default:
 				break;
 		}
-
-		const nextScene = {
-			level: currentLevel - 1,
-			scene: scene,
-			islands: islands,
-			activeIsland: ISLANDS.ACTIVE_ISLAND,
-			direction: SCENE.ANIMATE_DOWN,
-		};
-
-		animateNextScene(nextScene);
-	};
-
-	const showDemoLinks = (event) => {
-		event.preventDefault();
-
-		setShowLinks(true);
-	};
-
-	const handleClose = () => {
-		setShowLinks(false);
 	};
 
 	useEffect(() => {
 		if (!overlayFaded) return;
 
 		switch (menuState) {
+			case "Main":
+				setCurrentLevel(SCENE.MAIN_LEVEL);
+				updateSlots(["Contact", "About", "Services"]);
+				setActiveIsland("About");
+				setTargetIsland("");
+				setOverlayFaded(false);
+				setFadeOverlay(-1);
+				break;
+
 			case "Portfolio":
 				setCurrentLevel(SCENE.LEVEL_1);
 				updateSlots(["Physics", "VR", "Shaders"]);
@@ -261,13 +249,18 @@ const NavigationUI = () => {
 								variant="outline-dark"
 								className="w-100"
 							>
-								Porfolio
+								Portfolio
 							</Button>
 						</div>
 					</div>
 				) : null}
 				{menuState === "Portfolio" ? (
 					<div>
+						<div className="mb-3">
+							<Button onClick={Home} variant="outline-dark" className="w-100">
+								<House />
+							</Button>
+						</div>
 						<div className="mb-3">
 							<Button onClick={VR} variant="outline-dark" className="w-100">
 								VR
@@ -306,14 +299,19 @@ const NavigationUI = () => {
 							</Button>
 						</div>
 						<div className="mb-3">
-							<Button onClick={Home} variant="outline-dark" className="w-100">
-								<House />
+							<Button onClick={Back} variant="outline-dark" className="w-100">
+								<ArrowCounterclockwise />
 							</Button>
 						</div>
 					</div>
 				) : null}
 				{menuState === "DataViz" ? (
 					<div>
+						<div className="mb-3">
+							<Button onClick={Home} variant="outline-dark" className="w-100">
+								<House />
+							</Button>
+						</div>
 						<div className="mb-3">
 							<Button
 								onClick={Medical}
@@ -353,6 +351,11 @@ const NavigationUI = () => {
 								className="w-100"
 							>
 								Real-time
+							</Button>
+						</div>
+						<div className="mb-3">
+							<Button onClick={Back} variant="outline-dark" className="w-100">
+								<ArrowCounterclockwise />
 							</Button>
 						</div>
 					</div>
