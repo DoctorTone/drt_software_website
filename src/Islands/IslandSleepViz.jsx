@@ -59,6 +59,8 @@ export const IslandSleepViz = ({ name }) => {
 				swapSlots(targetIsland, name, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
+				setVisibleModal(MODALS[targetIsland.toUpperCase()]);
+				selectSound.play();
 			}
 		}
 	});

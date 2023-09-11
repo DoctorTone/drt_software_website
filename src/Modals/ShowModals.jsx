@@ -28,7 +28,7 @@ const ShowModals = ({ visibleModal }) => {
 				return <FinanceModal showModal={true} />;
 			case MODALS.INFO:
 				return <InfoModal showModal={true} />;
-			case MODALS.MEDVIZ:
+			case MODALS.MEDICAL:
 				return <MedVizModal showModal={true} />;
 			case MODALS.PANDEMIC:
 				return <PandemicModal showModal={true} />;

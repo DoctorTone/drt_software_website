@@ -109,7 +109,7 @@ const NavigationUI = () => {
 
 	const Medical = () => {
 		if (activeIsland === "Medical") {
-			setVisibleModal(MODALS.MEDVIZ);
+			setVisibleModal(MODALS.MEDICAL);
 			selectSound.play();
 		} else {
 			setTargetIsland("Medical");
@@ -144,11 +144,11 @@ const NavigationUI = () => {
 	};
 
 	const RealTime = () => {
-		if (activeIsland === "Real-Time") {
+		if (activeIsland === "RealTime") {
 			setVisibleModal(MODALS.REALTIME);
 			selectSound.play();
 		} else {
-			setTargetIsland("Real-Time");
+			setTargetIsland("RealTime");
 		}
 	};
 

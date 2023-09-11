@@ -59,6 +59,8 @@ export const IslandMedViz = ({ name }) => {
 				swapSlots(targetIsland, name, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
+				setVisibleModal(MODALS[targetIsland.toUpperCase()]);
+				selectSound.play();
 			}
 		}
 	});
