@@ -98,7 +98,7 @@ const ISLANDS = {
 	// Med viz island
 	MedVizPosition: [6, 0, 0],
 	MedVizModelPosition: [0, 3, 0],
-	MedVizTextPosition: [0, 4.5, 0],
+	MedVizTextPosition: [0, 4.25, 0],
 	// Brain viz island
 	BrainVizPosition: [-3.927, 0, -3.527],
 	BrainVizModelPosition: [-3.927, 2, -3.527],
@@ -109,8 +109,8 @@ const ISLANDS = {
 	CovidVizTextPosition: [-3.927, 3.5, 3.527],
 	// Finance viz island
 	FinanceVizPosition: [1.854, 0, 5.706],
-	FinanceVizModelPosition: [1.854, 2, 5.706],
-	FinanceVizTextPosition: [1.854, 3.5, 5.706],
+	FinanceVizModelPosition: [0, 3, 0],
+	FinanceVizTextPosition: [0.5, 4.25, 0.5],
 	// Sleep viz island
 	SleepVizPosition: [1.854, 0, -5.706],
 	SleepVizModelPosition: [1.854, 2, -5.706],
