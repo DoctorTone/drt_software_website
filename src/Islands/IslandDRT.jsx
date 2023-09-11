@@ -53,7 +53,7 @@ export const IslandDRT = ({ name }) => {
 
 	useFrame((state, delta) => {
 		if (togglePoints) {
-			matRef.current.opacity -= delta;
+			matRef.current.opacity -= delta * SCENE.FADE_DELAY;
 			if (matRef.current.opacity < 0) {
 				matRef.current.opacity = 1;
 				setTogglePoints(false);

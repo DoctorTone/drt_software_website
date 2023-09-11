@@ -73,6 +73,7 @@ export const IslandVR = () => {
 				position={ISLANDS.SLOT_POSITIONS[slotPosition]}
 			>
 				<VR
+					fade={togglePoints}
 					position={ISLANDS.VRModelPosition}
 					rotation-y={Math.PI / 6}
 					scale={0.6}

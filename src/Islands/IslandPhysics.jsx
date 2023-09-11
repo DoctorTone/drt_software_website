@@ -73,6 +73,7 @@ export const IslandPhysics = ({ islandNumber }) => {
 				position={ISLANDS.SLOT_POSITIONS[slotPosition]}
 			>
 				<Physics
+					fade={togglePoints}
 					position={ISLANDS.PhysicsModelPosition}
 					scale={0.125}
 					rotation-y={Math.PI / 2}
