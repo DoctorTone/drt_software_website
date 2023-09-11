@@ -78,12 +78,12 @@ export const IslandFinanceViz = ({ islandNumber }) => {
 					map={"./textures/FTSEViz.jpg"}
 				/>
 				<Shadow
-					scale={[1.85, 0.55, 1.25]}
+					scale={[1.85, 1, 1.25]}
 					opacity={0.65}
 					rotation-z={Math.PI * 1.1}
 					position={[
 						ISLANDS.FinanceVizTextPosition[0],
-						ISLANDS.FinanceVizTextPosition[1] - 2.5,
+						ISLANDS.FinanceVizTextPosition[1] - 2.65,
 						ISLANDS.FinanceVizTextPosition[2],
 					]}
 				/>

@@ -79,11 +79,11 @@ export const IslandMedViz = ({ islandNumber }) => {
 					map={"./textures/volumeRender.jpg"}
 				/>
 				<Shadow
-					scale={[1.55, 0.65, 1.25]}
+					scale={[1.55, 1, 1.25]}
 					opacity={0.65}
 					position={[
 						ISLANDS.MedVizTextPosition[0],
-						ISLANDS.MedVizTextPosition[1] - 2.8,
+						ISLANDS.MedVizTextPosition[1] - 2.55,
 						ISLANDS.MedVizTextPosition[2] + 0.5,
 					]}
 				/>
