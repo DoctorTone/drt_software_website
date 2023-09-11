@@ -6,7 +6,7 @@ import { SCENE, ISLANDS, MATERIALS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 
-export const IslandShaders = ({ islandNumber }) => {
+export const IslandShaders = ({ name }) => {
 	const [hovered, setHovered] = useState(false);
 	const [togglePoints, setTogglePoints] = useState(false);
 	const targetIsland = useStore((state) => state.targetIsland);
@@ -21,17 +21,17 @@ export const IslandShaders = ({ islandNumber }) => {
 	const matRef = useRef();
 	const boxRef = useRef();
 
-	const slotPosition = getSlotPosition(currentSlots, "Shaders");
+	const slotPosition = getSlotPosition(currentSlots, name);
 
 	const selectIsland = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "Shaders") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			setVisibleModal(MODALS.SHADER);
 			selectSound.play();
 		}
 	};
 
 	const pointerOver = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "Shaders") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			setHovered(true);
 		}
 	};
@@ -45,7 +45,7 @@ export const IslandShaders = ({ islandNumber }) => {
 	useEffect(() => {
 		if (!targetIsland) return;
 
-		if (targetIsland !== "Shaders" && activeIsland === "Shaders") {
+		if (targetIsland !== name && activeIsland === name) {
 			setTogglePoints(true);
 		}
 	}, [targetIsland]);
@@ -58,7 +58,7 @@ export const IslandShaders = ({ islandNumber }) => {
 				matRef.current.opacity = 1;
 				boxRef.current.opacity = 1;
 				setTogglePoints(false);
-				swapSlots(targetIsland, "Shaders", currentSlots);
+				swapSlots(targetIsland, name, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
 			}

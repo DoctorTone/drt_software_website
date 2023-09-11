@@ -7,10 +7,10 @@ import { IslandTech } from "../Islands/IslandTech.jsx";
 const PortfolioScene = () => {
 	return (
 		<>
-			<IslandVR />
-			<IslandPhysics />
-			<IslandShaders />
-			<IslandTech />
+			<IslandVR name="VR" />
+			<IslandPhysics name="Physics" />
+			<IslandShaders name="Shaders" />
+			<IslandTech name="Tech" />
 		</>
 	);
 };
