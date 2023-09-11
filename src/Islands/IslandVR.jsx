@@ -59,6 +59,10 @@ export const IslandVR = ({ name }) => {
 				swapSlots(targetIsland, name, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
+				// DEBUG
+				console.log("Target = ", targetIsland);
+				setVisibleModal(MODALS[targetIsland.toUpperCase()]);
+				selectSound.play();
 			}
 		}
 	});

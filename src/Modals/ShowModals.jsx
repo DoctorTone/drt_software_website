@@ -18,44 +18,44 @@ import TechModal from "./TechModal.jsx";
 import VRModal from "./VRModal.jsx";
 
 const ShowModals = ({ visibleModal }) => {
-  const renderModal = () => {
-    switch (visibleModal) {
-      case MODALS.ABOUT:
-        return <AboutModal showModal={true} />;
-      case MODALS.CONTACT:
-        return <ContactModal showModal={true} />;
-      case MODALS.FINANCE:
-        return <FinanceModal showModal={true} />;
-      case MODALS.INFO:
-        return <InfoModal showModal={true} />;
-      case MODALS.MEDVIZ:
-        return <MedVizModal showModal={true} />;
-      case MODALS.PANDEMIC:
-        return <PandemicModal showModal={true} />;
-      case MODALS.PERSON:
-        return <PersonModal showModal={true} />;
-      case MODALS.PHYSICS:
-        return <PhysicsModal showModal={true} />;
-      case MODALS.REALTIME:
-        return <RealTimeModal showModal={true} />;
-      case MODALS.SERVICES:
-        return <ServicesModal showModal={true} />;
-      case MODALS.SHADER:
-        return <ShaderModal showModal={true} />;
-      case MODALS.SLEEP:
-        return <SleepModal showModal={true} />;
-      case MODALS.START:
-        return <StartUpModal showModal={true} />;
-      case MODALS.TECH:
-        return <TechModal showModal={true} />;
-      case MODALS.VR:
-        return <VRModal showModal={true} />;
-      default:
-        return null;
-    }
-  };
+	const renderModal = () => {
+		switch (visibleModal) {
+			case MODALS.ABOUT:
+				return <AboutModal showModal={true} />;
+			case MODALS.CONTACT:
+				return <ContactModal showModal={true} />;
+			case MODALS.FINANCE:
+				return <FinanceModal showModal={true} />;
+			case MODALS.INFO:
+				return <InfoModal showModal={true} />;
+			case MODALS.MEDVIZ:
+				return <MedVizModal showModal={true} />;
+			case MODALS.PANDEMIC:
+				return <PandemicModal showModal={true} />;
+			case MODALS.PERSON:
+				return <PersonModal showModal={true} />;
+			case MODALS.PHYSICS:
+				return <PhysicsModal showModal={true} />;
+			case MODALS.REALTIME:
+				return <RealTimeModal showModal={true} />;
+			case MODALS.SERVICES:
+				return <ServicesModal showModal={true} />;
+			case MODALS.SHADERS:
+				return <ShaderModal showModal={true} />;
+			case MODALS.SLEEP:
+				return <SleepModal showModal={true} />;
+			case MODALS.START:
+				return <StartUpModal showModal={true} />;
+			case MODALS.TECH:
+				return <TechModal showModal={true} />;
+			case MODALS.VR:
+				return <VRModal showModal={true} />;
+			default:
+				return null;
+		}
+	};
 
-  return <>{renderModal()}</>;
+	return <>{renderModal()}</>;
 };
 
 export default ShowModals;

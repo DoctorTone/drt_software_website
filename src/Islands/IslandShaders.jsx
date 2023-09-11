@@ -61,6 +61,8 @@ export const IslandShaders = ({ name }) => {
 				swapSlots(targetIsland, name, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
+				setVisibleModal(MODALS[targetIsland.toUpperCase()]);
+				selectSound.play();
 			}
 		}
 	});
