@@ -7,7 +7,7 @@ import { IslandPoints } from "./IslandPoints.jsx";
 import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 
-export const IslandMedViz = ({ islandNumber }) => {
+export const IslandMedViz = ({ name }) => {
 	const [hovered, setHovered] = useState(false);
 	const [togglePoints, setTogglePoints] = useState(false);
 	const targetIsland = useStore((state) => state.targetIsland);
@@ -21,17 +21,17 @@ export const IslandMedViz = ({ islandNumber }) => {
 
 	const matRef = useRef();
 
-	const slotPosition = getSlotPosition(currentSlots, "MedViz");
+	const slotPosition = getSlotPosition(currentSlots, name);
 
 	const selectIsland = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "MedViz") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			setVisibleModal(MODALS.MEDVIZ);
 			selectSound.play();
 		}
 	};
 
 	const pointerOver = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "MedViz") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			setHovered(true);
 		}
 	};
@@ -45,7 +45,7 @@ export const IslandMedViz = ({ islandNumber }) => {
 	useEffect(() => {
 		if (!targetIsland) return;
 
-		if (targetIsland !== "MedViz" && activeIsland === "MedViz") {
+		if (targetIsland !== name && activeIsland === name) {
 			setTogglePoints(true);
 		}
 	}, [targetIsland]);
@@ -56,7 +56,7 @@ export const IslandMedViz = ({ islandNumber }) => {
 			if (matRef.current.opacity < 0) {
 				matRef.current.opacity = 1;
 				setTogglePoints(false);
-				swapSlots(targetIsland, "MedViz", currentSlots);
+				swapSlots(targetIsland, name, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
 			}

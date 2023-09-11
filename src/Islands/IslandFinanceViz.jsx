@@ -6,7 +6,7 @@ import { IslandPoints } from "./IslandPoints.jsx";
 import { Tablet } from "../Models/Tablet.jsx";
 import useStore from "../state/store.js";
 
-export const IslandFinanceViz = ({ islandNumber }) => {
+export const IslandFinanceViz = ({ name }) => {
 	const [hovered, setHovered] = useState(false);
 	const [togglePoints, setTogglePoints] = useState(false);
 	const targetIsland = useStore((state) => state.targetIsland);
@@ -20,17 +20,17 @@ export const IslandFinanceViz = ({ islandNumber }) => {
 
 	const matRef = useRef();
 
-	const slotPosition = getSlotPosition(currentSlots, "Finance");
+	const slotPosition = getSlotPosition(currentSlots, name);
 
 	const selectIsland = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "Finance") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			selectSound.play();
 			setVisibleModal(MODALS.FINANCE);
 		}
 	};
 
 	const pointerOver = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "Finance") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			setHovered(true);
 		}
 	};
@@ -44,7 +44,7 @@ export const IslandFinanceViz = ({ islandNumber }) => {
 	useEffect(() => {
 		if (!targetIsland) return;
 
-		if (targetIsland !== "Finance" && activeIsland === "Finance") {
+		if (targetIsland !== name && activeIsland === name) {
 			setTogglePoints(true);
 		}
 	}, [targetIsland]);
@@ -55,7 +55,7 @@ export const IslandFinanceViz = ({ islandNumber }) => {
 			if (matRef.current.opacity < 0) {
 				matRef.current.opacity = 1;
 				setTogglePoints(false);
-				swapSlots(targetIsland, "Finance", currentSlots);
+				swapSlots(targetIsland, name, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
 			}

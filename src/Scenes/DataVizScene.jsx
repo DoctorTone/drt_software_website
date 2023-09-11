@@ -10,10 +10,10 @@ import { DataViz } from "../Models/DataViz.jsx";
 const DataVizScene = () => {
 	return (
 		<>
-			<IslandMedViz />
-			<IslandFinanceViz />
-			<IslandCovidViz />
-			<IslandBrainViz />
+			<IslandMedViz name="MedViz" />
+			<IslandFinanceViz name="Finance" />
+			<IslandCovidViz name="Pandemic" />
+			<IslandBrainViz name="Real-time" />
 			<IslandSleepViz name="Sleep" />
 		</>
 	);
