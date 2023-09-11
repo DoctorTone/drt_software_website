@@ -83,7 +83,7 @@ export const IslandMedViz = ({ name }) => {
 					opacity={0.65}
 					position={[
 						ISLANDS.MedVizTextPosition[0],
-						ISLANDS.MedVizTextPosition[1] - 2.55,
+						ISLANDS.MedVizTextPosition[1] - 2.3,
 						ISLANDS.MedVizTextPosition[2] + 0.5,
 					]}
 				/>

@@ -83,7 +83,7 @@ export const IslandBrainViz = ({ name }) => {
 					opacity={0.65}
 					position={[
 						ISLANDS.BrainVizTextPosition[0],
-						ISLANDS.BrainVizTextPosition[1] - 2.55,
+						ISLANDS.BrainVizTextPosition[1] - 2.3,
 						ISLANDS.BrainVizTextPosition[2] + 0.25,
 					]}
 				/>

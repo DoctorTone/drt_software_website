@@ -83,7 +83,7 @@ export const IslandCovidViz = ({ name }) => {
 					opacity={0.65}
 					position={[
 						ISLANDS.CovidVizTextPosition[0],
-						ISLANDS.CovidVizTextPosition[1] - 2.55,
+						ISLANDS.CovidVizTextPosition[1] - 2.3,
 						ISLANDS.CovidVizTextPosition[2] + 0.25,
 					]}
 				/>

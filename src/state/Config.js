@@ -99,23 +99,23 @@ const ISLANDS = {
 	// Med viz island
 	MedVizPosition: [6, 0, 0],
 	MedVizModelPosition: [0, 3, 0],
-	MedVizTextPosition: [0, 4.25, 0],
+	MedVizTextPosition: [0, 4, 0],
 	// Brain viz island
 	BrainVizPosition: [-3.927, 0, -3.527],
 	BrainVizModelPosition: [0, 3, 0],
-	BrainVizTextPosition: [0, 4.25, 0],
+	BrainVizTextPosition: [0, 4, 0],
 	// Covid viz island
 	CovidVizPosition: [-3.927, 0, 3.527],
 	CovidVizModelPosition: [0, 3, 0],
-	CovidVizTextPosition: [0, 4.25, 0],
+	CovidVizTextPosition: [0, 4, 0],
 	// Finance viz island
 	FinanceVizPosition: [1.854, 0, 5.706],
 	FinanceVizModelPosition: [0, 3, 0],
-	FinanceVizTextPosition: [0, 4.25, 0],
+	FinanceVizTextPosition: [0, 4, 0],
 	// Sleep viz island
 	SleepVizPosition: [1.854, 0, -5.706],
 	SleepVizModelPosition: [0, 3, 0],
-	SleepVizTextPosition: [0, 4.25, 0],
+	SleepVizTextPosition: [0, 4, 0],
 };
 
 const MODALS = {

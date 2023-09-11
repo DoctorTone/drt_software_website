@@ -83,7 +83,7 @@ export const IslandSleepViz = ({ name }) => {
 					opacity={0.65}
 					position={[
 						ISLANDS.SleepVizTextPosition[0],
-						ISLANDS.SleepVizTextPosition[1] - 2.5,
+						ISLANDS.SleepVizTextPosition[1] - 2.3,
 						ISLANDS.SleepVizTextPosition[2] + 0.25,
 					]}
 				/>
