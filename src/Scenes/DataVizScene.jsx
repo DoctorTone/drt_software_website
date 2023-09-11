@@ -14,7 +14,7 @@ const DataVizScene = () => {
 			<IslandFinanceViz />
 			<IslandCovidViz />
 			<IslandBrainViz />
-			<IslandSleepViz />
+			<IslandSleepViz name="Sleep" />
 		</>
 	);
 };

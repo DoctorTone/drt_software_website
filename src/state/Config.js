@@ -110,11 +110,11 @@ const ISLANDS = {
 	// Finance viz island
 	FinanceVizPosition: [1.854, 0, 5.706],
 	FinanceVizModelPosition: [0, 3, 0],
-	FinanceVizTextPosition: [0.5, 4.25, 0.5],
+	FinanceVizTextPosition: [0, 4.25, 0],
 	// Sleep viz island
 	SleepVizPosition: [1.854, 0, -5.706],
-	SleepVizModelPosition: [1.854, 2, -5.706],
-	SleepVizTextPosition: [1.854, 3.5, -5.706],
+	SleepVizModelPosition: [0, 3, 0],
+	SleepVizTextPosition: [-0.35, 4.25, 0.25],
 };
 
 const MODALS = {
