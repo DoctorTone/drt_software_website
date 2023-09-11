@@ -12,6 +12,7 @@ import { useGLTF } from "@react-three/drei";
 import { MATERIALS } from "../state/Config.js";
 
 export function VR({ fade, ...props }) {
+	const { nodes, materials } = useGLTF("./models/vr_headset.glb");
 	const matRefs = { screen: useRef(), strap: useRef() };
 
 	useFrame((state, delta) => {
@@ -25,7 +26,6 @@ export function VR({ fade, ...props }) {
 		}
 	});
 
-	const { nodes, materials } = useGLTF("./models/vr_headset.glb");
 	return (
 		<group {...props} dispose={null}>
 			<group position={[-3.96, 0.04, -0.14]}>

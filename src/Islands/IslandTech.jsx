@@ -73,6 +73,7 @@ export const IslandTech = ({ islandNumber }) => {
 				position={ISLANDS.SLOT_POSITIONS[slotPosition]}
 			>
 				<Keyboard
+					fade={togglePoints}
 					position={ISLANDS.TechModelPosition}
 					scale={5}
 					rotation={[0.75, 0, 0]}
@@ -86,7 +87,7 @@ export const IslandTech = ({ islandNumber }) => {
 						ISLANDS.TechTextPosition[2],
 					]}
 				/>
-				<IslandPoints howPoints={togglePoints} />
+				<IslandPoints showPoints={togglePoints} />
 				<Text
 					color="white"
 					center

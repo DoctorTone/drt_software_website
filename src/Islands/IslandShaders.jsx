@@ -19,6 +19,7 @@ export const IslandShaders = ({ islandNumber }) => {
 	const getSlotPosition = useStore((state) => state.getSlotPosition);
 
 	const matRef = useRef();
+	const boxRef = useRef();
 
 	const slotPosition = getSlotPosition(currentSlots, "Shaders");
 
@@ -52,8 +53,10 @@ export const IslandShaders = ({ islandNumber }) => {
 	useFrame((state, delta) => {
 		if (togglePoints) {
 			matRef.current.opacity -= delta;
+			boxRef.current.opacity -= delta;
 			if (matRef.current.opacity < 0) {
 				matRef.current.opacity = 1;
+				boxRef.current.opacity = 1;
 				setTogglePoints(false);
 				swapSlots(targetIsland, "Shaders", currentSlots);
 				updateSlots(currentSlots);
@@ -71,10 +74,13 @@ export const IslandShaders = ({ islandNumber }) => {
 				onClick={selectIsland}
 				position={ISLANDS.SLOT_POSITIONS[slotPosition]}
 			>
-				<RoundedBox
-					position={ISLANDS.ShaderModelPosition}
-					material={MATERIALS.GREY}
-				/>
+				<RoundedBox fade={togglePoints} position={ISLANDS.ShaderModelPosition}>
+					<meshLambertMaterial
+						ref={boxRef}
+						transparent={true}
+						color={0x777777}
+					/>
+				</RoundedBox>
 				<Shadow
 					scale={1.9}
 					opacity={0.85}
