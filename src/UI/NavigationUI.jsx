@@ -103,6 +103,8 @@ const NavigationUI = () => {
 
 	const DataViz = () => {
 		setMenuState("DataViz");
+		// Fade overlay out
+		setFadeOverlay(1);
 	};
 
 	const Home = () => {
@@ -161,6 +163,15 @@ const NavigationUI = () => {
 				setCurrentLevel(SCENE.LEVEL_1);
 				updateSlots(["Physics", "VR", "Shaders"]);
 				setActiveIsland("VR");
+				setTargetIsland("");
+				setOverlayFaded(false);
+				setFadeOverlay(-1);
+				break;
+
+			case "DataViz":
+				setCurrentLevel(SCENE.LEVEL_2);
+				updateSlots(["Finance", "MedViz", "Sleep"]);
+				setActiveIsland("Medical");
 				setTargetIsland("");
 				setOverlayFaded(false);
 				setFadeOverlay(-1);

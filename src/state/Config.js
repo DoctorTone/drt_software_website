@@ -97,8 +97,8 @@ const ISLANDS = {
 	DataVizTextRotation: 0.3,
 	// Med viz island
 	MedVizPosition: [6, 0, 0],
-	MedVizModelPosition: [6, 2, 0],
-	MedVizTextPosition: [6, 3.5, 0],
+	MedVizModelPosition: [0, 3, 0],
+	MedVizTextPosition: [0, 4.5, 0],
 	// Brain viz island
 	BrainVizPosition: [-3.927, 0, -3.527],
 	BrainVizModelPosition: [-3.927, 2, -3.527],
