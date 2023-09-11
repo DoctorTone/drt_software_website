@@ -164,8 +164,6 @@ const NavigationUI = () => {
 				setMenuState("Main");
 				// Fade overlay out
 				setFadeOverlay(1);
-				// DEBUG
-				console.log("Going to main");
 				break;
 
 			case "DataViz":
@@ -257,9 +255,14 @@ const NavigationUI = () => {
 				{menuState === "Portfolio" ? (
 					<div>
 						<div className="mb-3">
-							<Button onClick={Home} variant="outline-dark" className="w-100">
-								<House />
-							</Button>
+							<OverlayTrigger
+								placement="right"
+								overlay={<Tooltip>Back to top</Tooltip>}
+							>
+								<Button onClick={Home} variant="outline-dark" className="w-100">
+									<House />
+								</Button>
+							</OverlayTrigger>
 						</div>
 						<div className="mb-3">
 							<Button onClick={VR} variant="outline-dark" className="w-100">
@@ -299,18 +302,28 @@ const NavigationUI = () => {
 							</Button>
 						</div>
 						<div className="mb-3">
-							<Button onClick={Back} variant="outline-dark" className="w-100">
-								<ArrowCounterclockwise />
-							</Button>
+							<OverlayTrigger
+								placement="right"
+								overlay={<Tooltip>Back to previous</Tooltip>}
+							>
+								<Button onClick={Back} variant="outline-dark" className="w-100">
+									<ArrowCounterclockwise />
+								</Button>
+							</OverlayTrigger>
 						</div>
 					</div>
 				) : null}
 				{menuState === "DataViz" ? (
 					<div>
 						<div className="mb-3">
-							<Button onClick={Home} variant="outline-dark" className="w-100">
-								<House />
-							</Button>
+							<OverlayTrigger
+								placement="right"
+								overlay={<Tooltip>Back to top</Tooltip>}
+							>
+								<Button onClick={Home} variant="outline-dark" className="w-100">
+									<House />
+								</Button>
+							</OverlayTrigger>
 						</div>
 						<div className="mb-3">
 							<Button
@@ -354,9 +367,14 @@ const NavigationUI = () => {
 							</Button>
 						</div>
 						<div className="mb-3">
-							<Button onClick={Back} variant="outline-dark" className="w-100">
-								<ArrowCounterclockwise />
-							</Button>
+							<OverlayTrigger
+								placement="right"
+								overlay={<Tooltip>Back to previous</Tooltip>}
+							>
+								<Button onClick={Back} variant="outline-dark" className="w-100">
+									<ArrowCounterclockwise />
+								</Button>
+							</OverlayTrigger>
 						</div>
 					</div>
 				) : null}
