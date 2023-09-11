@@ -3,6 +3,7 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { DRT } from "../Models/DRT.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
+import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
 
@@ -17,7 +18,6 @@ export const IslandDRT = () => {
 	const currentSlots = useStore((state) => state.currentSlots);
 	const updateSlots = useStore((state) => state.updateSlots);
 	const getSlotPosition = useStore((state) => state.getSlotPosition);
-	const swapSlots = useStore((state) => state.swapSlots);
 
 	const matRef = useRef();
 
@@ -56,8 +56,7 @@ export const IslandDRT = () => {
 			if (matRef.current.opacity < 0) {
 				matRef.current.opacity = 1;
 				setTogglePoints(false);
-				currentSlots[0] = activeIsland;
-				currentSlots[1] = targetIsland;
+				swapSlots(targetIsland, activeIsland, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
 			}

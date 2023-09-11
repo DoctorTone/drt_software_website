@@ -4,6 +4,7 @@ import { IslandPoints } from "./IslandPoints.jsx";
 import { useFrame } from "@react-three/fiber";
 import { Keyboard } from "../Models/Keyboard.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
+import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 
 export const IslandTech = ({ islandNumber }) => {
@@ -17,7 +18,6 @@ export const IslandTech = ({ islandNumber }) => {
 	const currentSlots = useStore((state) => state.currentSlots);
 	const updateSlots = useStore((state) => state.updateSlots);
 	const getSlotPosition = useStore((state) => state.getSlotPosition);
-	const swapSlots = useStore((state) => state.swapSlots);
 
 	const matRef = useRef();
 

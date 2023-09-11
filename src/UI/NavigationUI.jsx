@@ -161,6 +161,7 @@ const NavigationUI = () => {
 				setCurrentLevel(SCENE.LEVEL_1);
 				updateSlots(["Physics", "VR", "Shaders"]);
 				setActiveIsland("VR");
+				setTargetIsland("");
 				setOverlayFaded(false);
 				setFadeOverlay(-1);
 				break;
