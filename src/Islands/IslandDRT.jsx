@@ -7,31 +7,32 @@ import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
 
-export const IslandDRT = () => {
+export const IslandDRT = ({ name }) => {
 	const [hovered, setHovered] = useState(false);
 	const [togglePoints, setTogglePoints] = useState(false);
+	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
+
 	const targetIsland = useStore((state) => state.targetIsland);
 	const activeIsland = useStore((state) => state.activeIsland);
 	const setActiveIsland = useStore((state) => state.setActiveIsland);
 	const setVisibleModal = useStore((state) => state.setVisibleModal);
-	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 	const currentSlots = useStore((state) => state.currentSlots);
 	const updateSlots = useStore((state) => state.updateSlots);
 	const getSlotPosition = useStore((state) => state.getSlotPosition);
 
 	const matRef = useRef();
 
-	const slotPosition = getSlotPosition(currentSlots, "About");
+	const slotPosition = getSlotPosition(currentSlots, name);
 
 	const selectIsland = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "About") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			setVisibleModal(MODALS.ABOUT);
 			selectSound.play();
 		}
 	};
 
 	const pointerOver = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "About") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			setHovered(true);
 		}
 	};
@@ -45,7 +46,7 @@ export const IslandDRT = () => {
 	useEffect(() => {
 		if (!targetIsland) return;
 
-		if (targetIsland !== "About" && activeIsland === "About") {
+		if (targetIsland !== name && activeIsland === name) {
 			setTogglePoints(true);
 		}
 	}, [targetIsland]);
@@ -59,6 +60,8 @@ export const IslandDRT = () => {
 				swapSlots(targetIsland, activeIsland, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
+				setVisibleModal(MODALS[targetIsland.toUpperCase()]);
+				selectSound.play();
 			}
 		}
 	});

@@ -5,7 +5,6 @@ const useStore = create((set) => ({
 	// Island slot positions
 	activeIsland: "About",
 	targetIsland: "",
-	numIslands: 4,
 	currentSlots: ["Contact", "About", "Services"],
 	getSlotPosition: (slots, island) => {
 		for (let i = 0; i < slots.length; ++i) {

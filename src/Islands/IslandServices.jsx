@@ -7,31 +7,32 @@ import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 
-export const IslandServices = ({ slot }) => {
+export const IslandServices = ({ name }) => {
 	const [hovered, setHovered] = useState(false);
 	const [togglePoints, setTogglePoints] = useState(false);
+	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
+
 	const targetIsland = useStore((state) => state.targetIsland);
 	const activeIsland = useStore((state) => state.activeIsland);
 	const setActiveIsland = useStore((state) => state.setActiveIsland);
 	const setVisibleModal = useStore((state) => state.setVisibleModal);
-	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 	const currentSlots = useStore((state) => state.currentSlots);
 	const updateSlots = useStore((state) => state.updateSlots);
 	const getSlotPosition = useStore((state) => state.getSlotPosition);
 
 	const matRef = useRef();
 
-	const slotPosition = getSlotPosition(currentSlots, "Services");
+	const slotPosition = getSlotPosition(currentSlots, name);
 
 	const selectIsland = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "Services") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			setVisibleModal(MODALS.SERVICES);
 			selectSound.play();
 		}
 	};
 
 	const pointerOver = () => {
-		if (currentSlots[SLOTS.MIDDLE] === "Services") {
+		if (currentSlots[SLOTS.MIDDLE] === name) {
 			setHovered(true);
 		}
 	};
@@ -45,7 +46,7 @@ export const IslandServices = ({ slot }) => {
 	useEffect(() => {
 		if (!targetIsland) return;
 
-		if (targetIsland !== "Services" && activeIsland === "Services") {
+		if (targetIsland !== name && activeIsland === name) {
 			setTogglePoints(true);
 		}
 	}, [targetIsland]);
@@ -56,9 +57,11 @@ export const IslandServices = ({ slot }) => {
 			if (matRef.current.opacity < 0) {
 				matRef.current.opacity = 1;
 				setTogglePoints(false);
-				swapSlots(targetIsland, "Services", currentSlots);
+				swapSlots(targetIsland, name, currentSlots);
 				updateSlots(currentSlots);
 				setActiveIsland(targetIsland);
+				setVisibleModal(MODALS[targetIsland.toUpperCase()]);
+				selectSound.play();
 			}
 		}
 	});
