@@ -81,11 +81,10 @@ export const IslandSleepViz = ({ name }) => {
 				<Shadow
 					scale={[1.85, 1, 1.25]}
 					opacity={0.65}
-					rotation-z={Math.PI * 0.9}
 					position={[
-						ISLANDS.SleepVizTextPosition[0] + 0.25,
+						ISLANDS.SleepVizTextPosition[0],
 						ISLANDS.SleepVizTextPosition[1] - 2.5,
-						ISLANDS.SleepVizTextPosition[2],
+						ISLANDS.SleepVizTextPosition[2] + 0.25,
 					]}
 				/>
 				<IslandPoints showPoints={togglePoints} />

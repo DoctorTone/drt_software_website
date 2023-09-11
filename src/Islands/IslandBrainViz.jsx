@@ -75,17 +75,16 @@ export const IslandBrainViz = ({ name }) => {
 				<Tablet
 					fade={togglePoints}
 					position={ISLANDS.BrainVizModelPosition}
-					rotation={[Math.PI, Math.PI * 1.2, -Math.PI * 0.1]}
+					rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
 					map={"./textures/brainVisualisation.jpg"}
 				/>
 				<Shadow
 					scale={[2, 1, 1]}
 					opacity={0.65}
-					rotation-z={Math.PI * 0.3}
 					position={[
-						ISLANDS.BrainVizTextPosition[0] - 0.25,
-						ISLANDS.BrainVizTextPosition[1] - 3,
-						ISLANDS.BrainVizTextPosition[2] - 0.25,
+						ISLANDS.BrainVizTextPosition[0],
+						ISLANDS.BrainVizTextPosition[1] - 2.55,
+						ISLANDS.BrainVizTextPosition[2] + 0.25,
 					]}
 				/>
 				<IslandPoints showPoints={togglePoints} />

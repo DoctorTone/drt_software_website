@@ -3,6 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { swapSlots } from "../state/Utils.js";
 import { Tablet } from "../Models/Tablet.jsx";
 import useStore from "../state/store.js";
 
@@ -74,17 +75,16 @@ export const IslandFinanceViz = ({ name }) => {
 				<Tablet
 					fade={togglePoints}
 					position={ISLANDS.FinanceVizModelPosition}
-					rotation={[Math.PI, Math.PI * 0.375, -Math.PI * 0.1]}
+					rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
 					map={"./textures/FTSEViz.jpg"}
 				/>
 				<Shadow
 					scale={[1.85, 1, 1.25]}
 					opacity={0.65}
-					rotation-z={Math.PI * 1.1}
 					position={[
 						ISLANDS.FinanceVizTextPosition[0],
-						ISLANDS.FinanceVizTextPosition[1] - 2.65,
-						ISLANDS.FinanceVizTextPosition[2],
+						ISLANDS.FinanceVizTextPosition[1] - 2.55,
+						ISLANDS.FinanceVizTextPosition[2] + 0.25,
 					]}
 				/>
 				<IslandPoints showPoints={togglePoints} />
@@ -93,7 +93,6 @@ export const IslandFinanceViz = ({ name }) => {
 					center
 					fontSize={SCENE.FONT_SIZE}
 					position={ISLANDS.FinanceVizTextPosition}
-					rotation-y={Math.PI * 0.15}
 					anchorX="center"
 					anchorY="middle"
 					outlineWidth={SCENE.FONT_OUTLINE_WIDTH}

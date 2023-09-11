@@ -75,17 +75,16 @@ export const IslandCovidViz = ({ name }) => {
 				<Tablet
 					fade={togglePoints}
 					position={ISLANDS.CovidVizModelPosition}
-					rotation={[Math.PI, Math.PI * 0.775, -Math.PI * 0.1]}
+					rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
 					map={"./textures/pandemic.jpg"}
 				/>
 				<Shadow
 					scale={[2, 1, 1]}
 					opacity={0.65}
-					rotation-z={Math.PI * 0.75}
 					position={[
-						ISLANDS.CovidVizTextPosition[0] - 0.4,
-						ISLANDS.CovidVizTextPosition[1] - 3,
-						ISLANDS.CovidVizTextPosition[2] + 0.4,
+						ISLANDS.CovidVizTextPosition[0],
+						ISLANDS.CovidVizTextPosition[1] - 2.55,
+						ISLANDS.CovidVizTextPosition[2] + 0.25,
 					]}
 				/>
 				<IslandPoints showPoints={togglePoints} />
@@ -94,7 +93,6 @@ export const IslandCovidViz = ({ name }) => {
 					center
 					fontSize={SCENE.FONT_SIZE}
 					position={ISLANDS.CovidVizTextPosition}
-					rotation-y={-Math.PI * 0.25}
 					anchorX="center"
 					anchorY="middle"
 					outlineWidth={SCENE.FONT_OUTLINE_WIDTH}

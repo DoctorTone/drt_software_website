@@ -107,6 +107,51 @@ const NavigationUI = () => {
 		setFadeOverlay(1);
 	};
 
+	const Medical = () => {
+		if (activeIsland === "Medical") {
+			setVisibleModal(MODALS.MEDVIZ);
+			selectSound.play();
+		} else {
+			setTargetIsland("Medical");
+		}
+	};
+
+	const Finance = () => {
+		if (activeIsland === "Finance") {
+			setVisibleModal(MODALS.FINANCE);
+			selectSound.play();
+		} else {
+			setTargetIsland("Finance");
+		}
+	};
+
+	const Sleep = () => {
+		if (activeIsland === "Sleep") {
+			setVisibleModal(MODALS.SLEEP);
+			selectSound.play();
+		} else {
+			setTargetIsland("Sleep");
+		}
+	};
+
+	const Pandemic = () => {
+		if (activeIsland === "Pandemic") {
+			setVisibleModal(MODALS.PANDEMIC);
+			selectSound.play();
+		} else {
+			setTargetIsland("Pandemic");
+		}
+	};
+
+	const RealTime = () => {
+		if (activeIsland === "Real-Time") {
+			setVisibleModal(MODALS.REALTIME);
+			selectSound.play();
+		} else {
+			setTargetIsland("Real-Time");
+		}
+	};
+
 	const Home = () => {
 		setMenuState("Main");
 		setCurrentLevel(SCENE.MAIN_LEVEL);
@@ -170,7 +215,7 @@ const NavigationUI = () => {
 
 			case "DataViz":
 				setCurrentLevel(SCENE.LEVEL_2);
-				updateSlots(["Finance", "MedViz", "Sleep"]);
+				updateSlots(["Finance", "Medical", "Sleep"]);
 				setActiveIsland("Medical");
 				setTargetIsland("");
 				setOverlayFaded(false);
@@ -270,13 +315,17 @@ const NavigationUI = () => {
 				{menuState === "DataViz" ? (
 					<div>
 						<div className="mb-3">
-							<Button onClick={About} variant="outline-dark" className="w-100">
+							<Button
+								onClick={Medical}
+								variant="outline-dark"
+								className="w-100"
+							>
 								Medical
 							</Button>
 						</div>
 						<div className="mb-3">
 							<Button
-								onClick={Services}
+								onClick={Finance}
 								variant="outline-dark"
 								className="w-100"
 							>
@@ -285,7 +334,7 @@ const NavigationUI = () => {
 						</div>
 						<div className="mb-3">
 							<Button
-								onClick={Contact}
+								onClick={Pandemic}
 								variant="outline-dark"
 								className="w-100"
 							>
@@ -293,17 +342,13 @@ const NavigationUI = () => {
 							</Button>
 						</div>
 						<div className="mb-3">
-							<Button
-								onClick={Services}
-								variant="outline-dark"
-								className="w-100"
-							>
+							<Button onClick={Sleep} variant="outline-dark" className="w-100">
 								Sleep
 							</Button>
 						</div>
 						<div className="mb-3">
 							<Button
-								onClick={DataViz}
+								onClick={RealTime}
 								variant="outline-dark"
 								className="w-100"
 							>
