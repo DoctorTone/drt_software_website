@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import Col from "react-bootstrap/Col";
 import { MODALS } from "../state/Config.js";
 
 import useStore from "../state/store.js";
@@ -27,38 +28,44 @@ const ContactModel = ({ showModal }) => {
 			<Modal.Body>
 				<Form action="https://usebasin.com/f/da50ea670849" method="POST">
 					<Form.Group className="row">
-						<div className="col-2">
+						<Col xs={3} md={2}>
 							<Form.Label>Name</Form.Label>
-						</div>
-						<div className="col-10 mb-2">
+						</Col>
+						<Col xs={9} md={10} className="mb-2">
 							<Form.Control
 								type="text"
 								name="userName"
 								placeholder="Enter name"
 								required
 							/>
-						</div>
-						<div className="col-2">
+						</Col>
+						<Col xs={3} md={2}>
 							<Form.Label>Email</Form.Label>
-						</div>
-						<div className="col-10 mb-2">
+						</Col>
+						<Col xs={9} md={10} className="mb-2">
 							<Form.Control
 								type="email"
 								name="userEmail"
 								placeholder="name@name.com"
 								required
 							/>
-						</div>
-						<div className="col-2">
+						</Col>
+						<Col xs={3} md={2}>
 							<Form.Label>Phone</Form.Label>
-						</div>
-						<div className="col-10 mb-2">
+						</Col>
+						<Col xs={9} md={10} className="mb-2">
 							<Form.Control
 								type="tel"
 								name="userPhone"
 								placeholder="12345 678910"
 							/>
-						</div>
+						</Col>
+						<Col xs={3} md={2}>
+							<Form.Label>Message</Form.Label>
+						</Col>
+						<Col xs={9} md={10} className="mb-2">
+							<Form.Control type="text" name="userText" />
+						</Col>
 					</Form.Group>
 					<Button type="submit" className="mb-3">
 						Submit
