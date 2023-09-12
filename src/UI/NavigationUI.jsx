@@ -289,7 +289,12 @@ const NavigationUI = () => {
 					</Navbar>
 				) : null}
 				{menuState === "Portfolio" ? (
-					<Navbar expanded={expanded} expand="lg" className="bg-body-tertiary">
+					<Navbar
+						expanded={expanded}
+						expand="lg"
+						variant="dark"
+						className="bg-body-tertiary"
+					>
 						<Navbar.Toggle
 							onClick={() => setExpanded(!expanded)}
 							aria-controls="responsive-navbar-nav"
@@ -304,7 +309,7 @@ const NavigationUI = () => {
 									>
 										<Button
 											onClick={Home}
-											variant="outline-secondary"
+											variant="outline-warning"
 											className="w-100"
 										>
 											<House />
@@ -314,7 +319,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={VR}
-										variant="outline-secondary"
+										variant="outline-warning"
 										className="w-100"
 									>
 										VR
@@ -323,7 +328,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={Physics}
-										variant="outline-secondary"
+										variant="outline-warning"
 										className="w-100"
 									>
 										Physics
@@ -332,7 +337,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={Shaders}
-										variant="outline-secondary"
+										variant="outline-warning"
 										className="w-100"
 									>
 										Shaders
@@ -341,7 +346,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={Tech}
-										variant="outline-secondary"
+										variant="outline-warning"
 										className="w-100"
 									>
 										Tech
@@ -350,10 +355,10 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={DataViz}
-										variant="outline-secondary"
+										variant="outline-warning"
 										className="w-100"
 									>
-										Data Viz
+										DataViz
 									</Button>
 								</div>
 								<div className="mb-3">
@@ -363,7 +368,7 @@ const NavigationUI = () => {
 									>
 										<Button
 											onClick={Back}
-											variant="outline-secondary"
+											variant="outline-warning"
 											className="w-100"
 										>
 											<ArrowCounterclockwise />
@@ -390,7 +395,7 @@ const NavigationUI = () => {
 									>
 										<Button
 											onClick={Home}
-											variant="outline-dark"
+											variant="secondary"
 											className="w-100"
 										>
 											<House />
@@ -400,7 +405,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={Medical}
-										variant="outline-dark"
+										variant="secondary"
 										className="w-100"
 									>
 										Medical
@@ -409,7 +414,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={Finance}
-										variant="outline-dark"
+										variant="secondary"
 										className="w-100"
 									>
 										Finance
@@ -418,25 +423,21 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={Pandemic}
-										variant="outline-dark"
+										variant="secondary"
 										className="w-100"
 									>
 										Pandemic
 									</Button>
 								</div>
 								<div className="mb-3">
-									<Button
-										onClick={Sleep}
-										variant="outline-dark"
-										className="w-100"
-									>
+									<Button onClick={Sleep} variant="secondary" className="w-100">
 										Sleep
 									</Button>
 								</div>
 								<div className="mb-3">
 									<Button
 										onClick={RealTime}
-										variant="outline-dark"
+										variant="secondary"
 										className="w-100"
 									>
 										Real-time
@@ -449,7 +450,7 @@ const NavigationUI = () => {
 									>
 										<Button
 											onClick={Back}
-											variant="outline-dark"
+											variant="secondary"
 											className="w-100"
 										>
 											<ArrowCounterclockwise />
