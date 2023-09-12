@@ -259,20 +259,28 @@ const NavigationUI = () => {
 								placement="right"
 								overlay={<Tooltip>Back to top</Tooltip>}
 							>
-								<Button onClick={Home} variant="outline-dark" className="w-100">
+								<Button
+									onClick={Home}
+									variant="outline-secondary"
+									className="w-100"
+								>
 									<House />
 								</Button>
 							</OverlayTrigger>
 						</div>
 						<div className="mb-3">
-							<Button onClick={VR} variant="outline-dark" className="w-100">
+							<Button
+								onClick={VR}
+								variant="outline-secondary"
+								className="w-100"
+							>
 								VR
 							</Button>
 						</div>
 						<div className="mb-3">
 							<Button
 								onClick={Physics}
-								variant="outline-dark"
+								variant="outline-secondary"
 								className="w-100"
 							>
 								Physics
@@ -281,21 +289,25 @@ const NavigationUI = () => {
 						<div className="mb-3">
 							<Button
 								onClick={Shaders}
-								variant="outline-dark"
+								variant="outline-secondary"
 								className="w-100"
 							>
 								Shaders
 							</Button>
 						</div>
 						<div className="mb-3">
-							<Button onClick={Tech} variant="outline-dark" className="w-100">
+							<Button
+								onClick={Tech}
+								variant="outline-secondary"
+								className="w-100"
+							>
 								Tech
 							</Button>
 						</div>
 						<div className="mb-3">
 							<Button
 								onClick={DataViz}
-								variant="outline-dark"
+								variant="outline-secondary"
 								className="w-100"
 							>
 								Data Viz
@@ -306,7 +318,11 @@ const NavigationUI = () => {
 								placement="right"
 								overlay={<Tooltip>Back to previous</Tooltip>}
 							>
-								<Button onClick={Back} variant="outline-dark" className="w-100">
+								<Button
+									onClick={Back}
+									variant="outline-secondary"
+									className="w-100"
+								>
 									<ArrowCounterclockwise />
 								</Button>
 							</OverlayTrigger>

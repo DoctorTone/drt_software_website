@@ -25,7 +25,7 @@ export const IslandMedViz = ({ name }) => {
 
 	const selectIsland = () => {
 		if (currentSlots[SLOTS.MIDDLE] === name) {
-			setVisibleModal(MODALS.MEDVIZ);
+			setVisibleModal(MODALS.MEDICAL);
 			selectSound.play();
 		}
 	};
