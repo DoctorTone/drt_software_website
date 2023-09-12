@@ -9,7 +9,7 @@ import Overlay from "../components/Overlay.jsx";
 const DataVizScene = () => {
 	return (
 		<>
-			<Overlay fade={0} position-z={-15} opacity={1} color={0x707199} />
+			<Overlay fade={0} position-z={-15} opacity={1} color={0xf9dfae} />
 			<IslandMedViz name="Medical" />
 			<IslandFinanceViz name="Finance" />
 			<IslandCovidViz name="Pandemic" />

@@ -47,7 +47,7 @@ const ThreeApp = () => {
 				)}
 			</group>
 
-			<OrbitControls enablePan={true} enableRotate={true} />
+			<OrbitControls enablePan={false} enableRotate={false} />
 		</>
 	);
 };

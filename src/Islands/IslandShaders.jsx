@@ -76,7 +76,11 @@ export const IslandShaders = ({ name }) => {
 				onClick={selectIsland}
 				position={ISLANDS.SLOT_POSITIONS[slotPosition]}
 			>
-				<RoundedBox fade={togglePoints} position={ISLANDS.ShaderModelPosition}>
+				<RoundedBox
+					fade={togglePoints}
+					position={ISLANDS.ShaderModelPosition}
+					rotation-y={Math.PI / 4}
+				>
 					<meshLambertMaterial
 						ref={boxRef}
 						transparent={true}

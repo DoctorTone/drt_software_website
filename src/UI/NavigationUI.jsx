@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import {
 	House,
@@ -32,6 +34,11 @@ const NavigationUI = () => {
 	const [showLinks, setShowLinks] = useState(false);
 	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 	const [menuState, setMenuState] = useState("Main");
+	const [expanded, setExpanded] = useState(false);
+
+	const selectItem = (event) => {
+		console.log("Selected...");
+	};
 
 	const About = () => {
 		if (activeIsland === "About") {
@@ -40,6 +47,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("About");
 		}
+		setExpanded(false);
 	};
 
 	const Services = () => {
@@ -49,6 +57,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("Services");
 		}
+		setExpanded(false);
 	};
 
 	const Contact = () => {
@@ -58,6 +67,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("Contact");
 		}
+		setExpanded(false);
 	};
 
 	const Portfolio = () => {
@@ -156,6 +166,7 @@ const NavigationUI = () => {
 		setMenuState("Main");
 		// Fade overlay out
 		setFadeOverlay(1);
+		setExpanded(false);
 	};
 
 	const Back = () => {
@@ -175,6 +186,7 @@ const NavigationUI = () => {
 			default:
 				break;
 		}
+		setExpanded(false);
 	};
 
 	useEffect(() => {
@@ -217,40 +229,53 @@ const NavigationUI = () => {
 		<>
 			<div id="home" className="panel ps-2 ps-md-3 w-10">
 				{menuState === "Main" ? (
-					<div>
-						<div className="mb-3">
-							<Button onClick={About} variant="outline-dark" className="w-100">
-								About
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={Services}
-								variant="outline-dark"
-								className="w-100"
-							>
-								Services
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={Contact}
-								variant="outline-dark"
-								className="w-100"
-							>
-								Contact
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={Portfolio}
-								variant="outline-dark"
-								className="w-100"
-							>
-								Portfolio
-							</Button>
-						</div>
-					</div>
+					<Navbar expanded={expanded} expand="lg" className="bg-body-tertiary">
+						<Navbar.Toggle
+							onClick={() => setExpanded(!expanded)}
+							aria-controls="responsive-navbar-nav"
+							className="mb-3"
+						/>
+						<Navbar.Collapse>
+							<Nav className="flex-column">
+								<div className="mb-3">
+									<Button
+										onClick={About}
+										variant="outline-dark"
+										className="w-100"
+									>
+										About
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Services}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Services
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Contact}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Contact
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Portfolio}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Portfolio
+									</Button>
+								</div>
+							</Nav>
+						</Navbar.Collapse>
+					</Navbar>
 				) : null}
 				{menuState === "Portfolio" ? (
 					<div>
