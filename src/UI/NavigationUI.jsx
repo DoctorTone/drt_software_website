@@ -30,6 +30,8 @@ const NavigationUI = () => {
 	const updateSlots = useStore((state) => state.updateSlots);
 	const overlayFaded = useStore((state) => state.overlayFaded);
 	const setOverlayFaded = useStore((state) => state.setOverlayFaded);
+	const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
+	const displaySpeechBubble = useStore((state) => state.displaySpeechBubble);
 
 	const [showLinks, setShowLinks] = useState(false);
 	const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
@@ -75,6 +77,19 @@ const NavigationUI = () => {
 		// Fade overlay out
 		setFadeOverlay(1);
 		setExpanded(false);
+
+		const elem = document.getElementById("speechBubble");
+		if (!elem) return;
+
+		if (speechBubbleVisible) {
+			displaySpeechBubble(false);
+			const elem = document.getElementById("speechBubble");
+			if (!elem) return;
+
+			elem.classList.add("d-none");
+		}
+
+		elem.classList.add("disabled");
 	};
 
 	const VR = () => {
@@ -238,7 +253,7 @@ const NavigationUI = () => {
 
 	return (
 		<>
-			<div id="home" className="panel ps-2 ps-md-3 w-10">
+			<div id="home" className="panel ps-2 ps-md-3">
 				{menuState === "Main" ? (
 					<Navbar expanded={expanded} expand="lg" className="bg-body-tertiary">
 						<Navbar.Toggle

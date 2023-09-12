@@ -19,6 +19,8 @@ export const IslandDRT = ({ name }) => {
 	const currentSlots = useStore((state) => state.currentSlots);
 	const updateSlots = useStore((state) => state.updateSlots);
 	const getSlotPosition = useStore((state) => state.getSlotPosition);
+	const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
+	const displaySpeechBubble = useStore((state) => state.displaySpeechBubble);
 
 	const matRef = useRef();
 
@@ -26,6 +28,19 @@ export const IslandDRT = ({ name }) => {
 
 	const selectIsland = () => {
 		if (currentSlots[SLOTS.MIDDLE] === name) {
+			const elem = document.getElementById("speechBubble");
+			if (!elem) return;
+
+			if (speechBubbleVisible) {
+				displaySpeechBubble(false);
+				const elem = document.getElementById("speechBubble");
+				if (!elem) return;
+
+				elem.classList.add("d-none");
+			}
+
+			elem.classList.add("disabled");
+
 			setVisibleModal(MODALS.ABOUT);
 			selectSound.play();
 		}

@@ -109,6 +109,9 @@ a:active {
 	text-decoration: none;
 }
 
+.btn-outline-warning:hover {
+	color: red;
+}
 /* Speech bubble */
 #speechBubble {
 	left: 0%;

@@ -17,6 +17,7 @@ const App = () => {
 			</Canvas>
 			<NavigationUI />
 			<ShowModals visibleModal={currentVisibleModal} />
+			<Bubble />
 		</>
 	);
 };
