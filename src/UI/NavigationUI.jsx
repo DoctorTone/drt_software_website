@@ -74,6 +74,7 @@ const NavigationUI = () => {
 		setMenuState("Portfolio");
 		// Fade overlay out
 		setFadeOverlay(1);
+		setExpanded(false);
 	};
 
 	const VR = () => {
@@ -83,6 +84,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("VR");
 		}
+		setExpanded(false);
 	};
 
 	const Physics = () => {
@@ -92,6 +94,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("Physics");
 		}
+		setExpanded(false);
 	};
 
 	const Shaders = () => {
@@ -101,6 +104,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("Shaders");
 		}
+		setExpanded(false);
 	};
 	const Tech = () => {
 		if (activeIsland === "Tech") {
@@ -109,12 +113,14 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("Tech");
 		}
+		setExpanded(false);
 	};
 
 	const DataViz = () => {
 		setMenuState("DataViz");
 		// Fade overlay out
 		setFadeOverlay(1);
+		setExpanded(false);
 	};
 
 	const Medical = () => {
@@ -124,6 +130,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("Medical");
 		}
+		setExpanded(false);
 	};
 
 	const Finance = () => {
@@ -133,6 +140,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("Finance");
 		}
+		setExpanded(false);
 	};
 
 	const Sleep = () => {
@@ -142,6 +150,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("Sleep");
 		}
+		setExpanded(false);
 	};
 
 	const Pandemic = () => {
@@ -151,6 +160,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("Pandemic");
 		}
+		setExpanded(false);
 	};
 
 	const RealTime = () => {
@@ -160,6 +170,7 @@ const NavigationUI = () => {
 		} else {
 			setTargetIsland("RealTime");
 		}
+		setExpanded(false);
 	};
 
 	const Home = () => {
@@ -278,146 +289,176 @@ const NavigationUI = () => {
 					</Navbar>
 				) : null}
 				{menuState === "Portfolio" ? (
-					<div>
-						<div className="mb-3">
-							<OverlayTrigger
-								placement="right"
-								overlay={<Tooltip>Back to top</Tooltip>}
-							>
-								<Button
-									onClick={Home}
-									variant="outline-secondary"
-									className="w-100"
-								>
-									<House />
-								</Button>
-							</OverlayTrigger>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={VR}
-								variant="outline-secondary"
-								className="w-100"
-							>
-								VR
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={Physics}
-								variant="outline-secondary"
-								className="w-100"
-							>
-								Physics
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={Shaders}
-								variant="outline-secondary"
-								className="w-100"
-							>
-								Shaders
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={Tech}
-								variant="outline-secondary"
-								className="w-100"
-							>
-								Tech
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={DataViz}
-								variant="outline-secondary"
-								className="w-100"
-							>
-								Data Viz
-							</Button>
-						</div>
-						<div className="mb-3">
-							<OverlayTrigger
-								placement="right"
-								overlay={<Tooltip>Back to previous</Tooltip>}
-							>
-								<Button
-									onClick={Back}
-									variant="outline-secondary"
-									className="w-100"
-								>
-									<ArrowCounterclockwise />
-								</Button>
-							</OverlayTrigger>
-						</div>
-					</div>
+					<Navbar expanded={expanded} expand="lg" className="bg-body-tertiary">
+						<Navbar.Toggle
+							onClick={() => setExpanded(!expanded)}
+							aria-controls="responsive-navbar-nav"
+							className="mb-3"
+						/>
+						<Navbar.Collapse>
+							<Nav className="flex-column">
+								<div className="mb-3">
+									<OverlayTrigger
+										placement="right"
+										overlay={<Tooltip>Back to top</Tooltip>}
+									>
+										<Button
+											onClick={Home}
+											variant="outline-secondary"
+											className="w-100"
+										>
+											<House />
+										</Button>
+									</OverlayTrigger>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={VR}
+										variant="outline-secondary"
+										className="w-100"
+									>
+										VR
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Physics}
+										variant="outline-secondary"
+										className="w-100"
+									>
+										Physics
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Shaders}
+										variant="outline-secondary"
+										className="w-100"
+									>
+										Shaders
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Tech}
+										variant="outline-secondary"
+										className="w-100"
+									>
+										Tech
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={DataViz}
+										variant="outline-secondary"
+										className="w-100"
+									>
+										Data Viz
+									</Button>
+								</div>
+								<div className="mb-3">
+									<OverlayTrigger
+										placement="right"
+										overlay={<Tooltip>Back to previous</Tooltip>}
+									>
+										<Button
+											onClick={Back}
+											variant="outline-secondary"
+											className="w-100"
+										>
+											<ArrowCounterclockwise />
+										</Button>
+									</OverlayTrigger>
+								</div>
+							</Nav>
+						</Navbar.Collapse>
+					</Navbar>
 				) : null}
 				{menuState === "DataViz" ? (
-					<div>
-						<div className="mb-3">
-							<OverlayTrigger
-								placement="right"
-								overlay={<Tooltip>Back to top</Tooltip>}
-							>
-								<Button onClick={Home} variant="outline-dark" className="w-100">
-									<House />
-								</Button>
-							</OverlayTrigger>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={Medical}
-								variant="outline-dark"
-								className="w-100"
-							>
-								Medical
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={Finance}
-								variant="outline-dark"
-								className="w-100"
-							>
-								Finance
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={Pandemic}
-								variant="outline-dark"
-								className="w-100"
-							>
-								Pandemic
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button onClick={Sleep} variant="outline-dark" className="w-100">
-								Sleep
-							</Button>
-						</div>
-						<div className="mb-3">
-							<Button
-								onClick={RealTime}
-								variant="outline-dark"
-								className="w-100"
-							>
-								Real-time
-							</Button>
-						</div>
-						<div className="mb-3">
-							<OverlayTrigger
-								placement="right"
-								overlay={<Tooltip>Back to previous</Tooltip>}
-							>
-								<Button onClick={Back} variant="outline-dark" className="w-100">
-									<ArrowCounterclockwise />
-								</Button>
-							</OverlayTrigger>
-						</div>
-					</div>
+					<Navbar expanded={expanded} expand="lg" className="bg-body-tertiary">
+						<Navbar.Toggle
+							onClick={() => setExpanded(!expanded)}
+							aria-controls="responsive-navbar-nav"
+							className="mb-3"
+						/>
+						<Navbar.Collapse>
+							<Nav className="flex-column">
+								<div className="mb-3">
+									<OverlayTrigger
+										placement="right"
+										overlay={<Tooltip>Back to top</Tooltip>}
+									>
+										<Button
+											onClick={Home}
+											variant="outline-dark"
+											className="w-100"
+										>
+											<House />
+										</Button>
+									</OverlayTrigger>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Medical}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Medical
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Finance}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Finance
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Pandemic}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Pandemic
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Sleep}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Sleep
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={RealTime}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Real-time
+									</Button>
+								</div>
+								<div className="mb-3">
+									<OverlayTrigger
+										placement="right"
+										overlay={<Tooltip>Back to previous</Tooltip>}
+									>
+										<Button
+											onClick={Back}
+											variant="outline-dark"
+											className="w-100"
+										>
+											<ArrowCounterclockwise />
+										</Button>
+									</OverlayTrigger>
+								</div>
+							</Nav>
+						</Navbar.Collapse>
+					</Navbar>
 				) : null}
 			</div>
 			<div id="social" className="panel pe-1 pe-md-3">
