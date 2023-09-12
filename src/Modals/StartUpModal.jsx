@@ -41,7 +41,9 @@ const StartUpModal = ({ showModal }) => {
 			</Modal.Header>
 			<Modal.Body>
 				<p>Use the menu on the left to explore the site.</p>
-				<p>Click on the island in front of you to find out more.</p>
+				<p>
+					Click on the island in <strong>front</strong> of you to find out more.
+				</p>
 				<p>
 					Use the home {<House />} and back {<ArrowCounterclockwise />} icons to
 					move between the levels.

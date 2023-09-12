@@ -80,7 +80,7 @@ const ContactModel = ({ showModal }) => {
 							</a>
 						</Form.Label>
 						<br></br>
-						<Form.Label>Phone 0115 8408440</Form.Label>
+						<Form.Label>Phone 0115 8840440</Form.Label>
 					</Form.Group>
 				</Form>
 			</Modal.Body>
