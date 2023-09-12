@@ -25,7 +25,7 @@ export const IslandShaders = ({ name }) => {
 
 	const selectIsland = () => {
 		if (currentSlots[SLOTS.MIDDLE] === name) {
-			setVisibleModal(MODALS.SHADER);
+			setVisibleModal(MODALS.SHADERS);
 			selectSound.play();
 		}
 	};

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import useStore from "../state/store";
-const Overlay = ({ fade, ...props }) => {
+const Overlay = ({ fade, opacity, color, ...props }) => {
 	const matRef = useRef();
 	const triggerRef = useRef(false);
 
@@ -38,9 +38,9 @@ const Overlay = ({ fade, ...props }) => {
 			<planeGeometry args={[1000, 1000]} />
 			<meshBasicMaterial
 				ref={matRef}
-				color={0x454545}
+				color={color || 0x454545}
 				transparent={true}
-				opacity={0}
+				opacity={opacity || 0}
 			/>
 		</mesh>
 	);
