@@ -7,7 +7,6 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
-const DELAY = 0.5;
 export function DRT({ fade, ...props }) {
 	const { nodes } = useGLTF("./models/DRT-Text.gltf");
 	const matRef = useRef();
