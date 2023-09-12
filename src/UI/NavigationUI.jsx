@@ -320,7 +320,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<OverlayTrigger
 										placement="right"
-										overlay={<Tooltip>Back to top</Tooltip>}
+										overlay={<Tooltip>Home</Tooltip>}
 									>
 										<Button
 											onClick={Home}
@@ -406,7 +406,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<OverlayTrigger
 										placement="right"
-										overlay={<Tooltip>Back to top</Tooltip>}
+										overlay={<Tooltip>Home</Tooltip>}
 									>
 										<Button
 											onClick={Home}
