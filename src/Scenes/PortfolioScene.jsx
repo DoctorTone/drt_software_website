@@ -1,6 +1,7 @@
 import React from "react";
 import { IslandPhysics } from "../Islands/IslandPhysics.jsx";
 import { IslandVR } from "../Islands/IslandVR.jsx";
+import { IslandAR } from "../Islands/IslandAR.jsx";
 import { IslandShaders } from "../Islands/IslandShaders.jsx";
 import { IslandTech } from "../Islands/IslandTech.jsx";
 import Overlay from "../components/Overlay.jsx";
@@ -10,6 +11,7 @@ const PortfolioScene = () => {
 		<>
 			<Overlay fade={0} position-z={-5} opacity={1} />
 			<IslandVR name="VR" />
+			<IslandAR name="AR" />
 			<IslandPhysics name="Physics" />
 			<IslandShaders name="Shaders" />
 			<IslandTech name="Tech" />

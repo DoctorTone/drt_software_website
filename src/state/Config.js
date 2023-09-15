@@ -81,6 +81,11 @@ const ISLANDS = {
 	VRModelPosition: [2, -7, -1.5],
 	VRTextPosition: [0.25, 3.25, 0],
 	VRTextRotation: Math.PI / 2,
+	// AR island
+	ARPosition: [6, 0, 0],
+	ARModelPosition: [0, 1.5, 0],
+	ARTextPosition: [0.25, 3.25, 0],
+	ARTextRotation: Math.PI / 2,
 	// Shader island
 	ShaderPosition: [-3.927, 0, -3.527],
 	ShaderModelPosition: [0, 2.35, 0],

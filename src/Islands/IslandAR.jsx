@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { IslandPoints } from "./IslandPoints.jsx";
-import { VR } from "../Models/VR.jsx";
+import { AR } from "../Models/AR.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
@@ -78,7 +78,7 @@ export const IslandAR = ({ name }) => {
 					fade={togglePoints}
 					position={ISLANDS.ARModelPosition}
 					rotation-y={Math.PI / 6}
-					scale={0.6}
+					scale={2}
 				/>
 				<Shadow
 					scale={1.65}
