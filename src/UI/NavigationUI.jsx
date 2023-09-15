@@ -266,7 +266,11 @@ const NavigationUI = () => {
 		<>
 			<div id="home" className="panel ps-2 ps-md-3">
 				{menuState === "Main" ? (
-					<Navbar expanded={expanded} expand="lg" className="bg-body-tertiary">
+					<Navbar
+						expanded={expanded}
+						expand="lg"
+						className="bg-body-tertiary Main"
+					>
 						<Navbar.Toggle
 							onClick={() => setExpanded(!expanded)}
 							aria-controls="responsive-navbar-nav"
@@ -415,7 +419,11 @@ const NavigationUI = () => {
 					</Navbar>
 				) : null}
 				{menuState === "DataViz" ? (
-					<Navbar expanded={expanded} expand="lg" className="bg-body-tertiary">
+					<Navbar
+						expanded={expanded}
+						expand="lg"
+						className="bg-body-tertiary Viz"
+					>
 						<Navbar.Toggle
 							onClick={() => setExpanded(!expanded)}
 							aria-controls="responsive-navbar-nav"
@@ -430,7 +438,7 @@ const NavigationUI = () => {
 									>
 										<Button
 											onClick={Home}
-											variant="secondary"
+											variant="outline-dark"
 											className="w-100"
 										>
 											<House />
@@ -440,7 +448,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={Medical}
-										variant="secondary"
+										variant="outline-dark"
 										className="w-100"
 									>
 										Medical
@@ -449,7 +457,7 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={Finance}
-										variant="secondary"
+										variant="outline-dark"
 										className="w-100"
 									>
 										Finance
@@ -458,21 +466,25 @@ const NavigationUI = () => {
 								<div className="mb-3">
 									<Button
 										onClick={Pandemic}
-										variant="secondary"
+										variant="outline-dark"
 										className="w-100"
 									>
 										Pandemic
 									</Button>
 								</div>
 								<div className="mb-3">
-									<Button onClick={Sleep} variant="secondary" className="w-100">
+									<Button
+										onClick={Sleep}
+										variant="outline-dark"
+										className="w-100"
+									>
 										Sleep
 									</Button>
 								</div>
 								<div className="mb-3">
 									<Button
 										onClick={RealTime}
-										variant="secondary"
+										variant="outline-dark"
 										className="w-100"
 									>
 										Real-time
@@ -485,7 +497,7 @@ const NavigationUI = () => {
 									>
 										<Button
 											onClick={Back}
-											variant="secondary"
+											variant="outline-dark"
 											className="w-100"
 										>
 											<ArrowCounterclockwise />

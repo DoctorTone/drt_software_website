@@ -64,6 +64,20 @@ body {
 	padding: 0.5%;
 }
 
+.Main .btn-outline-dark {
+	color: #e3e5e7;
+	background-color: rgba(0.4, 0.4, 0.4, 0.25);
+}
+
+.btn-outline-warning {
+	background-color: rgba(0.4, 0.4, 0.4, 0.25);
+}
+
+.Viz .btn-outline-dark {
+	color: #e3e5e7;
+	background-color: rgba(0.4, 0.4, 0.4, 0.5);
+}
+
 #breadcrumbs {
 	left: 16%;
 	top: 4%;
