@@ -72,6 +72,12 @@ const NavigationUI = () => {
 		setExpanded(false);
 	};
 
+	const Projects = () => {
+		setVisibleModal(MODALS.PROJECTS);
+		selectSound.play();
+		setExpanded(false);
+	};
+
 	const Portfolio = () => {
 		setMenuState("Portfolio");
 		// Fade overlay out
@@ -303,6 +309,15 @@ const NavigationUI = () => {
 										className="w-100"
 									>
 										Contact
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Projects}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Projects
 									</Button>
 								</div>
 								<div className="mb-3">

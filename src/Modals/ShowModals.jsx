@@ -17,6 +17,7 @@ import StartUpModal from "./StartUpModal.jsx";
 import TechModal from "./TechModal.jsx";
 import VRModal from "./VRModal.jsx";
 import ARModal from "./ARModal.jsx";
+import ProjectsModal from "./ProjectsModal.jsx";
 
 const ShowModals = ({ visibleModal }) => {
 	const renderModal = () => {
@@ -53,6 +54,8 @@ const ShowModals = ({ visibleModal }) => {
 				return <VRModal showModal={true} />;
 			case MODALS.AR:
 				return <ARModal showModal={true} />;
+			case MODALS.PROJECTS:
+				return <ProjectsModal showModal={true} />;
 			default:
 				return null;
 		}

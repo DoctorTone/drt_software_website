@@ -141,6 +141,7 @@ const MODALS = {
 	TECH: 14,
 	VR: 15,
 	AR: 16,
+	PROJECTS: 17,
 };
 
 const SLOTS = {
