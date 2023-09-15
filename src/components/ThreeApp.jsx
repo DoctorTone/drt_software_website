@@ -11,6 +11,8 @@ import DataVizScene from "../Scenes/DataVizScene.jsx";
 import { Loading } from "./Loading.jsx";
 import Overlay from "./Overlay.jsx";
 
+const INTERACT = false;
+
 const ThreeApp = () => {
 	const currentSlots = useStore((state) => state.currentSlots);
 	const currentLevel = useStore((state) => state.currentLevel);
@@ -47,7 +49,7 @@ const ThreeApp = () => {
 				)}
 			</group>
 
-			<OrbitControls enablePan={true} enableRotate={true} />
+			<OrbitControls enablePan={INTERACT} enableRotate={INTERACT} />
 		</>
 	);
 };

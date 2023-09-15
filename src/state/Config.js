@@ -84,7 +84,7 @@ const ISLANDS = {
 	// AR island
 	ARPosition: [6, 0, 0],
 	ARModelPosition: [0, 1.5, 0],
-	ARTextPosition: [0.25, 3.25, 0],
+	ARTextPosition: [0.25, 3, 0],
 	ARTextRotation: Math.PI / 2,
 	// Shader island
 	ShaderPosition: [-3.927, 0, -3.527],

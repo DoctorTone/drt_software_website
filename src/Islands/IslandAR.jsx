@@ -85,7 +85,7 @@ export const IslandAR = ({ name }) => {
 					opacity={0.85}
 					position={[
 						ISLANDS.ARTextPosition[0],
-						ISLANDS.ARTextPosition[1] - 1.5,
+						ISLANDS.ARTextPosition[1] - 1.35,
 						ISLANDS.ARTextPosition[2],
 					]}
 				/>

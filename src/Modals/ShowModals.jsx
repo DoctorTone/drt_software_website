@@ -16,6 +16,7 @@ import SleepModal from "./SleepModal.jsx";
 import StartUpModal from "./StartUpModal.jsx";
 import TechModal from "./TechModal.jsx";
 import VRModal from "./VRModal.jsx";
+import ARModal from "./ARModal.jsx";
 
 const ShowModals = ({ visibleModal }) => {
 	const renderModal = () => {
@@ -50,6 +51,8 @@ const ShowModals = ({ visibleModal }) => {
 				return <TechModal showModal={true} />;
 			case MODALS.VR:
 				return <VRModal showModal={true} />;
+			case MODALS.AR:
+				return <ARModal showModal={true} />;
 			default:
 				return null;
 		}
