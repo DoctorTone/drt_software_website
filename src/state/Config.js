@@ -135,6 +135,7 @@ const MODALS = {
 	START: 13,
 	TECH: 14,
 	VR: 15,
+	AR: 16,
 };
 
 const SLOTS = {

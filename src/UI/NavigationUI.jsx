@@ -121,12 +121,23 @@ const NavigationUI = () => {
 		}
 		setExpanded(false);
 	};
+
 	const Tech = () => {
 		if (activeIsland === "Tech") {
 			setVisibleModal(MODALS.TECH);
 			selectSound.play();
 		} else {
 			setTargetIsland("Tech");
+		}
+		setExpanded(false);
+	};
+
+	const AR = () => {
+		if (activeIsland === "AR") {
+			setVisibleModal(MODALS.AR);
+			selectSound.play();
+		} else {
+			setTargetIsland("AR");
 		}
 		setExpanded(false);
 	};
@@ -365,6 +376,15 @@ const NavigationUI = () => {
 										className="w-100"
 									>
 										Tech
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={AR}
+										variant="outline-warning"
+										className="w-100"
+									>
+										AR
 									</Button>
 								</div>
 								<div className="mb-3">
