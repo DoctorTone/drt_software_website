@@ -78,6 +78,10 @@ body {
 	background-color: rgba(0.4, 0.4, 0.4, 0.5);
 }
 
+.twitter {
+	height: 1em;
+	width: 1em;
+}
 #breadcrumbs {
 	left: 16%;
 	top: 4%;

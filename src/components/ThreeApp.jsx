@@ -11,7 +11,7 @@ import DataVizScene from "../Scenes/DataVizScene.jsx";
 import { Loading } from "./Loading.jsx";
 import Overlay from "./Overlay.jsx";
 
-const INTERACT = true;
+const INTERACT = false;
 
 const ThreeApp = () => {
 	const currentSlots = useStore((state) => state.currentSlots);

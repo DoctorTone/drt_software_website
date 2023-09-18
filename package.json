@@ -11,7 +11,7 @@
     "r3f-perf": "^7.1.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
-    "react-bootstrap-icons": "^1.10.2",
+    "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^18.2.0",
     "react-transition-group": "^4.4.5",
     "three": "^0.148.0",

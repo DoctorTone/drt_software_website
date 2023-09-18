@@ -4,6 +4,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Image from "react-bootstrap/Image";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import {
 	House,
@@ -526,9 +527,9 @@ const NavigationUI = () => {
 			</div>
 			<div id="social" className="panel pe-1 pe-md-3">
 				<div className="mb-3">
-					<Button variant="outline-dark">
+					<Button variant="outline-secondary">
 						<a href="https://twitter.com/DrtSoftware" target="_blank">
-							<Twitter />
+							<Image src="x_twitter.png" className="twitter" />
 						</a>
 					</Button>
 				</div>
