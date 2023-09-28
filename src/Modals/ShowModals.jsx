@@ -7,7 +7,6 @@ import FinanceModal from "./FinanceModal.jsx";
 import InfoModal from "./InfoModal.jsx";
 import MedVizModal from "./MedVizModal.jsx";
 import PandemicModal from "./PandemicModal.jsx";
-import PersonModal from "./PersonModal.jsx";
 import PhysicsModal from "./PhysicsModal.jsx";
 import RealTimeModal from "./RealTimeModal.jsx";
 import ServicesModal from "./ServicesModal.jsx";
@@ -34,8 +33,6 @@ const ShowModals = ({ visibleModal }) => {
 				return <MedVizModal showModal={true} />;
 			case MODALS.PANDEMIC:
 				return <PandemicModal showModal={true} />;
-			case MODALS.PERSON:
-				return <PersonModal showModal={true} />;
 			case MODALS.PHYSICS:
 				return <PhysicsModal showModal={true} />;
 			case MODALS.REALTIME:

@@ -82,11 +82,6 @@ body {
 	height: 1em;
 	width: 1em;
 }
-#breadcrumbs {
-	left: 16%;
-	top: 4%;
-}
-
 .infoDisplay {
 	border: 2px solid black;
 	border-radius: 10px;
