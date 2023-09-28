@@ -79,6 +79,12 @@ const NavigationUI = () => {
 		setExpanded(false);
 	};
 
+	const Latest = () => {
+		setVisibleModal(MODALS.LATEST);
+		selectSound.play();
+		setExpanded(false);
+	};
+
 	const Portfolio = () => {
 		setMenuState("Portfolio");
 		// Fade overlay out
@@ -319,6 +325,15 @@ const NavigationUI = () => {
 										className="w-100"
 									>
 										Projects
+									</Button>
+								</div>
+								<div className="mb-3">
+									<Button
+										onClick={Latest}
+										variant="outline-dark"
+										className="w-100"
+									>
+										Latest
 									</Button>
 								</div>
 								<div className="mb-3">

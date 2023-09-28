@@ -17,6 +17,7 @@ import TechModal from "./TechModal.jsx";
 import VRModal from "./VRModal.jsx";
 import ARModal from "./ARModal.jsx";
 import ProjectsModal from "./ProjectsModal.jsx";
+import LatestModal from "./LatestModal.jsx";
 
 const ShowModals = ({ visibleModal }) => {
 	const renderModal = () => {
@@ -53,6 +54,8 @@ const ShowModals = ({ visibleModal }) => {
 				return <ARModal showModal={true} />;
 			case MODALS.PROJECTS:
 				return <ProjectsModal showModal={true} />;
+			case MODALS.LATEST:
+				return <LatestModal showModal={true} />;
 			default:
 				return null;
 		}
