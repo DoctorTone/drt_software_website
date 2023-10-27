@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { PumpkinIsland } from "./PumpkinIsland.jsx";
 import { Phone } from "../Models/Phone.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
@@ -105,7 +106,7 @@ export const IslandContact = ({ name }) => {
 						ISLANDS.ContactModelPosition[2],
 					]}
 				/>
-				<IslandPoints showPoints={togglePoints} />
+				<PumpkinIsland showPoints={togglePoints} />
 				<Text
 					color="white"
 					center

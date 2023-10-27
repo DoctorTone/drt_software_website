@@ -2,6 +2,7 @@ import React, { Suspense, useState, useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { PumpkinIsland } from "./PumpkinIsland.jsx";
 import { Work } from "../Models/Work.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
@@ -104,7 +105,7 @@ export const IslandServices = ({ name }) => {
 						ISLANDS.ServicesModelPosition[2],
 					]}
 				/>
-				<IslandPoints showPoints={togglePoints} />
+				<PumpkinIsland showPoints={togglePoints} />
 				<Text
 					color="white"
 					center

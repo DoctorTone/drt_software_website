@@ -3,6 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { PumpkinIsland } from "./PumpkinIsland.jsx";
 import { swapSlots } from "../state/Utils.js";
 import { Tablet } from "../Models/Tablet.jsx";
 import useStore from "../state/store.js";
@@ -89,7 +90,7 @@ export const IslandFinanceViz = ({ name }) => {
 						ISLANDS.FinanceVizTextPosition[2] + 0.25,
 					]}
 				/>
-				<IslandPoints showPoints={togglePoints} />
+				<PumpkinIsland showPoints={togglePoints} />
 				<Text
 					color="white"
 					center

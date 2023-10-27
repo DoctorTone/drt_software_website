@@ -4,6 +4,7 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { Tablet } from "../Models/Tablet.jsx";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { PumpkinIsland } from "./PumpkinIsland.jsx";
 import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 
@@ -89,7 +90,7 @@ export const IslandSleepViz = ({ name }) => {
 						ISLANDS.SleepVizTextPosition[2] + 0.25,
 					]}
 				/>
-				<IslandPoints showPoints={togglePoints} />
+				<PumpkinIsland showPoints={togglePoints} />
 				<Text
 					color="white"
 					center

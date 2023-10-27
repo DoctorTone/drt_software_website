@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Float, Text, useCursor, RoundedBox, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { PumpkinIsland } from "./PumpkinIsland.jsx";
 import { useFrame } from "@react-three/fiber";
 import { SCENE, ISLANDS, MATERIALS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
@@ -96,7 +97,7 @@ export const IslandShaders = ({ name }) => {
 						ISLANDS.ShaderTextPosition[2],
 					]}
 				/>
-				<IslandPoints showPoints={togglePoints} />
+				<PumpkinIsland showPoints={togglePoints} />
 				<Text
 					color="white"
 					center

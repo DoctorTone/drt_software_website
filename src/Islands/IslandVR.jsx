@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { PumpkinIsland } from "./PumpkinIsland.jsx";
 import { VR } from "../Models/VR.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
@@ -91,7 +92,7 @@ export const IslandVR = ({ name }) => {
 						ISLANDS.VRTextPosition[2],
 					]}
 				/>
-				<IslandPoints showPoints={togglePoints} />
+				<PumpkinIsland showPoints={togglePoints} />
 				<Text
 					color="white"
 					center

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { PumpkinIsland } from "./PumpkinIsland.jsx";
 import { DRT } from "../Models/DRT.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
@@ -100,7 +101,7 @@ export const IslandDRT = ({ name }) => {
 						ISLANDS.DRTModelPosition[2],
 					]}
 				/>
-				<IslandPoints showPoints={togglePoints} />
+				<PumpkinIsland showPoints={togglePoints} />
 				<Text
 					color="white"
 					center

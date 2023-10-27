@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { PumpkinIsland } from "./PumpkinIsland.jsx";
 import { useFrame } from "@react-three/fiber";
 import { Physics } from "../Models/Physics.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
@@ -89,7 +90,7 @@ export const IslandPhysics = ({ name }) => {
 						ISLANDS.PhysicsTextPosition[2],
 					]}
 				/>
-				<IslandPoints showPoints={togglePoints} />
+				<PumpkinIsland showPoints={togglePoints} />
 				<Text
 					color="white"
 					center
