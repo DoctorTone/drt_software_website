@@ -9,8 +9,7 @@ const Landing = () => {
       <ambientLight intensity={SCENE.ambientIntensity} />
       <pointLight position={SCENE.lightPosition} />
       <Sky sunPosition={SCENE.sunPosition} />
-      <DRT position-y={0.5} />
-      <Plane args={[10, 10]} rotation={[-Math.PI / 2, 0, 0]} />
+      <DRT />
     </>
   );
 };
