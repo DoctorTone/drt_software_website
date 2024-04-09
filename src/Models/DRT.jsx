@@ -8,7 +8,9 @@ import { useGLTF, useTexture, useEnvironment } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
 export function DRT({ fade, ...props }) {
-  const { nodes } = useGLTF("./models/DRT-Text.gltf");
+  const { nodes } = useGLTF("./models/DRT_Separate.gltf");
+  // DEBUG
+  console.log("Nodes = ", nodes);
   const matRef = useRef();
   const presetTexture = useEnvironment({
     files: "./textures/evening_sky_1k.hdr",
@@ -25,11 +27,15 @@ export function DRT({ fade, ...props }) {
 
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.DRT001.geometry}
-        position={[-1.09, -0.44, 0]}
-        rotation={[Math.PI / 2, 0, 0]}
-      >
+      <mesh geometry={nodes.DRT.geometry}>
+        <meshStandardMaterial
+          metalness={1}
+          roughness={0}
+          color="#d6cac9"
+          envMap={presetTexture}
+        />
+      </mesh>
+      <mesh geometry={nodes.Software.geometry} position={[-0.25, -0.5, 0]}>
         <meshStandardMaterial
           metalness={1}
           roughness={0}
@@ -41,4 +47,4 @@ export function DRT({ fade, ...props }) {
   );
 }
 
-useGLTF.preload("./models/DRT-Text.gltf");
+useGLTF.preload("./models/DRT_Separate.gltf");
