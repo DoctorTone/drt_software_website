@@ -7,6 +7,8 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, useEnvironment } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
+const MODEL_COLOR = "silver";
+
 export function DRT({ fade, rotate, ...props }) {
   const { nodes } = useGLTF("./models/DRT_Separate.gltf");
   const matRef = useRef();
@@ -24,14 +26,14 @@ export function DRT({ fade, rotate, ...props }) {
         matRef.current.opacity = 1;
       }
     }
-    if(rotate && rotationEnabled) {
-elapsedTime += delta;
-if(elapsedTime < SCENE.INITIAL_ANIMATION_TIME) return;
+    if (rotate && rotationEnabled) {
+      elapsedTime += delta;
+      if (elapsedTime < SCENE.INITIAL_ANIMATION_TIME) return;
       meshRef.current.rotation.y += delta;
-if(meshRef.current.rotation.y >= Math.PI *2) {
-meshRef.current.rotation.y = Math.PI *2;
-rotationEnabled = false;
-}
+      if (meshRef.current.rotation.y >= Math.PI * 2) {
+        meshRef.current.rotation.y = Math.PI * 2;
+        rotationEnabled = false;
+      }
     }
   });
 
@@ -41,15 +43,19 @@ rotationEnabled = false;
         <meshStandardMaterial
           metalness={1}
           roughness={0}
-          color="#d6cac9"
+          color={MODEL_COLOR}
           envMap={presetTexture}
         />
       </mesh>
-      <mesh ref={meshRef} geometry={nodes.Software.geometry} position={[-0.25, -0.5, 0]}>
+      <mesh
+        ref={meshRef}
+        geometry={nodes.Software.geometry}
+        position={[-0.25, -0.5, 0]}
+      >
         <meshStandardMaterial
           metalness={1}
           roughness={0}
-          color="#d6cac9"
+          color={MODEL_COLOR}
           envMap={presetTexture}
         />
       </mesh>
