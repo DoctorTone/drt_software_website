@@ -7,11 +7,10 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, useEnvironment } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
-export function DRT({ fade, ...props }) {
+export function DRT({ fade, rotate, ...props }) {
   const { nodes } = useGLTF("./models/DRT_Separate.gltf");
-  // DEBUG
-  console.log("Nodes = ", nodes);
   const matRef = useRef();
+  const meshRef = useRef();
   const presetTexture = useEnvironment({
     files: "./textures/evening_sky_1k.hdr",
   });
@@ -22,6 +21,9 @@ export function DRT({ fade, ...props }) {
       if (matRef.current.opacity < 0) {
         matRef.current.opacity = 1;
       }
+    }
+    if(rotate) {
+      meshRef.current.rotation.y += delta;
     }
   });
 
@@ -35,7 +37,7 @@ export function DRT({ fade, ...props }) {
           envMap={presetTexture}
         />
       </mesh>
-      <mesh geometry={nodes.Software.geometry} position={[-0.25, -0.5, 0]}>
+      <mesh ref={meshRef} geometry={nodes.Software.geometry} position={[-0.25, -0.5, 0]}>
         <meshStandardMaterial
           metalness={1}
           roughness={0}

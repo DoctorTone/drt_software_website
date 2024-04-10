@@ -15,6 +15,7 @@ const App = () => {
   return (
     <>
       <Canvas camera={{ position: SCENE.cameraPosition }}>
+      <color attach="background" args={[`#404241`]} />
         <Landing />
         <OrbitControls enablePan={true} enableRotate={true} />
       </Canvas>
