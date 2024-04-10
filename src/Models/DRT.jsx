@@ -11,6 +11,8 @@ export function DRT({ fade, rotate, ...props }) {
   const { nodes } = useGLTF("./models/DRT_Separate.gltf");
   const matRef = useRef();
   const meshRef = useRef();
+  let rotationEnabled = true;
+  let elapsedTime = 0;
   const presetTexture = useEnvironment({
     files: "./textures/evening_sky_1k.hdr",
   });
@@ -22,8 +24,14 @@ export function DRT({ fade, rotate, ...props }) {
         matRef.current.opacity = 1;
       }
     }
-    if(rotate) {
+    if(rotate && rotationEnabled) {
+elapsedTime += delta;
+if(elapsedTime < SCENE.INITIAL_ANIMATION_TIME) return;
       meshRef.current.rotation.y += delta;
+if(meshRef.current.rotation.y >= Math.PI *2) {
+meshRef.current.rotation.y = Math.PI *2;
+rotationEnabled = false;
+}
     }
   });
 
