@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import { DRT } from "../Models/DRT";
 import { SCENE } from "../state/Config.js";
 import { MeshReflectorMaterial } from "@react-three/drei";
@@ -14,17 +15,17 @@ const Landing = () => {
         <planeGeometry args={[50, 50]} />
         <MeshReflectorMaterial
           blur={[400, 100]}
-          resolution={1024}
+          resolution={512}
           mixBlur={1}
           mixStrength={15}
           depthScale={1}
           minDepthThreshold={0.85}
           color="#151515"
-          metalness={0.6}
-          roughness={1}
+          metalness={0.8}
+          roughness={0.5}
         />
       </mesh>
-      <DRT rotate={true} />
+      <DRT />
     </>
   );
 };
