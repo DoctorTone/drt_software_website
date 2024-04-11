@@ -1,9 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import ThreeApp from "./components/ThreeApp.jsx";
 import Landing from "./components/Landing.jsx";
-import NavigationUI from "./UI/NavigationUI.jsx";
-import ShowModals from "./Modals/ShowModals.jsx";
-import Bubble from "./components/Bubble.jsx";
+import LandingText from "./components/LandingText.jsx";
 import { OrbitControls } from "@react-three/drei";
 
 import { SCENE } from "./state/Config.js";
@@ -18,6 +15,7 @@ const App = () => {
         <Landing />
         <OrbitControls enablePan={true} enableRotate={true} />
       </Canvas>
+      <LandingText />
     </>
   );
 };
