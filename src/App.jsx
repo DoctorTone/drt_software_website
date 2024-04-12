@@ -1,18 +1,18 @@
 import { Canvas } from "@react-three/fiber";
-import Landing from "./components/Landing.jsx";
 import LandingText from "./components/LandingText.jsx";
+import Levels from "./Levels/Levels.jsx";
 import { OrbitControls } from "@react-three/drei";
 
 import { SCENE } from "./state/Config.js";
 import useStore from "./state/store.js";
 
 const App = () => {
-  const currentVisibleModal = useStore((state) => state.currentVisibleModal);
+  const currentLevel = useStore((state) => state.currentLevel);
 
   return (
     <>
       <Canvas camera={{ position: SCENE.cameraPosition }}>
-        <Landing />
+        <Levels levelName={currentLevel} />
         <OrbitControls enablePan={true} enableRotate={true} />
       </Canvas>
       <LandingText />
