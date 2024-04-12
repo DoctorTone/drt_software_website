@@ -9,7 +9,7 @@ import { SCENE } from "../state/Config";
 
 const MODEL_COLOR = "silver";
 
-export function DRT({ fade, rotate, ...props }) {
+export function DRT_Separate({ fade, rotate, ...props }) {
   const { nodes } = useGLTF("./models/DRT_Separate.gltf");
   const matRef = useRef();
   const meshRef = useRef();

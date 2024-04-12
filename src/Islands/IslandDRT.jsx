@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
-import { DRT } from "../Models/DRT.jsx";
+import { DRT_Fixed } from "../Models/DRT_Fixed.jsx";
 import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
@@ -90,7 +90,7 @@ export const IslandDRT = ({ name }) => {
         onClick={selectIsland}
         position={ISLANDS.SLOT_POSITIONS[slotPosition]}
       >
-        <DRT fade={togglePoints} position={ISLANDS.DRTModelPosition} />
+        <DRT_Fixed fade={togglePoints} position={ISLANDS.DRTModelPosition} />
         <Shadow
           scale={1.5}
           opacity={0.65}

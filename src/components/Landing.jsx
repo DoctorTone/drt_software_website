@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { DRT } from "../Models/DRT";
+import { DRT_Separate } from "../Models/DRT_Separate.jsx";
 import { SCENE } from "../state/Config.js";
 import { MeshReflectorMaterial } from "@react-three/drei";
 
@@ -22,7 +22,7 @@ const Landing = () => {
           roughness={0.5}
         />
       </mesh>
-      <DRT />
+      <DRT_Separate />
     </>
   );
 };
