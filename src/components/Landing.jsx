@@ -7,12 +7,9 @@ import { MeshReflectorMaterial } from "@react-three/drei";
 const Landing = () => {
   return (
     <>
-      <fog attach="fog" args={["#17171b", 0, 8]} />
-      <color attach="background" args={[`#17171b`]} />
-      <ambientLight intensity={SCENE.ambientIntensity} />
-      <pointLight position={SCENE.lightPosition} />
+      <color attach="background" args={[`#000000`]} />
       <mesh position={[0, -0.7, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[50, 50]} />
+        <planeGeometry args={[100, 100]} />
         <MeshReflectorMaterial
           blur={[400, 100]}
           resolution={512}

@@ -3,11 +3,9 @@ import Landing from "../components/Landing";
 import MainLevel from "./MainLevel";
 
 const Levels = ({ levelName }) => {
-  let component = null;
-
   switch (levelName) {
     case "Landing":
-      component = <Landing />;
+      return <Landing />;
       break;
 
     case "Main":
@@ -17,7 +15,6 @@ const Levels = ({ levelName }) => {
     default:
       break;
   }
-  return component;
 };
 
 export default Levels;
