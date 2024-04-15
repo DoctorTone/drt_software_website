@@ -7,7 +7,11 @@ import {
   Images,
   Newspaper,
 } from "react-bootstrap-icons";
-import { CircleMenu, CircleMenuItem } from "react-circular-menu";
+import {
+  CircleMenu,
+  CircleMenuItem,
+  TooltipPlacement,
+} from "react-circular-menu";
 
 const CircularMenu = () => {
   return (
@@ -25,19 +29,39 @@ const CircularMenu = () => {
          */
         rotationAngleInclusive={false}
       >
-        <CircleMenuItem onClick={() => alert("Clicked the item")}>
+        <CircleMenuItem
+          onClick={() => alert("Clicked the item")}
+          tooltip="About"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
           <Question />
         </CircleMenuItem>
-        <CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => alert("Clicked the item")}
+          tooltip="Services"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
           <Tools />
         </CircleMenuItem>
-        <CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => alert("Clicked the item")}
+          tooltip="Contact"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
           <TelephoneFill />
         </CircleMenuItem>
-        <CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => alert("Clicked the item")}
+          tooltip="Projects"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
           <Images />
         </CircleMenuItem>
-        <CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => alert("Clicked the item")}
+          tooltip="Latest"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
           <Newspaper />
         </CircleMenuItem>
       </CircleMenu>
