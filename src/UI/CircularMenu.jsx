@@ -17,9 +17,11 @@ import { MODALS } from "../state/Config.js";
 
 const CircularMenu = () => {
   const setVisibleModal = useStore((state) => state.setVisibleModal);
-  const showModal = (modal) => {
+  const setTargetIsland = useStore((state) => state.setTargetIsland);
+
+  const displayIsland = (modal, islandName) => {
     setVisibleModal(modal);
-    selectSound.play();
+    setTargetIsland(islandName);
   };
 
   return (
@@ -38,21 +40,21 @@ const CircularMenu = () => {
         rotationAngleInclusive={false}
       >
         <CircleMenuItem
-          onClick={() => setVisibleModal(MODALS.ABOUT)}
+          onClick={() => displayIsland(MODALS.ABOUT, "About")}
           tooltip="About"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Question />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => setVisibleModal(MODALS.SERVICES)}
+          onClick={() => displayIsland(MODALS.SERVICES, "Services")}
           tooltip="Services"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Tools />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => setVisibleModal(MODALS.CONTACT)}
+          onClick={() => displayIsland(MODALS.CONTACT, "Contact")}
           tooltip="Contact"
           tooltipPlacement={TooltipPlacement.Top}
         >

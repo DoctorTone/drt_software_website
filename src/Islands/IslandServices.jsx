@@ -27,23 +27,7 @@ export const IslandServices = ({ name }) => {
   const slotPosition = getSlotPosition(currentSlots, name);
 
   const selectIsland = () => {
-    if (currentSlots[SLOTS.MIDDLE] === name) {
-      const elem = document.getElementById("speechBubble");
-      if (!elem) return;
-
-      if (speechBubbleVisible) {
-        displaySpeechBubble(false);
-        const elem = document.getElementById("speechBubble");
-        if (!elem) return;
-
-        elem.classList.add("d-none");
-      }
-
-      elem.classList.add("disabled");
-
-      setVisibleModal(MODALS.SERVICES);
-      selectSound.play();
-    }
+    setVisibleModal(MODALS.SERVICES);
   };
 
   const pointerOver = () => {
@@ -88,7 +72,7 @@ export const IslandServices = ({ name }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}
-        position={ISLANDS.SLOT_POSITIONS[slotPosition]}
+        position={ISLANDS.SLOT_POSITIONS[1]}
       >
         <Work
           fade={togglePoints}
@@ -99,7 +83,7 @@ export const IslandServices = ({ name }) => {
         <Shadow
           scale={1}
           position={[
-            ISLANDS.ServicesModelPosition[0],
+            0,
             ISLANDS.ServicesModelPosition[1] - 0.5,
             ISLANDS.ServicesModelPosition[2],
           ]}

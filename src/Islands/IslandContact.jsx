@@ -27,23 +27,7 @@ export const IslandContact = ({ name }) => {
   const slotPosition = getSlotPosition(currentSlots, name);
 
   const selectIsland = () => {
-    if (currentSlots[SLOTS.MIDDLE] === name) {
-      const elem = document.getElementById("speechBubble");
-      if (!elem) return;
-
-      if (speechBubbleVisible) {
-        displaySpeechBubble(false);
-        const elem = document.getElementById("speechBubble");
-        if (!elem) return;
-
-        elem.classList.add("d-none");
-      }
-
-      elem.classList.add("disabled");
-
-      setVisibleModal(MODALS.CONTACT);
-      selectSound.play();
-    }
+    setVisibleModal(MODALS.CONTACT);
   };
 
   const pointerOver = () => {
@@ -89,7 +73,7 @@ export const IslandContact = ({ name }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}
-        position={ISLANDS.SLOT_POSITIONS[slotPosition]}
+        position={ISLANDS.SLOT_POSITIONS[1]}
       >
         <Phone
           fade={togglePoints}

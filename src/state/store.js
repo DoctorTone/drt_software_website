@@ -8,7 +8,7 @@ const useStore = create((set) => ({
   setCurrentLevel: (levelName) => set({ currentLevel: levelName }),
   // Island slot positions
   activeIsland: "About",
-  targetIsland: "",
+  targetIsland: "About",
   currentSlots: ["Contact", "About", "Services"],
   getSlotPosition: (slots, island) => {
     for (let i = 0; i < slots.length; ++i) {

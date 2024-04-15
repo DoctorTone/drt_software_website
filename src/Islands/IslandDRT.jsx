@@ -28,7 +28,6 @@ export const IslandDRT = ({ name }) => {
 
   const selectIsland = () => {
     setVisibleModal(MODALS.ABOUT);
-    selectSound.play();
   };
 
   const pointerOver = () => {
