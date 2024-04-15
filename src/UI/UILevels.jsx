@@ -1,5 +1,6 @@
 import React from "react";
 import LandingText from "./LandingText";
+import CircularMenu from "./CircularMenu";
 
 const UILevels = ({ levelName }) => {
   switch (levelName) {
@@ -8,7 +9,7 @@ const UILevels = ({ levelName }) => {
       break;
 
     case "Main":
-      return null;
+      return <CircularMenu />;
       break;
 
     default:

@@ -56,6 +56,10 @@ body {
   right: 10%;
   bottom: 5%;
 }
+#circularMain {
+  right: 20%;
+  bottom: 20%;
+}
 .offcanvas {
   background-color: black;
   color: #adb5bd;

@@ -57,7 +57,7 @@ const ISLANDS = {
   ACTIVE_ISLAND: 3,
   // DRT island
   DRTPosition: [0, 0, 6],
-  DRTModelPosition: [0.2, 2.2, 0.4],
+  DRTModelPosition: [0, 2.2, 0.4],
   DRTTextPosition: [0, 3, 0.4],
   DRTTreePosition: [-1, 1.5, 0],
   // Portfolio island
