@@ -28,9 +28,16 @@ const ServicesModal = ({ showModal }) => {
         <p>
           As well as bespoke software design and development, I also do 3D
           consultancy, presentations, workshops, mentoring and 3D graphical
-          services (such as building 3D websites and converting three.js to
-          react three fiber for example). If you need help with anything
-          3D-related then please get in touch.
+          services (such as building 3D websites).
+        </p>
+        <p>
+          As the majority of my work is 3D graphics and front-end web-based I
+          use languages and frameworks such as javascript, typescript, react,
+          bootstrap, material ui, etc. For all the graphics/WebXR programming I
+          use three.js and react three fiber, Babylon.js and GLSL for shader
+          programming. I have also built back-end applications using node,
+          express and database functionality. For desktop/native graphical
+          applications I also have experience of Unity.
         </p>
       </Modal.Body>
 
