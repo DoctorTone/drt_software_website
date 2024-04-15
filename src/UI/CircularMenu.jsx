@@ -12,8 +12,16 @@ import {
   CircleMenuItem,
   TooltipPlacement,
 } from "react-circular-menu";
+import useStore from "../state/store.js";
+import { MODALS } from "../state/Config.js";
 
 const CircularMenu = () => {
+  const setVisibleModal = useStore((state) => state.setVisibleModal);
+  const showModal = (modal) => {
+    setVisibleModal(modal);
+    selectSound.play();
+  };
+
   return (
     <div id="circularMain" className="panel">
       <CircleMenu
@@ -30,35 +38,35 @@ const CircularMenu = () => {
         rotationAngleInclusive={false}
       >
         <CircleMenuItem
-          onClick={() => alert("Clicked the item")}
+          onClick={() => setVisibleModal(MODALS.ABOUT)}
           tooltip="About"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Question />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => alert("Clicked the item")}
+          onClick={() => setVisibleModal(MODALS.SERVICES)}
           tooltip="Services"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Tools />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => alert("Clicked the item")}
+          onClick={() => setVisibleModal(MODALS.CONTACT)}
           tooltip="Contact"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <TelephoneFill />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => alert("Clicked the item")}
+          onClick={() => setVisibleModal(MODALS.PROJECTS)}
           tooltip="Projects"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Images />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => alert("Clicked the item")}
+          onClick={() => setVisibleModal(MODALS.LATEST)}
           tooltip="Latest"
           tooltipPlacement={TooltipPlacement.Top}
         >

@@ -27,23 +27,8 @@ export const IslandDRT = ({ name }) => {
   const slotPosition = getSlotPosition(currentSlots, name);
 
   const selectIsland = () => {
-    if (currentSlots[SLOTS.MIDDLE] === name) {
-      const elem = document.getElementById("speechBubble");
-      if (!elem) return;
-
-      if (speechBubbleVisible) {
-        displaySpeechBubble(false);
-        const elem = document.getElementById("speechBubble");
-        if (!elem) return;
-
-        elem.classList.add("d-none");
-      }
-
-      elem.classList.add("disabled");
-
-      setVisibleModal(MODALS.ABOUT);
-      selectSound.play();
-    }
+    setVisibleModal(MODALS.ABOUT);
+    selectSound.play();
   };
 
   const pointerOver = () => {
