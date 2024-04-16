@@ -10,14 +10,16 @@ import { MATERIALS } from "../state/Config.js";
 export function Work({ fade, ...props }) {
 	const { nodes, materials } = useGLTF("./models/work.glb");
 	const matRefs = { screwdriver: useRef(), wrench: useRef() };
+	let fadeEnabled = fade;
 
 	useFrame((state, delta) => {
-		if (fade) {
+		if (fadeEnabled) {
 			matRefs.screwdriver.current.opacity -= delta;
 			matRefs.wrench.current.opacity -= delta;
 			if (matRefs.screwdriver.current.opacity < 0) {
-				matRefs.screwdriver.current.opacity = 1;
-				matRefs.wrench.current.opacity = 1;
+				matRefs.screwdriver.current.opacity = 0;
+				matRefs.wrench.current.opacity = 0;
+				fadeEnabled = false;
 			}
 		}
 	});

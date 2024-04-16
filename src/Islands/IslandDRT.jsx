@@ -7,11 +7,10 @@ import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
 
-export const IslandDRT = ({ name, fade }) => {
+export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
-  const [togglePoints, setTogglePoints] = useState(false);
 
-  let fadeTextEnabled = fade;
+  let fadeTextEnabled = fadeOut;
 
   const targetIsland = useStore((state) => state.targetIsland);
   const activeIsland = useStore((state) => state.activeIsland);
@@ -43,14 +42,6 @@ export const IslandDRT = ({ name, fade }) => {
 
   useCursor(hovered);
 
-  useEffect(() => {
-    if (!targetIsland) return;
-
-    if (targetIsland !== name && activeIsland === name) {
-      setTogglePoints(true);
-    }
-  }, [targetIsland]);
-
   useFrame((state, delta) => {
     if (fadeTextEnabled) {
       textRef.current.opacity -= delta * SCENE.FADE_DELAY;
@@ -70,7 +61,7 @@ export const IslandDRT = ({ name, fade }) => {
         onClick={selectIsland}
         position={ISLANDS.SLOT_POSITIONS[slotPosition]}
       >
-        <DRT_Fixed fade={fade} position={ISLANDS.DRTModelPosition} />
+        <DRT_Fixed fade={fadeOut} position={ISLANDS.DRTModelPosition} />
         <Shadow
           scale={1.5}
           opacity={0.65}
@@ -80,7 +71,7 @@ export const IslandDRT = ({ name, fade }) => {
             ISLANDS.DRTModelPosition[2],
           ]}
         />
-        <IslandPoints showPoints={togglePoints} />
+        <IslandPoints />
         <Text
           color="white"
           center

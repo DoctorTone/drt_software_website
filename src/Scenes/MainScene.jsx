@@ -6,12 +6,19 @@ import useStore from "../state/store.js";
 
 const MainScene = () => {
   const targetIsland = useStore((state) => state.targetIsland);
+  const activeIsland = useStore((state) => state.activeIsland);
+
+  let fadeInStatus = false;
+  let fadeOutStatus = false;
+  if(activeIsland !== targetIsland) {
+fadeOutStatus = true;
+  }
 
   return (
     <>
-      {targetIsland === "About" && <IslandDRT name="About" fade={true} />}
-      {targetIsland === "Services" && <IslandServices name="Services" />}
-      {targetIsland === "Contact" && <IslandContact name="Contact" />}
+      {activeIsland === "About" && <IslandDRT name="About" fadeIn={fadeInStatus} fadeOut={fadeOutStatus}/>}
+      {activeIsland === "Services" && <IslandServices name="Services" fadeIn={fadeInStatus} fadeOut={fadeOutStatus}/>}
+      {activeIsland === "Contact" && <IslandContact name="Contact" fadeIn={fadeInStatus} fadeOut={trfadeOutStatusue}/>}
     </>
   );
 };

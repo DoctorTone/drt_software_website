@@ -7,10 +7,11 @@ import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 
-export const IslandServices = ({ name }) => {
+export const IslandServices = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
   const [togglePoints, setTogglePoints] = useState(false);
-  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
+
+  let fadeTextEnabled = fadeOut;
 
   const targetIsland = useStore((state) => state.targetIsland);
   const activeIsland = useStore((state) => state.activeIsland);
@@ -51,16 +52,11 @@ export const IslandServices = ({ name }) => {
   }, [targetIsland]);
 
   useFrame((state, delta) => {
-    if (togglePoints) {
-      matRef.current.opacity -= delta;
-      if (matRef.current.opacity < 0) {
-        matRef.current.opacity = 1;
-        setTogglePoints(false);
-        swapSlots(targetIsland, name, currentSlots);
-        updateSlots(currentSlots);
-        setActiveIsland(targetIsland);
-        setVisibleModal(MODALS[targetIsland.toUpperCase()]);
-        selectSound.play();
+    if (fadeTextEnabled) {
+      textRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      if (textRef.current.opacity < 0) {
+        textRef.current.opacity = 0;
+        fadeTextEnabled = false;
       }
     }
   });
@@ -75,7 +71,7 @@ export const IslandServices = ({ name }) => {
         position={ISLANDS.SLOT_POSITIONS[1]}
       >
         <Work
-          fade={togglePoints}
+          fade={fadeOut}
           rotation-y={Math.PI / 2}
           scale={0.1}
           position={ISLANDS.ServicesModelPosition}
@@ -100,7 +96,7 @@ export const IslandServices = ({ name }) => {
           outlineColor="black"
         >
           Services
-          <meshBasicMaterial ref={matRef} transparent={true} />
+          <meshBasicMaterial ref={textRef} transparent={true} />
         </Text>
       </group>
     </Float>

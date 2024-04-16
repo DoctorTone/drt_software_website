@@ -23,7 +23,7 @@ const CircularMenu = () => {
   const displayIsland = (modal, islandName) => {
     if (islandName === targetIsland) return;
 
-    setVisibleModal(modal);
+    // setVisibleModal(modal);
     setTargetIsland(islandName);
   };
 
