@@ -11,7 +11,8 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
   const [togglePoints, setTogglePoints] = useState(false);
 
-  let fadeTextEnabled = fadeOut;
+  let fadeInEnabled = fadeIn;
+  let fadeOutEnabled = fadeOut;
 
   const targetIsland = useStore((state) => state.targetIsland);
   const activeIsland = useStore((state) => state.activeIsland);
@@ -23,7 +24,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
   const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
   const displaySpeechBubble = useStore((state) => state.displaySpeechBubble);
 
-  const matRef = useRef();
+  const textRef = useRef();
 
   const slotPosition = getSlotPosition(currentSlots, name);
 
@@ -43,20 +44,19 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
 
   useCursor(hovered);
 
-  useEffect(() => {
-    if (!targetIsland) return;
-
-    if (targetIsland !== name && activeIsland === name) {
-      setTogglePoints(true);
-    }
-  }, [targetIsland]);
-
   useFrame((state, delta) => {
-    if (fadeTextEnabled) {
+    if (fadeOutEnabled) {
       textRef.current.opacity -= delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity < 0) {
         textRef.current.opacity = 0;
-        fadeTextEnabled = false;
+        fadeOutEnabled = false;
+      }
+    }
+    if (fadeInEnabled) {
+      textRef.current.opacity += delta * SCENE.FADE_DELAY;
+      if (textRef.current.opacity >= 1) {
+        textRef.current.opacity = 1;
+        fadeInEnabled = false;
       }
     }
   });
@@ -71,7 +71,8 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
         position={ISLANDS.SLOT_POSITIONS[1]}
       >
         <Work
-          fade={fadeOut}
+          fadeIn={fadeIn}
+          fadeOut={fadeOut}
           rotation-y={Math.PI / 2}
           scale={0.1}
           position={ISLANDS.ServicesModelPosition}
@@ -96,7 +97,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
           outlineColor="black"
         >
           Services
-          <meshBasicMaterial ref={textRef} transparent={true} />
+          <meshBasicMaterial ref={textRef} transparent={true} opacity={0} />
         </Text>
       </group>
     </Float>

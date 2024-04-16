@@ -43,21 +43,21 @@ const CircularMenu = () => {
         rotationAngleInclusive={false}
       >
         <CircleMenuItem
-          onClick={() => displayIsland(MODALS.ABOUT, "About")}
+          onClick={() => displayIsland(MODALS.ABOUT, "about")}
           tooltip="About"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Question />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland(MODALS.SERVICES, "Services")}
+          onClick={() => displayIsland(MODALS.SERVICES, "services")}
           tooltip="Services"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Tools />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland(MODALS.CONTACT, "Contact")}
+          onClick={() => displayIsland(MODALS.CONTACT, "contact")}
           tooltip="Contact"
           tooltipPlacement={TooltipPlacement.Top}
         >

@@ -7,8 +7,8 @@ const useStore = create((set) => ({
   currentLevel: "Landing",
   setCurrentLevel: (levelName) => set({ currentLevel: levelName }),
   // Island slot positions
-  activeIsland: "About",
-  targetIsland: "About",
+  activeIsland: "about",
+  targetIsland: "about",
   currentSlots: ["Contact", "About", "Services"],
   getSlotPosition: (slots, island) => {
     for (let i = 0; i < slots.length; ++i) {
@@ -21,7 +21,7 @@ const useStore = create((set) => ({
   setActiveIsland: (island) => set({ activeIsland: island }),
   setTargetIsland: (island) => set({ targetIsland: island }),
   transitionPhase: TRANSITIONS.FADE_OUT,
-  setTransitionPhase: (phase) => set({transitionPhase: phase}),
+  setTransitionPhase: (phase) => set({ transitionPhase: phase }),
   updateSlots: (slots) => set({ currentSlots: [...slots] }),
   overlayFaded: false,
   setOverlayFaded: (faded) => set({ overlayFaded: faded }),

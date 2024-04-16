@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { DRT_Fixed } from "../Models/DRT_Fixed.jsx";
-import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS, SLOTS, TRANSITIONS } from "../state/Config.js";
 import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
+import { useAccordionButton } from "react-bootstrap";
 
 export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
@@ -21,6 +22,7 @@ export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
   const getSlotPosition = useStore((state) => state.getSlotPosition);
   const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
   const displaySpeechBubble = useStore((state) => state.displaySpeechBubble);
+  const setTransitionPhase = useStore((state) => state.setTransitionPhase);
 
   const textRef = useRef();
 
@@ -48,6 +50,7 @@ export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
       if (textRef.current.opacity < 0) {
         textRef.current.opacity = 0;
         fadeTextEnabled = false;
+        setTransitionPhase(TRANSITIONS.FADE_IN);
       }
     }
   });

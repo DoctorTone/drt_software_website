@@ -3,22 +3,46 @@ import { IslandDRT } from "../Islands/IslandDRT.jsx";
 import { IslandServices } from "../Islands/IslandServices.jsx";
 import { IslandContact } from "../Islands/IslandContact.jsx";
 import useStore from "../state/store.js";
+import { TRANSITIONS } from "../state/Config.js";
 
 const MainScene = () => {
   const targetIsland = useStore((state) => state.targetIsland);
   const activeIsland = useStore((state) => state.activeIsland);
+  const transitionPhase = useStore((state) => state.transitionPhase);
 
-  let fadeInStatus = false;
-  let fadeOutStatus = false;
-  if(activeIsland !== targetIsland) {
-fadeOutStatus = true;
-  }
+  const getIsland = (transition) => {
+    let fadeOutStatus = transition === TRANSITIONS.FADE_OUT;
+    let fadeInStatus = transition === TRANSITIONS.FADE_IN;
+    if (activeIsland === targetIsland) {
+      fadeOutStatus = fadeInStatus = false;
+    }
+
+    return {
+      about: (
+        <IslandDRT name="About" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />
+      ),
+      services: (
+        <IslandServices
+          name="Services"
+          fadeOut={fadeOutStatus}
+          fadeIn={fadeInStatus}
+        />
+      ),
+      contact: (
+        <IslandContact
+          name="Contact"
+          fadeOut={fadeOutStatus}
+          fadeIn={fadeInStatus}
+        />
+      ),
+    };
+  };
 
   return (
     <>
-      {activeIsland === "About" && <IslandDRT name="About" fadeIn={fadeInStatus} fadeOut={fadeOutStatus}/>}
-      {activeIsland === "Services" && <IslandServices name="Services" fadeIn={fadeInStatus} fadeOut={fadeOutStatus}/>}
-      {activeIsland === "Contact" && <IslandContact name="Contact" fadeIn={fadeInStatus} fadeOut={trfadeOutStatusue}/>}
+      {transitionPhase === TRANSITIONS.FADE_OUT
+        ? getIsland(transitionPhase)[activeIsland]
+        : getIsland(transitionPhase)[targetIsland]}
     </>
   );
 };

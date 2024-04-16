@@ -7,50 +7,62 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { MATERIALS } from "../state/Config.js";
 
-export function Work({ fade, ...props }) {
-	const { nodes, materials } = useGLTF("./models/work.glb");
-	const matRefs = { screwdriver: useRef(), wrench: useRef() };
-	let fadeEnabled = fade;
+export function Work({ fadeIn, fadeOut, ...props }) {
+  const { nodes, materials } = useGLTF("./models/work.glb");
+  const matRefs = { screwdriver: useRef(), wrench: useRef() };
+  let fadeOutEnabled = fadeOut;
+  let fadeInEnabled = fadeIn;
 
-	useFrame((state, delta) => {
-		if (fadeEnabled) {
-			matRefs.screwdriver.current.opacity -= delta;
-			matRefs.wrench.current.opacity -= delta;
-			if (matRefs.screwdriver.current.opacity < 0) {
-				matRefs.screwdriver.current.opacity = 0;
-				matRefs.wrench.current.opacity = 0;
-				fadeEnabled = false;
-			}
-		}
-	});
+  useFrame((state, delta) => {
+    if (fadeOutEnabled) {
+      matRefs.screwdriver.current.opacity -= delta;
+      matRefs.wrench.current.opacity -= delta;
+      if (matRefs.screwdriver.current.opacity < 0) {
+        matRefs.screwdriver.current.opacity = 0;
+        matRefs.wrench.current.opacity = 0;
+        fadeOutEnabled = false;
+      }
+    }
+    if (fadeInEnabled) {
+      matRefs.screwdriver.current.opacity += delta;
+      matRefs.wrench.current.opacity += delta;
+      if (matRefs.screwdriver.current.opacity >= 1) {
+        matRefs.screwdriver.current.opacity = 1;
+        matRefs.wrench.current.opacity = 1;
+        fadeInEnabled = false;
+      }
+    }
+  });
 
-	return (
-		<group {...props} dispose={null}>
-			<mesh
-				geometry={nodes.screwdriver.geometry}
-				position={[0.76, 1.9, -0.76]}
-				rotation={[0, -1.55, 2.31]}
-			>
-				<meshLambertMaterial
-					transparent={true}
-					color={0x777777}
-					ref={matRefs.screwdriver}
-				/>
-			</mesh>
-			<mesh
-				geometry={nodes.wrench.geometry}
-				position={[-0.6, 0, -1.07]}
-				rotation={[-2.89, -1.54, 1.01]}
-				scale={0.54}
-			>
-				<meshLambertMaterial
-					transparent={true}
-					color={0x777777}
-					ref={matRefs.wrench}
-				/>
-			</mesh>
-		</group>
-	);
+  return (
+    <group {...props} dispose={null}>
+      <mesh
+        geometry={nodes.screwdriver.geometry}
+        position={[0.76, 1.9, -0.76]}
+        rotation={[0, -1.55, 2.31]}
+      >
+        <meshLambertMaterial
+          transparent={true}
+          color={0x777777}
+          opacity={0}
+          ref={matRefs.screwdriver}
+        />
+      </mesh>
+      <mesh
+        geometry={nodes.wrench.geometry}
+        position={[-0.6, 0, -1.07]}
+        rotation={[-2.89, -1.54, 1.01]}
+        scale={0.54}
+      >
+        <meshLambertMaterial
+          transparent={true}
+          opacity={0}
+          color={0x777777}
+          ref={matRefs.wrench}
+        />
+      </mesh>
+    </group>
+  );
 }
 
 useGLTF.preload("./models/work.glb");
