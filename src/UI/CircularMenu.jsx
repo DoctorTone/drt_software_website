@@ -20,10 +20,9 @@ const CircularMenu = () => {
   const targetIsland = useStore((state) => state.targetIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
 
-  const displayIsland = (modal, islandName) => {
+  const displayIsland = (islandName) => {
     if (islandName === targetIsland) return;
 
-    // setVisibleModal(modal);
     setTargetIsland(islandName);
   };
 
@@ -43,21 +42,21 @@ const CircularMenu = () => {
         rotationAngleInclusive={false}
       >
         <CircleMenuItem
-          onClick={() => displayIsland(MODALS.ABOUT, "about")}
+          onClick={() => displayIsland("about")}
           tooltip="About"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Question />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland(MODALS.SERVICES, "services")}
+          onClick={() => displayIsland("services")}
           tooltip="Services"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Tools />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland(MODALS.CONTACT, "contact")}
+          onClick={() => displayIsland("contact")}
           tooltip="Contact"
           tooltipPlacement={TooltipPlacement.Top}
         >

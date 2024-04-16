@@ -19,18 +19,18 @@ const MainScene = () => {
 
     return {
       about: (
-        <IslandDRT name="About" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />
+        <IslandDRT name="about" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />
       ),
       services: (
         <IslandServices
-          name="Services"
+          name="services"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />
       ),
       contact: (
         <IslandContact
-          name="Contact"
+          name="contact"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />

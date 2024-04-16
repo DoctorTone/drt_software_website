@@ -32,6 +32,12 @@ export const IslandContact = ({ name, fadeIn, fadeOut }) => {
     setHovered(false);
   };
 
+  const displayModal = (modal) => {
+    setTimeout(() => {
+      setVisibleModal(modal);
+    }, 1000);
+  };
+
   useCursor(hovered);
 
   useFrame((state, delta) => {
@@ -52,7 +58,8 @@ export const IslandContact = ({ name, fadeIn, fadeOut }) => {
         textRef.current.opacity = 1;
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
-        setActiveIsland("contact");
+        setActiveIsland(name);
+        displayModal(MODALS.CONTACT);
       }
     }
   });

@@ -32,6 +32,12 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
     setHovered(false);
   };
 
+  const displayModal = (modal) => {
+    setTimeout(() => {
+      setVisibleModal(modal);
+    }, 1000);
+  };
+
   useCursor(hovered);
 
   useFrame((state, delta) => {
@@ -49,7 +55,8 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
         textRef.current.opacity = 1;
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
-        setActiveIsland("services");
+        setActiveIsland(name);
+        displayModal(MODALS.SERVICES);
       }
     }
   });
