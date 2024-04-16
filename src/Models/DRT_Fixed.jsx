@@ -10,12 +10,14 @@ import { SCENE } from "../state/Config";
 export function DRT_Fixed({ fade, ...props }) {
   const { nodes } = useGLTF("./models/DRT-Text.gltf");
   const matRef = useRef();
+  let fadeEnabled = fade;
 
   useFrame((state, delta) => {
-    if (fade) {
+    if (fadeEnabled) {
       matRef.current.opacity -= delta * SCENE.FADE_DELAY;
       if (matRef.current.opacity < 0) {
-        matRef.current.opacity = 1;
+        matRef.current.opacity = 0;
+        fadeEnabled = false;
       }
     }
   });

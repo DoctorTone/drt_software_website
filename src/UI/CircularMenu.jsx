@@ -17,9 +17,12 @@ import { MODALS } from "../state/Config.js";
 
 const CircularMenu = () => {
   const setVisibleModal = useStore((state) => state.setVisibleModal);
+  const targetIsland = useStore((state) => state.targetIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
 
   const displayIsland = (modal, islandName) => {
+    if (islandName === targetIsland) return;
+
     setVisibleModal(modal);
     setTargetIsland(islandName);
   };

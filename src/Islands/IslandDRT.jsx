@@ -7,10 +7,11 @@ import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
 
-export const IslandDRT = ({ name }) => {
+export const IslandDRT = ({ name, fade }) => {
   const [hovered, setHovered] = useState(false);
   const [togglePoints, setTogglePoints] = useState(false);
-  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
+
+  let fadeTextEnabled = fade;
 
   const targetIsland = useStore((state) => state.targetIsland);
   const activeIsland = useStore((state) => state.activeIsland);
@@ -22,7 +23,7 @@ export const IslandDRT = ({ name }) => {
   const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
   const displaySpeechBubble = useStore((state) => state.displaySpeechBubble);
 
-  const matRef = useRef();
+  const textRef = useRef();
 
   const slotPosition = getSlotPosition(currentSlots, name);
 
@@ -51,16 +52,11 @@ export const IslandDRT = ({ name }) => {
   }, [targetIsland]);
 
   useFrame((state, delta) => {
-    if (togglePoints) {
-      matRef.current.opacity -= delta * SCENE.FADE_DELAY;
-      if (matRef.current.opacity < 0) {
-        matRef.current.opacity = 1;
-        setTogglePoints(false);
-        swapSlots(targetIsland, activeIsland, currentSlots);
-        updateSlots(currentSlots);
-        setActiveIsland(targetIsland);
-        setVisibleModal(MODALS[targetIsland.toUpperCase()]);
-        selectSound.play();
+    if (fadeTextEnabled) {
+      textRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      if (textRef.current.opacity < 0) {
+        textRef.current.opacity = 0;
+        fadeTextEnabled = false;
       }
     }
   });
@@ -74,7 +70,7 @@ export const IslandDRT = ({ name }) => {
         onClick={selectIsland}
         position={ISLANDS.SLOT_POSITIONS[slotPosition]}
       >
-        <DRT_Fixed fade={togglePoints} position={ISLANDS.DRTModelPosition} />
+        <DRT_Fixed fade={fade} position={ISLANDS.DRTModelPosition} />
         <Shadow
           scale={1.5}
           opacity={0.65}
@@ -96,7 +92,7 @@ export const IslandDRT = ({ name }) => {
           outlineColor="black"
         >
           About
-          <meshBasicMaterial ref={matRef} transparent={true} />
+          <meshBasicMaterial ref={textRef} transparent={true} />
         </Text>
       </group>
     </Float>

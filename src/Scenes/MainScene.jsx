@@ -9,7 +9,7 @@ const MainScene = () => {
 
   return (
     <>
-      {targetIsland === "About" && <IslandDRT name="About" />}
+      {targetIsland === "About" && <IslandDRT name="About" fade={true} />}
       {targetIsland === "Services" && <IslandServices name="Services" />}
       {targetIsland === "Contact" && <IslandContact name="Contact" />}
     </>
