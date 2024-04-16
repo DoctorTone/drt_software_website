@@ -35,7 +35,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
   const displayModal = (modal) => {
     setTimeout(() => {
       setVisibleModal(modal);
-    }, 1000);
+    }, SCENE.MODAL_DELAY);
   };
 
   useCursor(hovered);

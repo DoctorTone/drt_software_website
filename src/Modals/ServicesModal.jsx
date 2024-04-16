@@ -21,7 +21,7 @@ const ServicesModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Services</Modal.Title>
+        <Modal.Title>Services + Technology</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
