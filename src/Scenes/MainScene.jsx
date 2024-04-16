@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { IslandDRT } from "../Islands/IslandDRT.jsx";
 import { IslandServices } from "../Islands/IslandServices.jsx";
 import { IslandContact } from "../Islands/IslandContact.jsx";

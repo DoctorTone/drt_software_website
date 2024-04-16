@@ -1,41 +1,31 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { DRT_Fixed } from "../Models/DRT_Fixed.jsx";
-import { SCENE, ISLANDS, MODALS, SLOTS, TRANSITIONS } from "../state/Config.js";
-import { swapSlots } from "../state/Utils.js";
+import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
-import { useAccordionButton } from "react-bootstrap";
 
 export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
 
-  let fadeTextEnabled = fadeOut;
+  let fadeInEnabled = fadeIn;
+  let fadeOutEnabled = fadeOut;
 
-  const targetIsland = useStore((state) => state.targetIsland);
-  const activeIsland = useStore((state) => state.activeIsland);
-  const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setVisibleModal = useStore((state) => state.setVisibleModal);
-  const currentSlots = useStore((state) => state.currentSlots);
-  const updateSlots = useStore((state) => state.updateSlots);
-  const getSlotPosition = useStore((state) => state.getSlotPosition);
   const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
   const displaySpeechBubble = useStore((state) => state.displaySpeechBubble);
   const setTransitionPhase = useStore((state) => state.setTransitionPhase);
+  const setActiveIsland = useStore((state) => state.setActiveIsland);
 
   const textRef = useRef();
-
-  const slotPosition = getSlotPosition(currentSlots, name);
 
   const selectIsland = () => {
     setVisibleModal(MODALS.ABOUT);
   };
 
   const pointerOver = () => {
-    if (currentSlots[SLOTS.MIDDLE] === name) {
-      setHovered(true);
-    }
+    setHovered(true);
   };
 
   const pointerOut = () => {
@@ -45,12 +35,24 @@ export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
   useCursor(hovered);
 
   useFrame((state, delta) => {
-    if (fadeTextEnabled) {
+    if (fadeOutEnabled) {
       textRef.current.opacity -= delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity < 0) {
         textRef.current.opacity = 0;
-        fadeTextEnabled = false;
+        fadeOutEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_IN);
+      }
+    }
+    if (fadeInEnabled) {
+      if (textRef.current.opacity >= 1) {
+        textRef.current.opacity = 0;
+      }
+      textRef.current.opacity += delta * SCENE.FADE_DELAY;
+      if (textRef.current.opacity >= 1) {
+        textRef.current.opacity = 1;
+        fadeInEnabled = false;
+        setTransitionPhase(TRANSITIONS.FADE_OUT);
+        setActiveIsland("about");
       }
     }
   });
@@ -58,13 +60,16 @@ export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group
-        visible={slotPosition >= 0}
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}
-        position={ISLANDS.SLOT_POSITIONS[slotPosition]}
+        position={ISLANDS.SLOT_POSITIONS[1]}
       >
-        <DRT_Fixed fade={fadeOut} position={ISLANDS.DRTModelPosition} />
+        <DRT_Fixed
+          fadeIn={fadeIn}
+          fadeOut={fadeOut}
+          position={ISLANDS.DRTModelPosition}
+        />
         <Shadow
           scale={1.5}
           opacity={0.65}

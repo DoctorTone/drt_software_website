@@ -1,41 +1,31 @@
-import React, { Suspense, useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { Work } from "../Models/Work.jsx";
-import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
-import { swapSlots } from "../state/Utils.js";
+import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandServices = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
-  const [togglePoints, setTogglePoints] = useState(false);
 
   let fadeInEnabled = fadeIn;
   let fadeOutEnabled = fadeOut;
 
-  const targetIsland = useStore((state) => state.targetIsland);
-  const activeIsland = useStore((state) => state.activeIsland);
-  const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setVisibleModal = useStore((state) => state.setVisibleModal);
-  const currentSlots = useStore((state) => state.currentSlots);
-  const updateSlots = useStore((state) => state.updateSlots);
-  const getSlotPosition = useStore((state) => state.getSlotPosition);
   const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
   const displaySpeechBubble = useStore((state) => state.displaySpeechBubble);
+  const setTransitionPhase = useStore((state) => state.setTransitionPhase);
+  const setActiveIsland = useStore((state) => state.setActiveIsland);
 
   const textRef = useRef();
-
-  const slotPosition = getSlotPosition(currentSlots, name);
 
   const selectIsland = () => {
     setVisibleModal(MODALS.SERVICES);
   };
 
   const pointerOver = () => {
-    if (currentSlots[SLOTS.MIDDLE] === name) {
-      setHovered(true);
-    }
+    setHovered(true);
   };
 
   const pointerOut = () => {
@@ -50,6 +40,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
       if (textRef.current.opacity < 0) {
         textRef.current.opacity = 0;
         fadeOutEnabled = false;
+        setTransitionPhase(TRANSITIONS.FADE_IN);
       }
     }
     if (fadeInEnabled) {
@@ -57,6 +48,8 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
       if (textRef.current.opacity >= 1) {
         textRef.current.opacity = 1;
         fadeInEnabled = false;
+        setTransitionPhase(TRANSITIONS.FADE_OUT);
+        setActiveIsland("services");
       }
     }
   });
@@ -64,7 +57,6 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group
-        visible={slotPosition >= 0}
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}
@@ -85,7 +77,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
             ISLANDS.ServicesModelPosition[2],
           ]}
         />
-        <IslandPoints showPoints={togglePoints} />
+        <IslandPoints />
         <Text
           color="white"
           center
