@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { SCENE, MODALS } from "./Config.js";
+import { SCENE, MODALS, TRANSITIONS } from "./Config.js";
 
 const useStore = create((set) => ({
   // Levels in system
@@ -20,6 +20,8 @@ const useStore = create((set) => ({
   ignoreButtonPress: false,
   setActiveIsland: (island) => set({ activeIsland: island }),
   setTargetIsland: (island) => set({ targetIsland: island }),
+  transitionPhase: TRANSITIONS.FADE_OUT,
+  setTransitionPhase: (phase) => set({transitionPhase: phase}),
   updateSlots: (slots) => set({ currentSlots: [...slots] }),
   overlayFaded: false,
   setOverlayFaded: (faded) => set({ overlayFaded: faded }),

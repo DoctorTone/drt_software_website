@@ -43,6 +43,12 @@ const SCENE = {
   INITIAL_ANIMATION_TIME: 1,
 };
 
+const TRANSITIONS = {
+  FADE_NONE: 0,
+  FADE_OUT: 1,
+  FADE_IN: 2,
+};
+
 const ISLANDS = {
   // Position of each slot
   SLOT_POSITIONS: [
@@ -163,4 +169,4 @@ const MATERIALS = {
   SHINY_ORANGE: new THREE.MeshPhongMaterial({ color: 0xcc2906 }),
 };
 
-export { SCENE, ISLANDS, MODALS, MATERIALS, SLOTS };
+export { SCENE, ISLANDS, MODALS, MATERIALS, SLOTS, TRANSITIONS };
