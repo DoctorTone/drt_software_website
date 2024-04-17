@@ -1,66 +1,63 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import { Tablet } from "../Models/Tablet.jsx";
 import { IslandPoints } from "./IslandPoints.jsx";
-import { swapSlots } from "../state/Utils.js";
 import useStore from "../state/store.js";
 
-export const IslandMedViz = ({ name }) => {
+export const IslandMedViz = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
-  const [togglePoints, setTogglePoints] = useState(false);
-  const targetIsland = useStore((state) => state.targetIsland);
-  const activeIsland = useStore((state) => state.activeIsland);
+
+  let fadeInEnabled = fadeIn;
+  let fadeOutEnabled = fadeOut;
+
   const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setVisibleModal = useStore((state) => state.setVisibleModal);
-  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
-  const currentSlots = useStore((state) => state.currentSlots);
-  const updateSlots = useStore((state) => state.updateSlots);
-  const getSlotPosition = useStore((state) => state.getSlotPosition);
+  const setTransitionPhase = useStore((state) => state.setTransitionPhase);
 
-  const matRef = useRef();
-
-  const slotPosition = getSlotPosition(currentSlots, name);
+  const textRef = useRef();
 
   const selectIsland = () => {
-    if (currentSlots[SLOTS.MIDDLE] === name) {
-      setVisibleModal(MODALS.MEDICAL);
-      selectSound.play();
-    }
+    setVisibleModal(MODALS.MEDICAL);
   };
 
   const pointerOver = () => {
-    if (currentSlots[SLOTS.MIDDLE] === name) {
-      setHovered(true);
-    }
+    setHovered(true);
   };
 
   const pointerOut = () => {
     setHovered(false);
   };
 
+  const displayModal = (modal) => {
+    setTimeout(() => {
+      setVisibleModal(modal);
+    }, SCENE.MODAL_DELAY);
+  };
+
   useCursor(hovered);
 
-  useEffect(() => {
-    if (!targetIsland) return;
-
-    if (targetIsland !== name && activeIsland === name) {
-      setTogglePoints(true);
-    }
-  }, [targetIsland]);
-
   useFrame((state, delta) => {
-    if (togglePoints) {
-      matRef.current.opacity -= delta;
-      if (matRef.current.opacity < 0) {
-        matRef.current.opacity = 1;
-        setTogglePoints(false);
-        swapSlots(targetIsland, name, currentSlots);
-        updateSlots(currentSlots);
-        setActiveIsland(targetIsland);
-        setVisibleModal(MODALS[targetIsland.toUpperCase()]);
-        selectSound.play();
+    if (fadeOutEnabled) {
+      textRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      if (textRef.current.opacity < 0) {
+        textRef.current.opacity = 0;
+        fadeOutEnabled = false;
+        setTransitionPhase(TRANSITIONS.FADE_IN);
+      }
+    }
+    if (fadeInEnabled) {
+      if (textRef.current.opacity >= 1) {
+        textRef.current.opacity = 0;
+      }
+      textRef.current.opacity += delta * SCENE.FADE_DELAY;
+      if (textRef.current.opacity >= 1) {
+        textRef.current.opacity = 1;
+        fadeInEnabled = false;
+        setTransitionPhase(TRANSITIONS.FADE_OUT);
+        setActiveIsland(name);
+        displayModal(MODALS.CONTACT);
       }
     }
   });
@@ -68,14 +65,14 @@ export const IslandMedViz = ({ name }) => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group
-        visible={slotPosition >= 0}
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}
-        position={ISLANDS.SLOT_POSITIONS[slotPosition]}
+        position={ISLANDS.MAIN_POSITION}
       >
         <Tablet
-          fade={togglePoints}
+          fadeIn={fadeIn}
+          fadeOut={fadeOut}
           position={ISLANDS.MedVizModelPosition}
           rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
           map={"./textures/volumeRender.jpg"}
@@ -89,7 +86,7 @@ export const IslandMedViz = ({ name }) => {
             ISLANDS.MedVizTextPosition[2] + 0.5,
           ]}
         />
-        <IslandPoints showPoints={togglePoints} />
+        <IslandPoints />
         <Text
           color="white"
           center
@@ -101,7 +98,7 @@ export const IslandMedViz = ({ name }) => {
           outlineColor="black"
         >
           Medical
-          <meshBasicMaterial ref={matRef} transparent={true} />
+          <meshBasicMaterial ref={textRef} transparent={true} />
         </Text>
       </group>
     </Float>
