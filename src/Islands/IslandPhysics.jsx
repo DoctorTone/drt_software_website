@@ -57,7 +57,7 @@ export const IslandPhysics = ({ name, fadeIn, fadeOut }) => {
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
-        displayModal(MODALS.ABOUT);
+        displayModal(MODALS.PHYSICS);
       }
     }
   });

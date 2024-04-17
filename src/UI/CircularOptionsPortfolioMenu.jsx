@@ -12,10 +12,8 @@ import {
   TooltipPlacement,
 } from "react-circular-menu";
 import useStore from "../state/store.js";
-import { MODALS } from "../state/Config.js";
 
 const CircularOptionsMainMenu = () => {
-  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const targetIsland = useStore((state) => state.targetIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
 

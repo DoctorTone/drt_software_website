@@ -10,7 +10,7 @@ import PandemicModal from "./PandemicModal.jsx";
 import PhysicsModal from "./PhysicsModal.jsx";
 import RealTimeModal from "./RealTimeModal.jsx";
 import ServicesModal from "./ServicesModal.jsx";
-import ShaderModal from "./ShaderModal.jsx";
+import EffectsModal from "./EffectsModal.jsx";
 import SleepModal from "./SleepModal.jsx";
 import StartUpModal from "./StartUpModal.jsx";
 import TechModal from "./TechModal.jsx";
@@ -46,8 +46,8 @@ const ShowModals = ({ visibleModal }) => {
         return <RealTimeModal showModal={true} />;
       case MODALS.SERVICES:
         return <ServicesModal showModal={true} />;
-      case MODALS.SHADERS:
-        return <ShaderModal showModal={true} />;
+      case MODALS.EFFECTS:
+        return <EffectsModal showModal={true} />;
       case MODALS.SLEEP:
         return <SleepModal showModal={true} />;
       case MODALS.START:

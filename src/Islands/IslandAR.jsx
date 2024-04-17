@@ -57,7 +57,7 @@ export const IslandAR = ({ name, fadeIn, fadeOut }) => {
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
-        displayModal(MODALS.ABOUT);
+        displayModal(MODALS.AR);
       }
     }
   });

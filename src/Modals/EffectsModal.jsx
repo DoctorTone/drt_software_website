@@ -5,7 +5,7 @@ import { MODALS } from "../state/Config.js";
 
 import useStore from "../state/store.js";
 
-const ShaderModal = ({ showModal }) => {
+const EffectsModal = ({ showModal }) => {
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [show, setShow] = useState(false);
 
@@ -21,7 +21,7 @@ const ShaderModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Shaders/Materials</Modal.Title>
+        <Modal.Title>Effects and Materials</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
@@ -34,7 +34,8 @@ const ShaderModal = ({ showModal }) => {
             href="https://drt-software.com/Demos/Effects/effects.html"
             target="_blank"
             className="me-2"
-            variant="primary">
+            variant="primary"
+          >
             Launch demo
           </Button>
         </div>
@@ -46,7 +47,8 @@ const ShaderModal = ({ showModal }) => {
             href="https://drt-software.com/Demos/Material/editor.html"
             target="_blank"
             className="me-2"
-            variant="warning">
+            variant="warning"
+          >
             Launch editor
           </Button>
         </div>
@@ -61,4 +63,4 @@ const ShaderModal = ({ showModal }) => {
   );
 };
 
-export default ShaderModal;
+export default EffectsModal;

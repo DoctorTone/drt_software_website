@@ -19,7 +19,7 @@ export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
   const boxRef = useRef();
 
   const selectIsland = () => {
-    setVisibleModal(MODALS.SHADERS);
+    setVisibleModal(MODALS.EFFECTS);
   };
 
   const pointerOver = () => {
@@ -58,7 +58,7 @@ export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
-        displayModal(MODALS.ABOUT);
+        displayModal(MODALS.EFFECTS);
       }
     }
   });

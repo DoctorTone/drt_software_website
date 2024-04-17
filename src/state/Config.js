@@ -139,7 +139,7 @@ const MODALS = {
   PHYSICS: 8,
   REALTIME: 9,
   SERVICES: 10,
-  SHADERS: 11,
+  EFFECTS: 11,
   SLEEP: 12,
   START: 13,
   TECH: 14,
