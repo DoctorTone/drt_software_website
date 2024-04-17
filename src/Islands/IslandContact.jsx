@@ -67,11 +67,10 @@ export const IslandContact = ({ name, fadeIn, fadeOut }) => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group
-        rotation-y={0}
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}
-        position={ISLANDS.SLOT_POSITIONS[1]}
+        position={ISLANDS.MAIN_POSITION}
       >
         <Phone
           fadeIn={fadeIn}

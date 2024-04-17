@@ -37,11 +37,7 @@ export function Work({ fadeIn, fadeOut, ...props }) {
 
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.screwdriver.geometry}
-        position={[0.76, 1.9, -0.76]}
-        rotation={[0, -1.55, 2.31]}
-      >
+      <mesh geometry={nodes.screwdriver.geometry} position={[0.76, 1.9, -0.76]}>
         <meshLambertMaterial
           transparent={true}
           color={0x777777}
@@ -52,7 +48,6 @@ export function Work({ fadeIn, fadeOut, ...props }) {
       <mesh
         geometry={nodes.wrench.geometry}
         position={[-0.6, 0, -1.07]}
-        rotation={[-2.89, -1.54, 1.01]}
         scale={0.54}
       >
         <meshLambertMaterial

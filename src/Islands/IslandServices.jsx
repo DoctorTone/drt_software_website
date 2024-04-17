@@ -67,14 +67,14 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}
-        position={ISLANDS.SLOT_POSITIONS[1]}
+        position={ISLANDS.MAIN_POSITION}
       >
         <Work
           fadeIn={fadeIn}
           fadeOut={fadeOut}
-          rotation-y={Math.PI / 2}
           scale={0.1}
           position={ISLANDS.ServicesModelPosition}
+          rotation-y={Math.PI / 2}
         />
         <Shadow
           scale={1}

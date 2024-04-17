@@ -70,7 +70,7 @@ export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}
-        position={ISLANDS.SLOT_POSITIONS[1]}
+        position={ISLANDS.MAIN_POSITION}
       >
         <DRT_Fixed
           fadeIn={fadeIn}

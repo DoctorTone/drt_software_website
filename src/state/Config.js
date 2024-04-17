@@ -39,9 +39,9 @@ const SCENE = {
   ANIMATE_DOWN: 2,
   ROTATE_TIMEOUT: 5000,
   ROTATION_SPEED: 1.25,
-  FADE_DELAY: 1.5,
+  FADE_DELAY: 1,
   INITIAL_ANIMATION_TIME: 1,
-  MODAL_DELAY: 500,
+  MODAL_DELAY: 250,
 };
 
 const TRANSITIONS = {
@@ -52,11 +52,7 @@ const TRANSITIONS = {
 
 const ISLANDS = {
   // Position of each slot
-  SLOT_POSITIONS: [
-    [-9, 0, 0],
-    [0, 0, 6],
-    [9, 0, 0],
-  ],
+  MAIN_POSITION: [0, 0, 6],
   // Main scene
   MAIN_LEVEL_ISLANDS: 4,
   LEVEL_1_ISLANDS: 5,
