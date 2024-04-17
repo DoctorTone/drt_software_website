@@ -1,22 +1,14 @@
 import React from "react";
 // Import the circular menu
-import {
-  Question,
-  Tools,
-  TelephoneFill,
-  Images,
-  Newspaper,
-} from "react-bootstrap-icons";
+import { HouseFill, Images, BarChartFill } from "react-bootstrap-icons";
 import {
   CircleMenu,
   CircleMenuItem,
   TooltipPlacement,
 } from "react-circular-menu";
 import useStore from "../state/store.js";
-import { MODALS } from "../state/Config.js";
 
 const CircularLevelsMenu = () => {
-  const setVisibleModal = useStore((state) => state.setVisibleModal);
   const targetIsland = useStore((state) => state.targetIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
 
@@ -43,40 +35,27 @@ const CircularLevelsMenu = () => {
       >
         <CircleMenuItem
           onClick={() => displayIsland("about")}
-          tooltip="About"
+          tooltip="DRT"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <Question />
+          <HouseFill />
         </CircleMenuItem>
         <CircleMenuItem
           onClick={() => displayIsland("services")}
-          tooltip="Services"
-          tooltipPlacement={TooltipPlacement.Top}
-        >
-          <Tools />
-        </CircleMenuItem>
-        <CircleMenuItem
-          onClick={() => displayIsland("contact")}
-          tooltip="Contact"
-          tooltipPlacement={TooltipPlacement.Top}
-        >
-          <TelephoneFill />
-        </CircleMenuItem>
-        <CircleMenuItem
-          onClick={() => setVisibleModal(MODALS.PROJECTS)}
-          tooltip="Projects"
+          tooltip="Portfolio"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Images />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => setVisibleModal(MODALS.LATEST)}
-          tooltip="Latest"
+          onClick={() => displayIsland("contact")}
+          tooltip="DataViz"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <Newspaper />
+          <BarChartFill />
         </CircleMenuItem>
       </CircleMenu>
+      <p className="mt-1 ms-1">Levels</p>
     </div>
   );
 };

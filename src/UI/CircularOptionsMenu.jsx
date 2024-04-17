@@ -4,7 +4,7 @@ import {
   Question,
   Tools,
   TelephoneFill,
-  Images,
+  ArchiveFill,
   Newspaper,
 } from "react-bootstrap-icons";
 import {
@@ -67,7 +67,7 @@ const CircularOptionsMenu = () => {
           tooltip="Projects"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <Images />
+          <ArchiveFill />
         </CircleMenuItem>
         <CircleMenuItem
           onClick={() => setVisibleModal(MODALS.LATEST)}
@@ -77,6 +77,7 @@ const CircularOptionsMenu = () => {
           <Newspaper />
         </CircleMenuItem>
       </CircleMenu>
+      <p className="mt-1">Options</p>
     </div>
   );
 };
