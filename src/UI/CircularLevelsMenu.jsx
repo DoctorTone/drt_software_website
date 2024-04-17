@@ -9,13 +9,17 @@ import {
 import useStore from "../state/store.js";
 
 const CircularLevelsMenu = () => {
-  const targetIsland = useStore((state) => state.targetIsland);
+  const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
+  const currentLevel = useStore((state) => state.currentLevel);
+  const setCurrentLevel = useStore((state) => state.setCurrentLevel);
 
-  const displayIsland = (islandName) => {
-    if (islandName === targetIsland) return;
+  const updateLevel = (levelName, islandName) => {
+    if (currentLevel === levelName) return;
 
+    setActiveIsland(islandName);
     setTargetIsland(islandName);
+    setCurrentLevel(levelName);
   };
 
   return (
@@ -34,21 +38,21 @@ const CircularLevelsMenu = () => {
         rotationAngleInclusive={false}
       >
         <CircleMenuItem
-          onClick={() => displayIsland("about")}
+          onClick={() => updateLevel("Main", "about")}
           tooltip="DRT"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <HouseFill />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland("services")}
+          onClick={() => updateLevel("Portfolio", "vr")}
           tooltip="Portfolio"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Images />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland("contact")}
+          onClick={() => updateLevel("DataViz", "medical")}
           tooltip="DataViz"
           tooltipPlacement={TooltipPlacement.Top}
         >

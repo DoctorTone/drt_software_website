@@ -1,6 +1,7 @@
 import React from "react";
 import Landing from "../components/Landing";
 import MainLevel from "./MainLevel";
+import PortfolioLevel from "./PortfolioLevel";
 
 const Levels = ({ levelName }) => {
   switch (levelName) {
@@ -10,6 +11,10 @@ const Levels = ({ levelName }) => {
 
     case "Main":
       return <MainLevel />;
+      break;
+
+    case "Portfolio":
+      return <PortfolioLevel />;
       break;
 
     default:
