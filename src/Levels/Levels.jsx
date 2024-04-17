@@ -2,6 +2,7 @@ import React from "react";
 import Landing from "../components/Landing";
 import MainLevel from "./MainLevel";
 import PortfolioLevel from "./PortfolioLevel";
+import DataVizLevel from "./DataVizLevel";
 
 const Levels = ({ levelName }) => {
   switch (levelName) {
@@ -15,6 +16,10 @@ const Levels = ({ levelName }) => {
 
     case "Portfolio":
       return <PortfolioLevel />;
+      break;
+
+    case "DataViz":
+      return <DataVizLevel />;
       break;
 
     default:

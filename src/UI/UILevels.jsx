@@ -2,6 +2,7 @@ import React from "react";
 import LandingText from "./LandingText";
 import CircularOptionsMainMenu from "./CircularOptionsMainMenu";
 import CircularOptionsPortfolioMenu from "./CircularOptionsPortfolioMenu";
+import CircularOptionsDataVizMenu from "./CircularOptionsDataVizMenu";
 import CircularLevelsMenu from "./CircularLevelsMenu";
 
 const UILevels = ({ levelName }) => {
@@ -23,6 +24,15 @@ const UILevels = ({ levelName }) => {
       return (
         <>
           <CircularOptionsPortfolioMenu />
+          <CircularLevelsMenu />
+        </>
+      );
+      break;
+
+    case "DataViz":
+      return (
+        <>
+          <CircularOptionsDataVizMenu />
           <CircularLevelsMenu />
         </>
       );
