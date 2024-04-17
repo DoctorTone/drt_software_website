@@ -15,7 +15,7 @@ import {
 import useStore from "../state/store.js";
 import { MODALS } from "../state/Config.js";
 
-const CircularMenu = () => {
+const CircularOptionsMenu = () => {
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const targetIsland = useStore((state) => state.targetIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
@@ -27,7 +27,7 @@ const CircularMenu = () => {
   };
 
   return (
-    <div id="circularMain" className="panel">
+    <div id="circularOptions" className="panel">
       <CircleMenu
         startAngle={-90}
         rotationAngle={360}
@@ -81,4 +81,4 @@ const CircularMenu = () => {
   );
 };
 
-export default CircularMenu;
+export default CircularOptionsMenu;

@@ -56,8 +56,12 @@ body {
   right: 10%;
   bottom: 5%;
 }
-#circularMain {
+#circularOptions {
   right: 20%;
+  bottom: 20%;
+}
+#circularLevels {
+  left: 20%;
   bottom: 20%;
 }
 .offcanvas {
