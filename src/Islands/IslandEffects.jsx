@@ -1,12 +1,11 @@
 import React, { useState, useRef } from "react";
-import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { Float, Text, useCursor, RoundedBox, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
-import { VR } from "../Models/VR.jsx";
+import { useFrame } from "@react-three/fiber";
 import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
-export const IslandVR = ({ name, fadeIn, fadeOut }) => {
+export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -17,9 +16,10 @@ export const IslandVR = ({ name, fadeIn, fadeOut }) => {
   const setTransitionPhase = useStore((state) => state.setTransitionPhase);
 
   const textRef = useRef();
+  const boxRef = useRef();
 
   const selectIsland = () => {
-    setVisibleModal(MODALS.VR);
+    setVisibleModal(MODALS.SHADERS);
   };
 
   const pointerOver = () => {
@@ -41,19 +41,20 @@ export const IslandVR = ({ name, fadeIn, fadeOut }) => {
   useFrame((state, delta) => {
     if (fadeOutEnabled) {
       textRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      boxRef.current.opacity -= delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity < 0) {
         textRef.current.opacity = 0;
+        boxRef.current.opacity = 0;
         fadeOutEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_IN);
       }
     }
     if (fadeInEnabled) {
-      if (textRef.current.opacity >= 1) {
-        textRef.current.opacity = 0;
-      }
       textRef.current.opacity += delta * SCENE.FADE_DELAY;
+      boxRef.current.opacity += delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity >= 1) {
         textRef.current.opacity = 1;
+        boxRef.current.opacity = 1;
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
@@ -70,20 +71,24 @@ export const IslandVR = ({ name, fadeIn, fadeOut }) => {
         onClick={selectIsland}
         position={ISLANDS.MAIN_POSITION}
       >
-        <VR
-          fadeIn={fadeIn}
-          fadeOut={fadeOut}
-          position={ISLANDS.VRModelPosition}
-          rotation-y={Math.PI / 6}
-          scale={0.6}
-        />
+        <RoundedBox
+          position={ISLANDS.ShaderModelPosition}
+          rotation-y={Math.PI / 4}
+        >
+          <meshLambertMaterial
+            ref={boxRef}
+            transparent={true}
+            color={0x777777}
+          />
+        </RoundedBox>
+
         <Shadow
-          scale={1.65}
+          scale={1.9}
           opacity={0.85}
           position={[
-            ISLANDS.VRTextPosition[0],
-            ISLANDS.VRTextPosition[1] - 1.5,
-            ISLANDS.VRTextPosition[2],
+            ISLANDS.ShaderTextPosition[0],
+            ISLANDS.ShaderTextPosition[1] - 1.5,
+            ISLANDS.ShaderTextPosition[2],
           ]}
         />
         <IslandPoints />
@@ -91,13 +96,13 @@ export const IslandVR = ({ name, fadeIn, fadeOut }) => {
           color="white"
           center
           fontSize={SCENE.FONT_SIZE}
-          position={ISLANDS.VRTextPosition}
+          position={ISLANDS.ShaderTextPosition}
           anchorX="center"
           anchorY="middle"
           outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
           outlineColor="black"
         >
-          VR
+          Effects
           <meshBasicMaterial ref={textRef} transparent={true} />
         </Text>
       </group>

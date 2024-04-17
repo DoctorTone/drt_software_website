@@ -2,7 +2,7 @@ import React from "react";
 import { IslandPhysics } from "../Islands/IslandPhysics.jsx";
 import { IslandVR } from "../Islands/IslandVR.jsx";
 import { IslandAR } from "../Islands/IslandAR.jsx";
-import { IslandShaders } from "../Islands/IslandShaders.jsx";
+import { IslandEffects } from "../Islands/IslandEffects.jsx";
 import useStore from "../state/store.js";
 import { TRANSITIONS } from "../state/Config.js";
 import Overlay from "../components/Overlay.jsx";
@@ -29,9 +29,9 @@ const PortfolioScene = () => {
       ),
       vr: <IslandVR name="vr" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />,
       ar: <IslandAR name="ar" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />,
-      shaders: (
-        <IslandShaders
-          name="shaders"
+      effects: (
+        <IslandEffects
+          name="effects"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />
