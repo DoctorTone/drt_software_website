@@ -13,6 +13,7 @@ const CircularLevelsMenu = () => {
   const setTargetIsland = useStore((state) => state.setTargetIsland);
   const currentLevel = useStore((state) => state.currentLevel);
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
+  const leaveLevel = useStore((state) => state.leaveLevel);
 
   const updateLevel = (levelName, islandName) => {
     if (currentLevel === levelName) return;

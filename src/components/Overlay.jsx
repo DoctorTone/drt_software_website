@@ -6,20 +6,31 @@ import { SCENE } from "../state/Config.js";
 const Overlay = ({ fadeIn, fadeOut, color, ...props }) => {
   const matRef = useRef();
 
+  // DEBUG
+  console.log("Fade out =", fadeOut);
+
   let fadeInEnabled = fadeIn;
   let fadeOutEnabled = fadeOut;
 
   useFrame((state, delta) => {
     if (fadeOutEnabled) {
+      if (matRef.current.opacity === -1) {
+        matRef.current.opacity = 1;
+      }
       matRef.current.opacity -= delta * SCENE.TRANSITION_DELAY;
       if (matRef.current.opacity < 0) {
-        matRef.current.opacity = 0;
+        matRef.current.opacity = -1;
+        fadeOutEnabled = false;
       }
     }
     if (fadeInEnabled) {
+      if (matRef.current.opacity >= 1) {
+        matRef.current.opacity = 0;
+      }
       matRef.current.opacity += delta * SCENE.TRANSITION_DELAY;
       if (matRef.current.opacity >= 1) {
         matRef.current.opacity = 1;
+        fadeInEnabled = false;
       }
     }
   });
