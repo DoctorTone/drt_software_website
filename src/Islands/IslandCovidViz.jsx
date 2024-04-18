@@ -48,9 +48,6 @@ export const IslandCovidViz = ({ name, fadeIn, fadeOut }) => {
       }
     }
     if (fadeInEnabled) {
-      if (textRef.current.opacity >= 1) {
-        textRef.current.opacity = 0;
-      }
       textRef.current.opacity += delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity >= 1) {
         textRef.current.opacity = 1;
@@ -98,7 +95,7 @@ export const IslandCovidViz = ({ name, fadeIn, fadeOut }) => {
           outlineColor="black"
         >
           Pandemic
-          <meshBasicMaterial ref={textRef} transparent={true} />
+          <meshBasicMaterial ref={textRef} transparent={true} opacity={0} />
         </Text>
       </group>
     </Float>

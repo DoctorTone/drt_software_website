@@ -30,28 +30,28 @@ const DataVizScene = () => {
       ),
       finance: (
         <IslandFinanceViz
-          name="Finance"
+          name="finance"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />
       ),
       pandemic: (
         <IslandCovidViz
-          name="Pandemic"
+          name="pandemic"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />
       ),
       realtime: (
         <IslandBrainViz
-          name="RealTime"
+          name="realtime"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />
       ),
       sleep: (
         <IslandSleepViz
-          name="Sleep"
+          name="sleep"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />

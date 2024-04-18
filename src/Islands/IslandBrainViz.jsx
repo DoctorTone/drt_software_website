@@ -14,6 +14,7 @@ export const IslandBrainViz = ({ name, fadeIn, fadeOut }) => {
 
   const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setVisibleModal = useStore((state) => state.setVisibleModal);
+  const setTransitionPhase = useStore((state) => state.setTransitionPhase);
 
   const textRef = useRef();
 
@@ -47,16 +48,13 @@ export const IslandBrainViz = ({ name, fadeIn, fadeOut }) => {
       }
     }
     if (fadeInEnabled) {
-      if (textRef.current.opacity >= 1) {
-        textRef.current.opacity = 0;
-      }
       textRef.current.opacity += delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity >= 1) {
         textRef.current.opacity = 1;
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
-        displayModal(MODALS.CONTACT);
+        displayModal(MODALS.REALTIME);
       }
     }
   });
@@ -97,7 +95,7 @@ export const IslandBrainViz = ({ name, fadeIn, fadeOut }) => {
           outlineColor="black"
         >
           Real-Time
-          <meshBasicMaterial ref={textRef} transparent={true} />
+          <meshBasicMaterial ref={textRef} transparent={true} opacity={0} />
         </Text>
       </group>
     </Float>

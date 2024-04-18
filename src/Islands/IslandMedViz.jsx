@@ -57,7 +57,7 @@ export const IslandMedViz = ({ name, fadeIn, fadeOut }) => {
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
-        displayModal(MODALS.CONTACT);
+        displayModal(MODALS.MEDICAL);
       }
     }
   });

@@ -95,7 +95,7 @@ export const IslandFinanceViz = ({ name, fadeIn, fadeOut }) => {
           outlineColor="black"
         >
           Financial
-          <meshBasicMaterial ref={textRef} transparent={true} />
+          <meshBasicMaterial ref={textRef} transparent={true} opacity={0} />
         </Text>
       </group>
     </Float>
