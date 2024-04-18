@@ -6,6 +6,10 @@ const useStore = create((set) => ({
   levels: ["Landing", "Main", "Portfolio", "DataViz"],
   currentLevel: "Landing",
   setCurrentLevel: (levelName) => set({ currentLevel: levelName }),
+  onEnterLevel: false,
+  onLeaveLevel: false,
+  enterLevel: (status) => set({ onEnterLevel: status }),
+  leaveLevel: (status) => set({ onLeaveLevel: status }),
   // Island slot positions
   activeIsland: "about",
   targetIsland: "about",

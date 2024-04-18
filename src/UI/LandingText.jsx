@@ -5,9 +5,11 @@ import { BoxArrowInRight, ArrowRight } from "react-bootstrap-icons";
 
 const LandingText = () => {
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
+  const enterLevel = useStore((state) => state.enterLevel);
 
   const nextLevel = () => {
     setCurrentLevel("Main");
+    enterLevel(true);
   };
 
   return (
