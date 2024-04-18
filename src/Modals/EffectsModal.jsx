@@ -25,10 +25,9 @@ const EffectsModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        Shaders provide the opportunity to create an amazing array of graphical
-        transformations, ranging from increased realism to weird and wonderful
-        effects. The following demo shows a number of effects that you can
-        switch between (keep checking for updates!).
+        The following demo shows a collection of effects that illustrate an
+        aspect of graphics technology (such as shaders) or an interesting
+        algorithm, technique or process.
         <div className="text-center mt-2 mb-3">
           <Button
             href="https://drt-software.com/Demos/Effects/effects.html"

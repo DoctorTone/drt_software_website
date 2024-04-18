@@ -28,6 +28,7 @@ const Levels = ({ levelName }) => {
         <>
           <Overlay position-z={8} fadeOut={onEnterLevel} />
           <PortfolioLevel />
+          <Overlay position-z={-8} />
         </>
       );
       break;
@@ -37,6 +38,7 @@ const Levels = ({ levelName }) => {
         <>
           <Overlay position-z={8} fadeOut={onEnterLevel} />
           <DataVizLevel />
+          <Overlay position-z={-8} color={0xe6cea5} />
         </>
       );
       break;

@@ -34,7 +34,7 @@ const CircularOptionsMainMenu = () => {
         startAngle={-90}
         rotationAngle={360}
         itemSize={2}
-        radius={5}
+        radius={5.5}
         /**
          * rotationAngleInclusive (default true)
          * Whether to include the ending angle in rotation because an
@@ -71,15 +71,15 @@ const CircularOptionsMainMenu = () => {
         >
           <ArchiveFill />
         </CircleMenuItem>
-        <CircleMenuItem
+        {/* <CircleMenuItem
           onClick={() => setVisibleModal(MODALS.LATEST)}
           tooltip="Latest"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Newspaper />
-        </CircleMenuItem>
+        </CircleMenuItem> */}
       </CircleMenu>
-      <p className="mt-1">Options</p>
+      <p className="mt-0">Options</p>
     </div>
   );
 };
