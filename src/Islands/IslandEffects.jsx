@@ -50,6 +50,10 @@ export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
       }
     }
     if (fadeInEnabled) {
+      if (textRef.current.opacity >= 1) {
+        textRef.current.opacity = 0;
+        boxRef.current.opacity = 0;
+      }
       textRef.current.opacity += delta * SCENE.FADE_DELAY;
       boxRef.current.opacity += delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity >= 1) {
