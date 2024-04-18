@@ -50,6 +50,9 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
       }
     }
     if (fadeInEnabled) {
+      if (textRef.current.opacity >= 1) {
+        textRef.current.opacity = 0;
+      }
       textRef.current.opacity += delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity >= 1) {
         textRef.current.opacity = 1;
@@ -96,7 +99,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
           outlineColor="black"
         >
           Services
-          <meshBasicMaterial ref={textRef} transparent={true} opacity={0} />
+          <meshBasicMaterial ref={textRef} transparent={true} />
         </Text>
       </group>
     </Float>

@@ -99,7 +99,7 @@ export const IslandContact = ({ name, fadeIn, fadeOut }) => {
           outlineColor="black"
         >
           Contact
-          <meshBasicMaterial ref={textRef} transparent={true} opacity={0} />
+          <meshBasicMaterial ref={textRef} transparent={true} />
         </Text>
       </group>
     </Float>

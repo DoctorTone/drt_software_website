@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import useStore from "../state/store";
 import { SCENE } from "../state/Config.js";
 
 const Overlay = ({ fadeIn, fadeOut, color, ...props }) => {
@@ -14,12 +13,12 @@ const Overlay = ({ fadeIn, fadeOut, color, ...props }) => {
 
   useFrame((state, delta) => {
     if (fadeOutEnabled) {
-      if (matRef.current.opacity === -1) {
+      if (matRef.current.opacity === SCENE.FADE_RESET) {
         matRef.current.opacity = 1;
       }
       matRef.current.opacity -= delta * SCENE.TRANSITION_DELAY;
       if (matRef.current.opacity < 0) {
-        matRef.current.opacity = -1;
+        matRef.current.opacity = SCENE.FADE_RESET;
         fadeOutEnabled = false;
       }
     }
