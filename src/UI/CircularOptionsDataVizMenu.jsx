@@ -17,11 +17,13 @@ import useStore from "../state/store.js";
 const CircularOptionsDataVizMenu = () => {
   const targetIsland = useStore((state) => state.targetIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
+  const enterLevel = useStore((state) => state.enterLevel);
 
   const displayIsland = (islandName) => {
     if (islandName === targetIsland) return;
 
     setTargetIsland(islandName);
+    enterLevel(false);
   };
 
   return (

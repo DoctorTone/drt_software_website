@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import useStore from "../state/store";
-import { BoxArrowInRight, ArrowRight } from "react-bootstrap-icons";
+import { ArrowRight } from "react-bootstrap-icons";
 
 const LandingText = () => {
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
