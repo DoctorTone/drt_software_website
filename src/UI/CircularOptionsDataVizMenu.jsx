@@ -1,10 +1,11 @@
 import React from "react";
 // Import the circular menu
 import {
-  HeadsetVr,
-  BrightnessHighFill,
-  Fire,
-  PhoneVibrateFill,
+  HeartPulseFill,
+  CurrencyPound,
+  Virus2,
+  MoonStarsFill,
+  Activity,
 } from "react-bootstrap-icons";
 import {
   CircleMenu,
@@ -39,32 +40,39 @@ const CircularOptionsDataVizMenu = () => {
         rotationAngleInclusive={false}
       >
         <CircleMenuItem
-          onClick={() => displayIsland("vr")}
-          tooltip="VR"
+          onClick={() => displayIsland("medical")}
+          tooltip="Medical"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <HeadsetVr />
+          <HeartPulseFill />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland("physics")}
-          tooltip="Physics"
+          onClick={() => displayIsland("finance")}
+          tooltip="Finance"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <BrightnessHighFill />
+          <CurrencyPound />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland("effects")}
-          tooltip="Effects"
+          onClick={() => displayIsland("pandemic")}
+          tooltip="Pandemic"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <Fire />
+          <Virus2 />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland("ar")}
-          tooltip="AR"
+          onClick={() => displayIsland("sleep")}
+          tooltip="Sleep"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <PhoneVibrateFill />
+          <MoonStarsFill />
+        </CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => displayIsland("realtime")}
+          tooltip="Real-time"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
+          <Activity />
         </CircleMenuItem>
       </CircleMenu>
       <p className="mt-1">Options</p>
