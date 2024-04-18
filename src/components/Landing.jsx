@@ -14,7 +14,7 @@ const Landing = () => {
           blur={[400, 100]}
           resolution={512}
           mixBlur={1}
-          mixStrength={15}
+          mixStrength={20}
           depthScale={1}
           minDepthThreshold={0.85}
           color="#151515"

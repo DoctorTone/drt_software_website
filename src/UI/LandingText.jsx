@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import useStore from "../state/store";
+import { BoxArrowInRight, ArrowRight } from "react-bootstrap-icons";
 
 const LandingText = () => {
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
@@ -15,7 +16,10 @@ const LandingText = () => {
         I do 3D.
       </div>
       <div id="enterText" className="panel yellowText">
-        Add the extra dimension <Button onClick={nextLevel}>Go</Button>
+        <Button variant="outline-warning" onClick={nextLevel}>
+          <span className="h5">Add the extra dimension</span>{" "}
+          <ArrowRight className="mb-1" size={18} />
+        </Button>
       </div>
     </>
   );
