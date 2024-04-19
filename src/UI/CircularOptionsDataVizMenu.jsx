@@ -14,10 +14,14 @@ import {
 } from "react-circular-menu";
 import useStore from "../state/store.js";
 
-const CircularOptionsDataVizMenu = () => {
+const CircularOptionsDataVizMenu = ({ onToggle, open }) => {
   const targetIsland = useStore((state) => state.targetIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
   const enterLevel = useStore((state) => state.enterLevel);
+
+  const menuToggled = (menuActive) => {
+    onToggle(menuActive);
+  };
 
   const displayIsland = (islandName) => {
     if (islandName === targetIsland) return;
@@ -33,6 +37,8 @@ const CircularOptionsDataVizMenu = () => {
         rotationAngle={360}
         itemSize={2}
         radius={5.5}
+        onMenuToggle={menuToggled}
+        open={open}
         /**
          * rotationAngleInclusive (default true)
          * Whether to include the ending angle in rotation because an

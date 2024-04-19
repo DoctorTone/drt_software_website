@@ -9,12 +9,16 @@ import {
 import Button from "react-bootstrap/Button";
 import useStore from "../state/store.js";
 
-const CircularLevelsMenu = () => {
+const CircularLevelsMenu = ({ onToggle, open }) => {
   const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
   const currentLevel = useStore((state) => state.currentLevel);
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
   const enterLevel = useStore((state) => state.enterLevel);
+
+  const menuToggled = (menuActive) => {
+    onToggle(menuActive);
+  };
 
   const updateLevel = (levelName, islandName) => {
     if (currentLevel === levelName) return;
@@ -32,6 +36,8 @@ const CircularLevelsMenu = () => {
         rotationAngle={360}
         itemSize={2}
         radius={5}
+        onMenuToggle={menuToggled}
+        open={open}
         /**
          * rotationAngleInclusive (default true)
          * Whether to include the ending angle in rotation because an
@@ -62,7 +68,7 @@ const CircularLevelsMenu = () => {
           <BarChartFill />
         </CircleMenuItem>
       </CircleMenu>
-      <Button variant="secondary" className="mt-1" size="sm">
+      <Button variant="dark" className="mt-1 orangeText" size="sm">
         Levels
       </Button>
     </div>

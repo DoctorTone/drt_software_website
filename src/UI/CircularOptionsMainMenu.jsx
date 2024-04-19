@@ -16,7 +16,7 @@ import Button from "react-bootstrap/Button";
 import useStore from "../state/store.js";
 import { MODALS } from "../state/Config.js";
 
-const CircularOptionsMainMenu = ({ onToggle }) => {
+const CircularOptionsMainMenu = ({ onToggle, open }) => {
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const targetIsland = useStore((state) => state.targetIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
@@ -42,6 +42,7 @@ const CircularOptionsMainMenu = ({ onToggle }) => {
         itemSize={2}
         radius={5}
         onMenuToggle={menuToggled}
+        open={open}
         /**
          * rotationAngleInclusive (default true)
          * Whether to include the ending angle in rotation because an
@@ -86,7 +87,7 @@ const CircularOptionsMainMenu = ({ onToggle }) => {
           <Newspaper />
         </CircleMenuItem> */}
       </CircleMenu>
-      <Button variant="secondary" className="mt-1" size="sm">
+      <Button variant="dark" className="mt-1 orangeText" size="sm">
         Options
       </Button>
     </div>
