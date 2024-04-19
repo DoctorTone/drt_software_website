@@ -57,12 +57,19 @@ body {
   bottom: 5%;
 }
 #circularOptions {
-  right: 20%;
-  bottom: 15%;
+  right: 25%;
+  bottom: 10%;
 }
 #circularLevels {
   left: 20%;
-  bottom: 15%;
+  bottom: 10%;
+}
+.circleMenuStyle {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #8d8888;
+  padding: 1% 10%;
+  color: yellow;
 }
 .offcanvas {
   background-color: black;

@@ -6,6 +6,10 @@ import CircularOptionsDataVizMenu from "./CircularOptionsDataVizMenu";
 import CircularLevelsMenu from "./CircularLevelsMenu";
 
 const UILevels = ({ levelName }) => {
+  const toggleMainMenu = (menuActive) => {
+    // DEBUG
+    console.log("Menu open = ", menuActive);
+  };
   switch (levelName) {
     case "Landing":
       return <LandingText />;
@@ -14,7 +18,7 @@ const UILevels = ({ levelName }) => {
     case "Main":
       return (
         <>
-          <CircularOptionsMainMenu />
+          <CircularOptionsMainMenu onToggle={toggleMainMenu} />
           <CircularLevelsMenu />
         </>
       );

@@ -6,6 +6,7 @@ import {
   CircleMenuItem,
   TooltipPlacement,
 } from "react-circular-menu";
+import Button from "react-bootstrap/Button";
 import useStore from "../state/store.js";
 
 const CircularLevelsMenu = () => {
@@ -61,7 +62,9 @@ const CircularLevelsMenu = () => {
           <BarChartFill />
         </CircleMenuItem>
       </CircleMenu>
-      <p className="mt-1 ms-1">Levels</p>
+      <Button variant="secondary" className="mt-1" size="sm">
+        Levels
+      </Button>
     </div>
   );
 };

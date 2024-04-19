@@ -12,14 +12,19 @@ import {
   CircleMenuItem,
   TooltipPlacement,
 } from "react-circular-menu";
+import Button from "react-bootstrap/Button";
 import useStore from "../state/store.js";
 import { MODALS } from "../state/Config.js";
 
-const CircularOptionsMainMenu = () => {
+const CircularOptionsMainMenu = ({ onToggle }) => {
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const targetIsland = useStore((state) => state.targetIsland);
   const setTargetIsland = useStore((state) => state.setTargetIsland);
   const enterLevel = useStore((state) => state.enterLevel);
+
+  const menuToggled = (menuActive) => {
+    onToggle(menuActive);
+  };
 
   const displayIsland = (islandName) => {
     if (islandName === targetIsland) return;
@@ -31,10 +36,12 @@ const CircularOptionsMainMenu = () => {
   return (
     <div id="circularOptions" className="panel">
       <CircleMenu
+        className="ms-1"
         startAngle={-90}
         rotationAngle={360}
         itemSize={2}
-        radius={5.5}
+        radius={5}
+        onMenuToggle={menuToggled}
         /**
          * rotationAngleInclusive (default true)
          * Whether to include the ending angle in rotation because an
@@ -79,7 +86,9 @@ const CircularOptionsMainMenu = () => {
           <Newspaper />
         </CircleMenuItem> */}
       </CircleMenu>
-      <p className="mt-0">Options</p>
+      <Button variant="secondary" className="mt-1" size="sm">
+        Options
+      </Button>
     </div>
   );
 };

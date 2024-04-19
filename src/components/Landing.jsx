@@ -22,7 +22,7 @@ const Landing = () => {
           roughness={0.5}
         />
       </mesh>
-      <DRT_Separate />
+      <DRT_Separate position-x={0.25} />
     </>
   );
 };
