@@ -5,7 +5,6 @@ import {
   Tools,
   TelephoneFill,
   ArchiveFill,
-  Newspaper,
 } from "react-bootstrap-icons";
 import {
   CircleMenu,

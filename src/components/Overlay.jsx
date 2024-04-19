@@ -5,9 +5,6 @@ import { SCENE } from "../state/Config.js";
 const Overlay = ({ fadeIn, fadeOut, color, ...props }) => {
   const matRef = useRef();
 
-  // DEBUG
-  console.log("Fade out =", fadeOut);
-
   let fadeInEnabled = fadeIn;
   let fadeOutEnabled = fadeOut;
 

@@ -7,8 +7,7 @@ import { SCENE } from "../state/Config.js";
 import { useThree } from "@react-three/fiber";
 
 const MainLevel = () => {
-  const camera = useThree((state) => state.camera);
-  camera.position.set(0, 3, 10);
+  useThree(({ camera }) => camera.position.set(0, 3, 10));
 
   return (
     <>

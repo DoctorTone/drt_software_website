@@ -2,9 +2,9 @@ import { Canvas } from "@react-three/fiber";
 import Levels from "./Levels/Levels.jsx";
 import Lights from "./Scenes/Lights.jsx";
 import { OrbitControls } from "@react-three/drei";
+import { getCameraPosition } from "./utils/Utils.jsx";
 import ShowModals from "./Modals/ShowModals.jsx";
 
-import { SCENE } from "./state/Config.js";
 import useStore from "./state/store.js";
 import UILevels from "./UI/UILevels.jsx";
 
@@ -14,9 +14,10 @@ const App = () => {
 
   return (
     <>
-      <Canvas camera={{ position: SCENE.cameraPosition }}>
+      <Canvas camera={{ position: getCameraPosition(window.innerWidth) }}>
         <Lights />
         <Levels levelName={currentLevel} />
+        <OrbitControls enablePan={false} enableRotate={false} />
       </Canvas>
       <UILevels levelName={currentLevel} />
       <ShowModals visibleModal={currentVisibleModal} />
