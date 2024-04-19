@@ -11,6 +11,7 @@ import {
   CircleMenuItem,
   TooltipPlacement,
 } from "react-circular-menu";
+import Button from "react-bootstrap/Button";
 import useStore from "../state/store.js";
 
 const CircularOptionsMainMenu = ({ onToggle, open }) => {
@@ -75,7 +76,9 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           <PhoneVibrateFill />
         </CircleMenuItem>
       </CircleMenu>
-      <p className="mt-0">Options</p>
+      <Button variant="dark" className="mt-1 orangeText" size="sm">
+        Options
+      </Button>
     </div>
   );
 };
