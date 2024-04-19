@@ -19,7 +19,7 @@ export const IslandFinanceViz = ({ name, fadeIn, fadeOut }) => {
   const textRef = useRef();
 
   const selectIsland = () => {
-    selectSound.play();
+    setVisibleModal(MODALS.FINANCE);
   };
 
   const pointerOver = () => {
