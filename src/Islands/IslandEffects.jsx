@@ -1,8 +1,9 @@
 import React, { useState, useRef } from "react";
-import { Float, Text, useCursor, RoundedBox, Shadow } from "@react-three/drei";
+import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { useFrame } from "@react-three/fiber";
 import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
+import { Lightning } from "../Models/Lightning.jsx";
 import useStore from "../state/store.js";
 
 export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
@@ -16,7 +17,6 @@ export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
   const setTransitionPhase = useStore((state) => state.setTransitionPhase);
 
   const textRef = useRef();
-  const boxRef = useRef();
 
   const selectIsland = () => {
     setVisibleModal(MODALS.EFFECTS);
@@ -41,10 +41,8 @@ export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
   useFrame((state, delta) => {
     if (fadeOutEnabled) {
       textRef.current.opacity -= delta * SCENE.FADE_DELAY;
-      boxRef.current.opacity -= delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity < 0) {
         textRef.current.opacity = 0;
-        boxRef.current.opacity = 0;
         fadeOutEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_IN);
       }
@@ -52,13 +50,10 @@ export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
     if (fadeInEnabled) {
       if (textRef.current.opacity >= 1) {
         textRef.current.opacity = 0;
-        boxRef.current.opacity = 0;
       }
       textRef.current.opacity += delta * SCENE.FADE_DELAY;
-      boxRef.current.opacity += delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity >= 1) {
         textRef.current.opacity = 1;
-        boxRef.current.opacity = 1;
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
@@ -75,16 +70,11 @@ export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
         onClick={selectIsland}
         position={ISLANDS.MAIN_POSITION}
       >
-        <RoundedBox
+        <Lightning
+          fadeIn={fadeIn}
+          fadeOut={fadeOut}
           position={ISLANDS.ShaderModelPosition}
-          rotation-y={Math.PI / 4}
-        >
-          <meshLambertMaterial
-            ref={boxRef}
-            transparent={true}
-            color={0x777777}
-          />
-        </RoundedBox>
+        />
 
         <Shadow
           scale={1.9}
