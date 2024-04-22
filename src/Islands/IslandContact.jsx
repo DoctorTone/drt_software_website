@@ -1,82 +1,65 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { Phone } from "../Models/Phone.jsx";
-import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
-import { swapSlots } from "../state/Utils.js";
+import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
-export const IslandContact = ({ name }) => {
+export const IslandContact = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
-  const [togglePoints, setTogglePoints] = useState(false);
-  const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
 
-  const targetIsland = useStore((state) => state.targetIsland);
-  const activeIsland = useStore((state) => state.activeIsland);
+  let fadeInEnabled = fadeIn;
+  let fadeOutEnabled = fadeOut;
+
   const setActiveIsland = useStore((state) => state.setActiveIsland);
   const setVisibleModal = useStore((state) => state.setVisibleModal);
-  const currentSlots = useStore((state) => state.currentSlots);
-  const updateSlots = useStore((state) => state.updateSlots);
-  const getSlotPosition = useStore((state) => state.getSlotPosition);
   const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
   const displaySpeechBubble = useStore((state) => state.displaySpeechBubble);
+  const setTransitionPhase = useStore((state) => state.setTransitionPhase);
 
-  const matRef = useRef();
-
-  const slotPosition = getSlotPosition(currentSlots, name);
+  const textRef = useRef();
 
   const selectIsland = () => {
-    if (currentSlots[SLOTS.MIDDLE] === name) {
-      const elem = document.getElementById("speechBubble");
-      if (!elem) return;
-
-      if (speechBubbleVisible) {
-        displaySpeechBubble(false);
-        const elem = document.getElementById("speechBubble");
-        if (!elem) return;
-
-        elem.classList.add("d-none");
-      }
-
-      elem.classList.add("disabled");
-
-      setVisibleModal(MODALS.CONTACT);
-      selectSound.play();
-    }
+    setVisibleModal(MODALS.CONTACT);
   };
 
   const pointerOver = () => {
-    if (currentSlots[SLOTS.MIDDLE] === name) {
-      setHovered(true);
-    }
+    setHovered(true);
   };
 
   const pointerOut = () => {
     setHovered(false);
   };
 
+  const displayModal = (modal) => {
+    setTimeout(() => {
+      setVisibleModal(modal);
+    }, SCENE.MODAL_DELAY);
+  };
+
   useCursor(hovered);
 
-  useEffect(() => {
-    if (!targetIsland) return;
-
-    if (targetIsland !== name && activeIsland === name) {
-      setTogglePoints(true);
-    }
-  }, [targetIsland]);
-
   useFrame((state, delta) => {
-    if (togglePoints) {
-      matRef.current.opacity -= delta;
-      if (matRef.current.opacity < 0) {
-        matRef.current.opacity = 1;
-        setTogglePoints(false);
-        swapSlots(targetIsland, name, currentSlots);
-        updateSlots(currentSlots);
-        setActiveIsland(targetIsland);
-        setVisibleModal(MODALS[targetIsland.toUpperCase()]);
-        selectSound.play();
+    if (fadeOutEnabled) {
+      textRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      if (textRef.current.opacity < 0) {
+        textRef.current.opacity = 0;
+        fadeOutEnabled = false;
+        setTransitionPhase(TRANSITIONS.FADE_IN);
+      }
+    }
+    if (fadeInEnabled) {
+      if (textRef.current.opacity >= 1) {
+        textRef.current.opacity = 0;
+      }
+      textRef.current.opacity += delta * SCENE.FADE_DELAY;
+      if (textRef.current.opacity >= 1) {
+        textRef.current.opacity = 1;
+        fadeInEnabled = false;
+        setTransitionPhase(TRANSITIONS.FADE_OUT);
+        setActiveIsland(name);
+        displayModal(MODALS.CONTACT);
       }
     }
   });
@@ -84,15 +67,14 @@ export const IslandContact = ({ name }) => {
   return (
     <Float rotationIntensity={SCENE.rotationIntensity}>
       <group
-        visible={slotPosition >= 0}
-        rotation-y={0}
         onPointerOver={pointerOver}
         onPointerOut={pointerOut}
         onClick={selectIsland}
-        position={ISLANDS.SLOT_POSITIONS[slotPosition]}
+        position={ISLANDS.MAIN_POSITION}
       >
         <Phone
-          fade={togglePoints}
+          fadeIn={fadeIn}
+          fadeOut={fadeOut}
           position={ISLANDS.ContactModelPosition}
           rotation-y={Math.PI / 2}
           scale={0.007}
@@ -105,7 +87,7 @@ export const IslandContact = ({ name }) => {
             ISLANDS.ContactModelPosition[2],
           ]}
         />
-        <IslandPoints showPoints={togglePoints} />
+        <IslandPoints />
         <Text
           color="white"
           center
@@ -117,7 +99,7 @@ export const IslandContact = ({ name }) => {
           outlineColor="black"
         >
           Contact
-          <meshBasicMaterial ref={matRef} transparent={true} />
+          <meshBasicMaterial ref={textRef} transparent={true} />
         </Text>
       </group>
     </Float>

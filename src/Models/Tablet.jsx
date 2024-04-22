@@ -6,50 +6,65 @@ import React, { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { getDeviceStatus } from "../utils/Utils.jsx";
 import { useFrame } from "@react-three/fiber";
+import { SCENE } from "../state/Config";
 
-export function Tablet({ fade, ...props }) {
-	const { nodes, materials } = useGLTF("./models/tablet.glb");
-	const texture = useTexture(props.map);
-	texture.flipY = false;
+export function Tablet({ fadeIn, fadeOut, ...props }) {
+  const { nodes } = useGLTF("./models/tablet.glb");
+  const texture = useTexture(props.map);
+  texture.flipY = false;
 
-	const isMobile = getDeviceStatus();
+  let fadeOutEnabled = fadeOut;
+  let fadeInEnabled = fadeIn;
 
-	const matRef = useRef();
+  const isMobile = getDeviceStatus();
 
-	useFrame((state, delta) => {
-		if (fade) {
-			matRef.current.opacity -= delta;
-			if (matRef.current.opacity < 0) {
-				matRef.current.opacity = 1;
-			}
-		}
-	});
+  const matRef = useRef();
 
-	return (
-		<group {...props} dispose={null}>
-			<group scale={[0.1, 1.2, 0.9]}>
-				{isMobile ? (
-					<mesh geometry={nodes.Cube001.geometry}>
-						<meshLambertMaterial color={"grey"} />
-					</mesh>
-				) : (
-					<mesh geometry={nodes.Cube001.geometry}>
-						<meshPhysicalMaterial
-							color={0xeeeeee}
-							transmission={1}
-							roughness={0.2}
-							thickness={10}
-							envMapIntensity={1.5}
-						/>
-					</mesh>
-				)}
+  useFrame((state, delta) => {
+    if (fadeOutEnabled) {
+      matRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      if (matRef.current.opacity < 0) {
+        matRef.current.opacity = 0;
+        fadeOutEnabled = false;
+      }
+    }
+    if (fadeInEnabled) {
+      if (matRef.current.opacity >= 1) {
+        matRef.current.opacity = 0;
+      }
+      matRef.current.opacity += delta * SCENE.FADE_DELAY;
+      if (matRef.current.opacity >= 1) {
+        matRef.current.opacity = 1;
+        fadeInEnabled = false;
+      }
+    }
+  });
 
-				<mesh geometry={nodes.Cube001_1.geometry}>
-					<meshLambertMaterial transparent={true} map={texture} ref={matRef} />
-				</mesh>
-			</group>
-		</group>
-	);
+  return (
+    <group {...props} dispose={null}>
+      <group scale={[0.1, 1.2, 0.9]}>
+        {isMobile ? (
+          <mesh geometry={nodes.Cube001.geometry}>
+            <meshLambertMaterial color={"grey"} />
+          </mesh>
+        ) : (
+          <mesh geometry={nodes.Cube001.geometry}>
+            <meshPhysicalMaterial
+              color={0xeeeeee}
+              transmission={1}
+              roughness={0.2}
+              thickness={10}
+              envMapIntensity={1.5}
+            />
+          </mesh>
+        )}
+
+        <mesh geometry={nodes.Cube001_1.geometry}>
+          <meshLambertMaterial transparent={true} map={texture} ref={matRef} />
+        </mesh>
+      </group>
+    </group>
+  );
 }
 
 useGLTF.preload("./models/tablet.glb");

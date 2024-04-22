@@ -1,225 +1,251 @@
 html,
 body,
 #root {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: black;
 }
 
 body {
-	background: #4e4b4b;
+  background: #4e4b4b;
 }
 
 /* Widths */
 .w-10 {
-	width: 10%;
+  width: 10%;
 }
 
 .panel {
-	position: absolute;
+  position: absolute;
 }
 
 #home {
-	left: 0;
-	top: 5%;
-	text-align: left;
+  left: 0;
+  top: 5%;
+  text-align: left;
 }
 
 #social {
-	right: 0;
-	top: 5%;
-	text-align: right;
+  right: 0;
+  top: 5%;
+  text-align: right;
 }
 
 #camControl {
-	left: 0%;
-	bottom: 1%;
-	width: 100%;
-	text-align: center;
+  left: 0%;
+  bottom: 1%;
+  width: 100%;
+  text-align: center;
 }
 
 #infoTextTop {
-	left: 0%;
-	top: 1%;
-	width: 100%;
+  left: 0%;
+  top: 1%;
+  width: 100%;
 }
 
+#landingText {
+  right: 10%;
+  top: 10%;
+}
+#enterText {
+  right: 7.5%;
+  bottom: 5%;
+}
+#circularOptions {
+  right: 22%;
+  bottom: 10%;
+}
+#circularLevels {
+  left: 22%;
+  bottom: 10%;
+}
+.circleMenuStyle {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #8d8888;
+  padding: 1% 10%;
+  color: yellow;
+}
 .offcanvas {
-	background-color: black;
-	color: #adb5bd;
+  background-color: black;
+  color: #adb5bd;
 }
 
 #links {
-	left: 48%;
-	top: 5%;
+  left: 48%;
+  top: 5%;
 }
 
 .outline {
-	border: 0px solid darkslategray;
-	border-radius: 10px;
-	padding: 0.5%;
+  border: 0px solid darkslategray;
+  border-radius: 10px;
+  padding: 0.5%;
 }
 
 .Main .btn-outline-dark {
-	color: #e3e5e7;
-	background-color: rgba(0.4, 0.4, 0.4, 0.25);
+  color: #e3e5e7;
+  background-color: rgba(0.4, 0.4, 0.4, 0.25);
 }
 
 .btn-outline-warning {
-	background-color: rgba(0.4, 0.4, 0.4, 0.25);
+  background-color: rgba(0.4, 0.4, 0.4, 0.25);
 }
 
 .Viz .btn-outline-dark {
-	color: #e3e5e7;
-	background-color: rgba(0.4, 0.4, 0.4, 0.5);
+  color: #e3e5e7;
+  background-color: rgba(0.4, 0.4, 0.4, 0.5);
 }
 
 .twitter {
-	height: 1em;
-	width: 1em;
+  height: 1em;
+  width: 1em;
 }
 .infoDisplay {
-	border: 2px solid black;
-	border-radius: 10px;
-	padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
 }
 .orangeText {
-	color: orange;
+  color: orange;
+}
+.yellowText {
+  color: yellow;
 }
 .dark {
-	background-color: rgba(0.4, 0.4, 0.4, 0.35);
+  background-color: rgba(0.4, 0.4, 0.4, 0.35);
 }
 
 .fader {
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: -1;
-	background-color: rgba(0.5, 0.5, 0.5);
-	opacity: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(0.5, 0.5, 0.5);
+  opacity: 1;
 }
 .btn:hover {
-	color: orange;
+  color: orange;
 }
 
 a.redLink:link,
 a.redLink:visited,
 a.redLink:hover,
 a.redLink:active {
-	color: red;
+  color: red;
 }
 
 a:link,
 a:visited,
 a:hover,
 a:active {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .btn-outline-warning:hover {
-	color: red;
+  color: red;
 }
 /* Speech bubble */
 #speechBubble {
-	left: 0%;
-	bottom: 5%;
+  left: 0%;
+  bottom: 5%;
 }
 p.bubble {
-	position: relative;
-	width: 300px;
-	text-align: center;
-	line-height: 1.4em;
-	margin: 40px auto;
-	background-color: #fff;
-	border: 8px solid #333;
-	border-radius: 30px;
-	font-family: sans-serif;
-	padding: 20px;
-	font-size: large;
+  position: relative;
+  width: 300px;
+  text-align: center;
+  line-height: 1.4em;
+  margin: 40px auto;
+  background-color: #fff;
+  border: 8px solid #333;
+  border-radius: 30px;
+  font-family: sans-serif;
+  padding: 20px;
+  font-size: large;
 }
 
 p.thought {
-	width: 300px;
-	border-radius: 200px;
-	padding: 30px;
+  width: 300px;
+  border-radius: 200px;
+  padding: 30px;
 }
 
 p.bubble:before,
 p.bubble:after {
-	content: " ";
-	position: absolute;
-	width: 0;
-	height: 0;
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
 }
 
 p.speech:before {
-	left: 30px;
-	bottom: -50px;
-	border: 25px solid;
-	border-color: #333 transparent transparent #333;
+  left: 30px;
+  bottom: -50px;
+  border: 25px solid;
+  border-color: #333 transparent transparent #333;
 }
 
 p.speech:after {
-	left: 38px;
-	bottom: -30px;
-	border: 15px solid;
-	border-color: #fff transparent transparent #fff;
+  left: 38px;
+  bottom: -30px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
 }
 
 p.thought:before,
 p.thought:after {
-	left: 10px;
-	bottom: -30px;
-	width: 40px;
-	height: 40px;
-	background-color: #fff;
-	border: 8px solid #333;
-	-webkit-border-radius: 28px;
-	-moz-border-radius: 28px;
-	border-radius: 28px;
+  left: 10px;
+  bottom: -30px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 8px solid #333;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
 }
 
 p.thought:after {
-	width: 20px;
-	height: 20px;
-	left: 5px;
-	bottom: -40px;
-	-webkit-border-radius: 18px;
-	-moz-border-radius: 18px;
-	border-radius: 18px;
+  width: 20px;
+  height: 20px;
+  left: 5px;
+  bottom: -40px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
 }
 
 /* Add title outline to larger screen sizes */
 /* Medium */
 @media (min-width: 768px) {
-	.outline {
-		border: 2px solid darkslategray;
-	}
-	#infoTextTop {
-		left: 10%;
-		top: 3%;
-		width: 50%;
-	}
+  .outline {
+    border: 2px solid darkslategray;
+  }
+  #infoTextTop {
+    left: 10%;
+    top: 3%;
+    width: 50%;
+  }
 }
 /* Large */
 @media (min-width: 992px) {
-	#infoTextTop {
-		left: 10%;
-		top: 3%;
-		width: 40%;
-	}
+  #infoTextTop {
+    left: 10%;
+    top: 3%;
+    width: 40%;
+  }
 }
 /* Extra extra large */
 @media (min-width: 1400px) {
-	#infoTextTop {
-		left: 10%;
-		top: 3%;
-		width: 25%;
-	}
+  #infoTextTop {
+    left: 10%;
+    top: 3%;
+    width: 25%;
+  }
 }

@@ -1,26 +1,50 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { IslandDRT } from "../Islands/IslandDRT.jsx";
-import { IslandContact } from "../Islands/IslandContact.jsx";
 import { IslandServices } from "../Islands/IslandServices.jsx";
-import { MODALS } from "../state/Config.js";
-
+import { IslandContact } from "../Islands/IslandContact.jsx";
 import useStore from "../state/store.js";
+import { TRANSITIONS } from "../state/Config.js";
 
 const MainScene = () => {
-	const setVisibleModal = useStore((state) => state.setVisibleModal);
-	const startUpModalShown = useStore((state) => state.startUpModalShown);
+  const targetIsland = useStore((state) => state.targetIsland);
+  const activeIsland = useStore((state) => state.activeIsland);
+  const transitionPhase = useStore((state) => state.transitionPhase);
 
-	useEffect(() => {
-		setVisibleModal(startUpModalShown ? MODALS.NONE : MODALS.START);
-	}, []);
+  const getIsland = (transition) => {
+    let fadeOutStatus = transition === TRANSITIONS.FADE_OUT;
+    let fadeInStatus = transition === TRANSITIONS.FADE_IN;
+    if (activeIsland === targetIsland) {
+      fadeOutStatus = fadeInStatus = false;
+    }
 
-	return (
-		<>
-			<IslandContact name="Contact" />
-			<IslandDRT name="About" />
-			<IslandServices name="Services" />
-		</>
-	);
+    return {
+      about: (
+        <IslandDRT name="about" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />
+      ),
+      services: (
+        <IslandServices
+          name="services"
+          fadeOut={fadeOutStatus}
+          fadeIn={fadeInStatus}
+        />
+      ),
+      contact: (
+        <IslandContact
+          name="contact"
+          fadeOut={fadeOutStatus}
+          fadeIn={fadeInStatus}
+        />
+      ),
+    };
+  };
+
+  return (
+    <>
+      {transitionPhase === TRANSITIONS.FADE_OUT
+        ? getIsland(transitionPhase)[activeIsland]
+        : getIsland(transitionPhase)[targetIsland]}
+    </>
+  );
 };
 
 export default MainScene;

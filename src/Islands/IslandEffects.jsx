@@ -1,12 +1,12 @@
 import React, { useState, useRef } from "react";
-import { useFrame } from "@react-three/fiber";
 import { Float, Text, useCursor, Shadow } from "@react-three/drei";
-import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
-import { Tablet } from "../Models/Tablet.jsx";
 import { IslandPoints } from "./IslandPoints.jsx";
+import { useFrame } from "@react-three/fiber";
+import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
+import { Lightning } from "../Models/Lightning.jsx";
 import useStore from "../state/store.js";
 
-export const IslandMedViz = ({ name, fadeIn, fadeOut }) => {
+export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -19,7 +19,7 @@ export const IslandMedViz = ({ name, fadeIn, fadeOut }) => {
   const textRef = useRef();
 
   const selectIsland = () => {
-    setVisibleModal(MODALS.MEDICAL);
+    setVisibleModal(MODALS.EFFECTS);
   };
 
   const pointerOver = () => {
@@ -57,7 +57,7 @@ export const IslandMedViz = ({ name, fadeIn, fadeOut }) => {
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
-        displayModal(MODALS.MEDICAL);
+        displayModal(MODALS.EFFECTS);
       }
     }
   });
@@ -70,20 +70,19 @@ export const IslandMedViz = ({ name, fadeIn, fadeOut }) => {
         onClick={selectIsland}
         position={ISLANDS.MAIN_POSITION}
       >
-        <Tablet
+        <Lightning
           fadeIn={fadeIn}
           fadeOut={fadeOut}
-          position={ISLANDS.MedVizModelPosition}
-          rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
-          map={"./textures/volumeRender.jpg"}
+          position={ISLANDS.ShaderModelPosition}
         />
+
         <Shadow
-          scale={[1.55, 1, 1.25]}
-          opacity={0.65}
+          scale={1.9}
+          opacity={0.85}
           position={[
-            ISLANDS.MedVizTextPosition[0],
-            ISLANDS.MedVizTextPosition[1] - 2.3,
-            ISLANDS.MedVizTextPosition[2] + 0.5,
+            ISLANDS.ShaderTextPosition[0],
+            ISLANDS.ShaderTextPosition[1] - 1.5,
+            ISLANDS.ShaderTextPosition[2],
           ]}
         />
         <IslandPoints />
@@ -91,13 +90,13 @@ export const IslandMedViz = ({ name, fadeIn, fadeOut }) => {
           color="white"
           center
           fontSize={SCENE.FONT_SIZE}
-          position={ISLANDS.MedVizTextPosition}
+          position={ISLANDS.ShaderTextPosition}
           anchorX="center"
           anchorY="middle"
           outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
           outlineColor="black"
         >
-          Medical
+          Effects
           <meshBasicMaterial ref={textRef} transparent={true} />
         </Text>
       </group>

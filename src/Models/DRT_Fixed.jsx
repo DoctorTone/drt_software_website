@@ -7,8 +7,8 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
-export function Phone({ fadeIn, fadeOut, ...props }) {
-  const { nodes } = useGLTF("./models/phone.glb");
+export function DRT_Fixed({ fadeIn, fadeOut, ...props }) {
+  const { nodes } = useGLTF("./models/DRT-Text.gltf");
   const matRef = useRef();
   let fadeOutEnabled = fadeOut;
   let fadeInEnabled = fadeIn;
@@ -35,16 +35,15 @@ export function Phone({ fadeIn, fadeOut, ...props }) {
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Phone.geometry}>
-        <meshLambertMaterial
-          transparent={true}
-          opacity={0}
-          color={0x777777}
-          ref={matRef}
-        />
+      <mesh
+        geometry={nodes.DRT001.geometry}
+        position={[-1.09, -0.44, 0]}
+        rotation={[Math.PI / 2, 0, 0]}
+      >
+        <meshPhongMaterial transparent={true} color={0xcc7306} ref={matRef} />
       </mesh>
     </group>
   );
 }
 
-useGLTF.preload("./models/phone.glb");
+useGLTF.preload("./models/DRT-Text.gltf");
