@@ -19,7 +19,7 @@ const LandingText = () => {
       </div>
       <div id="enterText" className="panel yellowText">
         <Button variant="outline-secondary" onClick={nextLevel}>
-          <span className="h5 orangeText">Add the extra dimension</span>{" "}
+          <span className="h5 yellowText">Add the extra dimension</span>{" "}
           <ArrowRight className="mb-1" size={18} />
         </Button>
       </div>
