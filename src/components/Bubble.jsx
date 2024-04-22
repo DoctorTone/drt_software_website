@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Bubble = () => {
-	return (
-		<div id="speechBubble" className="panel d-none">
-			<p className="thought bubble fw-bold">
-				Click on front island for more info
-			</p>
-		</div>
-	);
+  return (
+    <div id="speechBubble" className="panel">
+      <p className="thought bubble fw-bold">
+        Click on islands for more info (when menus closed)
+      </p>
+    </div>
+  );
 };
 
 export default Bubble;

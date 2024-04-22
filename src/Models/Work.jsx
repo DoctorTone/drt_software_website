@@ -8,7 +8,7 @@ import { useGLTF } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
 export function Work({ fadeIn, fadeOut, ...props }) {
-  const { nodes, materials } = useGLTF("./models/work.glb");
+  const { nodes, materials } = useGLTF("./models/work2.glb");
   const matRefs = { screwdriver: useRef(), wrench: useRef() };
 
   let fadeOutEnabled = fadeOut;
@@ -61,4 +61,4 @@ export function Work({ fadeIn, fadeOut, ...props }) {
   );
 }
 
-useGLTF.preload("./models/work.glb");
+useGLTF.preload("./models/work2.glb");
