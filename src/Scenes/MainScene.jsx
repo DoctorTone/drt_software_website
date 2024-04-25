@@ -4,6 +4,7 @@ import { IslandServices } from "../Islands/IslandServices.jsx";
 import { IslandContact } from "../Islands/IslandContact.jsx";
 import useStore from "../state/store.js";
 import { TRANSITIONS } from "../state/Config.js";
+import Meteor from "../components/Meteor.jsx";
 
 const MainScene = () => {
   const targetIsland = useStore((state) => state.targetIsland);
@@ -43,6 +44,7 @@ const MainScene = () => {
       {transitionPhase === TRANSITIONS.FADE_OUT
         ? getIsland(transitionPhase)[activeIsland]
         : getIsland(transitionPhase)[targetIsland]}
+        <Meteor />
     </>
   );
 };
