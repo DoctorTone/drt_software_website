@@ -72,14 +72,14 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           <Fire />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland("effects")}
+          onClick={() => displayIsland("editor")}
           tooltip="Editor"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <PenFill />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland("effects")}
+          onClick={() => displayIsland("performance")}
           tooltip="Performance"
           tooltipPlacement={TooltipPlacement.Top}
         >

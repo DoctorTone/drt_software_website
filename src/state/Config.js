@@ -100,6 +100,11 @@ const ISLANDS = {
   ShaderModelPosition: [0, 2.35, 0],
   ShaderTextPosition: [0, 3.2, 0],
   ShaderTextRotation: 4.15,
+  // Editor island
+  EditorTextPosition: [0, 3, 0],
+  // Performance island
+  PerformanceModelPosition: [0, 1.5, 0],
+  PerformanceTextPosition: [0, 3.5, 0],
   // Tech island
   TechPosition: [-3.927, 0, 3.527],
   TechModelPosition: [0, 2.2, 0],
@@ -152,6 +157,7 @@ const MODALS = {
   AR: 16,
   PROJECTS: 17,
   LATEST: 18,
+  EDITOR: 19,
 };
 
 const SLOTS = {
