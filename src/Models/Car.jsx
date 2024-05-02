@@ -8,6 +8,8 @@ import { useGLTF } from "@react-three/drei";
 export function Car(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF("./models/car.gltf");
+  // DEBUG
+  console.log("Mats = ", materials);
   return (
     <group
       scale={0.75}
@@ -20,10 +22,9 @@ export function Car(props) {
         geometry={nodes.Mesh_body001.geometry}
         material={materials["plastic.001"]}
       />
-      <mesh
-        geometry={nodes.Mesh_body001_1.geometry}
-        material={materials.paintGreen}
-      />
+      <mesh geometry={nodes.Mesh_body001_1.geometry}>
+        <meshStandardMaterial color={0xcc7306} />
+      </mesh>
       <mesh
         geometry={nodes.Mesh_body001_2.geometry}
         material={nodes.Mesh_body001_2.material}
