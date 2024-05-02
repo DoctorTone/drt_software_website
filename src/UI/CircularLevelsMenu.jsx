@@ -54,7 +54,7 @@ const CircularLevelsMenu = ({ onToggle, open }) => {
           <HouseFill />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => updateLevel("Portfolio", "vr")}
+          onClick={() => updateLevel("Portfolio", "configurator")}
           tooltip="Portfolio"
           tooltipPlacement={TooltipPlacement.Top}
         >

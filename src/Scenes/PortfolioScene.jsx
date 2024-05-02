@@ -6,7 +6,6 @@ import { IslandEffects } from "../Islands/IslandEffects.jsx";
 import { IslandEditor } from "../Islands/IslandEditor.jsx";
 import useStore from "../state/store.js";
 import { TRANSITIONS } from "../state/Config.js";
-import Overlay from "../components/Overlay.jsx";
 import { IslandPerformance } from "../Islands/IslandPerformance.jsx";
 import { IslandConfigurator } from "../Islands/IslandConfigurator.jsx";
 

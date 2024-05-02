@@ -51,25 +51,11 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
         rotationAngleInclusive={false}
       >
         <CircleMenuItem
-          onClick={() => displayIsland("vr")}
-          tooltip="VR"
+          onClick={() => displayIsland("configurator")}
+          tooltip="Configurator"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <HeadsetVr />
-        </CircleMenuItem>
-        <CircleMenuItem
-          onClick={() => displayIsland("physics")}
-          tooltip="Physics"
-          tooltipPlacement={TooltipPlacement.Top}
-        >
-          <BrightnessHighFill />
-        </CircleMenuItem>
-        <CircleMenuItem
-          onClick={() => displayIsland("effects")}
-          tooltip="Effects"
-          tooltipPlacement={TooltipPlacement.Top}
-        >
-          <Fire />
+          <HandIndexThumb />
         </CircleMenuItem>
         <CircleMenuItem
           onClick={() => displayIsland("editor")}
@@ -79,18 +65,32 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           <PenFill />
         </CircleMenuItem>
         <CircleMenuItem
+          onClick={() => displayIsland("physics")}
+          tooltip="Physics"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
+          <BrightnessHighFill />
+        </CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => displayIsland("vr")}
+          tooltip="VR"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
+          <HeadsetVr />
+        </CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => displayIsland("effects")}
+          tooltip="Effects"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
+          <Fire />
+        </CircleMenuItem>
+        <CircleMenuItem
           onClick={() => displayIsland("performance")}
           tooltip="Performance"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Speedometer />
-        </CircleMenuItem>
-        <CircleMenuItem
-          onClick={() => displayIsland("configurator")}
-          tooltip="Configurator"
-          tooltipPlacement={TooltipPlacement.Top}
-        >
-          <HandIndexThumb />
         </CircleMenuItem>
         <CircleMenuItem
           onClick={() => displayIsland("ar")}
