@@ -5,6 +5,9 @@ import {
   BrightnessHighFill,
   Fire,
   PhoneVibrateFill,
+  PenFill,
+  Speedometer,
+  HandIndexThumb,
 } from "react-bootstrap-icons";
 import {
   CircleMenu,
@@ -67,6 +70,27 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Fire />
+        </CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => displayIsland("effects")}
+          tooltip="Editor"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
+          <PenFill />
+        </CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => displayIsland("effects")}
+          tooltip="Performance"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
+          <Speedometer />
+        </CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => displayIsland("effects")}
+          tooltip="Configurator"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
+          <HandIndexThumb />
         </CircleMenuItem>
         <CircleMenuItem
           onClick={() => displayIsland("ar")}

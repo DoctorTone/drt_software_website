@@ -8,7 +8,7 @@ import { MODALS } from "../state/Config.js";
 
 import useStore from "../state/store.js";
 
-const EffectsModal = ({ showModal }) => {
+const EditorModal = ({ showModal }) => {
   const setVisibleModal = useStore((state) => state.setVisibleModal);
   const [show, setShow] = useState(false);
 
@@ -24,26 +24,26 @@ const EffectsModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Effects and Materials</Modal.Title>
+        <Modal.Title>Material Editor</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
-        The following demo shows a collection of effects that illustrate an
-        aspect of graphics technology (such as shaders) or an interesting
-        algorithm, technique or process.
-        <div className="text-center mt-2 mb-3">
+        The material properties of objects can also create realistic effects.
+        The material editor below allows you to configure the physical material
+        on a 3D model.
+        <div className="text-center mt-2">
           <Row className="align-items-center">
             <Col xs={8}>
               <Image src="./images/vr.jpg" rounded fluid />
             </Col>
             <Col xs={4}>
               <Button
-                href="https://drt-software.com/Demos/Effects/effects.html"
+                href="https://drt-software.com/Demos/Material/editor.html"
                 target="_blank"
                 className="me-2"
-                variant="primary"
+                variant="warning"
               >
-                Launch demo
+                Launch editor
               </Button>
             </Col>
           </Row>
@@ -59,4 +59,4 @@ const EffectsModal = ({ showModal }) => {
   );
 };
 
-export default EffectsModal;
+export default EditorModal;
