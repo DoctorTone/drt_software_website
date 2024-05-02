@@ -5,6 +5,7 @@ import {
   Tools,
   TelephoneFill,
   ArchiveFill,
+  AlarmFill,
 } from "react-bootstrap-icons";
 import {
   CircleMenu,
@@ -78,13 +79,13 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
         >
           <ArchiveFill />
         </CircleMenuItem>
-        {/* <CircleMenuItem
+        <CircleMenuItem
           onClick={() => setVisibleModal(MODALS.LATEST)}
           tooltip="Latest"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <Newspaper />
-        </CircleMenuItem> */}
+          <AlarmFill />
+        </CircleMenuItem>
       </CircleMenu>
       <Button variant="dark" className="mt-1 orangeText" size="sm">
         Options

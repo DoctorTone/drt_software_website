@@ -26,23 +26,18 @@ const LatestModal = ({ showModal }) => {
       <Modal.Body>
         <ul>
           <li>
+            Welcome to the updated site! There are more demos and more content,
+            please have a look around!
+          </li>
+          <li>
             The portfolio section now includes some demos written with
             Babylon.js (
             <a href="https://www.babylonjs.com/" target="_blank">
               Babylon
             </a>
-            )
+            ), such as the performance demo.
           </li>
-          <li>
-            Check out the latest version of my{" "}
-            <a
-              href="https://drt-software.com/Demos/VRFramework/VRFramework.html"
-              target="_blank"
-            >
-              VRFramework
-            </a>
-            , for experimenting with all things VR!
-          </li>
+          <li>Lots more planned for the future...</li>
         </ul>
       </Modal.Body>
 
