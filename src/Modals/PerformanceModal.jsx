@@ -34,11 +34,11 @@ const PerformanceModal = ({ showModal }) => {
         <div className="text-center mt-2 mb-3">
           <Row className="align-items-center">
             <Col xs={8}>
-              <Image src="./images/vr.jpg" rounded fluid />
+              <Image src="./images/performance.jpg" rounded fluid />
             </Col>
             <Col xs={4}>
               <Button
-                href="https://drt-software.com/Demos/Effects/effects.html"
+                href="https://drt-software.com/Demos/Instancing/spheres.html"
                 target="_blank"
                 className="me-2"
                 variant="primary"

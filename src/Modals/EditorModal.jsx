@@ -34,7 +34,7 @@ const EditorModal = ({ showModal }) => {
         <div className="text-center mt-2">
           <Row className="align-items-center">
             <Col xs={8}>
-              <Image src="./images/vr.jpg" rounded fluid />
+              <Image src="./images/editor.jpg" rounded fluid />
             </Col>
             <Col xs={4}>
               <Button

@@ -34,7 +34,7 @@ const EffectsModal = ({ showModal }) => {
         <div className="text-center mt-2 mb-3">
           <Row className="align-items-center">
             <Col xs={8}>
-              <Image src="./images/vr.jpg" rounded fluid />
+              <Image src="./images/effects.jpg" rounded fluid />
             </Col>
             <Col xs={4}>
               <Button
