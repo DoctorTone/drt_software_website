@@ -86,7 +86,7 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           <Speedometer />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => displayIsland("effects")}
+          onClick={() => displayIsland("configurator")}
           tooltip="Configurator"
           tooltipPlacement={TooltipPlacement.Top}
         >

@@ -110,6 +110,9 @@ const ISLANDS = {
   TechModelPosition: [0, 2.2, 0],
   TechTextPosition: [0, 3, 0],
   TechTextRotation: -1,
+  // Configurator island
+  ConfiguratorModelPosition: [0, 1.75, 0],
+  ConfiguratorTextPosition: [0, 3, 0],
   // Data Viz island
   DataVizPosition: [1.854, 0, 5.706],
   DataVizModelPosition: [2, 2, 5.5],
@@ -158,6 +161,8 @@ const MODALS = {
   PROJECTS: 17,
   LATEST: 18,
   EDITOR: 19,
+  PERFORMANCE: 20,
+  CONFIGURATOR: 21,
 };
 
 const SLOTS = {

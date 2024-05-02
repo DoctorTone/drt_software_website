@@ -20,6 +20,7 @@ import ProjectsModal from "./ProjectsModal.jsx";
 import LatestModal from "./LatestModal.jsx";
 import EditorModal from "./EditorModal.jsx";
 import PerformanceModal from "./PerformanceModal.jsx";
+import ConfiguratorModal from "./ConfiguratorModal.jsx";
 
 const ShowModals = ({ visibleModal }) => {
   const [selectSound] = useState(() => new Audio("./sounds/select.wav"));
@@ -68,6 +69,8 @@ const ShowModals = ({ visibleModal }) => {
         return <EditorModal showModal={true} />;
       case MODALS.PERFORMANCE:
         return <PerformanceModal showModal={true} />;
+      case MODALS.CONFIGURATOR:
+        return <ConfiguratorModal showModal={true} />;
       default:
         return null;
     }

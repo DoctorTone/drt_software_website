@@ -8,6 +8,7 @@ import useStore from "../state/store.js";
 import { TRANSITIONS } from "../state/Config.js";
 import Overlay from "../components/Overlay.jsx";
 import { IslandPerformance } from "../Islands/IslandPerformance.jsx";
+import { IslandConfigurator } from "../Islands/IslandConfigurator.jsx";
 
 const PortfolioScene = () => {
   const targetIsland = useStore((state) => state.targetIsland);
@@ -30,7 +31,6 @@ const PortfolioScene = () => {
         />
       ),
       vr: <IslandVR name="vr" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />,
-      ar: <IslandAR name="ar" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />,
       effects: (
         <IslandEffects
           name="effects"
@@ -52,6 +52,14 @@ const PortfolioScene = () => {
           fadeIn={fadeInStatus}
         />
       ),
+      configurator: (
+        <IslandConfigurator
+          name="configurator"
+          fadeOut={fadeOutStatus}
+          fadeIn={fadeInStatus}
+        />
+      ),
+      ar: <IslandAR name="ar" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />,
     };
   };
 
