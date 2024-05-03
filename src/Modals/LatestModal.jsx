@@ -37,7 +37,10 @@ const LatestModal = ({ showModal }) => {
             </a>
             ), such as the performance demo.
           </li>
-          <li>Lots more planned for the future...</li>
+          <li>
+            If you'd like some help with 3D graphics or would like to discuss a
+            new or existing project then please get in touch.
+          </li>
         </ul>
       </Modal.Body>
 
