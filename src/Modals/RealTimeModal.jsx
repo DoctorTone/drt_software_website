@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Image from "react-bootstrap/Image";
 import { MODALS } from "../state/Config.js";
 
 import useStore from "../state/store.js";
@@ -31,19 +34,28 @@ const RealTimeModal = ({ showModal }) => {
         conjunction with colleagues at Thrill Laboratory and the Mixed Reality
         Lab.
         <div className="text-center mt-2">
-          <Button
-            className="me-2"
-            variant="primary"
-            href="https://www.drt-software.com/Horror/brainViz.html"
-            target="_blank">
-            Launch demo
-          </Button>
-          <Button
-            variant="warning"
-            href="https://www.youtube.com/watch?v=I-VyOMYmE5U"
-            target="_blank">
-            Launch video
-          </Button>
+          <Row className="align-items-center">
+            <Col xs={8}>
+              <Image src="./images/horror.jpg" rounded fluid />
+            </Col>
+            <Col xs={4}>
+              <Button
+                className="mb-3"
+                variant="primary"
+                href="https://www.drt-software.com/Horror/brainViz.html"
+                target="_blank"
+              >
+                Launch demo
+              </Button>
+              <Button
+                variant="warning"
+                href="https://www.youtube.com/watch?v=I-VyOMYmE5U"
+                target="_blank"
+              >
+                Launch video
+              </Button>
+            </Col>
+          </Row>
         </div>
       </Modal.Body>
 

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Image from "react-bootstrap/Image";
 import { MODALS } from "../state/Config.js";
 
 import useStore from "../state/store.js";
@@ -30,19 +33,28 @@ const MedVizModal = ({ showModal }) => {
         The following demo was used to isolate and measure tumerous lesions in
         the brain.
         <div className="text-center mt-2">
-          <Button
-            className="me-2"
-            variant="primary"
-            href="https://www.drt-software.com/MedicalViz/medicalViz.html"
-            target="_blank">
-            Launch demo
-          </Button>
-          <Button
-            variant="warning"
-            href="https://www.youtube.com/watch?v=MoKVrdJoqAM"
-            target="_blank">
-            Launch video
-          </Button>
+          <Row className="align-items-center">
+            <Col xs={8}>
+              <Image src="./images/brain.jpg" rounded fluid />
+            </Col>
+            <Col xs={4}>
+              <Button
+                className="mb-3"
+                variant="primary"
+                href="https://www.drt-software.com/MedicalViz/medicalViz.html"
+                target="_blank"
+              >
+                Launch demo
+              </Button>
+              <Button
+                variant="warning"
+                href="https://www.youtube.com/watch?v=MoKVrdJoqAM"
+                target="_blank"
+              >
+                Launch video
+              </Button>
+            </Col>
+          </Row>
         </div>
       </Modal.Body>
 
