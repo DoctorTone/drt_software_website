@@ -28,9 +28,9 @@ const PerformanceModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        The following demo shows a collection of effects that illustrate an
-        aspect of graphics technology (such as shaders) or an interesting
-        algorithm, technique or process.
+        Web-based rendering allows for thousands of objects to be displayed at
+        once. These can also be animated in real-time to produce some
+        interesting effects!
         <div className="text-center mt-2 mb-3">
           <Row className="align-items-center">
             <Col xs={8}>

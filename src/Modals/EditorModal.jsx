@@ -28,9 +28,10 @@ const EditorModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        The material properties of objects can also create realistic effects.
-        The material editor below allows you to configure the physical material
-        on a 3D model.
+        It is essential that artists, designers and 3D modelers can edit pieces
+        of work to experiment with the look and the level of realism that can be
+        achieved with current 3D technology. This demo allows a range of
+        realistic effects to be applied to a 3D model.
         <div className="text-center mt-2">
           <Row className="align-items-center">
             <Col xs={8}>

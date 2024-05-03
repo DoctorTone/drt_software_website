@@ -26,10 +26,10 @@ const ARModal = ({ showModal }) => {
 
       <Modal.Body>
         WebXR allows us to create AR applications directly in the browser. AR
-        enables virtual objects to be sitauted in the real world to enhance or
-        augment what is alrady there. Application areas include games,
-        advertising, education, medicine and lots more. Keep checking back to
-        see some new AR demos.
+        enables virtual objects to be situated in the real world to enhance or
+        augment what is already there. Application areas include games,
+        advertising, education, medicine, and lots more. Keep checking back to
+        see some new AR demos and videos.
       </Modal.Body>
 
       <Modal.Footer>

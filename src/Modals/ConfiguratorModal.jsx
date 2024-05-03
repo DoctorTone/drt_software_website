@@ -24,13 +24,14 @@ const ConfiguratorModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Configurator</Modal.Title>
+        <Modal.Title>3D Configurator</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
-        The following demo shows a collection of effects that illustrate an
-        aspect of graphics technology (such as shaders) or an interesting
-        algorithm, technique or process.
+        One of the most effective uses of 3D graphics is to showcase products.
+        The level of realism is sufficient that it gives customers an idea of
+        what the products look like before they purchase. This can be utilised
+        to configure anything from cars to ornaments!
         <div className="text-center mt-2 mb-3">
           <Row className="align-items-center">
             <Col xs={8}>

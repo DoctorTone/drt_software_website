@@ -24,13 +24,14 @@ const EffectsModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Effects and Materials</Modal.Title>
+        <Modal.Title>Effects and animations</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
-        The following demo shows a collection of effects that illustrate an
-        aspect of graphics technology (such as shaders) or an interesting
-        algorithm, technique or process.
+        The following list of effects and animations showcase various graphical
+        techniques that represent everything from realistic rendering to
+        interesting effects that can be achieved with graphics technology. Be
+        sure to keep checking back as the list is being updated!
         <div className="text-center mt-2 mb-3">
           <Row className="align-items-center">
             <Col xs={8}>
