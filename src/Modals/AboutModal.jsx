@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Image from "react-bootstrap/Image";
 import { MODALS } from "../state/Config.js";
 
 import useStore from "../state/store.js";
@@ -32,6 +33,9 @@ const AboutModal = ({ showModal }) => {
           large and small commercial companies, start-ups and academia. If you
           need some interactive 3D graphics then let me know!
         </p>
+        <div className="text-center">
+          <Image src="./images/drt.jpg" fluid rounded />
+        </div>
       </Modal.Body>
 
       <Modal.Footer>
