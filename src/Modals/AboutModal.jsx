@@ -27,11 +27,20 @@ const AboutModal = ({ showModal }) => {
       <Modal.Body>
         <p>
           I'm Dr Tony Glover and I have more than 25 years experience in the
-          software development industry. I do all things 3D - VR and virtual
-          environments, metaverse applications, multiplayer, data visualisation,
-          medical imaging, games and graphical tool design. I've worked for both
-          large and small commercial companies, start-ups and academia. If you
-          need some interactive 3D graphics then let me know!
+          software development industry. I am passionate about all things 3D -
+          my mission is to create stunning interactive websites that showcase
+          the power of 3D graphics.
+        </p>
+        <p>
+          I've worked for both large and small commercial companies, start-ups
+          and academia. I've built applications in the fields of virtual
+          reality, data visualisation, product configuration, mental health,
+          children's games, graphical tools, architecture, medical imaging,
+          interactive experiences and lots more!
+        </p>
+        <p>
+          If you want to harness the magic of 3D in your application then please
+          get in touch!
         </p>
         <div className="text-center">
           <Image src="./images/drt.jpg" fluid rounded />
