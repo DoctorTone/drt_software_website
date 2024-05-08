@@ -26,18 +26,29 @@ const ServicesModal = ({ showModal }) => {
 
       <Modal.Body>
         <p>
-          As well as bespoke software design and development, I also do 3D
-          consultancy, presentations, workshops, mentoring and 3D graphical
-          services (such as building 3D websites).
+          I build highly interactive and engaging 3D graphical web applications.
+          I don't just build ordinary websites, I utilise 3D graphics technolgy
+          to create immersive experiences.
         </p>
         <p>
-          As the majority of my work is 3D graphics and front-end web-based I
-          use languages and frameworks such as javascript, typescript, react,
-          bootstrap, material ui, etc. For all the graphics/WebXR programming I
-          use three.js and react three fiber, Babylon.js and GLSL for shader
-          programming. I have also built back-end applications using node,
-          express and database functionality. For desktop/native graphical
-          applications I also have experience of Unity.
+          The potential application areas are huge - engineering, data
+          visualisation, virtual reality, education, architecture, aeronautics,
+          cosmology, games, music, art, virtual tours, advertising... 3D
+          technology has the ability to revolutionise how visitors interact with
+          your content.
+        </p>
+        <p>
+          <em>
+            <span className="mildFont">
+              For those that want to know the technical details
+            </span>
+          </em>{" "}
+          I use languages and frontend frameworks such as javascript,
+          typescript, react, material ui, bootstrap etc. For all the
+          graphics/WebXR programming I use three.js and react three fiber,
+          Babylon.js and GLSL for shader programming. For desktop/native
+          graphical applications I use Unity. I have also built back-end
+          applications using node, express and database functionality.
         </p>
       </Modal.Body>
 

@@ -22,7 +22,9 @@ body {
 .panel {
   position: absolute;
 }
-
+.mildFont {
+  font-weight: 500;
+}
 #home {
   left: 0;
   top: 5%;

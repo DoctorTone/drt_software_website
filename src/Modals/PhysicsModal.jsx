@@ -24,7 +24,7 @@ const PhysicsModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Physics</Modal.Title>
+        <Modal.Title>Physics and Simulation</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
