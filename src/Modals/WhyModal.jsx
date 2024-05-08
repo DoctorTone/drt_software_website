@@ -20,15 +20,34 @@ const WhyModal = ({ showModal }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Why 3D Why me?</Modal.Title>
+        <Modal.Title>Why 3D and why me?</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
         <p>
-          I'm Dr Tony Glover and I have more than 25 years experience in the
-          software development industry. I am passionate about all things 3D -
-          my mission is to create stunning interactive websites that showcase
-          the power of 3D graphics.
+            <ul>
+                <li>
+                You sell a wonderful product but if only your customers could see it up close?
+                </li>
+                <li>
+You have complex data that you would like everyone to see and interact with in real-time regardless of their location.
+                </li>
+                <li>
+                    You would like to show clients a fly-through of the house that you've just designed.
+                </li>
+                <li>
+                    You would like your students to study a detailed, accurate model of the solar system and fly around the planets.
+                </li>
+                <li>
+                    You'd like to wander around a museum and see all the exhibits as if you were there.
+                </li>
+                <li>
+                    If only there were a way to train people in hazardous environments that's completely safe and repeatable?
+                </li>
+                <li>
+                    You get the idea right?
+                </li>
+            </ul>
         </p>
         <p>
           I've worked for both large and small commercial companies, start-ups
