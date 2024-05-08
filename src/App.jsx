@@ -17,7 +17,7 @@ const App = () => {
       <Canvas camera={{ position: getCameraPosition(window.innerWidth) }}>
         <Lights />
         <Levels levelName={currentLevel} />
-        <OrbitControls enablePan={false} enableRotate={false} />
+        <OrbitControls enablePan={false} enableRotate={true} />
       </Canvas>
       <UILevels levelName={currentLevel} />
       <ShowModals visibleModal={currentVisibleModal} />

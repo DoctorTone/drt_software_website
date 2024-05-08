@@ -5,6 +5,7 @@ import { IslandContact } from "../Islands/IslandContact.jsx";
 import useStore from "../state/store.js";
 import { TRANSITIONS } from "../state/Config.js";
 import Meteor from "../components/Meteor.jsx";
+import { IslandWhy } from "../Islands/IslandWhy.jsx";
 
 const MainScene = () => {
   const targetIsland = useStore((state) => state.targetIsland);
@@ -32,6 +33,13 @@ const MainScene = () => {
       contact: (
         <IslandContact
           name="contact"
+          fadeOut={fadeOutStatus}
+          fadeIn={fadeInStatus}
+        />
+      ),
+      why: (
+        <IslandWhy
+          name="why"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />
