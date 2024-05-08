@@ -6,6 +6,7 @@ import {
   TelephoneFill,
   ArchiveFill,
   AlarmFill,
+  InfoLg,
 } from "react-bootstrap-icons";
 import {
   CircleMenu,
@@ -56,7 +57,7 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           tooltip="About"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <Question />
+          <InfoLg />
         </CircleMenuItem>
         <CircleMenuItem
           onClick={() => displayIsland("services")}
@@ -64,6 +65,13 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           tooltipPlacement={TooltipPlacement.Top}
         >
           <Tools />
+        </CircleMenuItem>
+        <CircleMenuItem
+          onClick={() => displayIsland("why")}
+          tooltip="Why"
+          tooltipPlacement={TooltipPlacement.Top}
+        >
+          <Question />
         </CircleMenuItem>
         <CircleMenuItem
           onClick={() => displayIsland("contact")}

@@ -25,8 +25,7 @@ const ProjectsModal = ({ showModal }) => {
 
       <Modal.Body>
         <p>
-          I've enjoyed building a diverse array of interctive projects
-          including:
+          I've enjoyed building a diverse array of projects including:
           <ul>
             <li>
               A metaverse museum application for the art world allowing multiple
@@ -48,7 +47,11 @@ const ProjectsModal = ({ showModal }) => {
               3D product configurators, 3D editors, graphical tools, games for
               children with autism, driving simulators...
             </li>
-            <li>I'm always open to new project ideas and freelance work.</li>
+            <li>
+              I've worked with Universities, the Institute of Mental Health, the
+              NHS, artists, advertising agencies and lots of wonderful people.
+            </li>
+            <li>I'm always open to discussing new project ideas.</li>
           </ul>
         </p>
       </Modal.Body>
