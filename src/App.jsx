@@ -7,6 +7,7 @@ import ShowModals from "./Modals/ShowModals.jsx";
 import useStore from "./state/store.js";
 import UILevels from "./UI/UILevels.jsx";
 
+const INTERACTIVE = false;
 const App = () => {
   const currentLevel = useStore((state) => state.currentLevel);
   const currentVisibleModal = useStore((state) => state.currentVisibleModal);
@@ -16,7 +17,7 @@ const App = () => {
       <Canvas camera={{ position: getCameraPosition(window.innerWidth) }}>
         <Lights />
         <Levels levelName={currentLevel} />
-        <OrbitControls enablePan={false} enableRotate={true} />
+        <OrbitControls enablePan={INTERACTIVE} enableRotate={INTERACTIVE} />
       </Canvas>
       <UILevels levelName={currentLevel} />
       <ShowModals visibleModal={currentVisibleModal} />

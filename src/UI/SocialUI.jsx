@@ -26,10 +26,7 @@ export const SocialUI = () => {
       </div>
       <div>
         <Button variant="outline-dark">
-          <a
-            href="https://www.linkedin.com/in/tony-glover-4081694/"
-            target="_blank"
-          >
+          <a href="https://www.linkedin.com/in/tonyglover/" target="_blank">
             <Linkedin />
           </a>
         </Button>
