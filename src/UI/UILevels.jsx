@@ -5,6 +5,7 @@ import CircularOptionsPortfolioMenu from "./CircularOptionsPortfolioMenu";
 import CircularOptionsDataVizMenu from "./CircularOptionsDataVizMenu";
 import CircularLevelsMenu from "./CircularLevelsMenu";
 import Bubble from "../components/Bubble";
+import { SocialUI } from "../UI/SocialUI.jsx";
 
 const BUBBLE_TIME = 5 * 1000;
 
@@ -42,6 +43,7 @@ const UILevels = ({ levelName }) => {
     case "Main":
       return (
         <>
+          <SocialUI />
           <CircularOptionsMainMenu
             onToggle={toggleOptionsMenu}
             open={optionsActive}
@@ -55,6 +57,7 @@ const UILevels = ({ levelName }) => {
     case "Portfolio":
       return (
         <>
+          <SocialUI />
           <CircularOptionsPortfolioMenu
             onToggle={toggleOptionsMenu}
             open={optionsActive}
@@ -67,6 +70,7 @@ const UILevels = ({ levelName }) => {
     case "DataViz":
       return (
         <>
+          <SocialUI />
           <CircularOptionsDataVizMenu
             onToggle={toggleOptionsMenu}
             open={optionsActive}
