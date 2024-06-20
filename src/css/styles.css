@@ -25,6 +25,13 @@ body {
 .mildFont {
   font-weight: 500;
 }
+#navbar {
+  top: 2%;
+  right: 12.5%;
+  z-index: 100;
+  background-color: rgba(0.1, 0.1, 0.1, 0.2);
+  border-radius: 10px;
+}
 #home {
   left: 0;
   top: 5%;
@@ -141,6 +148,13 @@ a.redLink:visited,
 a.redLink:hover,
 a.redLink:active {
   color: red;
+}
+
+a.blackLink:link,
+a.blackLink:visited,
+a.blackLink:hover,
+a.blackLink:active {
+  color: black;
 }
 
 a:link,
