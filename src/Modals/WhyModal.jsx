@@ -39,7 +39,7 @@ const WhyModal = ({ showModal }) => {
       <Modal.Body>
         <Container className="text-center">
           <Row className="mb-5">
-            <BoxFill color="orange" size="30" />
+            <BoxFill color="orange" size="50" />
           </Row>
           <Row>
             <Col xs={4}>
@@ -54,8 +54,30 @@ const WhyModal = ({ showModal }) => {
                 the experience more memorable, and feel more involved.
               </p>
             </Col>
-            <Col xs={4}>Enhanced engagement</Col>
-            <Col xs={4}>Enhanced engagement</Col>
+            <Col xs={4}>
+              <Mouse2Fill
+                className="mb-3 greyBackground p-2 rounded"
+                color="orange"
+                size="60"
+              />
+              <p className="h5 mb-3">Improved visualisation</p>
+              <p className="greyText">
+                Users can explore and interact with realistic 3D models, making
+                the experience more memorable, and feel more involved.
+              </p>
+            </Col>
+            <Col xs={4}>
+              <Mouse2Fill
+                className="mb-3 greyBackground p-2 rounded"
+                color="orange"
+                size="60"
+              />
+              <p className="h5 mb-3">Innovative Branding</p>
+              <p className="greyText">
+                Users can explore and interact with realistic 3D models, making
+                the experience more memorable, and feel more involved.
+              </p>
+            </Col>
           </Row>
         </Container>
       </Modal.Body>
