@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("./fonts/OpenSans.woff2");
+}
+
 html,
 body,
 #root {
@@ -8,6 +13,7 @@ body,
   height: 100%;
   overflow: hidden;
   color: black;
+  font-family: "Open Sans";
 }
 
 body {
@@ -24,6 +30,15 @@ body {
 }
 .mildFont {
   font-weight: 500;
+}
+.portrait {
+  border: 3px solid orange;
+}
+.greyText {
+  color: #adb5bd;
+}
+.greyerText {
+  color: #d3d5d6;
 }
 #logo {
   top: 1%;

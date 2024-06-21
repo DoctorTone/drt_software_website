@@ -6,6 +6,7 @@ import { MODALS } from "../state/Config.js";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Stars, ThreeDots } from "react-bootstrap-icons";
 
 import useStore from "../state/store.js";
 
@@ -33,22 +34,30 @@ const AboutModal = ({ showModal }) => {
         closeButton
         closeVariant="white"
       >
-        <h2 className="mx-auto w-100 ps-3">Who am I ?</h2>
+        <h2 className="mx-auto w-100 ps-3">Welcome</h2>
       </Modal.Header>
 
       <Modal.Body>
-        <div className="text-center mb-3">
-          <Image src="./images/profile.jpg" fluid roundedCircle />
-        </div>
         <Container>
-          <Row>
-            <Col xs={2}></Col>
-            <Col xs={8}>
-              <p>
-                I'm Dr Tony Glover and I have more than 25 years experience in
-                the software development industry. I am passionate about all
-                things 3D - my mission is to create stunning interactive
-                websites that showcase the power of 3D graphics.
+          <Row className="mb-3">
+            <Stars color="orange" size="30" />
+          </Row>
+          <Row className="mb-3">
+            <Col xs={6} className="text-center">
+              <h3 className="mb-4">I'm Dr Tony Glover</h3>
+              <Image
+                className="portrait"
+                src="./images/profile.jpg"
+                fluid
+                roundedCircle
+              />
+            </Col>
+            <Col xs={6} className="pt-3 greyText">
+              <p className="greyText">
+                I have more than 25 years experience in the software development
+                industry. I am passionate about all things 3D - my mission is to
+                create stunning interactive websites that showcase the power of
+                3D graphics.
               </p>
               <p>
                 I formed DRT in 2017 to provide 3D data visualisation services
@@ -71,6 +80,9 @@ const AboutModal = ({ showModal }) => {
                 get in touch.
               </p>
             </Col>
+          </Row>
+          <Row>
+            <ThreeDots color="orange" size="36" />
           </Row>
         </Container>
       </Modal.Body>
