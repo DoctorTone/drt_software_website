@@ -25,6 +25,11 @@ body {
 .mildFont {
   font-weight: 500;
 }
+#logo {
+  top: 1%;
+  left: 10%;
+  z-index: 100;
+}
 #navbar {
   top: 2%;
   right: 12.5%;

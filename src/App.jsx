@@ -7,6 +7,7 @@ import ShowModals from "./Modals/ShowModals.jsx";
 import useStore from "./state/store.js";
 import UILevels from "./UI/UILevels.jsx";
 import { NavBar } from "./components/NavBar.jsx";
+import { Logo } from "./components/Logo.jsx";
 
 const INTERACTIVE = false;
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <>
+      <Logo />
       <NavBar />
       <Canvas camera={{ position: getCameraPosition(window.innerWidth) }}>
         <Lights />
