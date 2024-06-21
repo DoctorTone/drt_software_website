@@ -95,7 +95,7 @@ export const IslandWhy = ({ name, fadeIn, fadeOut }) => {
           outlineWidth={SCENE.FONT_OUTLINE_WIDTH}
           outlineColor="black"
         >
-          Why
+          Why 3D?
           <meshBasicMaterial ref={textRef} transparent={true} />
         </Text>
       </group>
