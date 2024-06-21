@@ -101,7 +101,7 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
         </CircleMenuItem>
       </CircleMenu>
       <Button variant="dark" className="mt-1 orangeText" size="sm">
-        Options
+        Demos
       </Button>
     </div>
   );

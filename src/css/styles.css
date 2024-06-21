@@ -36,6 +36,7 @@ body {
   z-index: 100;
   background-color: rgba(0.1, 0.1, 0.1, 0.2);
   border-radius: 10px;
+  color: yellow;
 }
 #home {
   left: 0;
@@ -61,7 +62,10 @@ body {
   top: 1%;
   width: 100%;
 }
-
+.mainModal {
+  background-color: black;
+  color: white;
+}
 #landingText {
   right: 10%;
   top: 10%;
