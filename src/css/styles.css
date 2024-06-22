@@ -43,6 +43,12 @@ body {
 .greyBackground {
   background-color: #4d4b4b;
 }
+.backGround {
+  background-image: url("./textures/lightning.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
 #logo {
   top: 1%;
   left: 10%;
@@ -83,6 +89,10 @@ body {
 .mainModal {
   background-color: black;
   color: white;
+  background-image: url("./textures/blue-wave-black.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
 #landingText {
   right: 10%;
