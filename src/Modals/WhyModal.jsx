@@ -5,7 +5,13 @@ import { MODALS } from "../state/Config.js";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { BoxFill, ThreeDots, Mouse2Fill } from "react-bootstrap-icons";
+import {
+  BoxFill,
+  ThreeDots,
+  Mouse2Fill,
+  EyeFill,
+  PencilFill,
+} from "react-bootstrap-icons";
 
 import useStore from "../state/store.js";
 
@@ -55,27 +61,29 @@ const WhyModal = ({ showModal }) => {
               </p>
             </Col>
             <Col xs={4}>
-              <Mouse2Fill
+              <EyeFill
                 className="mb-3 greyBackground p-2 rounded"
                 color="orange"
                 size="60"
               />
               <p className="h5 mb-3">Improved visualisation</p>
               <p className="greyText">
-                Users can explore and interact with realistic 3D models, making
-                the experience more memorable, and feel more involved.
+                Products can be represented realistically and viewed from any
+                angle. Complex data can be simplified and shared for a better
+                understanding.
               </p>
             </Col>
             <Col xs={4}>
-              <Mouse2Fill
+              <PencilFill
                 className="mb-3 greyBackground p-2 rounded"
                 color="orange"
                 size="60"
               />
               <p className="h5 mb-3">Innovative Branding</p>
               <p className="greyText">
-                Users can explore and interact with realistic 3D models, making
-                the experience more memorable, and feel more involved.
+                There are more innovative ways to represent your products. This
+                can greatly enhance the appearence compared to a traditional
+                website.
               </p>
             </Col>
           </Row>
