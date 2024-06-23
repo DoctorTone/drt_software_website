@@ -113,7 +113,7 @@ const ContactModel = ({ showModal }) => {
             </p>
           </div>
           <div className="text-center">
-            <h6 className="me-5">I aim to respond in one working day</h6>
+            <h6 className="me-5">I aim to respond within one working day</h6>
           </div>
           <Row>
             <ThreeDots color="orange" size="36" />

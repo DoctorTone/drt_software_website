@@ -17,7 +17,7 @@ body,
 }
 
 body {
-  background: #4e4b4b;
+  background: rgb(81, 92, 83);
 }
 
 /* Widths */
@@ -89,7 +89,7 @@ body {
 .mainModal {
   background-color: black;
   color: white;
-  background-image: url("./textures/blue-wave-black.jpg");
+  background-image: url("./textures/gradient.jpg");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
