@@ -20,11 +20,11 @@ const LandingText = () => {
       <Container id="landingText" className="panel">
         <Row className="mt-5">
           <div className="mt-5"></div>
-          <Col xs={6}>
+          <Col xs={12} md={6} className="lightGreyText">
             <h1>Welcome.</h1>
           </Col>
-          <Col xs={6}>
-            <h3>I'm Tony and</h3>
+          <Col xs={12} md={6} className="lightGreyText">
+            <h3>I'm Tony.</h3>
             <h3>I do all things 3D.</h3>
             <h3>Come and explore.</h3>
           </Col>

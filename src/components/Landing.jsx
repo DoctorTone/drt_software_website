@@ -1,12 +1,25 @@
 import React, { Suspense, useRef } from "react";
-import { useFrame } from "@react-three/fiber";
-import { DRT_Separate } from "../Models/DRT_Separate.jsx";
-import { SCENE } from "../state/Config.js";
-import { MeshReflectorMaterial } from "@react-three/drei";
-import { Loading } from "./Loading.jsx";
+import { Instances } from "@react-three/drei";
+import { WireCube } from "./WireCube";
+import useStore from "../state/store";
 
 const Landing = () => {
-  return <></>;
+  const cubeData = useStore((state) => state.cubeData);
+
+  return (
+    <>
+      <Instances
+        limit={50} // Optional: max amount of items (for calculating buffer size)
+        range={10}
+      >
+        <boxGeometry />
+        <meshStandardMaterial wireframe={true} color={"lightgreen"} />
+        {cubeData.map((data, i) => (
+          <WireCube key={i} />
+        ))}
+      </Instances>
+    </>
+  );
 };
 
 export default Landing;

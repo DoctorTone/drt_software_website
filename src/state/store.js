@@ -10,6 +10,8 @@ const useStore = create((set) => ({
   onLeaveLevel: false,
   enterLevel: (status) => set({ onEnterLevel: status }),
   leaveLevel: (status) => set({ onLeaveLevel: status }),
+  // Wireframe cubes on landing page
+  cubeData: [1, 2, 3, 4, 5],
   // Island slot positions
   activeIsland: "about",
   targetIsland: "about",
