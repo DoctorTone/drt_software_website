@@ -44,7 +44,7 @@ body {
   color: #d3d5d6;
 }
 .titleFont {
-  font-size: 5.5em;
+  font-size: 4.5em;
 }
 .greyBackground {
   background-color: #4d4b4b;
@@ -57,12 +57,13 @@ body {
 }
 #logo {
   top: 1%;
-  left: 10%;
+  left: 5%;
   z-index: 100;
 }
 #navbar {
-  top: 2%;
-  right: 12.5%;
+  top: 10%;
+  left: 2.5%;
+  width: 80%;
   z-index: 100;
   background-color: rgba(0.1, 0.1, 0.1, 0.2);
   border-radius: 10px;
@@ -75,8 +76,8 @@ body {
 }
 
 #social {
-  right: 0;
-  top: 5%;
+  right: 1%;
+  top: 1%;
   text-align: right;
 }
 
@@ -101,7 +102,7 @@ body {
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 #landingText {
-  right: 10%;
+  left: 1%;
   top: 10%;
 }
 #enterText {
