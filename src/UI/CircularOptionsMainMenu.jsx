@@ -5,7 +5,7 @@ import {
   Tools,
   TelephoneFill,
   ArchiveFill,
-  AlarmFill,
+  Keyboard,
   InfoLg,
 } from "react-bootstrap-icons";
 import {
@@ -92,7 +92,7 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           tooltip="Tech"
           tooltipPlacement={TooltipPlacement.Top}
         >
-          <AlarmFill />
+          <Keyboard />
         </CircleMenuItem>
       </CircleMenu>
       <Button variant="dark" className="mt-1 orangeText" size="sm">
