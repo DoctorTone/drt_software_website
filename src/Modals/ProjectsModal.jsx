@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { MODALS } from "../state/Config.js";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { ArchiveFill, ThreeDots, BrightnessHigh } from "react-bootstrap-icons";
+import Image from "react-bootstrap/Image";
 
 import useStore from "../state/store.js";
 
@@ -18,45 +23,120 @@ const ProjectsModal = ({ showModal }) => {
   }, [showModal]);
 
   return (
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Previous Projects</Modal.Title>
+    <Modal
+      show={show}
+      fullscreen
+      contentClassName="mainModal"
+      onHide={handleClose}
+    >
+      <Modal.Header
+        className="border-0 pb-0 text-center mt-5"
+        closeButton
+        closeVariant="white"
+      >
+        <h2 className="mx-auto w-100 ps-3">Previous projects</h2>
       </Modal.Header>
 
       <Modal.Body>
-        <p>
-          I've enjoyed building a diverse array of projects including:
-          <ul>
-            <li>
-              A metaverse museum application for the art world allowing multiple
-              participants to view exhibits in the browser and VR.
-            </li>
-            <li>
+        <Container>
+          <Row className="mb-3">
+            <ArchiveFill color="orange" size="30" />
+          </Row>
+          <Row className="text-center mb-1">
+            <p>I've enjoyed building a diverse array of projects including:</p>
+          </Row>
+          <Row className="mb-3">
+            <Col xs={2}>
+              <Image src="./images/configurator.jpg" rounded fluid />
+            </Col>
+            <Col xs={2}>
+              <Image src="./images/solar.jpg" rounded fluid />
+            </Col>
+            <Col xs={2}>
+              <Image src="./images/museum.jpg" rounded fluid />
+            </Col>
+            <Col xs={2}>
+              <Image src="./images/physics.jpg" rounded fluid />
+            </Col>
+            <Col xs={2}>
+              <Image src="./images/brain.jpg" rounded fluid />
+            </Col>
+            <Col xs={2}>
+              <Image src="./images/portfolio.jpg" rounded fluid />
+            </Col>
+          </Row>
+          <Row className="mb-1">
+            <Col xs={2}></Col>
+            <Col xs={1} className="text-center">
+              <BrightnessHigh color="orange" size={20} />
+            </Col>
+            <Col xs={8}>
+              A virtual relaity museum application for the art world allowing
+              multiple participants to view exhibits as if they were real and in
+              immersive VR.
+            </Col>
+          </Row>
+          <Row className="mb-1">
+            <Col xs={2}></Col>
+            <Col xs={1} className="text-center">
+              <BrightnessHigh color="orange" size={20} />
+            </Col>
+            <Col xs={7}>
+              3D editors and interface tools for the construction industry.
+            </Col>
+          </Row>
+          <Row className="mb-1">
+            <Col xs={2}></Col>
+            <Col xs={1} className="text-center">
+              <BrightnessHigh color="orange" size={20} />
+            </Col>
+            <Col xs={7}>
               3D data visualisations for things such as climate data, finance,
               sports, music and a whole lot more.
-            </li>
-            <li>
+            </Col>
+          </Row>
+          <Row className="mb-1">
+            <Col xs={2}></Col>
+            <Col xs={1} className="text-center">
+              <BrightnessHigh color="orange" size={20} />
+            </Col>
+            <Col xs={7}>
+              A 3D product configurator for the bathroom industry.
+            </Col>
+          </Row>
+          <Row className="mb-1">
+            <Col xs={2}></Col>
+            <Col xs={1} className="text-center">
+              <BrightnessHigh color="orange" size={20} />
+            </Col>
+            <Col xs={7}>
               Medical imaging applications for detecting and measuring tumours.
-            </li>
-            <li>A brain surgery simulator!</li>
-            <li>
-              A clinical mental health trial with Nottinghamshire Healthcare
-              Trust to aid people in coping with mental health issues.
-            </li>
-            <li>
-              3D product configurators, 3D editors, graphical tools, games for
-              children with autism, driving simulators...
-            </li>
-            <li>
-              I've worked with Universities, the Institute of Mental Health, the
-              NHS, artists, advertising agencies and lots of wonderful people.
-            </li>
-            <li>I'm always open to discussing new project ideas.</li>
-          </ul>
-        </p>
+            </Col>
+          </Row>
+          <Row className="mb-1">
+            <Col xs={2}></Col>
+            <Col xs={1} className="text-center">
+              <BrightnessHigh color="orange" size={20} />
+            </Col>
+            <Col xs={7}>
+              Virtual environments for collaborative gaming, social interaction,
+              video communication and more.
+            </Col>
+          </Row>
+          <Row className="mb-1">
+            <Col xs={2}></Col>
+            <Col xs={1} className="text-center">
+              <BrightnessHigh color="orange" size={20} />
+            </Col>
+            <Col xs={7}>
+              3D scene editors, graphical tools, games for children with autism,
+              driving simulators and even a brian surgery simulator!
+            </Col>
+          </Row>
+        </Container>
       </Modal.Body>
 
-      <Modal.Footer>
+      <Modal.Footer className="border-0">
         <Button onClick={handleClose} variant="secondary">
           Close
         </Button>
