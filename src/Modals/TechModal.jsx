@@ -42,30 +42,47 @@ const TechModal = ({ showModal }) => {
           <Row className="mb-3">
             <Keyboard color="orange" size="36" />
           </Row>
-          <Row className="text-center">
+          <Row className="text-center mb-3">
             <p>
               Here is a rundown of the tech stack that I use most of the time:
             </p>
           </Row>
           <Row>
-            <Col xs={12}>
-              Languages and frameworks: 🔸Javascript 🔸Typescript 🔸React
-              🔸three.js 🔸React three fiber 🔸Babylon.js 🔸Zustand (for state
-              management)
+            <Col xs={2}></Col>
+            <Col xs={10} className="mb-2">
+              <span className="orangeText">Languages and frameworks:</span>{" "}
+              🔸Javascript 🔸Typescript 🔸React 🔸three.js 🔸React three fiber
+              🔸Babylon.js 🔸Zustand (for state management)
             </Col>
-            <Col xs={12}>
-              Graphics related tech: 🔸WebGL 🔸GLSL (shaders) 🔸WebGPU 🔸Blender
-              (for 3D modelling)
+            <Col xs={2}></Col>
+            <Col xs={10} className="mb-2">
+              <span className="orangeText">Graphics related tech:</span> 🔸WebGL
+              🔸GLSL (shaders) 🔸WebGPU 🔸Blender (for 3D modelling)
             </Col>
-            <Col xs={12}>Desktop-related graphics: 🔸Unity 🔸C#</Col>
-            <Col xs={12}>
-              General:🔸HTML 🔸CSS frameworks - Material UI, bootstrap{" "}
+            <Col xs={2}></Col>
+            <Col xs={10} className="mb-2">
+              <span className="orangeText">Desktop-related graphics:</span>{" "}
+              🔸Unity 🔸C#
             </Col>
-            <Col xs={12}>
-              Back-end: 🔸Node.js and express 🔸Familiarity with MySQL and
-              MongoDB
+            <Col xs={2}></Col>
+            <Col xs={10} className="mb-2">
+              <span className="orangeText">General:</span>🔸HTML 🔸CSS
+              frameworks - Material UI, bootstrap{" "}
             </Col>
-            <Col xs={12}> Other: 🔸Git (for version control)</Col>
+            <Col xs={2}></Col>
+            <Col xs={10} className="mb-2">
+              <span className="orangeText">Back-end:</span> 🔸Node.js and
+              express 🔸Familiarity with MySQL and MongoDB
+            </Col>
+            <Col xs={2}></Col>
+            <Col xs={10} className="mb-2">
+              {" "}
+              <span className="orangeText">Other:</span> 🔸Git (for version
+              control)
+            </Col>
+          </Row>
+          <Row className="text-center mt-3">
+            <ThreeDots color="orange" size={30} />
           </Row>
         </Container>
       </Modal.Body>

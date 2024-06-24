@@ -17,7 +17,7 @@ const App = () => {
   return (
     <>
       {currentLevel !== "Landing" && <Logo />}
-      {currentLevel !== "Landing" && <NavBar />}
+      {currentLevel !== "Landing" && <NavBar level={currentLevel} />}
       <Canvas camera={{ position: getCameraPosition(window.innerWidth) }}>
         <Lights />
         <Levels levelName={currentLevel} />

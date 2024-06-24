@@ -200,6 +200,13 @@ a.blackLink:active {
   color: black;
 }
 
+a.orangeLink:link,
+a.orangeLink:visited,
+a.orangeLink:hover,
+a.orangeLink:active {
+  color: orange;
+}
+
 a:link,
 a:visited,
 a:hover,
