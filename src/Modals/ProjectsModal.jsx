@@ -30,7 +30,7 @@ const ProjectsModal = ({ showModal }) => {
       onHide={handleClose}
     >
       <Modal.Header
-        className="border-0 pb-0 text-center mt-5"
+        className="border-0 pb-0 text-center mt-1"
         closeButton
         closeVariant="white"
       >
@@ -129,8 +129,41 @@ const ProjectsModal = ({ showModal }) => {
               <BrightnessHigh color="orange" size={20} />
             </Col>
             <Col xs={7}>
+              3D websites to give your company or brand a competitive edge.
+            </Col>
+          </Row>
+          <Row className="mb-1">
+            <Col xs={2}></Col>
+            <Col xs={1} className="text-center">
+              <BrightnessHigh color="orange" size={20} />
+            </Col>
+            <Col xs={7}>
               3D scene editors, graphical tools, games for children with autism,
               driving simulators and even a brian surgery simulator!
+            </Col>
+          </Row>
+          <Row className="text-center mt-5">
+            <p>
+              These are some of the people I've been fortunate enough to work
+              with:
+            </p>
+          </Row>
+          <Row className="mb-3 align-items-center">
+            <Col xs={1}></Col>
+            <Col xs={2}>
+              <Image src="./images/logo_uon_dark.png" rounded fluid />
+            </Col>
+            <Col xs={2}>
+              <Image src="./images/iosh.png" rounded fluid />
+            </Col>
+            <Col xs={2}>
+              <Image src="./images/ThrillLab.jpg" rounded fluid />
+            </Col>
+            <Col xs={2}>
+              <Image src="./images/logo_imh.png" rounded fluid />
+            </Col>
+            <Col xs={2}>
+              <Image src="./images/NHS_Logo.png" rounded fluid />
             </Col>
           </Row>
         </Container>
