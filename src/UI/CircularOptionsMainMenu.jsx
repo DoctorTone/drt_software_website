@@ -88,8 +88,8 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           <ArchiveFill />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => setVisibleModal(MODALS.LATEST)}
-          tooltip="Latest"
+          onClick={() => displayIsland("tech")}
+          tooltip="Tech"
           tooltipPlacement={TooltipPlacement.Top}
         >
           <AlarmFill />

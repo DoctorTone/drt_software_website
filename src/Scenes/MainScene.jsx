@@ -3,6 +3,7 @@ import { IslandDRT } from "../Islands/IslandDRT.jsx";
 import { IslandServices } from "../Islands/IslandServices.jsx";
 import { IslandContact } from "../Islands/IslandContact.jsx";
 import { IslandProjects } from "../Islands/IslandProjects.jsx";
+import { IslandTech } from "../Islands/IslandTech.jsx";
 import useStore from "../state/store.js";
 import { TRANSITIONS } from "../state/Config.js";
 import Meteor from "../components/Meteor.jsx";
@@ -47,6 +48,9 @@ const MainScene = () => {
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />
+      ),
+      tech: (
+        <IslandTech name="tech" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />
       ),
     };
   };
