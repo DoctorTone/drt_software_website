@@ -21,12 +21,20 @@ const LandingText = () => {
         <Row className="mt-5">
           <div className="mt-5"></div>
           <Col xs={12} md={6} className="lightGreyText">
-            <h1>Welcome.</h1>
+            <div className="titleFont">Welcome.</div>
           </Col>
-          <Col xs={12} md={6} className="lightGreyText">
-            <h3>I'm Tony.</h3>
+          <Col xs={12} md={6} className="lightGreyText mt-5 pt-5">
+            <h3 className="mt-5 pt-5">I'm Tony.</h3>
             <h3>I do all things 3D.</h3>
-            <h3>Come and explore.</h3>
+          </Col>
+        </Row>
+        <Row className="text-center mt-5">
+          <Col className="mt-5">
+            <Button variant="warning" onClick={nextLevel}>
+              <h5 className="pt-1">
+                Come and explore <ArrowRight />{" "}
+              </h5>
+            </Button>
           </Col>
         </Row>
       </Container>

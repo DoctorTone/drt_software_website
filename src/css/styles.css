@@ -43,6 +43,9 @@ body {
 .lightGreyText {
   color: #d3d5d6;
 }
+.titleFont {
+  font-size: 5.5em;
+}
 .greyBackground {
   background-color: #4d4b4b;
 }
