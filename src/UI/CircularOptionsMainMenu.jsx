@@ -81,7 +81,7 @@ const CircularOptionsMainMenu = ({ onToggle, open }) => {
           <TelephoneFill />
         </CircleMenuItem>
         <CircleMenuItem
-          onClick={() => setVisibleModal(MODALS.PROJECTS)}
+          onClick={() => displayIsland("projects")}
           tooltip="Projects"
           tooltipPlacement={TooltipPlacement.Top}
         >

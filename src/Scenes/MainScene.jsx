@@ -2,6 +2,7 @@ import React from "react";
 import { IslandDRT } from "../Islands/IslandDRT.jsx";
 import { IslandServices } from "../Islands/IslandServices.jsx";
 import { IslandContact } from "../Islands/IslandContact.jsx";
+import { IslandProjects } from "../Islands/IslandProjects.jsx";
 import useStore from "../state/store.js";
 import { TRANSITIONS } from "../state/Config.js";
 import Meteor from "../components/Meteor.jsx";
@@ -38,8 +39,11 @@ const MainScene = () => {
         />
       ),
       why: (
-        <IslandWhy
-          name="why"
+        <IslandWhy name="why" fadeOut={fadeOutStatus} fadeIn={fadeInStatus} />
+      ),
+      projects: (
+        <IslandProjects
+          name="projects"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
         />
@@ -52,7 +56,7 @@ const MainScene = () => {
       {transitionPhase === TRANSITIONS.FADE_OUT
         ? getIsland(transitionPhase)[activeIsland]
         : getIsland(transitionPhase)[targetIsland]}
-        <Meteor />
+      <Meteor />
     </>
   );
 };
