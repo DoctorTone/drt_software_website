@@ -72,8 +72,8 @@ const ShowModals = ({ visibleModal }) => {
         return <PerformanceModal showModal={true} />;
       case MODALS.CONFIGURATOR:
         return <ConfiguratorModal showModal={true} />;
-        case MODALS.WHY:
-          return <WhyModal showModal={true} />;
+      case MODALS.WHY:
+        return <WhyModal showModal={true} />;
       default:
         return null;
     }

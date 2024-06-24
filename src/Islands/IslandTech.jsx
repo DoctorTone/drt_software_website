@@ -3,7 +3,7 @@ import { Float, Text, useCursor, Shadow } from "@react-three/drei";
 import { IslandPoints } from "./IslandPoints.jsx";
 import { useFrame } from "@react-three/fiber";
 import { Keyboard } from "../Models/Keyboard.jsx";
-import { SCENE, ISLANDS, MODALS, SLOTS } from "../state/Config.js";
+import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const IslandTech = ({ name, fadeIn, fadeOut }) => {
@@ -57,7 +57,7 @@ export const IslandTech = ({ name, fadeIn, fadeOut }) => {
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
-        displayModal(MODALS.PROJECTS);
+        displayModal(MODALS.TECH);
       }
     }
   });

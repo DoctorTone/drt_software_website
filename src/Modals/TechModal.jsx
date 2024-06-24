@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { MODALS } from "../state/Config.js";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { Stars, ThreeDots, Keyboard } from "react-bootstrap-icons";
 
 import useStore from "../state/store.js";
 
@@ -19,22 +23,54 @@ const TechModal = ({ showModal }) => {
   }, [showModal]);
 
   return (
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Technology</Modal.Title>
+    <Modal
+      show={show}
+      fullscreen
+      contentClassName="mainModal"
+      onHide={handleClose}
+    >
+      <Modal.Header
+        closeButton
+        className="border-0 pb-0 text-center mt-5"
+        closeVariant="white"
+      >
+        <h2 className="mx-auto w-100 ps-3">Technology</h2>
       </Modal.Header>
 
       <Modal.Body>
-        As the majority of my work is 3D graphics and front-end web-based I use
-        languages and frameworks such as javascript, typescript, react,
-        bootstrap, material ui, etc. For all the graphics/WebXR programming I
-        use three.js and react three fiber and GLSL for shader programming. I
-        have also built back-end applications using node, express and database
-        functionality. For desktop/native graphical applications I also have
-        experience of Unity.
+        <Container>
+          <Row className="mb-3">
+            <Keyboard color="orange" size="36" />
+          </Row>
+          <Row className="text-center">
+            <p>
+              Here is a rundown of the tech stack that I use most of the time:
+            </p>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              Languages and frameworks: 🔸Javascript 🔸Typescript 🔸React
+              🔸three.js 🔸React three fiber 🔸Babylon.js 🔸Zustand (for state
+              management)
+            </Col>
+            <Col xs={12}>
+              Graphics related tech: 🔸WebGL 🔸GLSL (shaders) 🔸WebGPU 🔸Blender
+              (for 3D modelling)
+            </Col>
+            <Col xs={12}>Desktop-related graphics: 🔸Unity 🔸C#</Col>
+            <Col xs={12}>
+              General:🔸HTML 🔸CSS frameworks - Material UI, bootstrap{" "}
+            </Col>
+            <Col xs={12}>
+              Back-end: 🔸Node.js and express 🔸Familiarity with MySQL and
+              MongoDB
+            </Col>
+            <Col xs={12}> Other: 🔸Git (for version control)</Col>
+          </Row>
+        </Container>
       </Modal.Body>
 
-      <Modal.Footer>
+      <Modal.Footer className="border-0">
         <Button onClick={handleClose} variant="secondary">
           Close
         </Button>
