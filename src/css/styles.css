@@ -37,6 +37,9 @@ body {
 .greyText {
   color: #adb5bd;
 }
+.darkText {
+  color: #333;
+}
 .greyerText {
   color: #d3d5d6;
 }
@@ -68,6 +71,10 @@ body {
   background-color: rgba(0.1, 0.1, 0.1, 0.2);
   border-radius: 10px;
   color: yellow;
+}
+#copyright {
+  left: 1%;
+  bottom: 1%;
 }
 #home {
   left: 0;
