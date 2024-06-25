@@ -48,34 +48,28 @@ const TechModal = ({ showModal }) => {
             </p>
           </Row>
           <Row>
-            <Col xs={2}></Col>
-            <Col xs={10} className="mb-2">
+            <Col xs={12} className="mb-2">
               <span className="orangeText">Languages and frameworks:</span>{" "}
               🔸Javascript 🔸Typescript 🔸React 🔸three.js 🔸React three fiber
               🔸Babylon.js 🔸Zustand (for state management)
             </Col>
-            <Col xs={2}></Col>
-            <Col xs={10} className="mb-2">
+            <Col xs={12} className="mb-2">
               <span className="orangeText">Graphics related tech:</span> 🔸WebGL
               🔸GLSL (shaders) 🔸WebGPU 🔸Blender (for 3D modelling)
             </Col>
-            <Col xs={2}></Col>
-            <Col xs={10} className="mb-2">
+            <Col xs={12} className="mb-2">
               <span className="orangeText">Desktop-related graphics:</span>{" "}
               🔸Unity 🔸C#
             </Col>
-            <Col xs={2}></Col>
-            <Col xs={10} className="mb-2">
+            <Col xs={12} className="mb-2">
               <span className="orangeText">General:</span>🔸HTML 🔸CSS
               frameworks - Material UI, bootstrap{" "}
             </Col>
-            <Col xs={2}></Col>
-            <Col xs={10} className="mb-2">
+            <Col xs={12} className="mb-2">
               <span className="orangeText">Back-end:</span> 🔸Node.js and
               express 🔸Familiarity with MySQL and MongoDB
             </Col>
-            <Col xs={2}></Col>
-            <Col xs={10} className="mb-2">
+            <Col xs={12} className="mb-2">
               {" "}
               <span className="orangeText">Other:</span> 🔸Git (for version
               control)
