@@ -70,7 +70,7 @@ const ProjectsModal = ({ showModal }) => {
               <BrightnessHigh color="orange" size={20} />
             </Col>
             <Col xs={11}>
-              A virtual relaity museum application for the art world allowing
+              A virtual reality museum application for the art world allowing
               multiple participants to view exhibits as if they were real and in
               immersive VR.
             </Col>
