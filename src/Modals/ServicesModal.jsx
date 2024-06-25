@@ -43,51 +43,47 @@ const ServicesModal = ({ showModal }) => {
             <Tools color="orange" size="30" />
           </Row>
           <Row className="mb-3">
-            <Col xs={1}></Col>
-            <Col xs={1} className="text-center">
+            <Col xs={2} className="text-center">
               <HexagonHalf color="orange" size="24" />
             </Col>
-            <Col xs={8}>
-              <div className="greyerText">
+            <Col xs={10}>
+              <p className="greyerText">
                 I build highly interactive and engaging 3D graphical web
                 applications. I don't just build ordinary websites, I utilise 3D
                 graphics technolgy to create immersive experiences.
-              </div>
+              </p>
             </Col>
           </Row>
           <Row className="mb-3">
-            <Col xs={1}></Col>
-            <Col xs={1} className="text-center">
+            <Col xs={2} className="text-center">
               <HexagonHalf color="orange" size="24" />
             </Col>
-            <Col xs={8}>
-              <div className="greyerText">
+            <Col xs={10}>
+              <p className="greyerText">
                 I have worked with large and small organisations, start-ups and
                 academic institutions to create diverse projects ranging from
                 virtual environments to brain surgery simulators.
-              </div>
+              </p>
             </Col>
           </Row>
           <Row className="mb-3">
-            <Col xs={1}></Col>
-            <Col xs={1} className="text-center">
+            <Col xs={2} className="text-center">
               <HexagonHalf color="orange" size="24" />
             </Col>
-            <Col xs={8}>
-              <div className="greyerText">
+            <Col xs={10}>
+              <p className="greyerText">
                 I have been involved in all aspects of the development from
                 requirements to implementation. I can take your ideas and turn
                 them into a viable product. Projects are built to the highest
                 quality and delivered on time.
-              </div>
+              </p>
             </Col>
           </Row>
           <Row className="mb-3">
-            <Col xs={1}></Col>
-            <Col xs={1} className="text-center">
+            <Col xs={2} className="text-center">
               <HexagonHalf color="orange" size="24" />
             </Col>
-            <Col xs={8}>
+            <Col xs={10}>
               <div className="greyerText">
                 Do you have an ongoing project that needs to be completed? No
                 problem! I can look at your existing codebase and get it done.
@@ -95,11 +91,10 @@ const ServicesModal = ({ showModal }) => {
             </Col>
           </Row>
           <Row className="mb-3">
-            <Col xs={1}></Col>
-            <Col xs={1} className="text-center">
+            <Col xs={2} className="text-center">
               <HexagonHalf color="orange" size="24" />
             </Col>
-            <Col xs={8}>
+            <Col xs={10}>
               <div className="greyerText">
                 I have a fantastic work ethic, am customer-focused, I provide
                 the level of service I would expect myself, and I communicate
@@ -108,11 +103,10 @@ const ServicesModal = ({ showModal }) => {
             </Col>
           </Row>
           <Row className="mb-5">
-            <Col xs={1}></Col>
-            <Col xs={1} className="text-center">
+            <Col xs={2} className="text-center">
               <HexagonHalf color="orange" size="24" />
             </Col>
-            <Col xs={8}>
+            <Col xs={10}>
               <div className="greyerText">
                 I offer consultancy services to try and help people decide on
                 the best technology choices available and the most applicable to

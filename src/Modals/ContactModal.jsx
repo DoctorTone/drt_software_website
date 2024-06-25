@@ -48,11 +48,10 @@ const ContactModel = ({ showModal }) => {
             method="POST"
           >
             <Row>
-              <Col xs={1}></Col>
-              <Col xs={3} md={2} className="ps-5">
-                <Form.Label className="ps-5">Name</Form.Label>
+              <Col xs={12} md={2} className="ps-0-xs ps-5-md">
+                <Form.Label className="ps-0-xs ps-5-md">Name</Form.Label>
               </Col>
-              <Col xs={9} md={6} className="mb-2">
+              <Col xs={12} md={6} className="mb-2">
                 <Form.Control
                   type="text"
                   name="userName"
@@ -62,11 +61,10 @@ const ContactModel = ({ showModal }) => {
               </Col>
             </Row>
             <Row>
-              <Col xs={1}></Col>
-              <Col xs={3} md={2} className="ps-5">
-                <Form.Label className="ps-5">Email</Form.Label>
+              <Col xs={12} md={2} className="ps-0-xs ps-5-md">
+                <Form.Label className="ps-0-xs ps-5-md">Email</Form.Label>
               </Col>
-              <Col xs={9} md={6} className="mb-2">
+              <Col xs={12} md={6} className="mb-2">
                 <Form.Control
                   type="email"
                   name="userEmail"
@@ -76,11 +74,10 @@ const ContactModel = ({ showModal }) => {
               </Col>
             </Row>
             <Row>
-              <Col xs={1}></Col>
-              <Col xs={3} md={2} className="ps-5">
-                <Form.Label className="ps-5">Phone</Form.Label>
+              <Col xs={12} md={2} className="ps-0-xs ps-5-md">
+                <Form.Label className="ps-0-xs ps-5-md">Phone</Form.Label>
               </Col>
-              <Col xs={9} md={6} className="mb-2">
+              <Col xs={12} md={6} className="mb-2">
                 <Form.Control
                   type="tel"
                   name="userPhone"
@@ -89,11 +86,10 @@ const ContactModel = ({ showModal }) => {
               </Col>
             </Row>
             <Row>
-              <Col xs={1}></Col>
-              <Col xs={3} md={2} className="ps-5">
-                <Form.Label className="ps-5">Message</Form.Label>
+              <Col xs={12} md={2} className="ps-0-xs ps-5-md">
+                <Form.Label className="ps-0-xs ps-5-md">Message</Form.Label>
               </Col>
-              <Col xs={9} md={6} className="mb-2">
+              <Col xs={12} md={6} className="mb-2">
                 <Form.Control type="text" name="userText" />
               </Col>
             </Row>
@@ -113,7 +109,9 @@ const ContactModel = ({ showModal }) => {
             </p>
           </div>
           <div className="text-center">
-            <h6 className="me-5">I aim to respond within one working day</h6>
+            <h6 className="me-0-xs me-5-md">
+              I aim to respond within one working day
+            </h6>
           </div>
           <Row>
             <ThreeDots color="orange" size="36" />

@@ -46,98 +46,90 @@ const ProjectsModal = ({ showModal }) => {
             <p>I've enjoyed building a diverse array of projects including:</p>
           </Row>
           <Row className="mb-3">
-            <Col xs={2}>
+            <Col xs={6} md={2} className="mb-3">
               <Image src="./images/configurator.jpg" rounded fluid />
             </Col>
-            <Col xs={2}>
+            <Col xs={6} md={2} className="mb-3">
               <Image src="./images/solar.jpg" rounded fluid />
             </Col>
-            <Col xs={2}>
+            <Col xs={6} md={2} className="mb-3">
               <Image src="./images/museum.jpg" rounded fluid />
             </Col>
-            <Col xs={2}>
+            <Col xs={6} md={2} className="mb-3">
               <Image src="./images/physics.jpg" rounded fluid />
             </Col>
-            <Col xs={2}>
+            <Col xs={6} md={2} className="mb-3">
               <Image src="./images/brain.jpg" rounded fluid />
             </Col>
-            <Col xs={2}>
+            <Col xs={6} md={2} className="mb-3">
               <Image src="./images/portfolio.jpg" rounded fluid />
             </Col>
           </Row>
           <Row className="mb-1">
-            <Col xs={2}></Col>
             <Col xs={1} className="text-center">
               <BrightnessHigh color="orange" size={20} />
             </Col>
-            <Col xs={8}>
+            <Col xs={11}>
               A virtual relaity museum application for the art world allowing
               multiple participants to view exhibits as if they were real and in
               immersive VR.
             </Col>
           </Row>
           <Row className="mb-1">
-            <Col xs={2}></Col>
             <Col xs={1} className="text-center">
               <BrightnessHigh color="orange" size={20} />
             </Col>
-            <Col xs={7}>
+            <Col xs={11}>
               3D editors and interface tools for the construction industry.
             </Col>
           </Row>
           <Row className="mb-1">
-            <Col xs={2}></Col>
             <Col xs={1} className="text-center">
               <BrightnessHigh color="orange" size={20} />
             </Col>
-            <Col xs={7}>
+            <Col xs={11}>
               3D data visualisations for things such as climate data, finance,
               sports, music and a whole lot more.
             </Col>
           </Row>
           <Row className="mb-1">
-            <Col xs={2}></Col>
             <Col xs={1} className="text-center">
               <BrightnessHigh color="orange" size={20} />
             </Col>
-            <Col xs={7}>
+            <Col xs={11}>
               A 3D product configurator for the bathroom industry.
             </Col>
           </Row>
           <Row className="mb-1">
-            <Col xs={2}></Col>
             <Col xs={1} className="text-center">
               <BrightnessHigh color="orange" size={20} />
             </Col>
-            <Col xs={7}>
+            <Col xs={11}>
               Medical imaging applications for detecting and measuring tumours.
             </Col>
           </Row>
           <Row className="mb-1">
-            <Col xs={2}></Col>
             <Col xs={1} className="text-center">
               <BrightnessHigh color="orange" size={20} />
             </Col>
-            <Col xs={7}>
+            <Col xs={11}>
               Virtual environments for collaborative gaming, social interaction,
               video communication and more.
             </Col>
           </Row>
           <Row className="mb-1">
-            <Col xs={2}></Col>
             <Col xs={1} className="text-center">
               <BrightnessHigh color="orange" size={20} />
             </Col>
-            <Col xs={7}>
+            <Col xs={11}>
               3D websites to give your company or brand a competitive edge.
             </Col>
           </Row>
           <Row className="mb-1">
-            <Col xs={2}></Col>
             <Col xs={1} className="text-center">
               <BrightnessHigh color="orange" size={20} />
             </Col>
-            <Col xs={7}>
+            <Col xs={11}>
               3D scene editors, graphical tools, games for children with autism,
               driving simulators and even a brian surgery simulator!
             </Col>
@@ -149,20 +141,19 @@ const ProjectsModal = ({ showModal }) => {
             </p>
           </Row>
           <Row className="mb-3 align-items-center">
-            <Col xs={1}></Col>
-            <Col xs={2}>
+            <Col xs={6} className="mb-2">
               <Image src="./images/logo_uon_dark.png" rounded fluid />
             </Col>
-            <Col xs={2}>
+            <Col xs={6} className="mb-2">
               <Image src="./images/iosh.png" rounded fluid />
             </Col>
-            <Col xs={2}>
+            <Col xs={6} className="mb-3">
               <Image src="./images/ThrillLab.jpg" rounded fluid />
             </Col>
-            <Col xs={2}>
+            <Col xs={6} className="mb-2">
               <Image src="./images/logo_imh.png" rounded fluid />
             </Col>
-            <Col xs={2}>
+            <Col xs={6} className="mb-2">
               <Image src="./images/NHS_Logo.png" rounded fluid />
             </Col>
           </Row>
