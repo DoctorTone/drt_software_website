@@ -46,22 +46,22 @@ const ProjectsModal = ({ showModal }) => {
             <p>I've enjoyed building a diverse array of projects including:</p>
           </Row>
           <Row className="mb-3">
-            <Col xs={6} md={2} className="mb-3">
+            <Col xs={6} md={4} className="mb-3">
               <Image src="./images/configurator.jpg" rounded fluid />
             </Col>
-            <Col xs={6} md={2} className="mb-3">
+            <Col xs={6} md={4} className="mb-3">
               <Image src="./images/solar.jpg" rounded fluid />
             </Col>
-            <Col xs={6} md={2} className="mb-3">
+            <Col xs={6} md={4} className="mb-3">
               <Image src="./images/museum.jpg" rounded fluid />
             </Col>
-            <Col xs={6} md={2} className="mb-3">
+            <Col xs={6} md={4} className="mb-3">
               <Image src="./images/physics.jpg" rounded fluid />
             </Col>
-            <Col xs={6} md={2} className="mb-3">
+            <Col xs={6} md={4} className="mb-3">
               <Image src="./images/brain.jpg" rounded fluid />
             </Col>
-            <Col xs={6} md={2} className="mb-3">
+            <Col xs={6} md={4} className="mb-3">
               <Image src="./images/portfolio.jpg" rounded fluid />
             </Col>
           </Row>
@@ -141,19 +141,19 @@ const ProjectsModal = ({ showModal }) => {
             </p>
           </Row>
           <Row className="mb-3 align-items-center">
-            <Col xs={6} className="mb-2">
+            <Col xs={6} md={4} className="mb-2">
               <Image src="./images/logo_uon_dark.png" rounded fluid />
             </Col>
-            <Col xs={6} className="mb-2">
+            <Col xs={6} md={4} className="mb-2">
               <Image src="./images/iosh.png" rounded fluid />
             </Col>
-            <Col xs={6} className="mb-3">
+            <Col xs={6} md={4} className="mb-3">
               <Image src="./images/ThrillLab.jpg" rounded fluid />
             </Col>
-            <Col xs={6} className="mb-2">
+            <Col xs={6} md={4} className="mb-2">
               <Image src="./images/logo_imh.png" rounded fluid />
             </Col>
-            <Col xs={6} className="mb-2">
+            <Col xs={6} md={4} className="mb-2">
               <Image src="./images/NHS_Logo.png" rounded fluid />
             </Col>
           </Row>

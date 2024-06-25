@@ -18,19 +18,22 @@ const LandingText = () => {
   return (
     <>
       <Container id="landingText" className="panel">
-        <Row className="mt-5">
-          <div className="mt-5"></div>
+        <Row>
           <Col xs={12} md={6} className="lightGreyText">
             <div className="titleFont">Welcome.</div>
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={6} className="lightGreyText mt-5 pt-5">
-            <h3 className="mt-5 pt-5">I'm Tony.</h3>
+          <Col
+            xs={12}
+            sm={{ span: 6, offset: 6 }}
+            className="lightGreyText titleSpacing"
+          >
+            <h3>I'm Tony.</h3>
             <h3>I do all things 3D.</h3>
           </Col>
         </Row>
-        <Row className="text-center mt-5">
+        <Row className="text-center">
           <Col>
             <Button variant="warning" onClick={nextLevel}>
               <h5 className="pt-1">

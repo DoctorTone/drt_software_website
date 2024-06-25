@@ -48,7 +48,11 @@ const ContactModel = ({ showModal }) => {
             method="POST"
           >
             <Row>
-              <Col xs={12} md={2} className="ps-0-xs ps-5-md">
+              <Col
+                xs={12}
+                md={{ span: 2, offset: 2 }}
+                className="ps-0-xs ps-5-md"
+              >
                 <Form.Label className="ps-0-xs ps-5-md">Name</Form.Label>
               </Col>
               <Col xs={12} md={6} className="mb-2">
@@ -61,7 +65,11 @@ const ContactModel = ({ showModal }) => {
               </Col>
             </Row>
             <Row>
-              <Col xs={12} md={2} className="ps-0-xs ps-5-md">
+              <Col
+                xs={12}
+                md={{ span: 2, offset: 2 }}
+                className="ps-0-xs ps-5-md"
+              >
                 <Form.Label className="ps-0-xs ps-5-md">Email</Form.Label>
               </Col>
               <Col xs={12} md={6} className="mb-2">
@@ -74,7 +82,11 @@ const ContactModel = ({ showModal }) => {
               </Col>
             </Row>
             <Row>
-              <Col xs={12} md={2} className="ps-0-xs ps-5-md">
+              <Col
+                xs={12}
+                md={{ span: 2, offset: 2 }}
+                className="ps-0-xs ps-5-md"
+              >
                 <Form.Label className="ps-0-xs ps-5-md">Phone</Form.Label>
               </Col>
               <Col xs={12} md={6} className="mb-2">
@@ -86,7 +98,11 @@ const ContactModel = ({ showModal }) => {
               </Col>
             </Row>
             <Row>
-              <Col xs={12} md={2} className="ps-0-xs ps-5-md">
+              <Col
+                xs={12}
+                md={{ span: 2, offset: 2 }}
+                className="ps-0-xs ps-5-md"
+              >
                 <Form.Label className="ps-0-xs ps-5-md">Message</Form.Label>
               </Col>
               <Col xs={12} md={6} className="mb-2">
@@ -94,9 +110,12 @@ const ContactModel = ({ showModal }) => {
               </Col>
             </Row>
             <Row>
-              <Col xs={1}></Col>
-              <Col xs={3} md={2} className="ps-5">
-                <Button type="submit" className="ms-5 mb-3">
+              <Col
+                xs={3}
+                md={{ span: 2, offset: 2 }}
+                className="ps-5-xs ps-0-md"
+              >
+                <Button type="submit" className="ms-5-sm ms-0-md mb-3">
                   Submit
                 </Button>
               </Col>
