@@ -28,9 +28,9 @@ const FinanceModal = ({ showModal }) => {
 
       <Modal.Body>
         This demo offers a novel method to visualise data in three dimensions.
-        The application visualises the FTSE-100 index for the whole of 2016. It
-        illustrates the share price trends on a daily, weekly and monthly basis.
-        The height of each bar also corresponds to the share price trend
+        The application visualises the FTSE-100 index for the whole of a year.
+        It illustrates the share price trends on a daily, weekly and monthly
+        basis. The height of each bar also corresponds to the share price trend
         throughout the year.
         <div className="text-center mt-2">
           <Row className="align-items-center">
@@ -41,7 +41,7 @@ const FinanceModal = ({ showModal }) => {
               <Button
                 className="mb-3"
                 variant="primary"
-                href="https://www.drt-software.com/FTSEViz/FTSEViz.html"
+                href="https://www.drt-software.com/FTSEViz/"
                 target="_blank"
               >
                 Launch demo

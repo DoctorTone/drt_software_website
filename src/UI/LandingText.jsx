@@ -33,7 +33,7 @@ const LandingText = () => {
             <h3>I do all things 3D.</h3>
           </Col>
         </Row>
-        <Row className="text-center">
+        <Row className="text-center mt-4">
           <Col>
             <Button variant="warning" onClick={nextLevel}>
               <h5 className="pt-1">

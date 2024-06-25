@@ -45,7 +45,7 @@ const PandemicModal = ({ showModal }) => {
               <Button
                 className="mb-3"
                 variant="primary"
-                href="https://www.drt-software.com/Covid/covid19.html"
+                href="https://www.drt-software.com/Covid/"
                 target="_blank"
               >
                 Launch demo

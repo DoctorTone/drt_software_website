@@ -51,7 +51,7 @@ const WhyModal = ({ showModal }) => {
             <BoxFill color="orange" size="50" />
           </Row>
           <Row>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} lg={4}>
               <Mouse2Fill
                 className="mb-3 greyBackground px-3 rounded"
                 color="orange"
@@ -63,7 +63,7 @@ const WhyModal = ({ showModal }) => {
                 the experience more memorable, and feel more involved.
               </p>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} lg={4}>
               <EyeFill
                 className="mb-3 greyBackground px-3 rounded"
                 color="orange"
@@ -76,7 +76,7 @@ const WhyModal = ({ showModal }) => {
                 understanding.
               </p>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} lg={4}>
               <PencilFill
                 className="mb-3 greyBackground px-3 rounded"
                 color="orange"
@@ -89,7 +89,7 @@ const WhyModal = ({ showModal }) => {
                 website.
               </p>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} lg={4}>
               <PeopleFill
                 className="mb-3 greyBackground px-3 rounded"
                 color="orange"
@@ -101,7 +101,7 @@ const WhyModal = ({ showModal }) => {
                 more users. Once there, they will be more tempted to stay
               </p>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} lg={4}>
               <BookHalf
                 className="mb-3 greyBackground px-3 rounded"
                 color="orange"
@@ -113,7 +113,7 @@ const WhyModal = ({ showModal }) => {
                 depth and context.
               </p>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} lg={4}>
               <TrophyFill
                 className="mb-3 greyBackground px-3 rounded"
                 color="orange"

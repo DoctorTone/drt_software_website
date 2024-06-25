@@ -43,7 +43,7 @@ const SleepModal = ({ showModal }) => {
               <Button
                 className="mb-3"
                 variant="primary"
-                href="https://www.drt-software.com/SleepViz/sleepViz.html"
+                href="https://www.drt-software.com/SleepViz/"
                 target="_blank"
               >
                 Launch demo

@@ -141,19 +141,19 @@ const ProjectsModal = ({ showModal }) => {
             </p>
           </Row>
           <Row className="mb-3 align-items-center">
-            <Col xs={6} md={4} className="mb-2">
+            <Col xs={6} md={4} lg={3} className="mb-2">
               <Image src="./images/logo_uon_dark.png" rounded fluid />
             </Col>
-            <Col xs={6} md={4} className="mb-2">
+            <Col xs={6} md={4} lg={3} className="mb-2">
               <Image src="./images/iosh.png" rounded fluid />
             </Col>
-            <Col xs={6} md={4} className="mb-3">
+            <Col xs={6} md={4} lg={3} className="mb-3">
               <Image src="./images/ThrillLab.jpg" rounded fluid />
             </Col>
-            <Col xs={6} md={4} className="mb-2">
+            <Col xs={6} md={4} lg={3} className="mb-2">
               <Image src="./images/logo_imh.png" rounded fluid />
             </Col>
-            <Col xs={6} md={4} className="mb-2">
+            <Col xs={6} md={4} lg={3} className="mb-2">
               <Image src="./images/NHS_Logo.png" rounded fluid />
             </Col>
           </Row>

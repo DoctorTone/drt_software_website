@@ -43,7 +43,7 @@ const ServicesModal = ({ showModal }) => {
             <Tools color="orange" size="30" />
           </Row>
           <Row className="mb-3">
-            <Col xs={2} className="text-center">
+            <Col xs={2} className="text-end">
               <HexagonHalf color="orange" size="24" />
             </Col>
             <Col xs={10}>
@@ -55,7 +55,7 @@ const ServicesModal = ({ showModal }) => {
             </Col>
           </Row>
           <Row className="mb-3">
-            <Col xs={2} className="text-center">
+            <Col xs={2} className="text-end">
               <HexagonHalf color="orange" size="24" />
             </Col>
             <Col xs={10}>
@@ -67,7 +67,7 @@ const ServicesModal = ({ showModal }) => {
             </Col>
           </Row>
           <Row className="mb-3">
-            <Col xs={2} className="text-center">
+            <Col xs={2} className="text-end">
               <HexagonHalf color="orange" size="24" />
             </Col>
             <Col xs={10}>
@@ -80,7 +80,7 @@ const ServicesModal = ({ showModal }) => {
             </Col>
           </Row>
           <Row className="mb-3">
-            <Col xs={2} className="text-center">
+            <Col xs={2} className="text-end">
               <HexagonHalf color="orange" size="24" />
             </Col>
             <Col xs={10}>
@@ -91,7 +91,7 @@ const ServicesModal = ({ showModal }) => {
             </Col>
           </Row>
           <Row className="mb-3">
-            <Col xs={2} className="text-center">
+            <Col xs={2} className="text-end">
               <HexagonHalf color="orange" size="24" />
             </Col>
             <Col xs={10}>
@@ -103,7 +103,7 @@ const ServicesModal = ({ showModal }) => {
             </Col>
           </Row>
           <Row className="mb-5">
-            <Col xs={2} className="text-center">
+            <Col xs={2} className="text-end">
               <HexagonHalf color="orange" size="24" />
             </Col>
             <Col xs={10}>

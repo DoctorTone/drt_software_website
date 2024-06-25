@@ -96,7 +96,7 @@ body {
 .mainModal {
   background-color: black;
   color: white;
-  background-image: url("./textures/gradient.jpg");
+  background-image: url("./textures/background.jpg");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -326,6 +326,13 @@ p.thought:after {
 }
 /* Large */
 @media (min-width: 992px) {
+  #landingText {
+    top: 20%;
+  }
+  #navbar {
+    width: 45%;
+    left: 40%;
+  }
   #infoTextTop {
     left: 10%;
     top: 3%;
@@ -333,7 +340,27 @@ p.thought:after {
   }
 }
 /* Extra extra large */
+@media (min-width: 1200px) {
+  #navbar {
+    width: 35%;
+    left: 55%;
+  }
+}
+
 @media (min-width: 1400px) {
+  #landingText {
+    top: 30%;
+    left: 10%;
+  }
+  #navbar {
+    width: 25%;
+    left: 65%;
+  }
+  .titleSpacing {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 6em;
+  }
   #infoTextTop {
     left: 10%;
     top: 3%;

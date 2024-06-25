@@ -41,7 +41,7 @@ const MedVizModal = ({ showModal }) => {
               <Button
                 className="mb-3"
                 variant="primary"
-                href="https://www.drt-software.com/MedicalViz/medicalViz.html"
+                href="https://www.drt-software.com/MedicalViz/"
                 target="_blank"
               >
                 Launch demo

@@ -42,7 +42,7 @@ const RealTimeModal = ({ showModal }) => {
               <Button
                 className="mb-3"
                 variant="primary"
-                href="https://www.drt-software.com/Horror/brainViz.html"
+                href="https://www.drt-software.com/Horror/"
                 target="_blank"
               >
                 Launch demo
