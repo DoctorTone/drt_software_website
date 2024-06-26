@@ -27,13 +27,14 @@ const InfoModal = ({ showModal }) => {
 
       <Modal.Body>
         <p>
-          Use the <strong>rotate</strong> buttons at the bottom to rotate the
-          islands, then click the nearest island for more information.
+          Click on the islands for more information (when the other menus are
+          closed).
         </p>
         <p>
-          If you want to access the levels or demos directly then just use the
-          link {<Link />} icon on the left.
+          Use the options/demo menu to explore all the options for the current
+          level.
         </p>
+        <p>Use the levels menu to switch between the different levels.</p>
         <p>
           Thanks to the{" "}
           <a href="https://market.pmnd.rs/" target="_blank">
@@ -44,6 +45,10 @@ const InfoModal = ({ showModal }) => {
             blend swap
           </a>{" "}
           community for the majority of the models.
+        </p>
+        <p>
+          Please contact me if you have any questions{" "}
+          <Button href="mailto:enquiries@drt-software.com">Contact</Button>
         </p>
       </Modal.Body>
 

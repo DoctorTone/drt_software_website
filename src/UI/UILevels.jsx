@@ -7,6 +7,7 @@ import CircularLevelsMenu from "./CircularLevelsMenu";
 import Bubble from "../components/Bubble";
 import { SocialUI } from "../UI/SocialUI.jsx";
 import { CopyrightUI } from "../UI/CopyrightUI.jsx";
+import { InfoUI } from "../UI/InfoUI.jsx";
 
 const BUBBLE_TIME = 5 * 1000;
 
@@ -45,6 +46,7 @@ const UILevels = ({ levelName }) => {
       return (
         <>
           <CopyrightUI />
+          <InfoUI />
           <SocialUI />
           <CircularOptionsMainMenu
             onToggle={toggleOptionsMenu}
@@ -60,6 +62,7 @@ const UILevels = ({ levelName }) => {
       return (
         <>
           <CopyrightUI />
+          <InfoUI />
           <SocialUI />
           <CircularOptionsPortfolioMenu
             onToggle={toggleOptionsMenu}
@@ -74,6 +77,7 @@ const UILevels = ({ levelName }) => {
       return (
         <>
           <CopyrightUI />
+          <InfoUI />
           <SocialUI />
           <CircularOptionsDataVizMenu
             onToggle={toggleOptionsMenu}
