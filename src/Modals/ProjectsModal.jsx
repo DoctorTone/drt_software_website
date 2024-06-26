@@ -46,23 +46,44 @@ const ProjectsModal = ({ showModal }) => {
             <p>I've enjoyed building a diverse array of projects including:</p>
           </Row>
           <Row className="mb-3">
-            <Col xs={6} md={4} className="mb-3">
-              <Image src="./images/configurator.jpg" rounded fluid />
+            <Col xs={6} md={4} className="mb-3 text-center">
+              <Image
+                src="./images/configurator.jpg"
+                rounded
+                fluid
+                className="mb-2"
+              />
+              <h6>3D Configurators</h6>
             </Col>
-            <Col xs={6} md={4} className="mb-3">
-              <Image src="./images/solar.jpg" rounded fluid />
+            <Col xs={6} md={4} className="mb-3 text-center">
+              <Image src="./images/solar.jpg" rounded fluid className="mb-2" />
+              <h6>Simulation</h6>
             </Col>
-            <Col xs={6} md={4} className="mb-3">
-              <Image src="./images/museum.jpg" rounded fluid />
+            <Col xs={6} md={4} className="mb-3 text-center">
+              <Image src="./images/museum.jpg" rounded fluid className="mb-2" />
+              <h6>Virtual Exhibits</h6>
             </Col>
-            <Col xs={6} md={4} className="mb-3">
-              <Image src="./images/physics.jpg" rounded fluid />
+            <Col xs={6} md={4} className="mb-3 text-center">
+              <Image
+                src="./images/physics.jpg"
+                rounded
+                fluid
+                className="mb-2"
+              />
+              <h6>Physics</h6>
             </Col>
-            <Col xs={6} md={4} className="mb-3">
-              <Image src="./images/brain.jpg" rounded fluid />
+            <Col xs={6} md={4} className="mb-3 text-center">
+              <Image src="./images/brain.jpg" rounded fluid className="mb-2" />
+              <h6>3D Data Visualisation</h6>
             </Col>
-            <Col xs={6} md={4} className="mb-3">
-              <Image src="./images/portfolio.jpg" rounded fluid />
+            <Col xs={6} md={4} className="mb-3 text-center">
+              <Image
+                src="./images/portfolio.jpg"
+                rounded
+                fluid
+                className="mb-2"
+              />
+              <h6>3D Websites</h6>
             </Col>
           </Row>
           <Row className="mb-1">
@@ -131,7 +152,7 @@ const ProjectsModal = ({ showModal }) => {
             </Col>
             <Col xs={11}>
               3D scene editors, graphical tools, games for children with autism,
-              driving simulators and even a brian surgery simulator!
+              driving simulators and even a brain surgery simulator!
             </Col>
           </Row>
           <Row className="text-center mt-5">
