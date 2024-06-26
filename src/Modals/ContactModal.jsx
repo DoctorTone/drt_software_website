@@ -123,8 +123,9 @@ const ContactModel = ({ showModal }) => {
           </Form>
           <div className="text-center mb-5">
             <p>
-              Alternatively you can email me here <Button>Contact</Button> or
-              call me on 0115 8840440.
+              Alternatively you can email me here{" "}
+              <Button href="mailto:enquiries@drt-software.com">Contact</Button>{" "}
+              or call me on 0115 8840440.
             </p>
           </div>
           <div className="text-center">
