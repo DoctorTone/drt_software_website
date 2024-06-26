@@ -8,6 +8,7 @@ import Bubble from "../components/Bubble";
 import { SocialUI } from "../UI/SocialUI.jsx";
 import { CopyrightUI } from "../UI/CopyrightUI.jsx";
 import { InfoUI } from "../UI/InfoUI.jsx";
+import { DayMode } from "./DayMode.jsx";
 
 const BUBBLE_TIME = 5 * 1000;
 
@@ -45,6 +46,7 @@ const UILevels = ({ levelName }) => {
     case "Main":
       return (
         <>
+          <DayMode />
           <CopyrightUI />
           <InfoUI />
           <SocialUI />

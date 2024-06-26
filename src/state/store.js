@@ -12,6 +12,9 @@ const useStore = create((set) => ({
   leaveLevel: (status) => set({ onLeaveLevel: status }),
   // Wireframe cubes on landing page
   cubeData: [1, 2, 3, 4, 5],
+  // Day/night mode
+  dayMode: true,
+  toggleDayMode: () => set((state) => ({ dayMode: !state.dayMode })),
   // Island slot positions
   activeIsland: "about",
   targetIsland: "about",
