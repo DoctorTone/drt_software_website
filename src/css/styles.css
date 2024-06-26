@@ -52,12 +52,6 @@ body {
 .greyBackground {
   background-color: #4d4b4b;
 }
-.backGround {
-  background-image: url("./textures/lightning.jpg");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
 #logo {
   top: 1%;
   left: 1%;
