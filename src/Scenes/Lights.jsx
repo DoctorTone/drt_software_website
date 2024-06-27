@@ -18,7 +18,8 @@ const Lights = () => {
           <SpotLight
             position={SCENE.spotlightPosition}
             target={SCENE.spotlightTarget}
-            angle={0.7}
+            angle={0.6}
+            intensity={5}
           />
           <Box position={SCENE.spotlightPosition.position} scale={0.1} />
         </>

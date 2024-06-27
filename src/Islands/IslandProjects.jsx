@@ -75,15 +75,15 @@ export const IslandProjects = ({ name, fadeIn, fadeOut }) => {
         <Project
           fadeIn={fadeIn}
           fadeOut={fadeOut}
-          position={ISLANDS.DRTModelPosition}
+          position={ISLANDS.ProjectsModelPosition}
         />
         <Shadow
           scale={1.5}
           opacity={0.65}
           position={[
-            ISLANDS.DRTModelPosition[0],
-            ISLANDS.DRTModelPosition[1] - 0.5,
-            ISLANDS.DRTModelPosition[2],
+            ISLANDS.ProjectsModelPosition[0],
+            ISLANDS.ProjectsModelPosition[1] - 0.5,
+            ISLANDS.ProjectsModelPosition[2],
           ]}
         />
         <IslandPoints />

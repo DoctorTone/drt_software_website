@@ -3,10 +3,11 @@ import * as THREE from "three";
 const SCENE = {
   cameraPosition: [0, 1, 3.5],
   lightPosition: [10, 10, 10],
-  spotlightPosition: [0, 3.75, 6.25],
+  spotlightPosition: [0, 4.5, 6.5],
   spotlightTarget: new THREE.Object3D(),
   rotationIntensity: 0.25,
-  sunPosition: [1, 0.15, 0],
+  sunDayPosition: [1, 0.15, 0],
+  sunNightPosition: [1, -0.15, 0],
   ambientIntensity: 0.5,
   tempRot: new THREE.Quaternion(),
   Y_AXIS: new THREE.Vector3(0, 1, 0),
@@ -79,8 +80,10 @@ const ISLANDS = {
   ContactModelPosition: [0, 2.1, -0.15],
   ContactTextPosition: [0, 2.75, 0],
   // Why island
-  WhyModelPosition: [0, 2, 0.5],
+  WhyModelPosition: [0, 2, 0],
   WhyTextPosition: [0, 3.25, 0.4],
+  // Projects island
+  ProjectsModelPosition: [0, 2.2, 0],
   // Services island
   ServicesPosition: [0, 0, -6],
   ServicesModelPosition: [0, 2.15, 0],
