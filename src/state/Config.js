@@ -3,6 +3,8 @@ import * as THREE from "three";
 const SCENE = {
   cameraPosition: [0, 1, 3.5],
   lightPosition: [10, 10, 10],
+  spotlightPosition: [0, 3.75, 6.25],
+  spotlightTarget: new THREE.Object3D(),
   rotationIntensity: 0.25,
   sunPosition: [1, 0.15, 0],
   ambientIntensity: 0.5,

@@ -9,7 +9,7 @@ import UILevels from "./UI/UILevels.jsx";
 import { NavBar } from "./components/NavBar.jsx";
 import { Logo } from "./components/Logo.jsx";
 
-const INTERACTIVE = false;
+const INTERACTIVE = true;
 const App = () => {
   const currentLevel = useStore((state) => state.currentLevel);
   const currentVisibleModal = useStore((state) => state.currentVisibleModal);
