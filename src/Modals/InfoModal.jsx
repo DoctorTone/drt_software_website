@@ -36,6 +36,9 @@ const InfoModal = ({ showModal }) => {
         </p>
         <p>Use the levels menu to switch between the different levels.</p>
         <p>
+          For added ambience try the day/night mode and play a little music!
+        </p>
+        <p>
           Thanks to the{" "}
           <a href="https://market.pmnd.rs/" target="_blank">
             pmndrs marketplace
