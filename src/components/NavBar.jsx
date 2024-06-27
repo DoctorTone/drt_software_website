@@ -28,7 +28,7 @@ export const NavBar = ({ level }) => {
             <Envelope /> : enquiries@drt-software.com
           </Nav.Link>
         </Nav.Item>
-        <Nav.Item>
+        <Nav.Item className="d-none d-sm-block">
           <Nav.Link className={linkName}>
             <Telephone /> : 0115 8840440
           </Nav.Link>

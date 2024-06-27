@@ -76,7 +76,7 @@ body {
 }
 #lights {
   left: 5%;
-  top: 10%;
+  top: 12.5%;
 }
 #home {
   left: 0;
@@ -304,15 +304,6 @@ p.thought:after {
 
 /* Add title outline to larger screen sizes */
 /* Medium */
-@media (min-width: 768px) and (orientation: landscape) {
-  #landingText {
-    top: 0%;
-  }
-  .titleSpacing {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
 @media (min-width: 768px) {
   #logo {
     left: 5%;
@@ -320,6 +311,9 @@ p.thought:after {
   #navbar {
     left: 27.5%;
     width: 60%;
+  }
+  #lights {
+    top: 10%;
   }
   #social {
     top: 1%;
@@ -333,8 +327,23 @@ p.thought:after {
     width: 50%;
   }
 }
+@media (min-width: 768px) and (orientation: landscape) {
+  #lights {
+    top: 25%;
+  }
+  #landingText {
+    top: 0%;
+  }
+  .titleSpacing {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
 /* Large */
 @media (min-width: 992px) {
+  #lights {
+    top: 12.5%;
+  }
   #landingText {
     top: 20%;
   }
@@ -354,6 +363,9 @@ p.thought:after {
     width: 35%;
     left: 55%;
   }
+  #lights {
+    top: 12.5%;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -362,8 +374,8 @@ p.thought:after {
     left: 10%;
   }
   #navbar {
-    width: 25%;
-    left: 65%;
+    width: 27.5%;
+    left: 60%;
   }
   .titleSpacing {
     margin-top: 0;
