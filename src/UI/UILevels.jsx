@@ -63,6 +63,7 @@ const UILevels = ({ levelName }) => {
     case "Portfolio":
       return (
         <>
+          <DayMode />
           <CopyrightUI />
           <InfoUI />
           <SocialUI />
@@ -78,6 +79,7 @@ const UILevels = ({ levelName }) => {
     case "DataViz":
       return (
         <>
+          <DayMode />
           <CopyrightUI />
           <InfoUI />
           <SocialUI />

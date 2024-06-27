@@ -1,9 +1,9 @@
 import React from "react";
 import { SCENE } from "../state/Config.js";
 import useStore from "../state/store.js";
-import { Box, SpotLight } from "@react-three/drei";
+import { SpotLight } from "@react-three/drei";
 
-const Lights = () => {
+const Lights = ({ level }) => {
   const dayMode = useStore((state) => state.dayMode);
   SCENE.spotlightTarget.position.set(0, 0, 6.25);
   return (
@@ -16,12 +16,11 @@ const Lights = () => {
       ) : (
         <>
           <SpotLight
-            position={SCENE.spotlightPosition}
+            position={SCENE.spotlightPosition[level]}
             target={SCENE.spotlightTarget}
             angle={0.6}
             intensity={5}
           />
-          <Box position={SCENE.spotlightPosition.position} scale={0.1} />
         </>
       )}
     </>

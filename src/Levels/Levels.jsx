@@ -8,6 +8,7 @@ import useStore from "../state/store.js";
 
 const Levels = ({ levelName }) => {
   const onEnterLevel = useStore((state) => state.onEnterLevel);
+  const dayMode = useStore((state) => state.dayMode);
 
   switch (levelName) {
     case "Landing":
@@ -38,7 +39,7 @@ const Levels = ({ levelName }) => {
         <>
           <Overlay position-z={8} fadeOut={onEnterLevel} />
           <DataVizLevel />
-          <Overlay position-z={-8} color={0xe6cea5} />
+          {dayMode ? <Overlay position-z={-8} color={0xe6cea5} /> : null}
         </>
       );
       break;

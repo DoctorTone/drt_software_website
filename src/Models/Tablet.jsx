@@ -42,7 +42,7 @@ export function Tablet({ fadeIn, fadeOut, ...props }) {
 
   return (
     <group {...props} dispose={null}>
-      <group scale={[0.1, 1.2, 0.9]}>
+      <group scale={[0.1 * 0.9, 1.2 * 0.9, 0.9 * 0.9]}>
         {isMobile ? (
           <mesh geometry={nodes.Cube001.geometry}>
             <meshLambertMaterial color={"grey"} />

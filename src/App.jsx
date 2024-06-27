@@ -19,7 +19,7 @@ const App = () => {
       {currentLevel !== "Landing" && <Logo />}
       {currentLevel !== "Landing" && <NavBar level={currentLevel} />}
       <Canvas camera={{ position: getCameraPosition(window.innerWidth) }}>
-        <Lights />
+        <Lights level={currentLevel} />
         <Levels levelName={currentLevel} />
         <OrbitControls
           enablePan={INTERACTIVE}
