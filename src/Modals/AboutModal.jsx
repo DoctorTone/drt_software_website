@@ -25,12 +25,12 @@ const AboutModal = ({ showModal }) => {
   return (
     <Modal
       show={show}
-      fullscreen
+      size="xl"
       contentClassName="mainModal"
       onHide={handleClose}
     >
       <Modal.Header
-        className="border-0 pb-0 text-center mt-5"
+        className="border-0 pb-0 text-center"
         closeButton
         closeVariant="white"
       >

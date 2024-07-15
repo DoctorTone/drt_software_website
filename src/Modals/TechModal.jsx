@@ -25,13 +25,13 @@ const TechModal = ({ showModal }) => {
   return (
     <Modal
       show={show}
-      fullscreen
+      size="xl"
       contentClassName="mainModal"
       onHide={handleClose}
     >
       <Modal.Header
         closeButton
-        className="border-0 pb-0 text-center mt-5"
+        className="border-0 pb-0 text-center"
         closeVariant="white"
       >
         <h2 className="mx-auto w-100 ps-3">Technology</h2>
