@@ -60,6 +60,8 @@ const TRANSITIONS = {
   FADE_NONE: 0,
   FADE_OUT: 1,
   FADE_IN: 2,
+  NEXT_LEFT: 3,
+  NEXT_RIGHT: 4,
 };
 
 const ISLANDS = {

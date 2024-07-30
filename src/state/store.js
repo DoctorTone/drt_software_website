@@ -4,8 +4,29 @@ import { SCENE, MODALS, TRANSITIONS } from "./Config.js";
 const useStore = create((set) => ({
   // Levels in system
   levels: ["Landing", "Main", "Portfolio", "DataViz"],
+  mainLevels: ["about", "services", "why", "contact", "projects", "tech"],
+  portfolioLevels: [
+    "configurator",
+    "editor",
+    "physics",
+    "vr",
+    "effects",
+    "performance",
+    "ar",
+  ],
+  dataLevels: ["medical", "finance", "pandemic", "sleep", "realTime"],
   currentLevel: "Landing",
-  setCurrentLevel: (levelName) => set({ currentLevel: levelName }),
+  currentLevelTable: null,
+  setCurrentLevel: (levelName) =>
+    set((state) => ({
+      currentLevel: levelName,
+      currentLevelTable:
+        levelName === "Main"
+          ? state.mainLevels
+          : levelName === "Portfolio"
+          ? state.portfolioLevels
+          : state.dataLevels,
+    })),
   onEnterLevel: false,
   onLeaveLevel: false,
   enterLevel: (status) => set({ onEnterLevel: status }),
@@ -18,6 +39,7 @@ const useStore = create((set) => ({
   // Island slot positions
   activeIsland: "about",
   targetIsland: "about",
+  islandNumber: 0,
   currentSlots: ["Contact", "About", "Services"],
   getSlotPosition: (slots, island) => {
     for (let i = 0; i < slots.length; ++i) {
@@ -28,7 +50,17 @@ const useStore = create((set) => ({
   },
   ignoreButtonPress: false,
   setActiveIsland: (island) => set({ activeIsland: island }),
-  setTargetIsland: (island) => set({ targetIsland: island }),
+  setTargetIsland: (island) => {
+    set((state) => ({
+      targetIsland:
+        island < 0
+          ? state.mainLevels[state.mainLevels.length - 1]
+          : island > state.mainLevels.length
+          ? state.mainLevels[0]
+          : state.mainLevels[island],
+      islandNumber: island,
+    }));
+  },
   transitionPhase: TRANSITIONS.FADE_OUT,
   setTransitionPhase: (phase) => set({ transitionPhase: phase }),
   updateSlots: (slots) => set({ currentSlots: [...slots] }),
