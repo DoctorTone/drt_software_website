@@ -83,7 +83,11 @@ body {
   top: 5%;
   text-align: left;
 }
-
+#navigation {
+  width: 100%;
+  left: 0%;
+  top: 40%;
+}
 #social {
   right: 1%;
   top: 12.5%;
