@@ -23,9 +23,9 @@ const CircularLevelsMenu = ({ onToggle, open }) => {
   const updateLevel = (levelName, islandName) => {
     if (currentLevel === levelName) return;
 
-    setActiveIsland(islandName);
-    setTargetIsland(islandName);
     setCurrentLevel(levelName);
+    setActiveIsland(islandName);
+    setTargetIsland(0);
     enterLevel(true);
   };
 

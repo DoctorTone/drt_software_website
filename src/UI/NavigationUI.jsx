@@ -3,7 +3,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { CaretLeftFill, CaretRightFill } from "react-bootstrap-icons";
-import { TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
 export const NavigationUI = () => {

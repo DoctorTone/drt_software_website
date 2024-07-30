@@ -14,12 +14,13 @@ const useStore = create((set) => ({
     "performance",
     "ar",
   ],
-  dataLevels: ["medical", "finance", "pandemic", "sleep", "realTime"],
+  dataLevels: ["medical", "finance", "pandemic", "sleep", "realtime"],
   currentLevel: "Landing",
   currentLevelTable: null,
   setCurrentLevel: (levelName) =>
     set((state) => ({
       currentLevel: levelName,
+      islandNumber: 0,
       currentLevelTable:
         levelName === "Main"
           ? state.mainLevels
@@ -54,11 +55,16 @@ const useStore = create((set) => ({
     set((state) => ({
       targetIsland:
         island < 0
-          ? state.mainLevels[state.mainLevels.length - 1]
-          : island > state.mainLevels.length
-          ? state.mainLevels[0]
-          : state.mainLevels[island],
-      islandNumber: island,
+          ? state.currentLevelTable[state.currentLevelTable.length - 1]
+          : island === state.currentLevelTable.length
+          ? state.currentLevelTable[0]
+          : state.currentLevelTable[island],
+      islandNumber:
+        island < 0
+          ? state.currentLevelTable.length - 1
+          : island === state.currentLevelTable.length
+          ? 0
+          : island,
     }));
   },
   transitionPhase: TRANSITIONS.FADE_OUT,

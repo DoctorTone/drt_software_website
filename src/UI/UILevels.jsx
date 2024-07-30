@@ -69,6 +69,7 @@ const UILevels = ({ levelName }) => {
           <CopyrightUI />
           <InfoUI />
           <SocialUI />
+          <NavigationUI />
           <CircularOptionsPortfolioMenu
             onToggle={toggleOptionsMenu}
             open={optionsActive}
@@ -85,6 +86,7 @@ const UILevels = ({ levelName }) => {
           <CopyrightUI />
           <InfoUI />
           <SocialUI />
+          <NavigationUI />
           <CircularOptionsDataVizMenu
             onToggle={toggleOptionsMenu}
             open={optionsActive}
