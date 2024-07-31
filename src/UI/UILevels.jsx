@@ -10,6 +10,7 @@ import { CopyrightUI } from "../UI/CopyrightUI.jsx";
 import { InfoUI } from "../UI/InfoUI.jsx";
 import { DayMode } from "./DayMode.jsx";
 import { NavigationUI } from "./NavigationUI.jsx";
+import { LevelsMenu } from "./LevelsMenu.jsx";
 
 const BUBBLE_TIME = 5 * 1000;
 
@@ -52,6 +53,7 @@ const UILevels = ({ levelName }) => {
           <InfoUI />
           <SocialUI />
           <NavigationUI />
+          <LevelsMenu />
           <CircularOptionsMainMenu
             onToggle={toggleOptionsMenu}
             open={optionsActive}
