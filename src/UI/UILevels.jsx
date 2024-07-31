@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import LandingText from "./LandingText";
-import CircularOptionsMainMenu from "./CircularOptionsMainMenu";
-import CircularOptionsPortfolioMenu from "./CircularOptionsPortfolioMenu";
-import CircularOptionsDataVizMenu from "./CircularOptionsDataVizMenu";
-import CircularLevelsMenu from "./CircularLevelsMenu";
 import Bubble from "../components/Bubble";
 import { SocialUI } from "../UI/SocialUI.jsx";
 import { CopyrightUI } from "../UI/CopyrightUI.jsx";
@@ -11,6 +7,7 @@ import { InfoUI } from "../UI/InfoUI.jsx";
 import { DayMode } from "./DayMode.jsx";
 import { NavigationUI } from "./NavigationUI.jsx";
 import { LevelsMenu } from "./LevelsMenu.jsx";
+import { NavState } from "./NavState.jsx";
 
 const BUBBLE_TIME = 5 * 1000;
 
@@ -53,12 +50,8 @@ const UILevels = ({ levelName }) => {
           <InfoUI />
           <SocialUI />
           <NavigationUI />
+          <NavState />
           <LevelsMenu />
-          <CircularOptionsMainMenu
-            onToggle={toggleOptionsMenu}
-            open={optionsActive}
-          />
-          <CircularLevelsMenu onToggle={toggleLevelsMenu} open={levelsActive} />
           {showBubble && <Bubble />}
         </>
       );
@@ -72,11 +65,7 @@ const UILevels = ({ levelName }) => {
           <InfoUI />
           <SocialUI />
           <NavigationUI />
-          <CircularOptionsPortfolioMenu
-            onToggle={toggleOptionsMenu}
-            open={optionsActive}
-          />
-          <CircularLevelsMenu onToggle={toggleLevelsMenu} open={levelsActive} />
+          <LevelsMenu />
         </>
       );
       break;
@@ -89,11 +78,7 @@ const UILevels = ({ levelName }) => {
           <InfoUI />
           <SocialUI />
           <NavigationUI />
-          <CircularOptionsDataVizMenu
-            onToggle={toggleOptionsMenu}
-            open={optionsActive}
-          />
-          <CircularLevelsMenu onToggle={toggleLevelsMenu} open={levelsActive} />
+          <LevelsMenu />
         </>
       );
       break;

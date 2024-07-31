@@ -86,7 +86,12 @@ body {
 #navigation {
   width: 100%;
   left: 0%;
-  top: 40%;
+  bottom: 40%;
+}
+#navState {
+  width: 100%;
+  bottom: 15%;
+  left: 0%;
 }
 #social {
   right: 1%;
@@ -308,7 +313,7 @@ p.thought:after {
 /* Speed dial */
 #speedDial {
   top: 22.5%;
-  left: 4.5%;
+  left: 5.75%;
 }
 @keyframes pop-in {
   0% {
@@ -349,6 +354,7 @@ p.thought:after {
 }
 .speed-dial:hover .toggle {
   background-color: #afa9a9;
+  cursor: pointer;
 }
 .speed-dial:hover .dials a {
   animation: pop-in 0.3s ease both;

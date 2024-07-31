@@ -24,12 +24,12 @@ export const DayMode = () => {
   return (
     <div id="lights" className="panel">
       <div className="d-flex mb-3">
-        <Form.Switch onChange={toggleMode} />
         <SunFill size={20} className="me-1" />
+        <Form.Switch onChange={toggleMode} />
         <MoonFill size={20} />
       </div>
       <div className="d-flex">
-        <Form.Switch onChange={toggleMusic} />
+        <Form.Switch onChange={toggleMusic} className="ms-4" />
         <MusicNoteBeamed />
       </div>
     </div>

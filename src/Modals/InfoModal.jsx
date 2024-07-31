@@ -26,14 +26,8 @@ const InfoModal = ({ showModal }) => {
       </Modal.Header>
 
       <Modal.Body>
-        <p>
-          Click on the islands for more information (when the other menus are
-          closed).
-        </p>
-        <p>
-          Use the options/demo menu to explore all the options for the current
-          level.
-        </p>
+        <p>Use the left/right arrows to see all the options.</p>
+        <p>Click on the islands for more information.</p>
         <p>Use the levels menu to switch between the different levels.</p>
         <p>
           For added ambience try the day/night mode and play a little music!
