@@ -9,6 +9,7 @@ const useStore = create((set) => ({
     "configurator",
     "editor",
     "physics",
+    "space",
     "vr",
     "effects",
     "performance",

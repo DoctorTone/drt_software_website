@@ -85,6 +85,9 @@ const ISLANDS = {
   ContactPosition: [-6, 0, 0],
   ContactModelPosition: [0, 2.1, -0.15],
   ContactTextPosition: [0, 2.75, 0],
+  // Space island
+  SpaceModelPosition: [0, 2.3, 0.4],
+  SpaceModelTextPosition: [0, 2.6, 0.4],
   // Why island
   WhyModelPosition: [0, 2, 0],
   WhyTextPosition: [0, 3.25, 0.4],
@@ -178,6 +181,7 @@ const MODALS = {
   PERFORMANCE: 20,
   CONFIGURATOR: 21,
   WHY: 22,
+  SPACE: 23,
 };
 
 const SLOTS = {
