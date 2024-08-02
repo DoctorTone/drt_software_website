@@ -8,7 +8,7 @@ import { getDeviceStatus } from "../utils/Utils.jsx";
 import { useFrame } from "@react-three/fiber";
 import { SCENE } from "../state/Config";
 
-export function Tablet({ fadeIn, fadeOut, ...props }) {
+export function Tablet({ fadeIn, fadeOut, direction, ...props }) {
   const { nodes } = useGLTF("./models/tablet.glb");
   const texture = useTexture(props.map);
   texture.flipY = false;
@@ -19,10 +19,12 @@ export function Tablet({ fadeIn, fadeOut, ...props }) {
   const isMobile = getDeviceStatus();
 
   const matRef = useRef();
+  const groupRef = useRef();
 
   useFrame((state, delta) => {
     if (fadeOutEnabled) {
       matRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      groupRef.current.position.x += delta * direction;
       if (matRef.current.opacity < 0) {
         matRef.current.opacity = 0;
         fadeOutEnabled = false;
@@ -41,7 +43,7 @@ export function Tablet({ fadeIn, fadeOut, ...props }) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <group scale={[0.1 * 0.9, 1.2 * 0.9, 0.9 * 0.9]}>
         {isMobile ? (
           <mesh geometry={nodes.Cube001.geometry}>

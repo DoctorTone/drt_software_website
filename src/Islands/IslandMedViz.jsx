@@ -6,7 +6,7 @@ import { Tablet } from "../Models/Tablet.jsx";
 import { IslandPoints } from "./IslandPoints.jsx";
 import useStore from "../state/store.js";
 
-export const IslandMedViz = ({ name, fadeIn, fadeOut }) => {
+export const IslandMedViz = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -76,6 +76,7 @@ export const IslandMedViz = ({ name, fadeIn, fadeOut }) => {
           position={ISLANDS.MedVizModelPosition}
           rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
           map={"./textures/volumeRender.jpg"}
+          direction={direction}
         />
         <Shadow
           scale={[1.55, 1, 1.25]}

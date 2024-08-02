@@ -12,6 +12,7 @@ const DataVizScene = () => {
   const targetIsland = useStore((state) => state.targetIsland);
   const activeIsland = useStore((state) => state.activeIsland);
   const transitionPhase = useStore((state) => state.transitionPhase);
+  const currentDirection = useStore((state) => state.currentDirection);
 
   const getIsland = (transition) => {
     let fadeOutStatus = transition === TRANSITIONS.FADE_OUT;
@@ -26,6 +27,7 @@ const DataVizScene = () => {
           name="medical"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
+          direction={currentDirection}
         />
       ),
       finance: (
@@ -33,6 +35,7 @@ const DataVizScene = () => {
           name="finance"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
+          direction={currentDirection}
         />
       ),
       pandemic: (
@@ -40,6 +43,7 @@ const DataVizScene = () => {
           name="pandemic"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
+          direction={currentDirection}
         />
       ),
       realtime: (
@@ -47,6 +51,7 @@ const DataVizScene = () => {
           name="realtime"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
+          direction={currentDirection}
         />
       ),
       sleep: (
@@ -54,6 +59,7 @@ const DataVizScene = () => {
           name="sleep"
           fadeOut={fadeOutStatus}
           fadeIn={fadeInStatus}
+          direction={currentDirection}
         />
       ),
     };

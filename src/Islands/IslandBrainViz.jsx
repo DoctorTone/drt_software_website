@@ -6,7 +6,7 @@ import { Tablet } from "../Models/Tablet.jsx";
 import { IslandPoints } from "./IslandPoints.jsx";
 import useStore from "../state/store.js";
 
-export const IslandBrainViz = ({ name, fadeIn, fadeOut }) => {
+export const IslandBrainViz = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -38,7 +38,7 @@ export const IslandBrainViz = ({ name, fadeIn, fadeOut }) => {
 
   useCursor(hovered);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (fadeOutEnabled) {
       textRef.current.opacity -= delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity < 0) {
@@ -73,6 +73,7 @@ export const IslandBrainViz = ({ name, fadeIn, fadeOut }) => {
           position={ISLANDS.BrainVizModelPosition}
           rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
           map={"./textures/brainVisualisation.jpg"}
+          direction={direction}
         />
         <Shadow
           scale={[2, 1, 1]}

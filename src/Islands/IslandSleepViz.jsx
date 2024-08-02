@@ -6,7 +6,7 @@ import { Tablet } from "../Models/Tablet.jsx";
 import { IslandPoints } from "./IslandPoints.jsx";
 import useStore from "../state/store.js";
 
-export const IslandSleepViz = ({ name, fadeIn, fadeOut }) => {
+export const IslandSleepViz = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -73,6 +73,7 @@ export const IslandSleepViz = ({ name, fadeIn, fadeOut }) => {
           position={ISLANDS.SleepVizModelPosition}
           rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
           map={"./textures/sleepData.jpg"}
+          direction={direction}
         />
         <Shadow
           scale={[1.85, 1, 1.25]}

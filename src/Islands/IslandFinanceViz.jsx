@@ -6,7 +6,7 @@ import { IslandPoints } from "./IslandPoints.jsx";
 import { Tablet } from "../Models/Tablet.jsx";
 import useStore from "../state/store.js";
 
-export const IslandFinanceViz = ({ name, fadeIn, fadeOut }) => {
+export const IslandFinanceViz = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -73,6 +73,7 @@ export const IslandFinanceViz = ({ name, fadeIn, fadeOut }) => {
           position={ISLANDS.FinanceVizModelPosition}
           rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
           map={"./textures/FTSEViz.jpg"}
+          direction={direction}
         />
         <Shadow
           scale={[1.85, 1, 1.25]}

@@ -6,7 +6,7 @@ import { Tablet } from "../Models/Tablet.jsx";
 import { IslandPoints } from "./IslandPoints.jsx";
 import useStore from "../state/store.js";
 
-export const IslandCovidViz = ({ name, fadeIn, fadeOut }) => {
+export const IslandCovidViz = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -73,6 +73,7 @@ export const IslandCovidViz = ({ name, fadeIn, fadeOut }) => {
           position={ISLANDS.CovidVizModelPosition}
           rotation={[Math.PI, Math.PI / 2, -Math.PI / 8]}
           map={"./textures/pandemic.jpg"}
+          direction={direction}
         />
         <Shadow
           scale={[2, 1, 1]}
