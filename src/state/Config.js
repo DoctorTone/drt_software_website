@@ -86,8 +86,8 @@ const ISLANDS = {
   ContactModelPosition: [0, 2.1, -0.15],
   ContactTextPosition: [0, 2.75, 0],
   // Space island
-  SpaceModelPosition: [0, 2.3, 0.4],
-  SpaceModelTextPosition: [0, 2.6, 0.4],
+  SpaceModelPosition: [0, 2.4, 0.4],
+  SpaceModelTextPosition: [0, 2.8, 0.4],
   // Why island
   WhyModelPosition: [0, 2, 0],
   WhyTextPosition: [0, 3.25, 0.4],

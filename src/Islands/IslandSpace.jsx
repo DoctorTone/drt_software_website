@@ -59,7 +59,7 @@ export const IslandSpace = ({ name, fadeIn, fadeOut, direction }) => {
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
-        displayModal(MODALS.ABOUT);
+        displayModal(MODALS.SPACE);
       }
     }
   });
