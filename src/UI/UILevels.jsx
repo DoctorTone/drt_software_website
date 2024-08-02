@@ -65,6 +65,7 @@ const UILevels = ({ levelName }) => {
           <InfoUI />
           <SocialUI />
           <NavigationUI />
+          <NavState />
           <LevelsMenu />
         </>
       );
@@ -78,6 +79,7 @@ const UILevels = ({ levelName }) => {
           <InfoUI />
           <SocialUI />
           <NavigationUI />
+          <NavState />
           <LevelsMenu />
         </>
       );
