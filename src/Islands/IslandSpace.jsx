@@ -40,7 +40,7 @@ export const IslandSpace = ({ name, fadeIn, fadeOut, direction }) => {
 
   useCursor(hovered);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (fadeOutEnabled) {
       textRef.current.opacity -= delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity < 0) {

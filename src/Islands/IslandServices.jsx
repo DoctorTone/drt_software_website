@@ -18,6 +18,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut, direction }) => {
   const setTransitionPhase = useStore((state) => state.setTransitionPhase);
   const setActiveIsland = useStore((state) => state.setActiveIsland);
 
+  const textMaterialRef = useRef();
   const textRef = useRef();
 
   const selectIsland = () => {
@@ -40,22 +41,23 @@ export const IslandServices = ({ name, fadeIn, fadeOut, direction }) => {
 
   useCursor(hovered);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (fadeOutEnabled) {
-      textRef.current.opacity -= delta * SCENE.FADE_DELAY;
-      if (textRef.current.opacity < 0) {
-        textRef.current.opacity = 0;
+      textMaterialRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      textRef.current.position.x += delta * direction;
+      if (textMaterialRef.current.opacity < 0) {
+        textMaterialRef.current.opacity = 0;
         fadeOutEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_IN);
       }
     }
     if (fadeInEnabled) {
-      if (textRef.current.opacity >= 1) {
-        textRef.current.opacity = 0;
+      if (textMaterialRef.current.opacity >= 1) {
+        textMaterialRef.current.opacity = 0;
       }
-      textRef.current.opacity += delta * SCENE.FADE_DELAY;
-      if (textRef.current.opacity >= 1) {
-        textRef.current.opacity = 1;
+      textMaterialRef.current.opacity += delta * SCENE.FADE_DELAY;
+      if (textMaterialRef.current.opacity >= 1) {
+        textMaterialRef.current.opacity = 1;
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
@@ -90,6 +92,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut, direction }) => {
         />
         <IslandPoints />
         <Text
+          ref={textRef}
           color="white"
           center
           fontSize={SCENE.FONT_SIZE}
@@ -100,7 +103,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut, direction }) => {
           outlineColor="black"
         >
           Services
-          <meshBasicMaterial ref={textRef} transparent={true} />
+          <meshBasicMaterial ref={textMaterialRef} transparent={true} />
         </Text>
       </group>
     </Float>
