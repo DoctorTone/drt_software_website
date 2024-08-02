@@ -1,7 +1,8 @@
 import React from "react";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import { List, HouseFill, Images, BarChartFill } from "react-bootstrap-icons";
+import Button from "react-bootstrap/Button";
+import { HouseFill, Images, BarChartFill } from "react-bootstrap-icons";
 import useStore from "../state/store.js";
 
 export const LevelsMenu = () => {
@@ -22,11 +23,7 @@ export const LevelsMenu = () => {
 
   return (
     <div id="speedDial" class="speed-dial panel">
-      <OverlayTrigger overlay={<Tooltip>Levels</Tooltip>} placement="right">
-        <a class="toggle">
-          <List />
-        </a>
-      </OverlayTrigger>
+      <Button>Explore</Button>
       <ul class="dials">
         <li onClick={() => updateLevel("Main", "about")}>
           <OverlayTrigger overlay={<Tooltip>Home</Tooltip>} placement="right">
