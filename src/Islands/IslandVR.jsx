@@ -6,7 +6,7 @@ import { VR } from "../Models/VR.jsx";
 import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
-export const IslandVR = ({ name, fadeIn, fadeOut }) => {
+export const IslandVR = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -76,6 +76,7 @@ export const IslandVR = ({ name, fadeIn, fadeOut }) => {
           position={ISLANDS.VRModelPosition}
           rotation-y={Math.PI / 6}
           scale={0.6}
+          direction={direction}
         />
         <Shadow
           scale={1.65}

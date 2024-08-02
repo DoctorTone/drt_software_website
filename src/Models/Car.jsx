@@ -7,16 +7,17 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { SCENE } from "../state/Config";
 
-export function Car({ fadeIn, fadeOut, ...props }) {
-  const group = useRef();
+export function Car({ fadeIn, fadeOut, direction, ...props }) {
   const { nodes, materials } = useGLTF("./models/car.gltf");
   const matRef = useRef();
+  const groupRef = useRef();
   let fadeOutEnabled = fadeOut;
   let fadeInEnabled = fadeIn;
 
   useFrame((state, delta) => {
     if (fadeOutEnabled) {
       matRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      groupRef.current.position.x += delta * direction;
       if (matRef.current.opacity < 0) {
         matRef.current.opacity = 0;
         fadeOutEnabled = false;
@@ -36,9 +37,9 @@ export function Car({ fadeIn, fadeOut, ...props }) {
 
   return (
     <group
+      ref={groupRef}
       scale={0.75}
       rotation-y={-Math.PI / 4}
-      ref={group}
       {...props}
       dispose={null}
     >

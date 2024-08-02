@@ -7,8 +7,8 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { SCENE } from "../state/Config";
 
-export function Brush({ fadeIn, fadeOut, ...props }) {
-  const group = useRef();
+export function Brush({ fadeIn, fadeOut, direction, ...props }) {
+  const groupRef = useRef();
   const { nodes, materials } = useGLTF("./models/brush.gltf");
   for (const mat in materials) {
     materials[mat].transparent = true;
@@ -22,11 +22,12 @@ export function Brush({ fadeIn, fadeOut, ...props }) {
   let fadeOutEnabled = fadeOut;
   let fadeInEnabled = fadeIn;
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (fadeOutEnabled) {
       for (const part in matRefs) {
         matRefs[part].current.material.opacity -= delta * SCENE.FADE_DELAY;
       }
+      groupRef.current.position.x += delta * direction;
       if (matRefs.part1.current.material.opacity < 0) {
         for (const part in matRefs) {
           matRefs[part].current.material.opacity = 0;
@@ -53,7 +54,7 @@ export function Brush({ fadeIn, fadeOut, ...props }) {
   });
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <group rotation={[-Math.PI, 0, 0]} scale={0.3}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh

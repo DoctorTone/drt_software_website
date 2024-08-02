@@ -6,7 +6,7 @@ import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import { Car } from "../Models/Car.jsx";
 import useStore from "../state/store.js";
 
-export const IslandConfigurator = ({ name, fadeIn, fadeOut }) => {
+export const IslandConfigurator = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -74,6 +74,7 @@ export const IslandConfigurator = ({ name, fadeIn, fadeOut }) => {
           fadeIn={fadeIn}
           fadeOut={fadeOut}
           position={ISLANDS.ConfiguratorModelPosition}
+          direction={direction}
         />
 
         <Shadow

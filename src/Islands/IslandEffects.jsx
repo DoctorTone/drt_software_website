@@ -6,7 +6,7 @@ import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import { Lightning } from "../Models/Lightning.jsx";
 import useStore from "../state/store.js";
 
-export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
+export const IslandEffects = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -74,6 +74,7 @@ export const IslandEffects = ({ name, fadeIn, fadeOut }) => {
           fadeIn={fadeIn}
           fadeOut={fadeOut}
           position={ISLANDS.ShaderModelPosition}
+          direction={direction}
         />
 
         <Shadow

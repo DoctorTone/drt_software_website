@@ -6,7 +6,7 @@ import { Physics } from "../Models/Physics.jsx";
 import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
-export const IslandPhysics = ({ name, fadeIn, fadeOut }) => {
+export const IslandPhysics = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -76,6 +76,7 @@ export const IslandPhysics = ({ name, fadeIn, fadeOut }) => {
           position={ISLANDS.PhysicsModelPosition}
           scale={0.125}
           rotation-y={Math.PI / 2}
+          direction={direction}
         />
         <Shadow
           scale={1.5}

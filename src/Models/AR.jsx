@@ -11,19 +11,21 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { SCENE } from "../state/Config";
 
-export function AR({ fadeIn, fadeOut, ...props }) {
+export function AR({ fadeIn, fadeOut, direction, ...props }) {
   const { nodes, materials } = useGLTF("./models/low_poly_mobile_phone.glb");
   const matRefs = {
     screen: useRef(),
     case: useRef(),
   };
+  const groupRef = useRef();
   let fadeOutEnabled = fadeOut;
   let fadeInEnabled = fadeIn;
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (fadeOutEnabled) {
       matRefs.screen.current.opacity -= delta * SCENE.FADE_DELAY;
       matRefs.case.current.opacity -= delta * SCENE.FADE_DELAY;
+      groupRef.current.position.x += delta * direction;
       if (matRefs.screen.current.opacity < 0) {
         matRefs.screen.current.opacity = 0;
         matRefs.case.current.opacity = 0;
@@ -45,7 +47,7 @@ export function AR({ fadeIn, fadeOut, ...props }) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <group position={[0, 43.978, 0]} rotation={[Math.PI / 4, 0, 0]}>

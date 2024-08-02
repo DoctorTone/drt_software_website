@@ -6,7 +6,7 @@ import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import { Target } from "../Models/Target.jsx";
 import useStore from "../state/store.js";
 
-export const IslandPerformance = ({ name, fadeIn, fadeOut }) => {
+export const IslandPerformance = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -74,6 +74,7 @@ export const IslandPerformance = ({ name, fadeIn, fadeOut }) => {
           fadeIn={fadeIn}
           fadeOut={fadeOut}
           position={ISLANDS.PerformanceModelPosition}
+          direction={direction}
         />
 
         <Shadow

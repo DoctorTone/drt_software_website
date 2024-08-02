@@ -7,10 +7,11 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
-export function Physics({ fadeIn, fadeOut, ...props }) {
+export function Physics({ fadeIn, fadeOut, direction, ...props }) {
   const { nodes } = useGLTF("./models/physics.glb");
   const atomRef = useRef();
   const torusRefs = [useRef(), useRef(), useRef()];
+  const groupRef = useRef();
 
   let fadeOutEnabled = fadeOut;
   let fadeInEnabled = fadeIn;
@@ -21,6 +22,7 @@ export function Physics({ fadeIn, fadeOut, ...props }) {
       for (let i = 0; i < torusRefs.length; ++i) {
         torusRefs[i].current.opacity -= delta * SCENE.FADE_DELAY;
       }
+      groupRef.current.position.x += delta * direction;
       if (atomRef.current.opacity < 0) {
         atomRef.current.opacity = 0;
         for (let i = 0; i < torusRefs.length; ++i) {
@@ -51,7 +53,7 @@ export function Physics({ fadeIn, fadeOut, ...props }) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <mesh
         geometry={nodes.Cube.geometry}
         position={[0, 0, 0]}

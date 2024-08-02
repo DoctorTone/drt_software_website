@@ -7,8 +7,8 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { SCENE } from "../state/Config";
 
-export function Target({ fadeIn, fadeOut, ...props }) {
-  const group = useRef();
+export function Target({ fadeIn, fadeOut, direction, ...props }) {
+  const groupRef = useRef();
   const { nodes, materials } = useGLTF("./models/target.gltf");
   for (const mat in materials) {
     materials[mat].transparent = true;
@@ -26,6 +26,7 @@ export function Target({ fadeIn, fadeOut, ...props }) {
       for (const part in matRefs) {
         matRefs[part].current.material.opacity -= delta * SCENE.FADE_DELAY;
       }
+      groupRef.current.position.x += delta * direction;
       if (matRefs.targetRed.current.material.opacity < 0) {
         for (const part in matRefs) {
           matRefs[part].current.material.opacity = 0;
@@ -52,7 +53,7 @@ export function Target({ fadeIn, fadeOut, ...props }) {
   });
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]}>
         <mesh
           geometry={nodes.Cylinder016.geometry}

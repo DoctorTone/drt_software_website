@@ -6,7 +6,7 @@ import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import { Brush } from "../Models/Brush.jsx";
 import useStore from "../state/store.js";
 
-export const IslandEditor = ({ name, fadeIn, fadeOut }) => {
+export const IslandEditor = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -74,6 +74,7 @@ export const IslandEditor = ({ name, fadeIn, fadeOut }) => {
           fadeIn={fadeIn}
           fadeOut={fadeOut}
           position={ISLANDS.ShaderModelPosition}
+          direction={direction}
         />
 
         <Shadow

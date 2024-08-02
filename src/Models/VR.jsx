@@ -11,16 +11,18 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
-export function VR({ fadeIn, fadeOut, ...props }) {
+export function VR({ fadeIn, fadeOut, direction, ...props }) {
   const { nodes } = useGLTF("./models/vr_headset.glb");
   const matRefs = { screen: useRef(), strap: useRef() };
+  const groupRef = useRef();
   let fadeOutEnabled = fadeOut;
   let fadeInEnabled = fadeIn;
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (fadeOutEnabled) {
       matRefs.screen.current.opacity -= delta * SCENE.FADE_DELAY;
       matRefs.strap.current.opacity -= delta * SCENE.FADE_DELAY;
+      groupRef.current.position.x += delta * direction;
       if (matRefs.screen.current.opacity < 0) {
         matRefs.screen.current.opacity = 0;
         matRefs.strap.current.opacity = 0;
@@ -43,7 +45,7 @@ export function VR({ fadeIn, fadeOut, ...props }) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <group position={[-3.96, 0.04, -0.14]}>
         <mesh geometry={nodes.VR_Screen_aiStandardSurface1_0.geometry}>
           <meshLambertMaterial
