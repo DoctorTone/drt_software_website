@@ -25,10 +25,20 @@ export const NavigationUI = () => {
       <Container fluid>
         <Row className="text-center">
           <Col xs={6}>
-            <CaretLeftFill size={72} color="royalblue" onClick={clickLeft} />
+            <CaretLeftFill
+              className="navArrows"
+              size={72}
+              color="royalblue"
+              onClick={clickLeft}
+            />
           </Col>
           <Col xs={6}>
-            <CaretRightFill size={72} color="royalblue" onClick={clickRight} />
+            <CaretRightFill
+              className="navArrows"
+              size={72}
+              color="royalblue"
+              onClick={clickRight}
+            />
           </Col>
         </Row>
       </Container>

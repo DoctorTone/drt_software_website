@@ -88,6 +88,9 @@ body {
   left: 0%;
   bottom: 40%;
 }
+.navArrows:hover {
+  cursor: pointer;
+}
 #navState {
   width: 100%;
   bottom: 15%;
