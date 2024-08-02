@@ -8,12 +8,41 @@ Title: Filing Box
 
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { SCENE } from "../state/Config";
 
-export function Project(props) {
+export function Project({ fadeIn, fadeOut, direction, ...props }) {
   const { nodes, materials } = useGLTF("./models/filing_box.glb");
+  const matRef = useRef();
+  const groupRef = useRef();
+  let fadeOutEnabled = fadeOut;
+  let fadeInEnabled = fadeIn;
+
+  useFrame((_, delta) => {
+    if (fadeOutEnabled) {
+      matRef.current.material.opacity -= delta * SCENE.FADE_DELAY;
+      groupRef.current.position.x += delta * direction;
+      if (matRef.current.material.opacity < 0) {
+        matRef.current.opacity = 0;
+        fadeOutEnabled = false;
+      }
+    }
+    if (fadeInEnabled) {
+      if (matRef.current.material.opacity >= 1) {
+        matRef.current.material.opacity = 0;
+      }
+      matRef.current.material.opacity += delta * SCENE.FADE_DELAY;
+      if (matRef.current.material.opacity >= 1) {
+        matRef.current.material.opacity = 1;
+        fadeInEnabled = false;
+      }
+    }
+  });
+
   return (
-    <group {...props} dispose={null} scale={0.01}>
+    <group ref={groupRef} {...props} dispose={null} scale={0.01}>
       <mesh
+        ref={matRef}
         castShadow
         receiveShadow
         geometry={nodes.Object_2.geometry}

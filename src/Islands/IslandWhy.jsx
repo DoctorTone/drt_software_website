@@ -6,7 +6,7 @@ import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
 
-export const IslandWhy = ({ name, fadeIn, fadeOut }) => {
+export const IslandWhy = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -38,7 +38,7 @@ export const IslandWhy = ({ name, fadeIn, fadeOut }) => {
 
   useCursor(hovered);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (fadeOutEnabled) {
       textRef.current.opacity -= delta * SCENE.FADE_DELAY;
       if (textRef.current.opacity < 0) {
@@ -74,6 +74,7 @@ export const IslandWhy = ({ name, fadeIn, fadeOut }) => {
           fadeIn={fadeIn}
           fadeOut={fadeOut}
           position={ISLANDS.WhyModelPosition}
+          direction={direction}
         />
         <Shadow
           scale={1.5}

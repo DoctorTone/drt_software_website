@@ -6,7 +6,7 @@ import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
 
-export const IslandProjects = ({ name, fadeIn, fadeOut }) => {
+export const IslandProjects = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -76,6 +76,7 @@ export const IslandProjects = ({ name, fadeIn, fadeOut }) => {
           fadeIn={fadeIn}
           fadeOut={fadeOut}
           position={ISLANDS.ProjectsModelPosition}
+          direction={direction}
         />
         <Shadow
           scale={1.5}

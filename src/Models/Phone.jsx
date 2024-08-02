@@ -7,15 +7,17 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
-export function Phone({ fadeIn, fadeOut, ...props }) {
+export function Phone({ fadeIn, fadeOut, direction, ...props }) {
   const { nodes } = useGLTF("./models/phone.glb");
   const matRef = useRef();
+  const groupRef = useRef();
   let fadeOutEnabled = fadeOut;
   let fadeInEnabled = fadeIn;
 
   useFrame((state, delta) => {
     if (fadeOutEnabled) {
       matRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      groupRef.current.position.x += delta * direction;
       if (matRef.current.opacity < 0) {
         matRef.current.opacity = 0;
         fadeOutEnabled = false;
@@ -34,7 +36,7 @@ export function Phone({ fadeIn, fadeOut, ...props }) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <mesh geometry={nodes.Phone.geometry}>
         <meshLambertMaterial
           transparent={true}

@@ -4,20 +4,24 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { CaretLeftFill, CaretRightFill } from "react-bootstrap-icons";
 import useStore from "../state/store.js";
+import { TRANSITIONS } from "../state/Config.js";
 
 export const NavigationUI = () => {
   const setTargetIsland = useStore((state) => state.setTargetIsland);
   const enterLevel = useStore((state) => state.enterLevel);
   let islandNumber = useStore((state) => state.islandNumber);
+  const setCurrentDirection = useStore((state) => state.setCurrentDirection);
 
   const clickLeft = () => {
     setTargetIsland(--islandNumber);
     enterLevel(false);
+    setCurrentDirection(TRANSITIONS.LEFT);
   };
 
   const clickRight = () => {
     setTargetIsland(++islandNumber);
     enterLevel(false);
+    setCurrentDirection(TRANSITIONS.RIGHT);
   };
 
   return (

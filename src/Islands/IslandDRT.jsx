@@ -6,7 +6,7 @@ import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 import { useFrame } from "@react-three/fiber";
 
-export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
+export const IslandDRT = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -73,6 +73,7 @@ export const IslandDRT = ({ name, fadeIn, fadeOut }) => {
         position={ISLANDS.MAIN_POSITION}
       >
         <DRT_Fixed
+          direction={direction}
           fadeIn={fadeIn}
           fadeOut={fadeOut}
           position={ISLANDS.DRTModelPosition}

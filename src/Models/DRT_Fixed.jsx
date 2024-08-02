@@ -7,15 +7,17 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
-export function DRT_Fixed({ fadeIn, fadeOut, ...props }) {
+export function DRT_Fixed({ fadeIn, fadeOut, direction, ...props }) {
   const { nodes } = useGLTF("./models/DRT-Text.gltf");
   const matRef = useRef();
+  const groupRef = useRef();
   let fadeOutEnabled = fadeOut;
   let fadeInEnabled = fadeIn;
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (fadeOutEnabled) {
       matRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      groupRef.current.position.x += delta * direction;
       if (matRef.current.opacity < 0) {
         matRef.current.opacity = 0;
         fadeOutEnabled = false;
@@ -34,7 +36,7 @@ export function DRT_Fixed({ fadeIn, fadeOut, ...props }) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <mesh
         geometry={nodes.DRT001.geometry}
         position={[-1.09, -0.44, 0]}

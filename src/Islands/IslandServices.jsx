@@ -6,7 +6,7 @@ import { Work } from "../Models/Work.jsx";
 import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
-export const IslandServices = ({ name, fadeIn, fadeOut }) => {
+export const IslandServices = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -75,6 +75,7 @@ export const IslandServices = ({ name, fadeIn, fadeOut }) => {
         <Work
           fadeIn={fadeIn}
           fadeOut={fadeOut}
+          direction={direction}
           scale={0.1}
           position={ISLANDS.ServicesModelPosition}
           rotation-y={Math.PI / 2}

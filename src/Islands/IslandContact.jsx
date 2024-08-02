@@ -6,7 +6,7 @@ import { Phone } from "../Models/Phone.jsx";
 import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
-export const IslandContact = ({ name, fadeIn, fadeOut }) => {
+export const IslandContact = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -78,6 +78,7 @@ export const IslandContact = ({ name, fadeIn, fadeOut }) => {
           position={ISLANDS.ContactModelPosition}
           rotation-y={Math.PI / 2}
           scale={0.007}
+          direction={direction}
         />
         <Shadow
           scale={1}

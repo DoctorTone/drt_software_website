@@ -7,17 +7,20 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { SCENE } from "../state/Config";
 
-export function Work({ fadeIn, fadeOut, ...props }) {
+export function Work({ fadeIn, fadeOut, direction, ...props }) {
   const { nodes, materials } = useGLTF("./models/work2.glb");
   const matRefs = { screwdriver: useRef(), wrench: useRef() };
 
   let fadeOutEnabled = fadeOut;
   let fadeInEnabled = fadeIn;
 
+  const groupRef = useRef();
+
   useFrame((state, delta) => {
     if (fadeOutEnabled) {
       matRefs.screwdriver.current.opacity -= delta * SCENE.FADE_DELAY;
       matRefs.wrench.current.opacity -= delta;
+      groupRef.current.position.x += delta * direction;
       if (matRefs.screwdriver.current.opacity < 0) {
         matRefs.screwdriver.current.opacity = 0;
         matRefs.wrench.current.opacity = 0;
@@ -36,7 +39,7 @@ export function Work({ fadeIn, fadeOut, ...props }) {
   });
 
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <mesh geometry={nodes.screwdriver.geometry} position={[0.76, 1.9, -0.76]}>
         <meshLambertMaterial
           transparent={true}

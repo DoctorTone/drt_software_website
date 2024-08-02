@@ -28,6 +28,8 @@ const useStore = create((set) => ({
           ? state.portfolioLevels
           : state.dataLevels,
     })),
+  currentDirection: TRANSITIONS.LEFT,
+  setCurrentDirection: (direction) => set({ currentDirection: direction }),
   onEnterLevel: false,
   onLeaveLevel: false,
   enterLevel: (status) => set({ onEnterLevel: status }),

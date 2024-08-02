@@ -6,7 +6,7 @@ import { Keyboard } from "../Models/Keyboard.jsx";
 import { SCENE, ISLANDS, MODALS, TRANSITIONS } from "../state/Config.js";
 import useStore from "../state/store.js";
 
-export const IslandTech = ({ name, fadeIn, fadeOut }) => {
+export const IslandTech = ({ name, fadeIn, fadeOut, direction }) => {
   const [hovered, setHovered] = useState(false);
 
   let fadeInEnabled = fadeIn;
@@ -76,6 +76,7 @@ export const IslandTech = ({ name, fadeIn, fadeOut }) => {
           position={ISLANDS.TechModelPosition}
           scale={5}
           rotation={[0.75, 0, 0]}
+          direction={direction}
         />
         <Shadow
           scale={1.75}

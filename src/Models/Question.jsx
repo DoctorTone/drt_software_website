@@ -4,19 +4,59 @@ Command: npx gltfjsx@6.2.16 .\question.gltf -T
 Files: .\question.gltf [44.23KB] > C:\Users\tony\Documents\Github\drt_software_website\public\models\question-transformed.glb [3.01KB] (93%)
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
-import { MeshStandardMaterial } from 'three'
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { SCENE } from "../state/Config";
 
-export function Question(props) {
-  const { nodes } = useGLTF('./models/question.glb')
+export function Question({ fadeIn, fadeOut, direction, ...props }) {
+  const { nodes } = useGLTF("./models/question.glb");
+  const groupRef = useRef();
+  const matRef = useRef();
+  let fadeOutEnabled = fadeOut;
+  let fadeInEnabled = fadeIn;
+
+  useFrame((_, delta) => {
+    if (fadeOutEnabled) {
+      matRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      groupRef.current.position.x += delta * direction;
+      if (matRef.current.opacity < 0) {
+        matRef.current.opacity = 0;
+        fadeOutEnabled = false;
+      }
+    }
+    if (fadeInEnabled) {
+      if (matRef.current.opacity >= 1) {
+        matRef.current.opacity = 0;
+      }
+      matRef.current.opacity += delta * SCENE.FADE_DELAY;
+      if (matRef.current.opacity >= 1) {
+        matRef.current.opacity = 1;
+        fadeInEnabled = false;
+      }
+    }
+  });
+
   return (
-    <group rotation-y={-Math.PI/2} scale={2} {...props} dispose={null}>
-      <mesh geometry={nodes.Question.geometry} rotation={[Math.PI / 2, 0, -Math.PI / 2]}>
-        <meshStandardMaterial color={0xcc7306} />
+    <group
+      ref={groupRef}
+      rotation-y={-Math.PI / 2}
+      scale={2}
+      {...props}
+      dispose={null}
+    >
+      <mesh
+        geometry={nodes.Question.geometry}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+      >
+        <meshStandardMaterial
+          color={0xcc7306}
+          transparent={true}
+          ref={matRef}
+        />
       </mesh>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('./models/question.glb')
+useGLTF.preload("./models/question.glb");
