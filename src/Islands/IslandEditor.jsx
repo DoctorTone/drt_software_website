@@ -17,6 +17,7 @@ export const IslandEditor = ({ name, fadeIn, fadeOut, direction }) => {
   const setTransitionPhase = useStore((state) => state.setTransitionPhase);
 
   const textRef = useRef();
+  const textMaterialRef = useRef();
 
   const selectIsland = () => {
     setVisibleModal(MODALS.EDITOR);
@@ -40,20 +41,21 @@ export const IslandEditor = ({ name, fadeIn, fadeOut, direction }) => {
 
   useFrame((state, delta) => {
     if (fadeOutEnabled) {
-      textRef.current.opacity -= delta * SCENE.FADE_DELAY;
-      if (textRef.current.opacity < 0) {
-        textRef.current.opacity = 0;
+      textMaterialRef.current.opacity -= delta * SCENE.FADE_DELAY;
+      textRef.current.position.x += delta * direction;
+      if (textMaterialRef.current.opacity < 0) {
+        textMaterialRef.current.opacity = 0;
         fadeOutEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_IN);
       }
     }
     if (fadeInEnabled) {
-      if (textRef.current.opacity >= 1) {
-        textRef.current.opacity = 0;
+      if (textMaterialRef.current.opacity >= 1) {
+        textMaterialRef.current.opacity = 0;
       }
-      textRef.current.opacity += delta * SCENE.FADE_DELAY;
-      if (textRef.current.opacity >= 1) {
-        textRef.current.opacity = 1;
+      textMaterialRef.current.opacity += delta * SCENE.FADE_DELAY;
+      if (textMaterialRef.current.opacity >= 1) {
+        textMaterialRef.current.opacity = 1;
         fadeInEnabled = false;
         setTransitionPhase(TRANSITIONS.FADE_OUT);
         setActiveIsland(name);
@@ -88,6 +90,7 @@ export const IslandEditor = ({ name, fadeIn, fadeOut, direction }) => {
         />
         <IslandPoints />
         <Text
+          ref={textRef}
           color="white"
           center
           fontSize={SCENE.FONT_SIZE}
@@ -98,7 +101,7 @@ export const IslandEditor = ({ name, fadeIn, fadeOut, direction }) => {
           outlineColor="black"
         >
           Editor
-          <meshBasicMaterial ref={textRef} transparent={true} />
+          <meshBasicMaterial ref={textMaterialRef} transparent={true} />
         </Text>
       </group>
     </Float>
