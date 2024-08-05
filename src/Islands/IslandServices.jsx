@@ -13,8 +13,6 @@ export const IslandServices = ({ name, fadeIn, fadeOut, direction }) => {
   let fadeOutEnabled = fadeOut;
 
   const setVisibleModal = useStore((state) => state.setVisibleModal);
-  const speechBubbleVisible = useStore((state) => state.speechBubbleVisible);
-  const displaySpeechBubble = useStore((state) => state.displaySpeechBubble);
   const setTransitionPhase = useStore((state) => state.setTransitionPhase);
   const setActiveIsland = useStore((state) => state.setActiveIsland);
 
