@@ -426,6 +426,9 @@ p.thought:after {
     top: 3%;
     width: 50%;
   }
+  #speedDial {
+    top: 20%;
+  }
 }
 @media (min-width: 768px) and (orientation: landscape) {
   #lights {
@@ -455,6 +458,9 @@ p.thought:after {
     left: 10%;
     top: 3%;
     width: 40%;
+  }
+  #speedDial {
+    top: 25%;
   }
 }
 /* Extra extra large */
