@@ -27,7 +27,7 @@ export const NavigationUI = () => {
   return (
     <div id="navigation" className="panel">
       <Container fluid>
-        <Row className="text-center">
+        <Row>
           <Col xs={6}>
             <CaretLeftFill
               className="navArrows"
@@ -36,7 +36,7 @@ export const NavigationUI = () => {
               onClick={clickLeft}
             />
           </Col>
-          <Col xs={6}>
+          <Col xs={6} className="text-end">
             <CaretRightFill
               className="navArrows"
               size={72}

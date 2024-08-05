@@ -86,14 +86,14 @@ body {
 #navigation {
   width: 100%;
   left: 0%;
-  bottom: 40%;
+  bottom: 25%;
 }
 .navArrows:hover {
   cursor: pointer;
 }
 #navState {
   width: 100%;
-  bottom: 15%;
+  bottom: 10%;
   left: 0%;
 }
 #social {
@@ -334,104 +334,72 @@ p.thought:after {
     transform: scale(0);
   }
 }
-.speed-dial {
+/* .dials a {
+  animation: pop-in 0.3s ease both;
+}
+.dials p {
+  animation: pop-in 0.3s ease both;
+  margin: 0;
+} */
+.dials {
   text-align: center;
-  display: inline-block;
-}
-.speed-dial a,
-.speed-dial a:hover,
-.speed-dial a:active,
-.speed-dial a:visited,
-.speed-dial a:focus {
-  color: #000;
-  display: inline-block;
-  text-decoration: none;
-}
-.speed-dial .toggle {
-  display: inline-block;
-  border-radius: 10%;
-  border: 2px solid black;
-  /* width: 50px;
-  height: 50px; */
-  padding: 7.5% 15%;
-  font-size: 16px;
-}
-.speed-dial:hover .toggle {
-  background-color: #afa9a9;
-  cursor: pointer;
-}
-.speed-dial:hover .dials a {
-  animation: pop-in 0.3s ease both;
-}
-.speed-dial:hover .dials p {
-  animation: pop-in 0.3s ease both;
-}
-.speed-dial .dials {
   margin: 0;
   padding: 0;
   list-style: none;
+  color: black;
 }
-.speed-dial .dials a {
+.dials a {
   display: inline-block;
   border-radius: 50%;
+  background-color: #8d8888;
   width: 50px;
   height: 50px;
   font-size: 24px;
-  margin: 8px 0;
-  transform: scale(0);
-  animation: pop-out 0.3s ease both;
+  margin: 0;
+  /* transform: scale(0); */
+  animation: pop-in 0.3s ease both;
 }
-.speed-dial .dials a:hover {
+.dials a:hover {
   background-color: #afa9a9;
   cursor: pointer;
 }
-.speed-dial .dials p {
+.dials p {
   font-size: 16px;
-  transform: scale(0);
-  animation: pop-out 0.3s ease both;
+  background-color: rgb(87, 83, 83);
+  color: orange;
+  border-radius: 10%;
+  margin-top: 3px;
 }
-.speed-dial .dials a.pop-in {
+/* .dials a.pop-in {
   animation: pop-in 0.3s ease both;
 }
-.speed-dial .dials p.pop-in {
+.dials p.pop-in {
   animation: pop-in 0.3s ease both;
 }
-.speed-dial .dials li:nth-child(0) a {
+.dials li:nth-child(0) a {
   animation-delay: 0s;
 }
-.speed-dial .dials li:nth-child(1) a {
+.dials li:nth-child(1) a {
   animation-delay: 0.1s;
 }
-.speed-dial .dials li:nth-child(2) a {
+.dials li:nth-child(2) a {
   animation-delay: 0.2s;
 }
-.speed-dial .dials li:nth-child(3) a {
+.dials li:nth-child(3) a {
   animation-delay: 0.3s;
 }
-.speed-dial .dials li:nth-child(4) a {
+.dials li:nth-child(4) a {
   animation-delay: 0.4s;
 }
-.speed-dial .dials li:nth-child(5) a {
+.dials li:nth-child(5) a {
   animation-delay: 0.5s;
 }
-.speed-dial .dials li:nth-child(6) a {
+.dials li:nth-child(6) a {
   animation-delay: 0.6s;
-}
-
-.bg-share {
-  background-color: #15b897;
-}
+} */
 
 .bg-twitter {
   background-color: #c9cdcf;
-}
-
-.bg-facebook {
-  background-color: #3c5b9b;
-}
-
-.bg-google-plus {
-  background-color: #f73e29;
 }
 
 /* Add title outline to larger screen sizes */
