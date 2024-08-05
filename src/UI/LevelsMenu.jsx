@@ -22,35 +22,26 @@ export const LevelsMenu = () => {
   };
 
   return (
-    <div id="speedDial" class="speed-dial panel">
+    <div id="speedDial" className="speed-dial panel">
       <Button>Explore</Button>
-      <ul class="dials">
+      <ul className="dials">
         <li onClick={() => updateLevel("Main", "about")}>
-          <OverlayTrigger overlay={<Tooltip>Home</Tooltip>} placement="right">
-            <a class="bg-twitter">
-              <HouseFill />
-            </a>
-          </OverlayTrigger>
+          <a className="bg-twitter">
+            <HouseFill />
+          </a>
+          <p className="dialText">Home</p>
         </li>
         <li onClick={() => updateLevel("Portfolio", "configurator")}>
-          <OverlayTrigger
-            overlay={<Tooltip>Portfolio</Tooltip>}
-            placement="right"
-          >
-            <a class="bg-twitter">
-              <Images />
-            </a>
-          </OverlayTrigger>
+          <a className="bg-twitter">
+            <Images />
+          </a>
+          <p className="dialText">Portfolio</p>
         </li>
         <li onClick={() => updateLevel("DataViz", "medical")}>
-          <OverlayTrigger
-            overlay={<Tooltip>Data Viz</Tooltip>}
-            placement="right"
-          >
-            <a class="bg-twitter">
-              <BarChartFill />
-            </a>
-          </OverlayTrigger>
+          <a className="bg-twitter">
+            <BarChartFill />
+          </a>
+          <p className="dialText">Data viz</p>
         </li>
       </ul>
     </div>

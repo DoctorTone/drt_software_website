@@ -363,6 +363,9 @@ p.thought:after {
 .speed-dial:hover .dials a {
   animation: pop-in 0.3s ease both;
 }
+.speed-dial:hover .dials p {
+  animation: pop-in 0.3s ease both;
+}
 .speed-dial .dials {
   margin: 0;
   padding: 0;
@@ -382,7 +385,15 @@ p.thought:after {
   background-color: #afa9a9;
   cursor: pointer;
 }
+.speed-dial .dials p {
+  font-size: 16px;
+  transform: scale(0);
+  animation: pop-out 0.3s ease both;
+}
 .speed-dial .dials a.pop-in {
+  animation: pop-in 0.3s ease both;
+}
+.speed-dial .dials p.pop-in {
   animation: pop-in 0.3s ease both;
 }
 .speed-dial .dials li:nth-child(0) a {
