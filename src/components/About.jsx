@@ -7,7 +7,7 @@ import { Stars, ThreeDots } from "react-bootstrap-icons";
 
 const About = () => {
   return (
-    <div className="paleBackground blackText pt-3">
+    <div className="whiteBackground blackText pt-3">
       <Container>
         <Row className="mb-3">
           <Stars color="orange" size="30" />

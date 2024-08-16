@@ -36,7 +36,7 @@ const LandingText = () => {
         </Row>
         <Row className="text-center mt-md-4">
           <Col>
-            <h5>
+            <h5 className="orangeText">
               Scroll to find out more. <ArrowDown />
             </h5>
           </Col>

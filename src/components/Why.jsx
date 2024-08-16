@@ -16,7 +16,7 @@ import {
 
 const Why = () => {
   return (
-    <div className="lightGreyBackground">
+    <div className="darkBackground">
       <Container className="text-center">
         <Row className="pt-4">
           <BoxFill color="orange" size="50" />
@@ -24,7 +24,7 @@ const Why = () => {
         <Row>
           <div className="text-start ">
             <h5 className="whiteText">Why</h5>
-            <h2 className="mb-4 whiteText">Why Use 3D?</h2>
+            <h2 className="mb-4 greyerText">Why Use 3D?</h2>
           </div>
           <hr></hr>
           <Col xs={12} md={6} lg={4}>
@@ -33,7 +33,7 @@ const Why = () => {
               color="orange"
               size="60"
             />
-            <p className="h5 mb-3">Enhanced engagement</p>
+            <p className="h5 mb-3 whiteText">Enhanced engagement</p>
             <p className="greyText mb-5">
               Users can explore and interact with realistic 3D models, making
               the experience more memorable, and feel more involved.
@@ -45,7 +45,7 @@ const Why = () => {
               color="orange"
               size="60"
             />
-            <p className="h5 mb-3">Improved visualisation</p>
+            <p className="h5 mb-3 whiteText">Improved visualisation</p>
             <p className="greyText mb-5">
               Products can be represented realistically and viewed from any
               angle. Complex data can be simplified and shared for a better
@@ -58,7 +58,7 @@ const Why = () => {
               color="orange"
               size="60"
             />
-            <p className="h5 mb-3">Innovative Branding</p>
+            <p className="h5 mb-3 whiteText">Innovative Branding</p>
             <p className="greyText mb-5">
               There are more innovative ways to represent your products. This
               can greatly enhance the appearence compared to a traditional
@@ -71,7 +71,7 @@ const Why = () => {
               color="orange"
               size="60"
             />
-            <p className="h5 mb-3">Increased visitors</p>
+            <p className="h5 mb-3 whiteText">Increased visitors</p>
             <p className="greyText mb-5">
               The interactive and engaging nature of the site will encourage
               more users. Once there, they will be more tempted to stay
@@ -83,7 +83,7 @@ const Why = () => {
               color="orange"
               size="60"
             />
-            <p className="h5 mb-3">Compelling experiences</p>
+            <p className="h5 mb-3 whiteText">Compelling experiences</p>
             <p className="greyText mb-5">
               Visitors can explore interacive elements providing increased depth
               and context.
@@ -95,7 +95,7 @@ const Why = () => {
               color="orange"
               size="60"
             />
-            <p className="h5 mb-3">Competitive edge</p>
+            <p className="h5 mb-3 whiteText">Competitive edge</p>
             <p className="greyText mb-5">
               3D interactive websites can provide a distinct advantage over a
               more conventional website.
