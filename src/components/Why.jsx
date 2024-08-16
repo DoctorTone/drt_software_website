@@ -16,13 +16,17 @@ import {
 
 const Why = () => {
   return (
-    <div className="greyBackground">
+    <div className="lightGreyBackground">
       <Container className="text-center">
-        <h2 className="mx-auto w-100 ps-3">Why use 3D?</h2>
-        <Row className="mb-5">
+        <Row className="pt-4">
           <BoxFill color="orange" size="50" />
         </Row>
         <Row>
+          <div className="text-start ">
+            <h5 className="whiteText">Why</h5>
+            <h2 className="mb-4 whiteText">Why Use 3D?</h2>
+          </div>
+          <hr></hr>
           <Col xs={12} md={6} lg={4}>
             <Mouse2Fill
               className="mb-3 greyBackground px-3 rounded"
@@ -98,7 +102,7 @@ const Why = () => {
             </p>
           </Col>
         </Row>
-        <ThreeDots color="orange" size="30" />
+        <ThreeDots className="mb-4" color="orange" size="30" />
       </Container>
     </div>
   );

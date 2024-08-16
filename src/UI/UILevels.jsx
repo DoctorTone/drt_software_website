@@ -11,6 +11,10 @@ import { NavState } from "./NavState.jsx";
 import About from "../components/About.jsx";
 import Services from "../components/Services.jsx";
 import Why from "../components/Why.jsx";
+import Projects from "../components/Projects.jsx";
+import Tech from "../components/Tech.jsx";
+import Contact from "../components/Contact.jsx";
+import Footer from "../components/Footer.jsx";
 
 const BUBBLE_TIME = 5 * 1000;
 
@@ -48,6 +52,10 @@ const UILevels = ({ levelName }) => {
           <About />
           <Services />
           <Why />
+          <Projects />
+          <Tech />
+          <Contact />
+          <Footer />
         </>
       );
       break;

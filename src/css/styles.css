@@ -59,6 +59,9 @@ canvas {
 .greyBackground {
   background-color: #4d4b4b;
 }
+.lightGreyBackground {
+  background-color: #86898b;
+}
 #logo {
   top: 1%;
   left: 1%;

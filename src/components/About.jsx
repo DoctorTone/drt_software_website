@@ -17,12 +17,14 @@ const About = () => {
             <h5>About</h5>
             <h2 className="mb-4">I'm Dr Tony Glover</h2>
             <hr></hr>
-            <Image
-              className="portrait"
-              src="./images/profile.jpg"
-              fluid
-              roundedCircle
-            />
+            <div className="text-center">
+              <Image
+                className="portrait"
+                src="./images/profile.jpg"
+                fluid
+                roundedCircle
+              />
+            </div>
           </Col>
           <Col xs={12} className="pt-3">
             <p>
@@ -52,7 +54,7 @@ const About = () => {
           </Col>
         </Row>
         <Row>
-          <ThreeDots color="orange" size="36" />
+          <ThreeDots className="mb-3" color="orange" size="36" />
         </Row>
       </Container>
     </div>
