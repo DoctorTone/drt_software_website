@@ -10,6 +10,7 @@ import { LevelsMenu } from "./LevelsMenu.jsx";
 import { NavState } from "./NavState.jsx";
 import About from "../components/About.jsx";
 import Services from "../components/Services.jsx";
+import Why from "../components/Why.jsx";
 
 const BUBBLE_TIME = 5 * 1000;
 
@@ -46,6 +47,7 @@ const UILevels = ({ levelName }) => {
           <LandingText />
           <About />
           <Services />
+          <Why />
         </>
       );
       break;

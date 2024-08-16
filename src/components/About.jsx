@@ -13,8 +13,10 @@ const About = () => {
           <Stars color="orange" size="30" />
         </Row>
         <Row className="mb-3">
-          <Col xs={12} className="text-center">
-            <h3 className="mb-4">I'm Dr Tony Glover</h3>
+          <Col xs={12}>
+            <h5>About</h5>
+            <h2 className="mb-4">I'm Dr Tony Glover</h2>
+            <hr></hr>
             <Image
               className="portrait"
               src="./images/profile.jpg"
