@@ -64,7 +64,7 @@ const Tech = () => {
                 variant="top"
                 src="./images/react.png"
               />
-              <Card.Title>R3F</Card.Title>
+              <Card.Title>Fiber</Card.Title>
             </Card>
           </Col>
           <Col xs={2}>
