@@ -5,6 +5,7 @@ import PortfolioLevel from "./PortfolioLevel";
 import DataVizLevel from "./DataVizLevel";
 import Overlay from "../components/Overlay.jsx";
 import useStore from "../state/store.js";
+import About from "../components/About.jsx";
 
 const Levels = ({ levelName }) => {
   const onEnterLevel = useStore((state) => state.onEnterLevel);

@@ -43,7 +43,7 @@ const AboutModal = ({ showModal }) => {
             <Stars color="orange" size="30" />
           </Row>
           <Row className="mb-3">
-            <Col xs={12} md={6} className="text-center">
+            <Col xs={12} className="text-center">
               <h3 className="mb-4">I'm Dr Tony Glover</h3>
               <Image
                 className="portrait"
@@ -52,7 +52,7 @@ const AboutModal = ({ showModal }) => {
                 roundedCircle
               />
             </Col>
-            <Col xs={12} md={6} className="pt-3 greyText">
+            <Col xs={12} className="pt-3 greyText">
               <p className="greyText">
                 I have more than 25 years experience in the software development
                 industry. I am passionate about all things 3D - my mission is to

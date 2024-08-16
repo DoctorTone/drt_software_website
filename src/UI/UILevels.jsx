@@ -8,6 +8,8 @@ import { DayMode } from "./DayMode.jsx";
 import { NavigationUI } from "./NavigationUI.jsx";
 import { LevelsMenu } from "./LevelsMenu.jsx";
 import { NavState } from "./NavState.jsx";
+import About from "../components/About.jsx";
+import Services from "../components/Services.jsx";
 
 const BUBBLE_TIME = 5 * 1000;
 
@@ -39,7 +41,13 @@ const UILevels = ({ levelName }) => {
 
   switch (levelName) {
     case "Landing":
-      return <LandingText />;
+      return (
+        <>
+          <LandingText />
+          <About />
+          <Services />
+        </>
+      );
       break;
 
     case "Main":
