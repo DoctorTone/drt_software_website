@@ -430,12 +430,18 @@ p.thought:after {
   #landingText {
     top: 15%;
   }
+  .titleSpacing {
+    margin-top: 10em;
+    margin-bottom: 1em;
+  }
+  .titleFont {
+    font-size: 4.5em;
+  }
   #logo {
     left: 5%;
   }
   #navbar {
-    left: 27.5%;
-    width: 60%;
+    width: 20%;
   }
   #lights {
     top: 10%;
