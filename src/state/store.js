@@ -3,7 +3,7 @@ import { SCENE, MODALS, TRANSITIONS } from "./Config.js";
 
 const useStore = create((set) => ({
   // Levels in system
-  levels: ["Landing", "Main", "Portfolio", "DataViz"],
+  levels: ["Landing", "Portfolio", "DataViz"],
   mainLevels: ["about", "services", "why", "contact", "projects", "tech"],
   portfolioLevels: [
     "configurator",
@@ -41,8 +41,8 @@ const useStore = create((set) => ({
   dayMode: true,
   toggleDayMode: () => set((state) => ({ dayMode: !state.dayMode })),
   // Island slot positions
-  activeIsland: "about",
-  targetIsland: "about",
+  activeIsland: "configurator",
+  targetIsland: "configurator",
   islandNumber: 0,
   currentSlots: ["Contact", "About", "Services"],
   getSlotPosition: (slots, island) => {

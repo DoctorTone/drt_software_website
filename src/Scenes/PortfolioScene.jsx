@@ -9,6 +9,7 @@ import useStore from "../state/store.js";
 import { TRANSITIONS } from "../state/Config.js";
 import { IslandPerformance } from "../Islands/IslandPerformance.jsx";
 import { IslandConfigurator } from "../Islands/IslandConfigurator.jsx";
+import Meteor from "../components/Meteor.jsx";
 
 const PortfolioScene = () => {
   const targetIsland = useStore((state) => state.targetIsland);
@@ -96,6 +97,7 @@ const PortfolioScene = () => {
       {transitionPhase === TRANSITIONS.FADE_OUT
         ? getIsland(transitionPhase)[activeIsland]
         : getIsland(transitionPhase)[targetIsland]}
+      <Meteor />
     </>
   );
 };

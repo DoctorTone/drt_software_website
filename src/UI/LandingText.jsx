@@ -14,7 +14,7 @@ const LandingText = () => {
   const enterLevel = useStore((state) => state.enterLevel);
 
   const nextLevel = () => {
-    setCurrentLevel("Main");
+    setCurrentLevel("Portfolio");
     enterLevel(true);
   };
 

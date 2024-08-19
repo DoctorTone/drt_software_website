@@ -1,8 +1,6 @@
 import React from "react";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 import Button from "react-bootstrap/Button";
-import { HouseFill, Images, BarChartFill } from "react-bootstrap-icons";
+import { Images, BarChartFill } from "react-bootstrap-icons";
 import useStore from "../state/store.js";
 
 export const LevelsMenu = () => {
@@ -11,15 +9,6 @@ export const LevelsMenu = () => {
   const currentLevel = useStore((state) => state.currentLevel);
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
   const enterLevel = useStore((state) => state.enterLevel);
-
-  const toggleOptions = () => {
-    const elem = document.querySelector(".dials");
-    if (elem.classList.contains("d-none")) {
-      elem.classList.remove("d-none");
-    } else {
-      elem.classList.add("d-none");
-    }
-  };
 
   const hideIcons = () => {
     const elem = document.querySelector(".dials");
@@ -53,12 +42,6 @@ export const LevelsMenu = () => {
         Explore
       </Button>
       <ul className="dials d-none">
-        <li onClick={() => updateLevel("Main", "about")}>
-          <a className="bg-twitter">
-            <HouseFill color="black" />
-          </a>
-          <p className="dialText">Home</p>
-        </li>
         <li onClick={() => updateLevel("Portfolio", "configurator")}>
           <a className="bg-twitter">
             <Images color="black" />

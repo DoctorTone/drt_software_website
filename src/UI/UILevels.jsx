@@ -23,21 +23,8 @@ const UILevels = ({ levelName }) => {
   const [levelsActive, setLevelsActive] = useState(false);
   const [showBubble, setShowBubble] = useState(true);
 
-  const toggleOptionsMenu = (menuActive) => {
-    setOptionsActive(menuActive);
-    if (menuActive && levelsActive) {
-      setLevelsActive(false);
-    }
-  };
-  const toggleLevelsMenu = (menuActive) => {
-    setLevelsActive(menuActive);
-    if (menuActive && optionsActive) {
-      setOptionsActive(false);
-    }
-  };
-
   useEffect(() => {
-    if (levelName === "Main") {
+    if (levelName === "Portfolio") {
       setTimeout(() => {
         setShowBubble(false);
       }, BUBBLE_TIME);
@@ -85,6 +72,7 @@ const UILevels = ({ levelName }) => {
           <NavigationUI />
           <NavState />
           <LevelsMenu />
+          {showBubble && <Bubble />}
         </>
       );
       break;

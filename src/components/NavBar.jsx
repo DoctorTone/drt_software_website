@@ -19,7 +19,7 @@ export const NavBar = ({ level }) => {
   }
   return (
     <>
-      <Nav id="navbar" className="panel">
+      <Nav id="mail" className="panel">
         <Nav.Item>
           <Nav.Link
             href="mailto:enquiries@drt-software.com"
