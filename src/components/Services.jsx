@@ -20,7 +20,7 @@ const Services = () => {
           <Col xs={1} className="text-end">
             <HexagonHalf color="orange" size="24" />
           </Col>
-          <Col xs={3}>
+          <Col xs={11}>
             <p className="greyerText">
               I build highly interactive and engaging 3D graphical web
               applications. I don't just build ordinary websites, I utilise 3D
@@ -30,7 +30,7 @@ const Services = () => {
           <Col xs={1} className="text-end">
             <HexagonHalf color="orange" size="24" />
           </Col>
-          <Col xs={3}>
+          <Col xs={11}>
             <p className="greyerText">
               I have worked with large and small organisations, start-ups and
               academic institutions to create diverse projects ranging from
@@ -40,7 +40,7 @@ const Services = () => {
           <Col xs={1} className="text-end">
             <HexagonHalf color="orange" size="24" />
           </Col>
-          <Col xs={3}>
+          <Col xs={11}>
             <p className="greyerText">
               I have been involved in all aspects of the development from
               requirements to implementation. I can take your ideas and turn
@@ -51,7 +51,7 @@ const Services = () => {
           <Col xs={1} className="text-end">
             <HexagonHalf color="orange" size="24" />
           </Col>
-          <Col xs={3}>
+          <Col xs={11}>
             <div className="greyerText">
               Do you have an ongoing project that needs to be completed? No
               problem! I can look at your existing codebase and get it done.
@@ -60,7 +60,7 @@ const Services = () => {
           <Col xs={1} className="text-end">
             <HexagonHalf color="orange" size="24" />
           </Col>
-          <Col xs={3}>
+          <Col xs={11}>
             <div className="greyerText">
               I have a fantastic work ethic, am customer-focused, I provide the
               level of service I would expect myself, and I communicate the
@@ -70,7 +70,7 @@ const Services = () => {
           <Col xs={1} className="text-end">
             <HexagonHalf color="orange" size="24" />
           </Col>
-          <Col xs={3}>
+          <Col xs={11}>
             <div className="greyerText">
               I offer consultancy services to try and help people decide on the
               best technology choices available and the most applicable to their

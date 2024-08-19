@@ -51,7 +51,7 @@ canvas {
   color: #d3d5d6;
 }
 .titleFont {
-  font-size: 4.5em;
+  font-size: 3em;
 }
 .paleBackground {
   background-color: rgb(200, 200, 200);
@@ -79,13 +79,12 @@ canvas {
 #navbar {
   top: 1%;
   right: 0.5%;
-  width: 20%;
+  width: 30%;
   z-index: 100;
   border-radius: 10px;
-  color: white;
 }
 #navbar .nav-link {
-  color: white;
+  color: yellow;
 }
 #copyright {
   left: 1%;
@@ -147,7 +146,7 @@ canvas {
   top: 8%;
 }
 .titleSpacing {
-  margin-top: 6em;
+  margin-top: 8em;
   margin-bottom: 1em;
 }
 #enterText {
