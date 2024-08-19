@@ -8,6 +8,7 @@ import { Tools, HexagonHalf } from "react-bootstrap-icons";
 const Services = () => {
   return (
     <div className="lightGreyBackground pb-4">
+      <a id="services"></a>
       <Container className="whiteText">
         <div className="text-center pt-4">
           <Tools color="orange" size="32" />

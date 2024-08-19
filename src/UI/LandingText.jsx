@@ -6,6 +6,8 @@ import { ArrowDown } from "react-bootstrap-icons";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 const LandingText = () => {
   const setCurrentLevel = useStore((state) => state.setCurrentLevel);
@@ -18,6 +20,19 @@ const LandingText = () => {
 
   return (
     <>
+      <Navbar id="navbar" expand="lg" className="panel">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#about_me">About</Nav.Link>
+            <Nav.Link href="#services">Services</Nav.Link>
+            <Nav.Link href="#why_3d">3D?</Nav.Link>
+            <Nav.Link href="#projects">Projects</Nav.Link>
+            <Nav.Link href="#tech">Technology</Nav.Link>
+            <Nav.Link href="#contact">Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
       <Container id="landingText" className="panel">
         <Row>
           <Col xs={12} md={6} className="lightGreyText">

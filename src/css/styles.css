@@ -79,11 +79,13 @@ canvas {
 #navbar {
   top: 1%;
   right: 0.5%;
-  width: 80%;
+  width: 20%;
   z-index: 100;
-  background-color: rgba(0.1, 0.1, 0.1, 0.2);
   border-radius: 10px;
-  color: yellow;
+  color: white;
+}
+#navbar .nav-link {
+  color: white;
 }
 #copyright {
   left: 1%;

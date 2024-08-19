@@ -17,13 +17,14 @@ import {
 const Why = () => {
   return (
     <div className="darkBackground">
+      <a id="why_3d"></a>
       <Container className="text-center">
         <Row className="pt-4">
           <BoxFill color="orange" size="50" />
         </Row>
         <Row>
           <div className="text-start ">
-            <h5 className="whiteText">Why</h5>
+            <h5 className="whiteText">Why 3D?</h5>
             <h2 className="mb-4 greyerText">Why Use 3D?</h2>
           </div>
           <hr></hr>
@@ -103,6 +104,7 @@ const Why = () => {
           </Col>
         </Row>
         <ThreeDots className="mb-4" color="orange" size="30" />
+        <hr className="orangeText m-0"></hr>
       </Container>
     </div>
   );

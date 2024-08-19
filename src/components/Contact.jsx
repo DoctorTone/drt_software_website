@@ -9,6 +9,7 @@ import { TelephoneFill, ThreeDots } from "react-bootstrap-icons";
 const Contact = () => {
   return (
     <div className="whiteBackground pt-3">
+      <a id="contact"></a>
       <Container>
         <Row>
           <TelephoneFill color="orange" size="30" />

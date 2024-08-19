@@ -9,6 +9,7 @@ import Card from "react-bootstrap/Card";
 const Tech = () => {
   return (
     <div className="paleBackground pt-3">
+      <a id="tech"></a>
       <Container>
         <Row>
           <Keyboard color="orange" size="42" />
@@ -20,6 +21,7 @@ const Tech = () => {
         </Row>
       </Container>
       <Container className="w-50 mb-2">
+        <p>A collection of the technology that I'm currently using:</p>
         <Row>
           <Col xs={2}>
             <Card style={{ width: "7rem" }} className="text-center">

@@ -9,6 +9,7 @@ import Image from "react-bootstrap/Image";
 const Projects = () => {
   return (
     <div className="darkBackground pt-4 whiteText">
+      <a id="projects"></a>
       <Container>
         <Row>
           <ArchiveFill color="orange" size="36" />
