@@ -20,71 +20,71 @@ const Tech = () => {
           <hr></hr>
         </Row>
       </Container>
-      <Container className="w-50 mb-2">
+      <Container className="mb-2">
         <p>A collection of the technology that I'm currently using:</p>
         <Row>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4} className="mb-2">
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/javascript.png"
               />
               <Card.Title>Javascript</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
-              <Card.Img className="p-4" variant="top" src="./images/type.png" />
-              <Card.Title>Typescript</Card.Title>
+          <Col xs={4}>
+            <Card className="text-center">
+              <Card.Img className="p-3" variant="top" src="./images/type.png" />
+              <Card.Title>TS</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4}>
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/react.png"
               />
               <Card.Title>React</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4}>
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/three.png"
               />
               <Card.Title>Three.js</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4}>
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/react.png"
               />
               <Card.Title>Fiber</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4}>
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/Babylon.png"
               />
-              <Card.Title>Babylon.js</Card.Title>
+              <Card.Title>Babylon</Card.Title>
             </Card>
           </Col>
         </Row>
       </Container>
-      <Container className="w-50 mb-2">
+      <Container className="mb-2">
         <Row>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4} className="mb-2">
+            <Card className="text-center">
               <Card.Img
                 className="p-3"
                 variant="top"
@@ -93,93 +93,93 @@ const Tech = () => {
               <Card.Title>Zustand</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
-              <Card.Img className="p-4" variant="top" src="./images/next.jpg" />
+          <Col xs={4}>
+            <Card className="text-center">
+              <Card.Img className="p-3" variant="top" src="./images/next.jpg" />
               <Card.Title>Next.js</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4}>
+            <Card className="text-center">
               <Card.Img className="p-4" variant="top" src="./images/gsap.jpg" />
               <Card.Title>GSAP</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4}>
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/WebGL.png"
               />
               <Card.Title>WebGL</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4}>
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/WebGL.png"
               />
               <Card.Title>GLSL</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
-              <Card.Img className="p-4" variant="top" src="./images/gpu.png" />
+          <Col xs={4}>
+            <Card className="text-center">
+              <Card.Img className="p-3" variant="top" src="./images/gpu.png" />
               <Card.Title>WebGPU</Card.Title>
             </Card>
           </Col>
         </Row>
       </Container>
-      <Container className="w-50">
+      <Container className="mb-2">
         <Row>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4} className="mb-2">
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/blender.jpg"
               />
               <Card.Title>Blender</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4}>
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/unity.png"
               />
               <Card.Title>Unity</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
+          <Col xs={4}>
+            <Card className="text-center">
               <Card.Img
-                className="p-4"
+                className="p-3"
                 variant="top"
                 src="./images/unreal.png"
               />
               <Card.Title>Unreal</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
-              <Card.Img className="p-4" variant="top" src="./images/html.png" />
+          <Col xs={4}>
+            <Card className="text-center">
+              <Card.Img className="p-3" variant="top" src="./images/html.png" />
               <Card.Title>HTML</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
-              <Card.Img className="p-4" variant="top" src="./images/css.png" />
+          <Col xs={4}>
+            <Card className="text-center">
+              <Card.Img className="p-3" variant="top" src="./images/css.png" />
               <Card.Title>CSS</Card.Title>
             </Card>
           </Col>
-          <Col xs={2}>
-            <Card style={{ width: "7rem" }} className="text-center">
-              <Card.Img className="p-4" variant="top" src="./images/node.png" />
+          <Col xs={4}>
+            <Card className="text-center">
+              <Card.Img className="p-3" variant="top" src="./images/node.png" />
               <Card.Title>Node</Card.Title>
             </Card>
           </Col>
