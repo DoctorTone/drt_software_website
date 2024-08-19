@@ -52,7 +52,7 @@ const Services = () => {
             <HexagonHalf color="orange" size="24" />
           </Col>
           <Col xs={11}>
-            <div className="greyerText">
+            <div className="greyerText pb-2">
               Do you have an ongoing project that needs to be completed? No
               problem! I can look at your existing codebase and get it done.
             </div>
@@ -61,7 +61,7 @@ const Services = () => {
             <HexagonHalf color="orange" size="24" />
           </Col>
           <Col xs={11}>
-            <div className="greyerText">
+            <div className="greyerText pb-2">
               I have a fantastic work ethic, am customer-focused, I provide the
               level of service I would expect myself, and I communicate the
               process every step of the way.

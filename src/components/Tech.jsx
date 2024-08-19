@@ -20,29 +20,33 @@ const Tech = () => {
           <hr></hr>
         </Row>
       </Container>
-      <Container className="mb-2">
+      <Container className="mb-2 techWidth">
         <p>A collection of the technology that I'm currently using:</p>
         <Row>
           <Col xs={4} md={2} className="mb-2">
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/javascript.png"
               />
-              <Card.Title>Javascript</Card.Title>
+              <Card.Title>JS</Card.Title>
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
-              <Card.Img className="p-3" variant="top" src="./images/type.png" />
+            <Card className="text-center cardWidth">
+              <Card.Img
+                className="p-2 p-xl-2"
+                variant="top"
+                src="./images/type.png"
+              />
               <Card.Title>TS</Card.Title>
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/react.png"
               />
@@ -50,9 +54,9 @@ const Tech = () => {
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/three.png"
               />
@@ -60,9 +64,9 @@ const Tech = () => {
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/react.png"
               />
@@ -70,9 +74,9 @@ const Tech = () => {
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/Babylon.png"
               />
@@ -81,12 +85,12 @@ const Tech = () => {
           </Col>
         </Row>
       </Container>
-      <Container className="mb-2">
+      <Container className="mb-2 techWidth">
         <Row>
           <Col xs={4} md={2} className="mb-2">
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/zustand.jpg"
               />
@@ -94,21 +98,29 @@ const Tech = () => {
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
-              <Card.Img className="p-3" variant="top" src="./images/next.jpg" />
+            <Card className="text-center cardWidth">
+              <Card.Img
+                className="p-2 p-xl-2"
+                variant="top"
+                src="./images/next.jpg"
+              />
               <Card.Title>Next.js</Card.Title>
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
-              <Card.Img className="p-3" variant="top" src="./images/gsap.jpg" />
+            <Card className="text-center cardWidth">
+              <Card.Img
+                className="p-2 p-xl-2"
+                variant="top"
+                src="./images/gsap.jpg"
+              />
               <Card.Title>GSAP</Card.Title>
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/WebGL.png"
               />
@@ -116,9 +128,9 @@ const Tech = () => {
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/WebGL.png"
               />
@@ -126,19 +138,23 @@ const Tech = () => {
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
-              <Card.Img className="p-3" variant="top" src="./images/gpu.png" />
+            <Card className="text-center cardWidth">
+              <Card.Img
+                className="p-2 p-xl-2"
+                variant="top"
+                src="./images/gpu.png"
+              />
               <Card.Title>WebGPU</Card.Title>
             </Card>
           </Col>
         </Row>
       </Container>
-      <Container className="mb-2">
+      <Container className="mb-2 techWidth">
         <Row>
           <Col xs={4} md={2} className="mb-2">
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/blender.jpg"
               />
@@ -146,9 +162,9 @@ const Tech = () => {
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/unity.png"
               />
@@ -156,9 +172,9 @@ const Tech = () => {
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
+            <Card className="text-center cardWidth">
               <Card.Img
-                className="p-3"
+                className="p-2 p-xl-2"
                 variant="top"
                 src="./images/unreal.png"
               />
@@ -166,20 +182,32 @@ const Tech = () => {
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
-              <Card.Img className="p-3" variant="top" src="./images/html.png" />
+            <Card className="text-center cardWidth">
+              <Card.Img
+                className="p-2 p-xl-2"
+                variant="top"
+                src="./images/html.png"
+              />
               <Card.Title>HTML</Card.Title>
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
-              <Card.Img className="p-3" variant="top" src="./images/css.png" />
+            <Card className="text-center cardWidth">
+              <Card.Img
+                className="p-2 p-xl-2"
+                variant="top"
+                src="./images/css.png"
+              />
               <Card.Title>CSS</Card.Title>
             </Card>
           </Col>
           <Col xs={4} md={2}>
-            <Card className="text-center">
-              <Card.Img className="p-3" variant="top" src="./images/node.png" />
+            <Card className="text-center cardWidth">
+              <Card.Img
+                className="p-2 p-xl-2"
+                variant="top"
+                src="./images/node.png"
+              />
               <Card.Title>Node</Card.Title>
             </Card>
           </Col>

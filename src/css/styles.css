@@ -483,7 +483,6 @@ p.thought:after {
   }
   #navbar {
     width: 45%;
-    left: 40%;
   }
   #infoTextTop {
     left: 10%;
@@ -502,6 +501,15 @@ p.thought:after {
   }
   #lights {
     top: 12.5%;
+  }
+  .titleFont {
+    font-size: 5em;
+  }
+  .techWidth {
+    width: 75%;
+  }
+  .cardWidth {
+    width: 75%;
   }
 }
 
