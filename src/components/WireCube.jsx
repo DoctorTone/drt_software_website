@@ -24,7 +24,7 @@ export const WireCube = (...props) => {
       position={[Math.random() * 4 - 2, Math.random() * 4 - 2, 0]}
       rotation={[Math.random() * 2, Math.random() * 2, Math.random() * 2]}
     >
-      <Instance ref={boxRef} />;
+      <Instance ref={boxRef} />
     </group>
   );
 };

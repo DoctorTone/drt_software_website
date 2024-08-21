@@ -11,7 +11,7 @@ const Lights = ({ level }) => {
       {dayMode ? (
         <>
           <ambientLight intensity={SCENE.ambientIntensity} />
-          <pointLight position={SCENE.lightPosition} />{" "}
+          <pointLight position={SCENE.lightPosition} />
         </>
       ) : (
         <>

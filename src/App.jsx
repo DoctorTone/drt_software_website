@@ -18,15 +18,17 @@ const App = () => {
     <>
       {currentLevel !== "Landing" && <Logo />}
       {currentLevel !== "Landing" && <NavBar level={currentLevel} />}
-      <Canvas camera={{ position: getCameraPosition(window.innerWidth) }}>
-        <Lights level={currentLevel} />
-        <Levels levelName={currentLevel} />
-        <OrbitControls
-          enablePan={INTERACTIVE}
-          enableRotate={INTERACTIVE}
-          enableZoom={INTERACTIVE}
-        />
-      </Canvas>
+      <div id="canvas-container">
+        <Canvas camera={{ position: getCameraPosition(window.innerWidth) }}>
+          <Lights level={currentLevel} />
+          <Levels levelName={currentLevel} />
+          <OrbitControls
+            enablePan={INTERACTIVE}
+            enableRotate={INTERACTIVE}
+            enableZoom={INTERACTIVE}
+          />
+        </Canvas>
+      </div>
       <UILevels levelName={currentLevel} />
       <ShowModals visibleModal={currentVisibleModal} />
     </>
